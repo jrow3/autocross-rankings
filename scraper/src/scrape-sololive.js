@@ -390,27 +390,40 @@ function generateExpectedEventCodes(years = [2021, 2022, 2023, 2024, 2025, 2026]
   return codes;
 }
 
-// Check which events actually exist on sololive
+// Check which events actually exist on sololive (parallel batches)
 async function probeEvents(codes) {
   const existing = [];
+  const BATCH_SIZE = 10;
 
-  for (const event of codes) {
-    const url = `${BASE_URL}/${event.code}/index.php`;
-    try {
-      const res = await fetch(url, {
-        method: 'HEAD',
-        headers: { 'User-Agent': 'AutocrossRankings/1.0 (research)' },
-        redirect: 'follow',
-        timeout: 5000,
-      });
-      if (res.ok) {
-        console.log(`  Found: ${event.code}`);
-        existing.push(event);
-      }
-    } catch (e) {
-      // Event doesn't exist
+  for (let i = 0; i < codes.length; i += BATCH_SIZE) {
+    const batch = codes.slice(i, i + BATCH_SIZE);
+    const results = await Promise.allSettled(
+      batch.map(async (event) => {
+        const url = `${BASE_URL}/${event.code}/index.php`;
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 3000);
+        try {
+          const res = await fetch(url, {
+            method: 'HEAD',
+            headers: { 'User-Agent': 'AutocrossRankings/1.0 (research)' },
+            redirect: 'follow',
+            signal: controller.signal,
+          });
+          clearTimeout(timer);
+          if (res.ok) {
+            console.log(`  Found: ${event.code}`);
+            return event;
+          }
+        } catch (e) {
+          clearTimeout(timer);
+        }
+        return null;
+      })
+    );
+    for (const r of results) {
+      if (r.status === 'fulfilled' && r.value) existing.push(r.value);
     }
-    await new Promise(r => setTimeout(r, 200));
+    console.log(`  Probed ${Math.min(i + BATCH_SIZE, codes.length)}/${codes.length}...`);
   }
 
   return existing;
@@ -449,22 +462,32 @@ async function main() {
       console.error('No known events file. Run with "discover" first.');
       process.exit(1);
     }
-    const events = JSON.parse(readFileSync(KNOWN_EVENTS_FILE, 'utf8'));
+    const raw = JSON.parse(readFileSync(KNOWN_EVENTS_FILE, 'utf8'));
+    // Support both string codes and {code, type} objects
+    const events = raw.map(e => typeof e === 'string'
+      ? { code: e, type: e.includes('NATS') ? 'nationals' : 'tour' }
+      : e
+    );
     console.log(`Scraping ${events.length} events...`);
 
+    let scraped = 0, skipped = 0, failed = 0;
     for (const event of events) {
       const outFile = join(DATA_DIR, `${event.code}.json`);
       if (existsSync(outFile)) {
         console.log(`Skipping ${event.code} (already scraped)`);
+        skipped++;
         continue;
       }
       try {
         await scrapeEvent(event.code, event.type);
+        scraped++;
       } catch (e) {
         console.error(`Failed to scrape ${event.code}: ${e.message}`);
+        failed++;
       }
       await new Promise(r => setTimeout(r, 1000));
     }
+    console.log(`\nDone: ${scraped} scraped, ${skipped} skipped, ${failed} failed`);
 
   } else {
     console.log('Usage:');
