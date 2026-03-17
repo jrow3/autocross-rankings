@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autocross RANK - National Driver Rankings</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1><a href="#/">Autocross <span class="accent">RANK</span></a></h1>
+      <p class="subtitle">Relative Autocross Numerical Klassification</p>
+    </div>
+    <nav>
+      <a href="#/" class="nav-link active" data-page="rankings">Rankings</a>
+      <a href="#/events" class="nav-link" data-page="events">Events</a>
+      <a href="#/about" class="nav-link" data-page="about">About</a>
+      <div class="search-container">
+        <input type="text" id="global-search" placeholder="Search drivers..." autocomplete="off">
+        <div id="search-results" class="search-dropdown"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="app">
+    <!-- Content loaded dynamically -->
+    <div class="loading">Loading...</div>
+  </main>
+
+  <footer>
+    <p>Data sourced from <a href="https://www.scca.com" target="_blank">SCCA</a> national events. Updated automatically.</p>
+    <p id="last-updated"></p>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/rankings.js"></script>
+  <script src="js/driver.js"></script>
+  <script src="js/event.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
