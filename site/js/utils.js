@@ -14,9 +14,10 @@ async function fetchJSON(path) {
   return data;
 }
 
-// Render trend indicator
+// Render trend indicator (matches spreadsheet: up arrows, dash, down arrows, X)
 function renderTrend(trend) {
   const map = {
+    up3: '<span class="trend trend-up3" title="Strong improvement">&#9650;&#9650;&#9650;</span>',
     up2: '<span class="trend trend-up2" title="Strong improvement">&#9650;&#9650;</span>',
     up1: '<span class="trend trend-up1" title="Improving">&#9650;</span>',
     steady: '<span class="trend trend-steady" title="Steady">&mdash;</span>',
@@ -27,10 +28,10 @@ function renderTrend(trend) {
   return map[trend] || map.steady;
 }
 
-// Render consistency as visual bars (5 bars, more filled = more consistent)
+// Render consistency as visual bars (1-5 integer, more bars = more consistent)
 function renderConsistency(value) {
-  // Lower value = more consistent. Map 0-1.5 range to 5-0 bars
-  const filled = Math.max(0, Math.min(5, Math.round(5 - (value * 3.5))));
+  // value is now 1-5 integer from the algorithm
+  const filled = Math.max(1, Math.min(5, value || 1));
   let html = '<span class="consistency-bar">';
   for (let i = 0; i < 5; i++) {
     if (i < filled) {
@@ -59,9 +60,9 @@ function renderClassBadge(className) {
   return `<span class="class-badge">${className}</span>`;
 }
 
-// Format score
+// Format score (0-100 percentile scale)
 function formatScore(score) {
-  return score.toFixed(1);
+  return Math.round(score);
 }
 
 // Escape HTML

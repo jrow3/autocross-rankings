@@ -1,58 +1,722 @@
 [
-  "21LNTNT",
-  "21LINNT",
-  "21BLMNT",
-  "21TOLNT",
-  "21ELRNT",
-  "21JEFNT",
-  "21PRGNT",
-  "21LINNT2",
-  "21NATSGEN",
-  "22LNTNT",
-  "22LINNT",
-  "22BLMNT",
-  "22TOLNT",
-  "22ELRNT",
-  "22JEFNT",
-  "22PRGNT",
-  "22RHNT",
-  "22NATSGEN",
-  "23LNTNT",
-  "23LINNT",
-  "23BLMNT",
-  "23TOLNT",
-  "23ELRNT",
-  "23JEFNT",
-  "23PRGNT",
-  "23RHNT",
-  "23NATSGEN",
-  "24LNTNT",
-  "24LINNT",
-  "24BLMNT",
-  "24TOLNT",
-  "24ELRNT",
-  "24JEFNT",
-  "24PRGNT",
-  "24RHNT",
-  "24PACKNT",
-  "24NATSGEN",
-  "25LNTNT",
-  "25LINNT",
-  "25BLMNT",
-  "25TOLNT",
-  "25ELRNT",
-  "25JEFNT",
-  "25PRGNT",
-  "25RHNT",
-  "25PACKNT",
-  "25NATSGEN",
-  "26LNTNT",
-  "26LINNT",
-  "26BLMNT",
-  "26TOLNT",
-  "26ELRNT",
-  "26JEFNT",
-  "26PRGNT",
-  "26RHNT",
-  "26PACKNT"
+  {
+    "name": "2015 Dixie National Tour",
+    "type": "tour",
+    "year": 2015
+  },
+  {
+    "name": "2015 San Diego National Tour",
+    "type": "tour",
+    "year": 2015
+  },
+  {
+    "name": "2015 College Station National Tour",
+    "type": "tour",
+    "year": 2015
+  },
+  {
+    "name": "2015 Crows Landing National Tour",
+    "type": "tour",
+    "year": 2015
+  },
+  {
+    "name": "2015 Kentucky Match Tour",
+    "type": "tour",
+    "year": 2015
+  },
+  {
+    "name": "2015 Lincoln National Tour",
+    "type": "tour",
+    "year": 2015
+  },
+  {
+    "name": "2015 Georgia Match Tour",
+    "type": "tour",
+    "year": 2015
+  },
+  {
+    "name": "2015 Pikes Peak National Tour",
+    "type": "tour",
+    "year": 2015
+  },
+  {
+    "name": "2015 Devens National Tour",
+    "type": "tour",
+    "year": 2015
+  },
+  {
+    "name": "2015 Utah Match Tour",
+    "type": "tour",
+    "year": 2015
+  },
+  {
+    "name": "2015 Packwood National Tour",
+    "type": "tour",
+    "year": 2015
+  },
+  {
+    "name": "2015 Wilmington National Tour",
+    "type": "tour",
+    "year": 2015
+  },
+  {
+    "name": "2015 SCCA Solo Nationals",
+    "type": "nationals",
+    "year": 2015
+  },
+  {
+    "name": "2016 Dixie National Tour",
+    "type": "tour",
+    "year": 2016
+  },
+  {
+    "name": "2016 Oceanside Showdown Match Tour",
+    "type": "tour",
+    "year": 2016
+  },
+  {
+    "name": "2016 Crows Landing National Tour",
+    "type": "tour",
+    "year": 2016
+  },
+  {
+    "name": "2016 Thunder Valley Showdown Match Tour",
+    "type": "tour",
+    "year": 2016
+  },
+  {
+    "name": "2016 Lincoln National Tour",
+    "type": "tour",
+    "year": 2016
+  },
+  {
+    "name": "2016 Washington DC National Tour",
+    "type": "tour",
+    "year": 2016
+  },
+  {
+    "name": "2016 Crossroads Showdown Match Tour",
+    "type": "tour",
+    "year": 2016
+  },
+  {
+    "name": "2016 College Station National Tour",
+    "type": "tour",
+    "year": 2016
+  },
+  {
+    "name": "2016 Packwood National Tour",
+    "type": "tour",
+    "year": 2016
+  },
+  {
+    "name": "2016 Heavy Metal Showdown Match Tour",
+    "type": "tour",
+    "year": 2016
+  },
+  {
+    "name": "2016 Wilmington National Tour",
+    "type": "tour",
+    "year": 2016
+  },
+  {
+    "name": "2016 Colorado National Tour",
+    "type": "tour",
+    "year": 2016
+  },
+  {
+    "name": "2016 SCCA Solo Nationals",
+    "type": "nationals",
+    "year": 2016
+  },
+  {
+    "name": "2017 San Diego Match Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 Dixie National Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 College Station National Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 Crows Landing National Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 Pitt Race Match Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 Lincoln National Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 Peru Match Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 Colorado National Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 Devens National Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 Bristol National Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 Bristol Match Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 Packwood National Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 Toledo National Tour",
+    "type": "tour",
+    "year": 2017
+  },
+  {
+    "name": "2017 SCCA Solo Nationals",
+    "type": "nationals",
+    "year": 2017
+  },
+  {
+    "name": "2018 Ft Myers Match Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 Dixie National Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 Charlotte Match Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 San Diego Match Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 Crows Landing National Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 Texas National Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 Pittsburgh Match Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 Lincoln National Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 Finger Lakes National Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 Peru National Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 Bristol Match Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 Bristol National Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 Packwood National Tour",
+    "type": "tour",
+    "year": 2018
+  },
+  {
+    "name": "2018 SCCA Solo Nationals",
+    "type": "nationals",
+    "year": 2018
+  },
+  {
+    "name": "2019 Dixie National Tour",
+    "type": "tour",
+    "year": 2019
+  },
+  {
+    "name": "2019 Charlotte National Tour",
+    "type": "tour",
+    "year": 2019
+  },
+  {
+    "name": "2019 Mineral Wells National Tour",
+    "type": "tour",
+    "year": 2019
+  },
+  {
+    "name": "2019 Crows Landing National Tour",
+    "type": "tour",
+    "year": 2019
+  },
+  {
+    "name": "2019 Finger Lakes National Tour",
+    "type": "tour",
+    "year": 2019
+  },
+  {
+    "name": "2019 Lincoln National Tour",
+    "type": "tour",
+    "year": 2019
+  },
+  {
+    "name": "2019 San Diego Match Tour",
+    "type": "tour",
+    "year": 2019
+  },
+  {
+    "name": "2019 Bristol Match Tour",
+    "type": "tour",
+    "year": 2019
+  },
+  {
+    "name": "2019 Bristol National Tour",
+    "type": "tour",
+    "year": 2019
+  },
+  {
+    "name": "2019 Packwood National Tour",
+    "type": "tour",
+    "year": 2019
+  },
+  {
+    "name": "2019 Peru National Tour",
+    "type": "tour",
+    "year": 2019
+  },
+  {
+    "name": "2019 SCCA Solo Nationals",
+    "type": "nationals",
+    "year": 2019
+  },
+  {
+    "name": "2020 Dixie National Tour",
+    "type": "tour",
+    "year": 2020
+  },
+  {
+    "name": "2020 Bristol National Tour",
+    "type": "tour",
+    "year": 2020
+  },
+  {
+    "name": "2020 Packwood National Tour",
+    "type": "tour",
+    "year": 2020
+  },
+  {
+    "name": "2020 Peru National Tour",
+    "type": "tour",
+    "year": 2020
+  },
+  {
+    "name": "2020 Bristol Fall National Tour",
+    "type": "tour",
+    "year": 2020
+  },
+  {
+    "name": "2020 Toledo National Tour",
+    "type": "tour",
+    "year": 2020
+  },
+  {
+    "name": "2020 Texas National Tour",
+    "type": "tour",
+    "year": 2020
+  },
+  {
+    "name": "2020 Dixie Winter National Tour",
+    "type": "tour",
+    "year": 2020
+  },
+  {
+    "name": "2021 Dixie National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 Texas National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 Las Vegas National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 Fontana National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 South Texas National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 New Jersey National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 Chicago National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 Lincoln Thu-Sat National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 Lincoln Sat-Mon National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 Peru National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 Finger Lakes National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 Bristol National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 Packwood National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 SCCA Solo Nationals",
+    "type": "nationals",
+    "year": 2021
+  },
+  {
+    "name": "2021 Charlotte National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2021 Allied vs Axis National Tour",
+    "type": "tour",
+    "year": 2021
+  },
+  {
+    "name": "2022 Red Hills National Tour",
+    "type": "tour",
+    "year": 2022
+  },
+  {
+    "name": "2022 Las Vegas National Tour",
+    "type": "tour",
+    "year": 2022
+  },
+  {
+    "name": "2022 Washington DC National Tour",
+    "type": "tour",
+    "year": 2022
+  },
+  {
+    "name": "2022 Crows Landing National Tour",
+    "type": "tour",
+    "year": 2022
+  },
+  {
+    "name": "2022 South Texas National Tour",
+    "type": "tour",
+    "year": 2022
+  },
+  {
+    "name": "2022 Lincoln National Tour",
+    "type": "tour",
+    "year": 2022
+  },
+  {
+    "name": "2022 Peru National Tour",
+    "type": "tour",
+    "year": 2022
+  },
+  {
+    "name": "2022 Finger Lakes National Tour",
+    "type": "tour",
+    "year": 2022
+  },
+  {
+    "name": "2022 Bristol National Tour",
+    "type": "tour",
+    "year": 2022
+  },
+  {
+    "name": "2022 Packwood National Tour",
+    "type": "tour",
+    "year": 2022
+  },
+  {
+    "name": "2022 SCCA Solo Nationals",
+    "type": "nationals",
+    "year": 2022
+  },
+  {
+    "name": "2022 Charlotte National Tour",
+    "type": "tour",
+    "year": 2022
+  },
+  {
+    "name": "2022 Allied vs Axis National Tour",
+    "type": "tour",
+    "year": 2022
+  },
+  {
+    "name": "2023 Red Hills National Tour",
+    "type": "tour",
+    "year": 2023
+  },
+  {
+    "name": "2023 Las Vegas National Tour",
+    "type": "tour",
+    "year": 2023
+  },
+  {
+    "name": "2023 Crows Landing National Tour",
+    "type": "tour",
+    "year": 2023
+  },
+  {
+    "name": "2023 South Texas National Tour",
+    "type": "tour",
+    "year": 2023
+  },
+  {
+    "name": "2023 Lincoln National Tour",
+    "type": "tour",
+    "year": 2023
+  },
+  {
+    "name": "2023 Charlotte National Tour",
+    "type": "tour",
+    "year": 2023
+  },
+  {
+    "name": "2023 Peru National Tour",
+    "type": "tour",
+    "year": 2023
+  },
+  {
+    "name": "2023 Bristol National Tour",
+    "type": "tour",
+    "year": 2023
+  },
+  {
+    "name": "2023 Packwood National Tour",
+    "type": "tour",
+    "year": 2023
+  },
+  {
+    "name": "2023 Chicago National Tour",
+    "type": "tour",
+    "year": 2023
+  },
+  {
+    "name": "2023 Finger Lakes National Tour",
+    "type": "tour",
+    "year": 2023
+  },
+  {
+    "name": "2023 SCCA Solo Nationals",
+    "type": "nationals",
+    "year": 2023
+  },
+  {
+    "name": "2023 Moultrie National Tour",
+    "type": "tour",
+    "year": 2023
+  },
+  {
+    "name": "2024 Phoenix National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 Red Hills National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 South Texas National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 Charlotte National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 Crows Landing National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 Lincoln National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 Brunswick National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 Cleveland National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 Bristol National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 Packwood National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 Chicago National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 Romulus National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 Grissom National Tour",
+    "type": "tour",
+    "year": 2024
+  },
+  {
+    "name": "2024 SCCA Solo Nationals",
+    "type": "nationals",
+    "year": 2024
+  },
+  {
+    "name": "2025 Phoenix National Tour",
+    "type": "tour",
+    "year": 2025
+  },
+  {
+    "name": "2025 Red Hills National Tour",
+    "type": "tour",
+    "year": 2025
+  },
+  {
+    "name": "2025 South Texas National Tour",
+    "type": "tour",
+    "year": 2025
+  },
+  {
+    "name": "2025 Crows Landing National Tour",
+    "type": "tour",
+    "year": 2025
+  },
+  {
+    "name": "2025 Lincoln National Tour",
+    "type": "tour",
+    "year": 2025
+  },
+  {
+    "name": "2025 Grissom National Tour",
+    "type": "tour",
+    "year": 2025
+  },
+  {
+    "name": "2025 Brunswick National Tour",
+    "type": "tour",
+    "year": 2025
+  },
+  {
+    "name": "2025 Charlotte National Tour",
+    "type": "tour",
+    "year": 2025
+  },
+  {
+    "name": "2025 Bristol National Tour",
+    "type": "tour",
+    "year": 2025
+  },
+  {
+    "name": "2025 Packwood National Tour",
+    "type": "tour",
+    "year": 2025
+  },
+  {
+    "name": "2025 Chicago National Tour",
+    "type": "tour",
+    "year": 2025
+  },
+  {
+    "name": "2025 Finger Lakes National Tour",
+    "type": "tour",
+    "year": 2025
+  },
+  {
+    "name": "2025 SCCA Solo Nationals",
+    "type": "nationals",
+    "year": 2025
+  },
+  {
+    "name": "2026 Red Hills National Tour",
+    "type": "tour",
+    "year": 2026
+  }
 ]

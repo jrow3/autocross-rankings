@@ -4,8 +4,8 @@ const PAGE_SIZE = 50;
 let rankingsData = null;
 let filteredData = null;
 let currentPage = 1;
-let sortField = 'rank';
-let sortDir = 'asc';
+let sortField = 'score';
+let sortDir = 'desc';
 
 async function renderRankings() {
   const app = document.getElementById('app');
@@ -34,6 +34,7 @@ async function renderRankings() {
         </select>
         <select class="filter-select" id="filter-trend">
           <option value="">All Trends</option>
+          <option value="up3">Strong Improvement (3x)</option>
           <option value="up2">Strong Improvement</option>
           <option value="up1">Improving</option>
           <option value="steady">Steady</option>
@@ -52,9 +53,8 @@ async function renderRankings() {
     <table class="rankings-table">
       <thead>
         <tr>
-          <th data-sort="rank">Rank <span class="sort-arrow">&#9650;</span></th>
           <th data-sort="displayName">Driver</th>
-          <th data-sort="score">RANK Score</th>
+          <th data-sort="score">RANK Score <span class="sort-arrow">&#9660;</span></th>
           <th data-sort="primaryClass">Class</th>
           <th data-sort="consistency" class="hide-mobile">Consistency</th>
           <th data-sort="trend" class="hide-mobile">Trend</th>
@@ -90,7 +90,7 @@ async function renderRankings() {
         sortDir = sortDir === 'asc' ? 'desc' : 'asc';
       } else {
         sortField = field;
-        sortDir = field === 'rank' || field === 'consistency' ? 'asc' : 'desc';
+        sortDir = field === 'consistency' ? 'asc' : 'desc';
         if (field === 'displayName' || field === 'primaryClass' || field === 'region') sortDir = 'asc';
       }
       applySortAndRender();
@@ -141,11 +141,8 @@ function renderPage(data) {
   const page = data.slice(start, start + PAGE_SIZE);
 
   const tbody = document.getElementById('rankings-body');
-  tbody.innerHTML = page.map(d => {
-    const rankClass = d.rank <= 3 ? `rank-${d.rank}` : d.rank <= 10 ? 'rank-top10' : '';
-    return `
-      <tr class="${rankClass}" data-driver="${d.driverId}">
-        <td><span class="rank-num">${d.rank}</span></td>
+  tbody.innerHTML = page.map(d => `
+      <tr data-driver="${d.driverId}">
         <td><strong>${escapeHtml(d.displayName)}</strong></td>
         <td><span class="score">${formatScore(d.score)}</span></td>
         <td>${renderClassBadge(d.primaryClass)}</td>
@@ -155,8 +152,7 @@ function renderPage(data) {
         <td class="hide-mobile">${escapeHtml(d.region || '')}</td>
         <td class="hide-mobile">${d.eventCount}</td>
       </tr>
-    `;
-  }).join('');
+    `).join('');
 
   // Click to navigate to driver
   tbody.querySelectorAll('tr[data-driver]').forEach(tr => {

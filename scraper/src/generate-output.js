@@ -95,10 +95,16 @@ async function generateOutput() {
       tires: regEntry?.tires || [],
       cities: regEntry?.cities || [],
       history: history.sort((a, b) => {
-        // Sort by date descending
-        const dateA = a.eventDates || '';
-        const dateB = b.eventDates || '';
-        return dateB.localeCompare(dateA);
+        // Sort by date descending - parse actual dates from strings
+        const parseDate = (str) => {
+          if (!str) return new Date(0);
+          const match = str.match(/((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4})/i);
+          if (match) return new Date(match[1]);
+          const slashMatch = str.match(/(\d{2}\/\d{2}\/\d{4})/);
+          if (slashMatch) return new Date(slashMatch[1]);
+          return new Date(0);
+        };
+        return parseDate(b.eventDates) - parseDate(a.eventDates);
       }),
     };
 

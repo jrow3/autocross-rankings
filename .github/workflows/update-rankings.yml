@@ -24,11 +24,11 @@ jobs:
 
       - name: Discover events
         working-directory: scraper
-        run: node src/scrape-sololive.js discover
+        run: node src/scrape-vault.js discover
 
       - name: Scrape all events
         working-directory: scraper
-        run: node src/scrape-sololive.js all
+        run: node src/scrape-vault.js all
 
       - name: Build driver registry
         working-directory: scraper

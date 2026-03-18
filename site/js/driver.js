@@ -14,12 +14,14 @@ async function renderDriver(driverId) {
     return;
   }
 
-  const consistencyLabel = driver.consistency < 0.3 ? 'Very Consistent' :
-    driver.consistency < 0.6 ? 'Consistent' :
-    driver.consistency < 1.0 ? 'Variable' : 'Inconsistent';
+  // Consistency is now 1-5 integer
+  const consistencyLabel = driver.consistency >= 5 ? 'Very Consistent' :
+    driver.consistency >= 4 ? 'Consistent' :
+    driver.consistency >= 3 ? 'Average' :
+    driver.consistency >= 2 ? 'Variable' : 'Inconsistent';
 
   const trendLabels = {
-    up2: 'Strong Improvement', up1: 'Improving', steady: 'Steady',
+    up3: 'Strong Improvement', up2: 'Strong Improvement', up1: 'Improving', steady: 'Steady',
     down1: 'Declining', down2: 'Strong Decline', absent: 'Absent',
   };
 
@@ -63,6 +65,20 @@ async function renderDriver(driverId) {
           </div>
         </div>
       </div>
+
+      ${driver.yearScores && Object.keys(driver.yearScores).length > 0 ? `
+      <div class="card">
+        <h3>Year-by-Year RANK</h3>
+        <div class="year-scores">
+          ${Object.entries(driver.yearScores).sort(([a], [b]) => a - b).map(([year, score]) => `
+            <div class="year-score">
+              <div class="value">${score}</div>
+              <div class="label">${year}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      ` : ''}
 
       <div class="card">
         <h3>Details</h3>
@@ -129,9 +145,14 @@ function renderScoreChart(driver) {
     return short.slice(0, 20);
   });
 
-  const positions = history.map(h =>
-    h.totalInClass ? Math.round((1 - h.position / h.totalInClass) * 100) : 50
-  );
+  // Use PAX overall position when available (better metric, especially for small classes)
+  // Fall back to class position if no PAX data
+  const positions = history.map(h => {
+    if (h.paxOverallPosition && h.paxOverallTotal) {
+      return Math.round((1 - h.paxOverallPosition / h.paxOverallTotal) * 100);
+    }
+    return h.totalInClass ? Math.round((1 - h.position / h.totalInClass) * 100) : 50;
+  });
 
   if (scoreChart) scoreChart.destroy();
 
@@ -157,7 +178,13 @@ function renderScoreChart(driver) {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            label: (ctx) => `Top ${100 - ctx.parsed.y}% of class`,
+            label: (ctx) => {
+              const h = history[ctx.dataIndex];
+              const isPax = h.paxOverallPosition && h.paxOverallTotal;
+              return isPax
+                ? `Top ${100 - ctx.parsed.y}% PAX overall (${h.paxOverallPosition}/${h.paxOverallTotal})`
+                : `Top ${100 - ctx.parsed.y}% of class (${h.position}/${h.totalInClass})`;
+            },
           },
         },
       },
