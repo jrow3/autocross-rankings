@@ -2,26 +2,26 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0f1117;
-  --bg-card: #1a1d27;
-  --bg-hover: #232736;
-  --border: #2a2e3d;
-  --text: #e4e6ed;
-  --text-dim: #8b8fa3;
-  --accent: #4f8cff;
-  --accent-hover: #6ba0ff;
-  --green: #34d399;
-  --red: #f87171;
-  --yellow: #fbbf24;
-  --orange: #fb923c;
-  --trophy: #fbbf24;
-  --rank-top: #fbbf24;
-  --rank-high: #4f8cff;
-  --rank-mid: #8b8fa3;
+  --bg: #f5f6fa;
+  --bg-card: #ffffff;
+  --bg-hover: #eef0f6;
+  --border: #d8dbe5;
+  --text: #1a1d27;
+  --text-dim: #6b7085;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --green: #16a34a;
+  --red: #dc2626;
+  --yellow: #ca8a04;
+  --orange: #ea580c;
+  --trophy: #ca8a04;
+  --rank-top: #ca8a04;
+  --rank-high: #2563eb;
+  --rank-mid: #6b7085;
   --font: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   --mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
   --radius: 8px;
-  --shadow: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 html { font-size: 15px; }
@@ -331,7 +331,7 @@ main {
 }
 
 .pagination button:hover { background: var(--bg-hover); }
-.pagination button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.pagination button.active { background: var(--accent); border-color: var(--accent); color: #ffffff; }
 .pagination button:disabled { opacity: 0.4; cursor: not-allowed; }
 .pagination .page-info { color: var(--text-dim); font-size: 0.85rem; }
 
@@ -528,8 +528,8 @@ main {
   margin-left: 0.5rem;
 }
 
-.event-type-tour { background: #1e3a5f; color: #4f8cff; }
-.event-type-nationals { background: #3d2b08; color: #fbbf24; }
+.event-type-tour { background: #dbeafe; color: #1d4ed8; }
+.event-type-nationals { background: #fef3c7; color: #92400e; }
 
 /* === About Page === */
 .about-content {

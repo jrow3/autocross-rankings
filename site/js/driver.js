@@ -163,12 +163,12 @@ function renderScoreChart(driver) {
       datasets: [{
         label: 'Performance %',
         data: positions,
-        borderColor: '#4f8cff',
-        backgroundColor: 'rgba(79, 140, 255, 0.1)',
+        borderColor: '#2563eb',
+        backgroundColor: 'rgba(37, 99, 235, 0.1)',
         fill: true,
         tension: 0.3,
         pointRadius: 4,
-        pointBackgroundColor: '#4f8cff',
+        pointBackgroundColor: '#2563eb',
       }],
     },
     options: {
@@ -191,13 +191,13 @@ function renderScoreChart(driver) {
       scales: {
         y: {
           min: 0, max: 100,
-          title: { display: true, text: 'Percentile', color: '#8b8fa3' },
-          grid: { color: '#2a2e3d' },
-          ticks: { color: '#8b8fa3' },
+          title: { display: true, text: 'Percentile', color: '#6b7085' },
+          grid: { color: '#d8dbe5' },
+          ticks: { color: '#6b7085' },
         },
         x: {
-          grid: { color: '#2a2e3d' },
-          ticks: { color: '#8b8fa3', maxRotation: 45 },
+          grid: { color: '#d8dbe5' },
+          ticks: { color: '#6b7085', maxRotation: 45 },
         },
       },
     },

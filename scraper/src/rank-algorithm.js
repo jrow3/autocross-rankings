@@ -37,8 +37,8 @@ const MAX_ITERATIONS = 100;
 const INITIAL_SCORE = 1000;
 const RECENCY_HALF_LIFE_DAYS = 365; // Recent results count more
 const INDIVIDUAL_PRUNE_ZSCORE = 1.8; // Prune results with high z-score (~3% target)
-const LIMITED_DATA_PENALTY_MAX = 0.05; // Up to 5% reduction for limited data
-const LIMITED_DATA_THRESHOLD = 5; // Below this many events, apply penalty
+const LIMITED_DATA_PENALTY_MAX = 0.30; // Up to 30% reduction for limited data
+const LIMITED_DATA_THRESHOLD = 8; // Below this many events, apply penalty
 const RECENT_CLASSES_COUNT = 3; // Use most recent N classes for driver's class list
 
 // Load all event data
@@ -298,10 +298,22 @@ function computeRankScores(eventDays) {
   // while dominant wins produce significantly more credit.
   const MARGIN_AMPLIFIER = 5; // Amplifies raw margin percentage into meaningful score difference
   const MARGIN_CAP = 2.5;     // Max margin multiplier (prevents extreme blowouts from dominating)
+  const NATIONALS_WEIGHT = 1.5; // Solo Nationals are the pinnacle — weight 50% more than Tours
   const comparisons = [];
 
   for (const day of eventDays) {
-    const weight = recencyWeight(day.eventDate, now);
+    const eventTypeWeight = (day.eventType === 'nationals') ? NATIONALS_WEIGHT : 1.0;
+    const baseWeight = recencyWeight(day.eventDate, now) * eventTypeWeight;
+
+    // Field-size normalization: each comparison is weighted by 1/sqrt(fieldSize).
+    // This means winning a 1000-person field earns ~10x more than a 10-person field
+    // (sqrt(1000)/sqrt(10) ≈ 10), rather than 100x with raw comparisons.
+    // This prevents high-volume drivers from dominating purely through event count,
+    // while still rewarding competing in (and winning) larger fields.
+    const fieldSize = day.results.length;
+    const fieldNorm = 1 / Math.sqrt(fieldSize);
+    const weight = baseWeight * fieldNorm;
+
     const results = day.results.sort((a, b) => a.paxTime - b.paxTime);
 
     for (let i = 0; i < results.length; i++) {
@@ -326,12 +338,23 @@ function computeRankScores(eventDays) {
 
   console.log(`Built ${comparisons.length.toLocaleString()} pairwise comparisons`);
 
+  // Pre-compute total comparison weight per driver for normalization.
+  // This eliminates volume bias: a driver's score represents their average
+  // quality per comparison, not total accumulated wins.
+  const driverTotalWeight = new Map();
+  for (const comp of comparisons) {
+    const w = comp.weight * comp.marginMultiplier;
+    driverTotalWeight.set(comp.winner, (driverTotalWeight.get(comp.winner) || 0) + w);
+    driverTotalWeight.set(comp.loser, (driverTotalWeight.get(comp.loser) || 0) + w);
+  }
+
   // Iterative convergence (recursive quality propagation)
   for (let iter = 0; iter < MAX_ITERATIONS; iter++) {
     const newScores = new Map();
+    const driverAccum = new Map(); // accumulated raw score per driver
 
     for (const [driver] of scores) {
-      newScores.set(driver, 100); // Base score
+      driverAccum.set(driver, 0);
     }
 
     for (const comp of comparisons) {
@@ -341,13 +364,19 @@ function computeRankScores(eventDays) {
       // Beating a strong opponent (high score) = more valuable
       // Losing to a weak opponent (low score) = more costly
       // Time margin scaling: winning by a large margin gives proportionally more credit
-      // e.g., 0.01s ahead -> ~1.0x, 1s ahead on 60s run (~1.7%) -> 1.08x, 3s ahead (~5%) -> 1.25x
       const winValue = (loserScore / INITIAL_SCORE) * comp.weight * comp.marginMultiplier;
-      // Loss penalty also scales: losing by a lot hurts more than a close loss
       const lossValue = -(winnerScore / INITIAL_SCORE) * comp.weight * 0.3 * comp.marginMultiplier;
 
-      newScores.set(comp.winner, (newScores.get(comp.winner) || 0) + winValue);
-      newScores.set(comp.loser, (newScores.get(comp.loser) || 0) + lossValue);
+      driverAccum.set(comp.winner, (driverAccum.get(comp.winner) || 0) + winValue);
+      driverAccum.set(comp.loser, (driverAccum.get(comp.loser) || 0) + lossValue);
+    }
+
+    // Normalize each driver by their total comparison weight.
+    // This makes the score represent "average quality per weighted comparison"
+    // rather than "total accumulated score", eliminating volume bias.
+    for (const [driver, accum] of driverAccum) {
+      const totalWeight = driverTotalWeight.get(driver) || 1;
+      newScores.set(driver, (accum / totalWeight) * INITIAL_SCORE + INITIAL_SCORE);
     }
 
     // Normalize to keep centered
@@ -384,7 +413,33 @@ function computeRankScores(eventDays) {
   return { scores, driverNames };
 }
 
-// Normalize raw iterative scores to 0-100 percentile scale (matching reference spreadsheet)
+// Inverse normal CDF (probit function) — Abramowitz & Stegun approximation.
+// Maps a probability p ∈ (0,1) to a z-score on the standard normal distribution.
+function probit(p) {
+  if (p <= 0) return -8;
+  if (p >= 1) return 8;
+  if (p < 0.5) return -probit(1 - p);
+  const t = Math.sqrt(-2 * Math.log(1 - p));
+  const c0 = 2.515517, c1 = 0.802853, c2 = 0.010328;
+  const d1 = 1.432788, d2 = 0.189269, d3 = 0.001308;
+  return t - (c0 + c1 * t + c2 * t * t) / (1 + d1 * t + d2 * t * t + d3 * t * t * t);
+}
+
+// Normalize raw scores to 0-100 using quantile normalization to a normal distribution.
+//
+// This is the same approach used by standardized tests (SAT, IQ, etc.):
+//   1. Rank drivers by raw iterative score → percentile rank (0 to 1)
+//   2. Map percentile through the inverse normal CDF (probit) → z-score
+//   3. Scale z-scores to 0-100
+//
+// The result is a bell-curve distribution where:
+//   - Very few drivers reach 100 (right tail of the bell curve)
+//   - Very few drivers are near 0 (left tail)
+//   - Most drivers cluster around 50 (center)
+//   - Score gaps reflect statistical significance of performance differences
+//
+// This avoids both the "too many 100s" problem of linear percentile
+// and the "too punishing" problem of min-max scaling on skewed raw scores.
 function normalizeToPercentile(rankings) {
   const n = rankings.length;
   if (n === 0) return;
@@ -392,23 +447,49 @@ function normalizeToPercentile(rankings) {
   // Sort by raw score descending
   rankings.sort((a, b) => b.rawScore - a.rawScore);
 
-  // Assign percentile: top driver = 100, bottom driver approaches 0
-  // Using percentile rank formula: 100 * (n - rank) / (n - 1)
+  if (n === 1) {
+    rankings[0].score = 100;
+    return;
+  }
+
+  // Step 1: Compute percentile rank for each driver (0 to 1, exclusive)
+  // Using (n - rank) / n so top driver ≈ 1.0 and bottom ≈ 0.0
+  // Clip to (0.0001, 0.9999) to avoid probit infinity
+  const percentiles = rankings.map((_, i) => {
+    const raw = (n - 1 - i) / n; // rank 0 → (n-1)/n ≈ 0.9999, rank n-1 → 0/n = 0
+    return Math.max(0.0001, Math.min(0.9999, raw));
+  });
+
+  // Step 2: Map through probit (inverse normal CDF) to get z-scores
+  const zScores = percentiles.map(p => probit(p));
+
+  // Step 3: Flatten the bell curve with a sub-linear power transform.
+  // Exponent < 1 spreads apart z-scores near 0 (the middle/median),
+  // creating a more platykurtic (flat-topped) distribution.
+  // 0.8 = moderate flattening; 1.0 = pure normal; 0.5 = very flat.
+  const FLATTEN_EXPONENT = 0.85;
+  const flatZ = zScores.map(z =>
+    Math.sign(z) * Math.pow(Math.abs(z), FLATTEN_EXPONENT)
+  );
+
+  // Step 4: Scale flattened z-scores to 0-100
+  const maxZ = flatZ[0];
+  const minZ = flatZ[n - 1];
+  const zRange = maxZ - minZ || 1;
+
   for (let i = 0; i < n; i++) {
-    if (n > 1) {
-      rankings[i].score = Math.round(100 * (n - 1 - i) / (n - 1));
-    } else {
-      rankings[i].score = 100;
-    }
+    const normalized = ((flatZ[i] - minZ) / zRange) * 100;
+    rankings[i].score = Math.round(normalized);
   }
 }
 
-// Compute per-year RANK scores using percentile ranking
-// For each year, rank all drivers by their average normalized position,
-// then assign percentile scores (0-100) so year scores align with overall RANK methodology.
+// Compute per-year RANK scores using the same probit + flatten normalization as overall.
+// This ensures year scores are on the same scale as the overall RANK score,
+// preventing confusing mismatches (e.g., year=100 but overall=87).
 function computeAllYearScores(allDriverResults) {
   const years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
-  const yearPercentiles = new Map(); // year -> Map(driverName -> percentile)
+  const yearPercentiles = new Map(); // year -> Map(driverName -> score)
+  const FLATTEN_EXPONENT = 0.85; // Must match the overall normalization
 
   for (const year of years) {
     // Collect average normalized position for each driver in this year
@@ -430,10 +511,26 @@ function computeAllYearScores(allDriverResults) {
     const n = driverAvgs.length;
     const percentileMap = new Map();
 
-    for (let i = 0; i < n; i++) {
-      // Top driver gets 100, bottom gets ~0
-      const percentile = n > 1 ? Math.round(100 * (n - 1 - i) / (n - 1)) : 100;
-      percentileMap.set(driverAvgs[i].driverName, percentile);
+    if (n === 1) {
+      percentileMap.set(driverAvgs[0].driverName, 100);
+    } else {
+      // Same probit + flatten pipeline as overall normalization
+      const percentiles = driverAvgs.map((_, i) => {
+        const raw = (n - 1 - i) / n;
+        return Math.max(0.0001, Math.min(0.9999, raw));
+      });
+      const zScores = percentiles.map(p => probit(p));
+      const flatZ = zScores.map(z =>
+        Math.sign(z) * Math.pow(Math.abs(z), FLATTEN_EXPONENT)
+      );
+      const maxZ = flatZ[0];
+      const minZ = flatZ[n - 1];
+      const zRange = maxZ - minZ || 1;
+
+      for (let i = 0; i < n; i++) {
+        const normalized = ((flatZ[i] - minZ) / zRange) * 100;
+        percentileMap.set(driverAvgs[i].driverName, Math.round(normalized));
+      }
     }
 
     yearPercentiles.set(year, percentileMap);
@@ -584,11 +681,26 @@ function getRecentClasses(driverResults) {
   return recentClasses;
 }
 
-// Apply limited data penalty (up to 5% score reduction)
+// Apply limited data penalty (up to 30% score reduction)
 function applyLimitedDataPenalty(score, eventCount) {
   if (eventCount >= LIMITED_DATA_THRESHOLD) return score;
   const penaltyFraction = LIMITED_DATA_PENALTY_MAX * (1 - eventCount / LIMITED_DATA_THRESHOLD);
   return score * (1 - penaltyFraction);
+}
+
+// Apply inactivity penalty — scores decay for drivers who haven't competed recently.
+// Uses the same half-life concept as recency weighting: a driver who last competed
+// 1 year ago loses ~15% of their score, 2 years ago ~30%, 4+ years ago ~50%+.
+// This prevents inactive drivers from sitting atop the rankings indefinitely.
+const INACTIVITY_GRACE_DAYS = 365;  // No penalty for first year of inactivity
+const INACTIVITY_HALF_LIFE_DAYS = 730; // Score halves every 2 years beyond grace period
+
+function applyInactivityPenalty(score, lastEventDate, now) {
+  const daysSinceLastEvent = (now - lastEventDate) / (1000 * 60 * 60 * 24);
+  if (daysSinceLastEvent <= INACTIVITY_GRACE_DAYS) return score;
+  const inactiveDays = daysSinceLastEvent - INACTIVITY_GRACE_DAYS;
+  const decay = Math.pow(0.5, inactiveDays / INACTIVITY_HALF_LIFE_DAYS);
+  return score * decay;
 }
 
 // Main ranking pipeline
@@ -640,7 +752,13 @@ async function computeRankings() {
     const eventCount = new Set(results.map(r => r.eventCode)).size;
 
     // Apply limited data penalty
-    const penalizedScore = applyLimitedDataPenalty(rawScore, eventCount);
+    let penalizedScore = applyLimitedDataPenalty(rawScore, eventCount);
+
+    // Apply inactivity penalty (decay score for drivers who stopped competing)
+    const lastEventDate = results.reduce((latest, r) =>
+      r.eventDate > latest ? r.eventDate : latest, new Date(0)
+    );
+    penalizedScore = applyInactivityPenalty(penalizedScore, lastEventDate, now);
 
     const consistency = computeConsistency(results);
     const trend = computeTrend(results, now);

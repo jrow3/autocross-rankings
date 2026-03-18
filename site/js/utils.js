@@ -5,9 +5,10 @@ const DATA_BASE = 'data';
 // Fetch JSON with caching
 const jsonCache = new Map();
 
+const CACHE_BUST = 'v=11';
 async function fetchJSON(path) {
   if (jsonCache.has(path)) return jsonCache.get(path);
-  const res = await fetch(`${DATA_BASE}/${path}`);
+  const res = await fetch(`${DATA_BASE}/${path}?${CACHE_BUST}`);
   if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
   const data = await res.json();
   jsonCache.set(path, data);
