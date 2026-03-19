@@ -545,10 +545,14 @@ main {
   max-width: 750px;
 }
 
-.about-content h2 { margin-top: 2rem; margin-bottom: 0.5rem; }
-.about-content p { margin-bottom: 1rem; color: var(--text-dim); }
-.about-content ul { margin-left: 1.5rem; margin-bottom: 1rem; color: var(--text-dim); }
-.about-content li { margin-bottom: 0.3rem; }
+.about-content h2 { margin-top: 2.5rem; margin-bottom: 0.75rem; }
+.about-content h3 { margin-top: 2rem; margin-bottom: 0.5rem; color: var(--accent); font-size: 1.1rem; }
+.about-content h4 { margin-top: 1.25rem; margin-bottom: 0.4rem; font-size: 1rem; }
+.about-content p { margin-bottom: 1rem; color: var(--text-dim); line-height: 1.6; }
+.about-content em { color: var(--text-dim); font-style: italic; opacity: 0.85; }
+.about-content code { background: rgba(255,255,255,0.06); padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+.about-content ul, .about-content ol { margin-left: 1.5rem; margin-bottom: 1rem; color: var(--text-dim); }
+.about-content li { margin-bottom: 0.3rem; line-height: 1.5; }
 
 /* === Back link === */
 .back-link {
