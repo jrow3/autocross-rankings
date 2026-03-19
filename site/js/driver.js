@@ -35,7 +35,7 @@ async function renderDriver(driverId) {
           <div class="label">Rank</div>
         </div>
         <div class="driver-info">
-          <h2>${escapeHtml(driver.displayName)}</h2>
+          <h2>${escapeHtml(driver.displayName)} ${renderTrend(driver.trend)}</h2>
           <div class="meta">
             ${renderClassBadge(driver.primaryClass)}
             ${driver.allClasses?.length > 1 ? driver.allClasses.filter(c => c !== driver.primaryClass).map(c => renderClassBadge(c)).join(' ') : ''}
@@ -44,7 +44,7 @@ async function renderDriver(driverId) {
         </div>
         <div class="driver-score">
           <div class="value">${formatScore(driver.score)}</div>
-          <div class="label">RANK Score</div>
+          <div class="label">RATING Score</div>
         </div>
       </div>
 
@@ -52,23 +52,26 @@ async function renderDriver(driverId) {
         <h3>Metrics</h3>
         <div class="metrics-grid">
           <div class="metric">
+            <div class="metric-name">Consistency</div>
             <div class="value">${renderConsistency(driver.consistency)}</div>
             <div class="label">${consistencyLabel}</div>
           </div>
           <div class="metric">
-            <div class="value">${renderTrend(driver.trend)}</div>
-            <div class="label">${trendLabels[driver.trend] || 'Steady'}</div>
+            <div class="metric-name">Confidence</div>
+            <div class="value">${renderConfidence(driver.confidence)}</div>
+            <div class="label">${renderConfidenceLabel(driver.confidence)}</div>
           </div>
           <div class="metric">
-            <div class="value">${renderDataPoints(driver.dataPoints)}</div>
-            <div class="label">${driver.eventCount} Events</div>
+            <div class="metric-name">Events</div>
+            <div class="value">${driver.eventCount}</div>
+            <div class="label">Competitions</div>
           </div>
         </div>
       </div>
 
       ${driver.yearScores && Object.keys(driver.yearScores).length > 0 ? `
       <div class="card">
-        <h3>Year-by-Year RANK</h3>
+        <h3>Year-by-Year RATING</h3>
         <div class="year-scores">
           ${Object.entries(driver.yearScores).sort(([a], [b]) => a - b).map(([year, score]) => `
             <div class="year-score">
@@ -116,7 +119,7 @@ async function renderDriver(driverId) {
                   <div style="font-size:0.75rem;color:var(--text-dim)">${h.eventDates || ''}</div>
                 </td>
                 <td>${renderClassBadge(h.className)}</td>
-                <td>${h.trophy ? '<span class="trophy">&#9733;</span> ' : ''}${h.position}/${h.totalInClass || '?'}</td>
+                <td>${h.trophy ? renderTrophy(h.eventType, h.position) : ''}${h.position}/${h.totalInClass || '?'}</td>
                 <td style="font-family:var(--mono)">${h.paxTime ? h.paxTime.toFixed(3) : 'N/A'}</td>
                 <td class="hide-mobile">${escapeHtml(h.car || '')}</td>
                 <td class="hide-mobile">${h.paxOverallPosition ? `${h.paxOverallPosition}/${h.paxOverallTotal}` : ''}</td>

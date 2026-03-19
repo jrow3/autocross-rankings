@@ -32,15 +32,6 @@ async function renderRankings() {
           <option value="">All Regions</option>
           ${regions.map(r => `<option value="${r}">${escapeHtml(r)}</option>`).join('')}
         </select>
-        <select class="filter-select" id="filter-trend">
-          <option value="">All Trends</option>
-          <option value="up3">Strong Improvement (3x)</option>
-          <option value="up2">Strong Improvement</option>
-          <option value="up1">Improving</option>
-          <option value="steady">Steady</option>
-          <option value="down1">Declining</option>
-          <option value="down2">Strong Decline</option>
-        </select>
       </div>
     </div>
 
@@ -53,14 +44,14 @@ async function renderRankings() {
     <table class="rankings-table">
       <thead>
         <tr>
-          <th data-sort="displayName">Driver</th>
-          <th data-sort="score">RANK Score <span class="sort-arrow">&#9660;</span></th>
-          <th data-sort="primaryClass">Class</th>
-          <th data-sort="consistency" class="hide-mobile">Consistency</th>
-          <th data-sort="trend" class="hide-mobile">Trend</th>
-          <th data-sort="dataPoints" class="hide-mobile">Data</th>
-          <th data-sort="region" class="hide-mobile">Region</th>
-          <th data-sort="eventCount" class="hide-mobile">Events</th>
+          <th>Driver</th>
+          <th>RATING Score</th>
+          <th>Class</th>
+          <th class="hide-mobile">Trend</th>
+          <th class="hide-mobile">Consistency</th>
+          <th class="hide-mobile">Confidence</th>
+          <th class="hide-mobile">Region</th>
+          <th class="hide-mobile">Events</th>
         </tr>
       </thead>
       <tbody id="rankings-body"></tbody>
@@ -80,22 +71,6 @@ async function renderRankings() {
   // Wire up filters
   document.getElementById('filter-class').addEventListener('change', applyFilters);
   document.getElementById('filter-region').addEventListener('change', applyFilters);
-  document.getElementById('filter-trend').addEventListener('change', applyFilters);
-
-  // Wire up sort
-  document.querySelectorAll('.rankings-table th[data-sort]').forEach(th => {
-    th.addEventListener('click', () => {
-      const field = th.dataset.sort;
-      if (sortField === field) {
-        sortDir = sortDir === 'asc' ? 'desc' : 'asc';
-      } else {
-        sortField = field;
-        sortDir = field === 'consistency' ? 'asc' : 'desc';
-        if (field === 'displayName' || field === 'primaryClass' || field === 'region') sortDir = 'asc';
-      }
-      applySortAndRender();
-    });
-  });
 
   currentPage = 1;
   applySortAndRender();
@@ -104,12 +79,10 @@ async function renderRankings() {
 function applyFilters() {
   const classFilter = document.getElementById('filter-class').value;
   const regionFilter = document.getElementById('filter-region').value;
-  const trendFilter = document.getElementById('filter-trend').value;
 
   filteredData = rankingsData.filter(d => {
     if (classFilter && d.primaryClass !== classFilter) return false;
     if (regionFilter && d.region !== regionFilter) return false;
-    if (trendFilter && d.trend !== trendFilter) return false;
     return true;
   });
 
@@ -146,9 +119,9 @@ function renderPage(data) {
         <td><strong>${escapeHtml(d.displayName)}</strong></td>
         <td><span class="score">${formatScore(d.score)}</span></td>
         <td>${renderClassBadge(d.primaryClass)}</td>
-        <td class="hide-mobile">${renderConsistency(d.consistency)}</td>
         <td class="hide-mobile">${renderTrend(d.trend)}</td>
-        <td class="hide-mobile">${renderDataPoints(d.dataPoints)}</td>
+        <td class="hide-mobile">${renderConsistency(d.consistency)}</td>
+        <td class="hide-mobile">${renderConfidence(d.confidence)}</td>
         <td class="hide-mobile">${escapeHtml(d.region || '')}</td>
         <td class="hide-mobile">${d.eventCount}</td>
       </tr>

@@ -1,7 +1,7 @@
 {
   "name": "autocross-rankings-scraper",
   "version": "1.0.0",
-  "description": "Scrapes SCCA autocross results and computes RANK driver rankings",
+  "description": "Scrapes SCCA autocross results and computes RATING driver rankings",
   "type": "module",
   "scripts": {
     "scrape": "node src/scrape-sololive.js",

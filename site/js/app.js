@@ -45,35 +45,45 @@ function renderAbout() {
   const app = document.getElementById('app');
   app.innerHTML = `
     <div class="about-content">
-      <h2>What is RANK?</h2>
+      <h2>What is RATING?</h2>
       <p>
-        <strong>RANK</strong> (Relative Autocross Numerical Klassification) is a driver scoring system
+        <strong>RATING</strong> (Relative Autocross Time Index Normalized Grade) is a driver scoring system
         that compiles results from all SCCA national autocross competitions and produces a single
         0&ndash;100 score representing each driver's skill level relative to all other national competitors.
       </p>
 
       <h2>Algorithm Overview</h2>
-      <p>RANK uses a multi-stage pipeline to produce fair, statistically robust scores:</p>
+      <p>RATING uses a multi-stage pipeline to produce fair, statistically robust scores:</p>
       <ol>
         <li>Compile PAX-indexed results from all national events (Tours &amp; Nationals)</li>
-        <li>Prune statistical outliers (bad days, weather, car failures)</li>
+        <li>Build per-class results using PAX factors for cross-class comparison</li>
+        <li>Prune individual statistical outliers (~3% of results)</li>
+        <li>Prune event day outliers (~5% of event days)</li>
         <li>Build pairwise comparisons between every driver at each event</li>
         <li>Iteratively solve for driver quality using recursive opponent-strength weighting</li>
-        <li>Apply penalties for limited data and inactivity</li>
+        <li>Weight results by recency (3-year plateau, then slow decay)</li>
+        <li>Apply limited data penalty for drivers with few events</li>
         <li>Normalize to a 0&ndash;100 scale using probit (bell-curve) mapping</li>
+        <li>Compute per-year breakdowns, consistency, trend, data points, and confidence</li>
       </ol>
 
       <h2>Pairwise Comparison Engine</h2>
-      <p>At the core of RANK is an iterative pairwise comparison system. For every event day,
+      <p>At the core of RATING is an iterative pairwise comparison system. For every event day,
       each pair of drivers is compared head-to-head based on PAX time. Each comparison is weighted by several factors:</p>
       <ul>
         <li><strong>Opponent quality</strong> &mdash; Beating a strong opponent (who themselves beat strong opponents)
         is worth more than beating a weak one. This is solved iteratively until scores converge,
         propagating quality through the entire network of comparisons.</li>
-        <li><strong>Time margin</strong> &mdash; Winning by a large margin earns proportionally more credit
-        than a razor-thin finish. Margins are capped to prevent blowouts from dominating.</li>
-        <li><strong>Recency</strong> &mdash; Results are exponentially weighted with a 1-year half-life.
-        A result from 2 years ago counts about 25% as much as one from today.</li>
+        <li><strong>Time margin</strong> &mdash; Winning by a large margin earns more credit
+        than a razor-thin finish. The log-ratio of PAX times is passed through a tanh soft-cap
+        (smooth S-curve) so that blowouts contribute diminishing returns rather than dominating.</li>
+        <li><strong>Asymmetric win/loss</strong> &mdash; Losses are weighted at 40% the value of wins. This means
+        a single bad result is less damaging than a good result is beneficial, reducing volatility from
+        fluky poor finishes.</li>
+        <li><strong>Recency</strong> &mdash; Results from the last 3 years carry full weight. Beyond that,
+        results decay with a 5-year half-life, bottoming out at 15%. A result from 8 years ago still
+        counts, just at reduced strength. There is no separate inactivity penalty &mdash; the recency
+        model naturally handles it.</li>
         <li><strong>Event type</strong> &mdash; Solo Nationals results carry 1.5&times; the weight of Tour results,
         reflecting the higher competition level at the pinnacle event.</li>
         <li><strong>Field-size normalization</strong> &mdash; Each comparison is weighted by 1/&radic;(field size).
@@ -87,11 +97,13 @@ function renderAbout() {
       <p>Before computing scores, the algorithm removes statistical outliers to prevent fluky results
       from distorting rankings:</p>
       <ul>
-        <li><strong>Individual pruning (~3%)</strong> &mdash; Results where a driver performed far worse than their
-        personal average (z-score &gt; 1.8) are removed. These typically represent car failures,
+        <li><strong>Individual pruning (~3%)</strong> &mdash; For each driver, PAX time ratios (vs. best-in-field)
+        are analyzed using MAD (Median Absolute Deviation). Results where a driver performed far worse than their
+        personal median (modified z-score &gt; 2.0) are removed. MAD is used instead of standard deviation because
+        it resists being pulled by the very outliers we're trying to detect. These typically represent car failures,
         mechanical issues, or runs with no clean times.</li>
         <li><strong>Event day pruning (~5%)</strong> &mdash; Entire event days are removed when drivers across the
-        field performed significantly worse than their averages (z-score &gt; 1.5). This catches days with
+        field performed significantly worse than their cross-event averages (z-score &gt; 1.5). This catches days with
         rain, changing conditions, or course issues that affected everyone.</li>
       </ul>
 
@@ -113,31 +125,31 @@ function renderAbout() {
       <p>The result: very few drivers reach 100 or 0 (the tails of the distribution), most cluster
       around 50, and the spacing between scores reflects meaningful performance differences.</p>
 
-      <h2>Penalties</h2>
-      <ul>
-        <li><strong>Limited data penalty</strong> &mdash; Drivers with fewer than 8 events receive up to a 30%
-        score reduction. This prevents a single strong weekend from producing an inflated ranking.
-        The penalty scales linearly: 1 event = 30% reduction, 4 events = 15%, 8+ events = no penalty.</li>
-        <li><strong>Inactivity penalty</strong> &mdash; Drivers who haven't competed in over a year see their score
-        gradually decay with a 2-year half-life. A driver who last competed 2 years ago loses roughly 50%
-        of their score. This ensures the rankings reflect the current competitive landscape, not historical dominance.</li>
-      </ul>
+      <h2>Limited Data Penalty</h2>
+      <p>Drivers with fewer than 10 events receive up to a 25% score reduction using a smooth squared curve.
+      This prevents a single strong weekend from producing an inflated ranking. The penalty diminishes
+      rapidly as event count grows &mdash; a driver with 5 events sees only a 6% reduction, while
+      10+ events means no penalty at all.</p>
 
       <h2>Supporting Metrics</h2>
       <ul>
         <li><strong>Consistency (1&ndash;5 bars)</strong> &mdash; Measures how stable a driver's results are, using
         the interquartile range (IQR) of their normalized finishes over the last 3 years. Results are
         deduplicated by event and the top/bottom 10% are trimmed before calculation. Higher consistency
-        means the RANK score is more reliable.</li>
+        means the score is more reliable.</li>
         <li><strong>Trend</strong> &mdash; Linear regression of performance over time. Shows whether a driver is
-        improving (&uarr;), steady (&ndash;), declining (&darr;), or absent (X, no results in 1+ year).</li>
+        improving (&uarr;), steady (&ndash;), declining (&darr;), or absent (no results in 1+ year).</li>
         <li><strong>Data Points (1&ndash;5 bars)</strong> &mdash; The number of unique competitors this driver has been
         compared against. More comparisons = more robust and trustworthy score.</li>
+        <li><strong>Confidence (1&ndash;5 bars)</strong> &mdash; A composite metric combining event count, network breadth
+        (unique competitors faced), recency of last event, and consistency. Higher confidence means the
+        ranking is well-supported by data.</li>
       </ul>
 
       <h2>Year-by-Year Scores</h2>
-      <p>Each driver's profile includes per-year scores computed using the same probit + flatten pipeline
-      as the overall RANK score. This ensures year scores are on the same 0&ndash;100 scale as the overall
+      <p>Each driver's profile includes per-year scores computed using the same pairwise engine and
+      probit normalization as the overall score, but without recency decay (since all events within a year
+      are equally recent). This ensures year scores are on the same 0&ndash;100 scale as the overall
       ranking, so a year score of 90 means the same thing as an overall score of 90.</p>
 
       <h2>Name Deduplication</h2>
@@ -155,8 +167,6 @@ function renderAbout() {
       <h2>Data Sources</h2>
       <p>Results are scraped from the official SCCA Pronto Timing System used at all national events,
       including National Tours and Solo Nationals. Data goes back to 2015.</p>
-      <p>Currently tracking <strong>6,800+ drivers</strong> across <strong>140+ events</strong> with
-      over <strong>8.5 million pairwise comparisons</strong>.</p>
       <p class="disclaimer">This tool is unofficial and not affiliated with SCCA. It is a data-driven
       estimate of relative driver skill and should be interpreted as one useful perspective, not absolute truth.</p>
     </div>
