@@ -53,6 +53,8 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           local-dir: ./site/
           server-dir: /djrow3.com/dump/autoxrating/
+          state-name: .ftp-deploy-sync-state.json
+          timeout: 60000
 
       - name: Commit updated data
         run: |
