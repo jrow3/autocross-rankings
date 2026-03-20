@@ -239,6 +239,12 @@ main {
   background: var(--bg-hover);
 }
 
+.jacket-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
 .rankings-table tr { cursor: pointer; }
 
 /* Rank column styling */
@@ -518,10 +524,20 @@ main {
 .history-table tr:hover td { background: var(--bg-hover); }
 
 /* === Events Page === */
+.year-header {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent);
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3rem;
+}
+
 .events-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .event-card {

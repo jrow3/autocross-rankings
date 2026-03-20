@@ -40,7 +40,7 @@ async function renderRankings() {
     <div class="stats-bar">
       <div><span class="stat-value" id="stat-drivers">0</span> drivers</div>
       <div><span class="stat-value" id="stat-events">0</span> events analyzed</div>
-      <div><span class="stat-value" id="stat-results">0</span> results processed</div>
+      <div><span class="stat-value" id="stat-comparisons">0</span> comparisons made</div>
     </div>
 
     <table class="rankings-table">
@@ -53,6 +53,7 @@ async function renderRankings() {
           <th class="hide-mobile">Consistency</th>
           <th class="hide-mobile">Confidence</th>
           <th class="hide-mobile">Region</th>
+          <th class="hide-mobile">Jackets</th>
           <th class="hide-mobile">Events</th>
         </tr>
       </thead>
@@ -67,7 +68,7 @@ async function renderRankings() {
     const meta = await fetchJSON('meta.json');
     document.getElementById('stat-drivers').textContent = meta.totalDrivers.toLocaleString();
     document.getElementById('stat-events').textContent = meta.totalEvents;
-    document.getElementById('stat-results').textContent = rankingsData.length.toLocaleString();
+    document.getElementById('stat-comparisons').textContent = (meta.totalComparisons || 0).toLocaleString();
   } catch (e) { /* meta not available */ }
 
   // Wire up filters
@@ -136,6 +137,7 @@ function renderPage(data) {
         <td class="hide-mobile">${renderConsistency(d.consistency)}</td>
         <td class="hide-mobile">${renderConfidence(d.confidence)}</td>
         <td class="hide-mobile">${escapeHtml(d.region || '')}</td>
+        <td class="hide-mobile">${d.nationalsWins ? `<span class="jacket-count">${d.nationalsWins}<svg viewBox="0 0 16 16" width="12" height="12"><path d="M6 1L4 2L1 4L2 10L4 9V15H12V9L14 10L15 4L12 2L10 1H6Z" fill="#dc2626"/><path d="M6 1L7 3L8 5L9 3L10 1" fill="none" stroke="#fff" stroke-width="0.8"/><path d="M4 9V15H12V9" fill="none" stroke="#b91c1c" stroke-width="0.5"/></svg></span>` : ''}</td>
         <td class="hide-mobile">${d.eventCount}</td>
       </tr>
     `).join('');

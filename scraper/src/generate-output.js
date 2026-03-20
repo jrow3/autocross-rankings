@@ -27,8 +27,7 @@ async function generateOutput() {
   }
 
   const rankings = JSON.parse(readFileSync(rankingsFile, 'utf8'));
-  writeFileSync(join(SITE_DATA_DIR, 'rankings.json'), JSON.stringify(rankings));
-  console.log(`Copied rankings.json (${rankings.length} drivers)`);
+  // nationalsWins will be added after building driver histories below
 
   // 2. Generate per-driver detail files
   const registry = loadRegistry();
@@ -81,6 +80,14 @@ async function generateOutput() {
       }
     }
   }
+
+  // Enrich rankings with nationalsWins count
+  for (const ranked of rankings) {
+    const history = driverHistories.get(ranked.driverName) || [];
+    ranked.nationalsWins = history.filter(h => h.eventType === 'nationals' && h.position === 1 && h.trophy).length;
+  }
+  writeFileSync(join(SITE_DATA_DIR, 'rankings.json'), JSON.stringify(rankings));
+  console.log(`Wrote rankings.json (${rankings.length} drivers)`);
 
   // Write per-driver files
   let driverFileCount = 0;
@@ -151,10 +158,24 @@ async function generateOutput() {
   console.log(`Generated ${eventFileCount} event files`);
 
   // 4. Generate meta.json
+  // Calculate total pairwise comparisons (n choose 2 per class per event)
+  let totalComparisons = 0;
+  for (const event of allEvents) {
+    for (const [, classResults] of Object.entries(event.classResults || {})) {
+      const n = classResults.length;
+      totalComparisons += (n * (n - 1)) / 2;
+    }
+    if (event.paxIndex?.overall) {
+      const n = event.paxIndex.overall.length;
+      totalComparisons += (n * (n - 1)) / 2;
+    }
+  }
+
   const meta = {
     lastUpdated: new Date().toISOString(),
     totalDrivers: rankings.length,
     totalEvents: allEvents.length,
+    totalComparisons,
     totalClasses: [...new Set(allEvents.flatMap(e => e.classes || []))].length,
     events: allEvents.map(e => ({
       eventCode: e.eventCode,

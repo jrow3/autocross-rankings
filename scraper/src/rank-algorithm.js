@@ -427,7 +427,7 @@ function computeRankScoresForSubset(eventDays, options = {}) {
     }
   }
 
-  return { scores, driverNames };
+  return { scores, driverNames, totalComparisons: comparisons.length };
 }
 
 // Overall RATING computation — delegates to subset engine with recency decay enabled
@@ -704,7 +704,7 @@ async function computeRankings() {
   eventDays = pruneEventDayOutliers(eventDays);
 
   // 4. Compute iterative RATING scores (recursive pairwise comparison)
-  const { scores, driverNames } = computeRankScores(eventDays);
+  const { scores, driverNames, totalComparisons } = computeRankScores(eventDays);
 
   // 5. Load driver registry for metadata
   const registry = loadRegistry();

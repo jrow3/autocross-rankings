@@ -12,7 +12,31 @@ async function renderEvents() {
     return;
   }
 
-  const events = meta.events || [];
+  const events = (meta.events || []).sort((a, b) => {
+    // Parse year from event dates or code
+    const getYear = (e) => {
+      const match = (e.eventDates || e.eventCode || '').match(/(\d{4})/);
+      return match ? parseInt(match[1]) : 0;
+    };
+    const yearA = getYear(a);
+    const yearB = getYear(b);
+    // Sort by year descending
+    if (yearB !== yearA) return yearB - yearA;
+    // Within same year, nationals first
+    if (a.eventType === 'nationals' && b.eventType !== 'nationals') return -1;
+    if (b.eventType === 'nationals' && a.eventType !== 'nationals') return 1;
+    // Then by date descending
+    return (b.eventDates || '').localeCompare(a.eventDates || '');
+  });
+
+  // Group by year
+  const eventsByYear = new Map();
+  for (const e of events) {
+    const match = (e.eventDates || e.eventCode || '').match(/(\d{4})/);
+    const year = match ? match[1] : 'Unknown';
+    if (!eventsByYear.has(year)) eventsByYear.set(year, []);
+    eventsByYear.get(year).push(e);
+  }
 
   app.innerHTML = `
     <div class="rankings-header">
@@ -21,20 +45,23 @@ async function renderEvents() {
         <div><span class="stat-value">${events.length}</span> events tracked</div>
       </div>
     </div>
-    <div class="events-grid">
-      ${events.map(e => `
-        <div class="event-card" data-event="${e.eventCode}">
-          <h3>
-            ${escapeHtml(e.eventName || e.eventCode)}
-            <span class="event-type-badge event-type-${e.eventType}">${e.eventType}</span>
-          </h3>
-          <div class="dates">${e.eventDates || ''}</div>
-          <div class="stats">
-            <div><span>${e.totalDrivers || '?'}</span> drivers</div>
+    ${[...eventsByYear.entries()].map(([year, yearEvents]) => `
+      <h3 class="year-header">${year}</h3>
+      <div class="events-grid">
+        ${yearEvents.map(e => `
+          <div class="event-card" data-event="${e.eventCode}">
+            <h3>
+              ${escapeHtml(e.eventName || e.eventCode)}
+              <span class="event-type-badge event-type-${e.eventType}">${e.eventType}</span>
+            </h3>
+            <div class="dates">${e.eventDates || ''}</div>
+            <div class="stats">
+              <div><span>${e.totalDrivers || '?'}</span> drivers</div>
+            </div>
           </div>
-        </div>
-      `).join('')}
-    </div>
+        `).join('')}
+      </div>
+    `).join('')}
   `;
 
   document.querySelectorAll('.event-card').forEach(card => {
