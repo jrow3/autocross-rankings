@@ -21,6 +21,7 @@ function updateNav(page) {
 async function route() {
   const { page, id } = getRoute();
   updateNav(page);
+  window.scrollTo(0, 0);
 
   switch (page) {
     case 'rankings':

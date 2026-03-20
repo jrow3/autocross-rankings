@@ -375,8 +375,29 @@ main {
 .driver-info h2 { font-size: 1.6rem; margin-bottom: 0.3rem; }
 .driver-info .meta { color: var(--text-dim); font-size: 0.9rem; }
 
-.driver-score {
+.driver-nationals-count {
+  text-align: center;
   margin-left: auto;
+}
+
+.driver-nationals-count .value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.driver-nationals-count .label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.driver-score {
+  margin-left: 1.5rem;
   text-align: center;
 }
 
@@ -594,6 +615,7 @@ footer a { color: var(--accent); }
 
   .driver-profile { grid-template-columns: 1fr; }
   .driver-header { flex-direction: column; text-align: center; gap: 1rem; }
+  .driver-nationals-count { margin-left: 0; }
   .driver-score { margin-left: 0; }
 
   .rankings-table { font-size: 0.8rem; }

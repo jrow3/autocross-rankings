@@ -25,6 +25,8 @@ async function renderDriver(driverId) {
     down1: 'Declining', down2: 'Strong Decline', absent: 'Absent',
   };
 
+  const nationalsWins = (driver.history || []).filter(h => h.eventType === 'nationals' && h.position === 1).length;
+
   app.innerHTML = `
     <a href="#/" class="back-link">&larr; Back to Rankings</a>
 
@@ -42,6 +44,12 @@ async function renderDriver(driverId) {
             &nbsp;&middot;&nbsp; ${escapeHtml(driver.region || 'Unknown Region')}
           </div>
         </div>
+        ${nationalsWins > 0 ? `
+        <div class="driver-nationals-count">
+          <div class="value">${nationalsWins} <svg class="trophy-icon" viewBox="0 0 16 16" width="18" height="18"><path d="M6 1L4 2L1 4L2 10L4 9V15H12V9L14 10L15 4L12 2L10 1H6Z" fill="#dc2626"/><path d="M6 1L7 3L8 5L9 3L10 1" fill="none" stroke="#fff" stroke-width="0.8"/><path d="M4 9V15H12V9" fill="none" stroke="#b91c1c" stroke-width="0.5"/></svg></div>
+          <div class="label">Jacket${nationalsWins !== 1 ? 's' : ''}</div>
+        </div>
+        ` : ''}
         <div class="driver-score">
           <div class="value">${formatScore(driver.score)}</div>
           <div class="label">RATING Score</div>
@@ -106,7 +114,6 @@ async function renderDriver(driverId) {
               <th>Event</th>
               <th>Class</th>
               <th>Position</th>
-              <th>PAX Time</th>
               <th class="hide-mobile">Car</th>
               <th class="hide-mobile">PAX Overall</th>
             </tr>
@@ -120,7 +127,6 @@ async function renderDriver(driverId) {
                 </td>
                 <td>${renderClassBadge(h.className)}</td>
                 <td>${h.trophy ? renderTrophy(h.eventType, h.position) : ''}${h.position}/${h.totalInClass || '?'}</td>
-                <td style="font-family:var(--mono)">${h.paxTime ? h.paxTime.toFixed(3) : 'N/A'}</td>
                 <td class="hide-mobile">${escapeHtml(h.car || '')}</td>
                 <td class="hide-mobile">${h.paxOverallPosition ? `${h.paxOverallPosition}/${h.paxOverallTotal}` : ''}</td>
               </tr>

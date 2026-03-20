@@ -6,6 +6,8 @@ let filteredData = null;
 let currentPage = 1;
 let sortField = 'score';
 let sortDir = 'desc';
+let savedClassFilter = '';
+let savedRegionFilter = '';
 
 async function renderRankings() {
   const app = document.getElementById('app');
@@ -72,13 +74,24 @@ async function renderRankings() {
   document.getElementById('filter-class').addEventListener('change', applyFilters);
   document.getElementById('filter-region').addEventListener('change', applyFilters);
 
-  currentPage = 1;
-  applySortAndRender();
+  // Restore saved filter values
+  if (savedClassFilter) document.getElementById('filter-class').value = savedClassFilter;
+  if (savedRegionFilter) document.getElementById('filter-region').value = savedRegionFilter;
+
+  // Re-apply filters if any were saved
+  if (savedClassFilter || savedRegionFilter) {
+    applyFilters();
+  } else {
+    currentPage = 1;
+    applySortAndRender();
+  }
 }
 
 function applyFilters() {
   const classFilter = document.getElementById('filter-class').value;
   const regionFilter = document.getElementById('filter-region').value;
+  savedClassFilter = classFilter;
+  savedRegionFilter = regionFilter;
 
   filteredData = rankingsData.filter(d => {
     if (classFilter && d.primaryClass !== classFilter) return false;
