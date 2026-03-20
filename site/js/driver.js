@@ -2,13 +2,36 @@
 
 let scoreChart = null;
 
+// In-memory cache for driver chunks (persists across navigations within session)
+let _driverIndex = null;
+const _chunkCache = new Map();
+
+async function loadDriverFromChunk(driverId) {
+  // Load the driver index (maps slug -> chunk number)
+  if (!_driverIndex) {
+    _driverIndex = await fetchJSON('driver-index.json');
+  }
+
+  const chunkNum = _driverIndex[driverId];
+  if (chunkNum === undefined) return null;
+
+  // Load the chunk (cached in memory for instant same-chunk navigation)
+  if (!_chunkCache.has(chunkNum)) {
+    const chunk = await fetchJSON(`drivers/chunk-${chunkNum}.json`);
+    _chunkCache.set(chunkNum, chunk);
+  }
+
+  return _chunkCache.get(chunkNum)[driverId] || null;
+}
+
 async function renderDriver(driverId) {
   const app = document.getElementById('app');
   app.innerHTML = '<div class="loading">Loading driver profile...</div>';
 
   let driver;
   try {
-    driver = await fetchJSON(`drivers/${driverId}.json`);
+    driver = await loadDriverFromChunk(driverId);
+    if (!driver) throw new Error('Not found');
   } catch (e) {
     app.innerHTML = '<div class="loading">Driver not found.</div>';
     return;

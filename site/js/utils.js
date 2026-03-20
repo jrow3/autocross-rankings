@@ -5,7 +5,7 @@ const DATA_BASE = 'data';
 // Fetch JSON with caching
 const jsonCache = new Map();
 
-const CACHE_BUST = 'v=11';
+const CACHE_BUST = 'v=12';
 async function fetchJSON(path) {
   if (jsonCache.has(path)) return jsonCache.get(path);
   const res = await fetch(`${DATA_BASE}/${path}?${CACHE_BUST}`);

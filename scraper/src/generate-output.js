@@ -89,8 +89,14 @@ async function generateOutput() {
   writeFileSync(join(SITE_DATA_DIR, 'rankings.json'), JSON.stringify(rankings));
   console.log(`Wrote rankings.json (${rankings.length} drivers)`);
 
-  // Write per-driver files
-  let driverFileCount = 0;
+  // Write chunked driver bundle files (instead of one file per driver)
+  const CHUNK_SIZE = 300;
+  const driverIndex = {};  // slug -> chunk number
+  const chunks = [];       // array of { slug: driverData } objects
+  let currentChunk = {};
+  let currentChunkIndex = 0;
+  let driversInCurrentChunk = 0;
+
   for (const ranked of rankings) {
     const history = driverHistories.get(ranked.driverName) || [];
     const regEntry = Object.values(registry).find(d => d.normalizedName === ranked.driverName);
@@ -115,13 +121,37 @@ async function generateOutput() {
       }),
     };
 
-    writeFileSync(
-      join(SITE_DATA_DIR, 'drivers', `${ranked.driverId}.json`),
-      JSON.stringify(driverData)
-    );
-    driverFileCount++;
+    currentChunk[ranked.driverId] = driverData;
+    driverIndex[ranked.driverId] = currentChunkIndex;
+    driversInCurrentChunk++;
+
+    if (driversInCurrentChunk >= CHUNK_SIZE) {
+      chunks.push(currentChunk);
+      currentChunk = {};
+      currentChunkIndex++;
+      driversInCurrentChunk = 0;
+    }
   }
-  console.log(`Generated ${driverFileCount} driver detail files`);
+  // Push the last partial chunk
+  if (driversInCurrentChunk > 0) {
+    chunks.push(currentChunk);
+  }
+
+  // Write chunk files
+  for (let i = 0; i < chunks.length; i++) {
+    writeFileSync(
+      join(SITE_DATA_DIR, 'drivers', `chunk-${i}.json`),
+      JSON.stringify(chunks[i])
+    );
+  }
+
+  // Write driver index
+  writeFileSync(
+    join(SITE_DATA_DIR, 'driver-index.json'),
+    JSON.stringify(driverIndex)
+  );
+
+  console.log(`Generated ${chunks.length} driver chunk files (${rankings.length} drivers, ${CHUNK_SIZE}/chunk)`);
 
   // 3. Generate per-event summary files
   let eventFileCount = 0;
