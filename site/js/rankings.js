@@ -59,9 +59,9 @@ async function renderRankings() {
     </div>
 
     <div class="stats-bar">
+      <div><span class="stat-value" id="stat-events">0</span> events</div>
       <div><span class="stat-value" id="stat-drivers">0</span> drivers</div>
-      <div><span class="stat-value" id="stat-events">0</span> events analyzed</div>
-      <div><span class="stat-value" id="stat-comparisons">0</span> comparisons made</div>
+      <div><span class="stat-value" id="stat-comparisons">0</span> comparisons</div>
     </div>
 
     <div class="table-scroll-container">
