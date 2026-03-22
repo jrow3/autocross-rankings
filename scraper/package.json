@@ -4,7 +4,7 @@
   "description": "Scrapes SCCA autocross results and computes RATING driver rankings",
   "type": "module",
   "scripts": {
-    "scrape": "node src/scrape-sololive.js",
+    "scrape": "node src/scraper.js",
     "scrape:archives": "node src/scrape-archives.js",
     "rank": "node src/rank-algorithm.js",
     "generate": "node src/generate-output.js",

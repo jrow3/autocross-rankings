@@ -86,20 +86,34 @@ async function generateOutput() {
     const history = driverHistories.get(ranked.driverName) || [];
     ranked.nationalsWins = history.filter(h => h.eventType === 'nationals' && h.position === 1 && h.trophy).length;
   }
-  writeFileSync(join(SITE_DATA_DIR, 'rankings.json'), JSON.stringify(rankings));
+  // Write rankings.json without yearScores and allClasses (those live in driver chunks)
+  const slimRankings = rankings.map(({ yearScores, allClasses, ...rest }) => rest);
+  writeFileSync(join(SITE_DATA_DIR, 'rankings.json'), JSON.stringify(slimRankings));
   console.log(`Wrote rankings.json (${rankings.length} drivers)`);
 
+  // Write lightweight search index (~200KB vs full rankings)
+  const searchIndex = rankings.map(d => ({
+    driverId: d.driverId,
+    displayName: d.displayName,
+    rank: d.rank,
+    score: d.score,
+    primaryClass: d.primaryClass,
+  }));
+  writeFileSync(join(SITE_DATA_DIR, 'search-index.json'), JSON.stringify(searchIndex));
+  console.log(`Wrote search-index.json (${searchIndex.length} drivers)`);
+
   // Write chunked driver bundle files (instead of one file per driver)
-  const CHUNK_SIZE = 300;
+  const CHUNK_SIZE = 100;
   const driverIndex = {};  // slug -> chunk number
   const chunks = [];       // array of { slug: driverData } objects
   let currentChunk = {};
   let currentChunkIndex = 0;
   let driversInCurrentChunk = 0;
 
+  const registryByName = new Map(Object.entries(registry).map(([slug, d]) => [d.normalizedName, { ...d, _slug: slug }]));
   for (const ranked of rankings) {
     const history = driverHistories.get(ranked.driverName) || [];
-    const regEntry = Object.values(registry).find(d => d.normalizedName === ranked.driverName);
+    const regEntry = registryByName.get(ranked.driverName);
 
     const driverData = {
       ...ranked,
@@ -163,7 +177,10 @@ async function generateOutput() {
       eventType: event.eventType,
       totalDrivers: event.totalDrivers,
       classes: event.classes,
-      paxIndex: event.paxIndex?.overall?.slice(0, 100) || [], // Top 100 PAX
+      paxIndex: (event.paxIndex?.overall?.slice(0, 100) || []).map(p => {
+        const regEntry = registryByName.get(normalizeName(p.name));
+        return regEntry ? { ...p, driverId: regEntry._slug } : { ...p };
+      }),
       classResults: {},
     };
 

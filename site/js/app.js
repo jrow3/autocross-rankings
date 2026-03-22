@@ -2,9 +2,12 @@
 
 function getRoute() {
   const hash = window.location.hash.slice(1) || '/';
-  const parts = hash.split('/').filter(Boolean);
+  // Split off query string from the hash path (e.g. #/?class=SS&region=NER)
+  const [pathPart] = hash.split('?');
+  const parts = pathPart.split('/').filter(Boolean);
 
   if (parts.length === 0 || parts[0] === '') return { page: 'rankings' };
+  if (parts[0] === 'compare' && parts[1] && parts[2]) return { page: 'compare', id: parts[1], id2: parts[2] };
   if (parts[0] === 'driver' && parts[1]) return { page: 'driver', id: parts[1] };
   if (parts[0] === 'events') return { page: 'events' };
   if (parts[0] === 'event' && parts[1]) return { page: 'event', id: parts[1] };
@@ -19,7 +22,7 @@ function updateNav(page) {
 }
 
 async function route() {
-  const { page, id } = getRoute();
+  const { page, id, id2 } = getRoute();
   updateNav(page);
   window.scrollTo(0, 0);
 
@@ -29,6 +32,9 @@ async function route() {
       break;
     case 'driver':
       await renderDriver(id);
+      break;
+    case 'compare':
+      await renderCompare(id, id2);
       break;
     case 'events':
       await renderEvents();

@@ -6,6 +6,12 @@ on:
     - cron: '0 10 * * 1'
   # Manual trigger
   workflow_dispatch:
+    inputs:
+      full_discovery:
+        description: 'Re-discover all historical years (not just current/next)'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -25,7 +31,14 @@ jobs:
         working-directory: scraper
         run: npm ci
 
-      - name: Discover events
+      # Only discover current + next year for weekly updates (historical events don't change)
+      - name: Discover events (current + next year)
+        working-directory: scraper
+        run: node src/scraper.js discover $(date +%Y),$(( $(date +%Y) + 1 ))
+
+      # Full historical re-discovery (manual trigger only, use "full_discovery" input)
+      - name: Discover all historical events
+        if: github.event.inputs.full_discovery == 'true'
         working-directory: scraper
         run: node src/scraper.js discover
 
@@ -60,6 +73,6 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add scraper/data/ site/data/
+          git add scraper/data/ site/data/ site/.ftp-deploy-sync-state.json 2>/dev/null || true
           git diff --staged --quiet || git commit -m "Update rankings data $(date +%Y-%m-%d)"
           git push

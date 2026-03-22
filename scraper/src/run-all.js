@@ -15,10 +15,10 @@ async function main() {
 
   if (!skipScrape) {
     // Step 1: Discover events
-    run('node src/scrape-sololive.js discover');
+    run('node src/scraper.js discover');
 
     // Step 2: Scrape all events
-    run('node src/scrape-sololive.js all');
+    run('node src/scraper.js all');
   }
 
   // Step 3: Build driver registry

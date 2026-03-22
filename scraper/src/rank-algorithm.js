@@ -323,53 +323,59 @@ function computeRankScoresForSubset(eventDays, options = {}) {
     }
   }
 
-  // Build pairwise comparisons with log-ratio margin scaling.
-  // The tanh softcap gives a smooth S-curve: small gaps earn credit quickly,
-  // large gaps asymptote to MARGIN_SOFTCAP. No hard cliff.
-  const comparisons = [];
+  // Build lightweight event day summaries for on-the-fly comparison generation.
+  // Each summary stores sorted driver names, paxTimes, and the pre-computed base
+  // weight (recency * eventType * fieldNorm). Margin multipliers between each pair
+  // are also pre-computed since they depend only on paxTimes, not scores.
+  // This avoids storing ~19.5M comparison objects in memory.
+  const daySummaries = [];
+  let totalComparisonsCount = 0;
 
   for (const day of eventDays) {
     const eventTypeWeight = (day.eventType === 'nationals') ? NATIONALS_WEIGHT : 1.0;
     const recency = useRecencyDecay ? recencyWeight(day.eventDate, now) : 1.0;
     const baseWeight = recency * eventTypeWeight;
 
-    // Field-size normalization: 1/sqrt(fieldSize)
     const fieldSize = day.results.length;
     const fieldNorm = 1 / Math.sqrt(fieldSize);
     const weight = baseWeight * fieldNorm;
 
-    const results = [...day.results].sort((a, b) => a.paxTime - b.paxTime);
+    const sorted = [...day.results].sort((a, b) => a.paxTime - b.paxTime);
+    const drivers = sorted.map(r => r.driverName);
+    const paxTimes = sorted.map(r => r.paxTime);
 
-    for (let i = 0; i < results.length; i++) {
-      for (let j = i + 1; j < results.length; j++) {
-        const winner = results[i];
-        const loser = results[j];
-
-        // Log-ratio margin with tanh softcap
-        const timeRatio = loser.paxTime / winner.paxTime;
+    // Pre-compute margin multipliers for all pairs (depends only on paxTimes, not scores)
+    const n = drivers.length;
+    const margins = new Float64Array(n * n);
+    for (let i = 0; i < n; i++) {
+      for (let j = i + 1; j < n; j++) {
+        const timeRatio = paxTimes[j] / paxTimes[i];
         const logMargin = Math.log(timeRatio);
-        const marginMultiplier = 1 + (MARGIN_SOFTCAP - 1) * Math.tanh(logMargin * MARGIN_SCALE);
+        margins[i * n + j] = 1 + (MARGIN_SOFTCAP - 1) * Math.tanh(logMargin * MARGIN_SCALE);
+      }
+    }
 
-        comparisons.push({
-          winner: winner.driverName,
-          loser: loser.driverName,
-          weight,
-          marginMultiplier,
-          dayId: day.id,
-        });
+    totalComparisonsCount += (n * (n - 1)) / 2;
+
+    daySummaries.push({ drivers, weight, margins, n });
+  }
+
+  // Pre-compute total comparison weight per driver for normalization
+  // (depends only on weights and margins, not on scores — constant across iterations)
+  const driverTotalWeight = new Map();
+  for (const summary of daySummaries) {
+    const { drivers, weight, margins, n } = summary;
+    for (let i = 0; i < n; i++) {
+      for (let j = i + 1; j < n; j++) {
+        const w = weight * margins[i * n + j];
+        driverTotalWeight.set(drivers[i], (driverTotalWeight.get(drivers[i]) || 0) + w);
+        driverTotalWeight.set(drivers[j], (driverTotalWeight.get(drivers[j]) || 0) + w);
       }
     }
   }
 
-  // Pre-compute total comparison weight per driver for normalization
-  const driverTotalWeight = new Map();
-  for (const comp of comparisons) {
-    const w = comp.weight * comp.marginMultiplier;
-    driverTotalWeight.set(comp.winner, (driverTotalWeight.get(comp.winner) || 0) + w);
-    driverTotalWeight.set(comp.loser, (driverTotalWeight.get(comp.loser) || 0) + w);
-  }
-
   // Iterative convergence (recursive quality propagation)
+  // Re-walks event day summaries each iteration instead of iterating a stored array.
   for (let iter = 0; iter < MAX_ITERATIONS; iter++) {
     const newScores = new Map();
     const driverAccum = new Map();
@@ -378,15 +384,24 @@ function computeRankScoresForSubset(eventDays, options = {}) {
       driverAccum.set(driver, 0);
     }
 
-    for (const comp of comparisons) {
-      const winnerScore = scores.get(comp.winner) || INITIAL_SCORE;
-      const loserScore = scores.get(comp.loser) || INITIAL_SCORE;
+    for (const summary of daySummaries) {
+      const { drivers, weight, margins, n } = summary;
+      for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+          const winnerName = drivers[i];
+          const loserName = drivers[j];
+          const marginMultiplier = margins[i * n + j];
 
-      const winValue = (loserScore / INITIAL_SCORE) * comp.weight * comp.marginMultiplier;
-      const lossValue = -(winnerScore / INITIAL_SCORE) * comp.weight * LOSS_WEIGHT_FACTOR * comp.marginMultiplier;
+          const winnerScore = scores.get(winnerName) || INITIAL_SCORE;
+          const loserScore = scores.get(loserName) || INITIAL_SCORE;
 
-      driverAccum.set(comp.winner, (driverAccum.get(comp.winner) || 0) + winValue);
-      driverAccum.set(comp.loser, (driverAccum.get(comp.loser) || 0) + lossValue);
+          const winValue = (loserScore / INITIAL_SCORE) * weight * marginMultiplier;
+          const lossValue = -(winnerScore / INITIAL_SCORE) * weight * LOSS_WEIGHT_FACTOR * marginMultiplier;
+
+          driverAccum.set(winnerName, (driverAccum.get(winnerName) || 0) + winValue);
+          driverAccum.set(loserName, (driverAccum.get(loserName) || 0) + lossValue);
+        }
+      }
     }
 
     for (const [driver, accum] of driverAccum) {
@@ -427,7 +442,7 @@ function computeRankScoresForSubset(eventDays, options = {}) {
     }
   }
 
-  return { scores, driverNames, totalComparisons: comparisons.length };
+  return { scores, driverNames, totalComparisons: totalComparisonsCount };
 }
 
 // Overall RATING computation — delegates to subset engine with recency decay enabled
@@ -487,11 +502,48 @@ function normalizeToPercentile(rankings) {
 // Compute per-year RATING scores using the same pairwise engine as overall.
 // This ensures yearly scores use the same methodology (opponent quality propagation,
 // margin weighting, etc.) so they align with the overall ranking.
+// Historical (past) year scores are cached to disk so they only need to be computed once.
+const YEAR_SCORES_CACHE_FILE = join(DATA_DIR, 'year-scores-cache.json');
+
+function loadYearScoresCache() {
+  try {
+    if (existsSync(YEAR_SCORES_CACHE_FILE)) {
+      return JSON.parse(readFileSync(YEAR_SCORES_CACHE_FILE, 'utf8'));
+    }
+  } catch (e) {
+    console.warn('Failed to load year scores cache, recomputing all years:', e.message);
+  }
+  return {};
+}
+
+function saveYearScoresCache(cache) {
+  try {
+    writeFileSync(YEAR_SCORES_CACHE_FILE, JSON.stringify(cache));
+  } catch (e) {
+    console.warn('Failed to save year scores cache:', e.message);
+  }
+}
+
 function computeAllYearScores(eventDays) {
-  const years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
+  const currentYear = new Date().getFullYear();
+  const years = Array.from({length: currentYear - 2010 + 2}, (_, i) => 2010 + i);
   const yearPercentiles = new Map();
 
+  // Load cached scores for historical years
+  const cache = loadYearScoresCache();
+  let cacheHits = 0;
+  let cacheUpdated = false;
+
   for (const year of years) {
+    // Use cache for completed (past) years
+    if (year < currentYear && cache[String(year)]) {
+      const cachedScores = cache[String(year)];
+      const percentileMap = new Map(Object.entries(cachedScores).map(([k, v]) => [k, Number(v)]));
+      yearPercentiles.set(year, percentileMap);
+      cacheHits++;
+      continue;
+    }
+
     const yearDays = eventDays.filter(d => d.eventDate.getFullYear() === year);
     if (yearDays.length === 0) continue;
 
@@ -513,6 +565,25 @@ function computeAllYearScores(eventDays) {
       percentileMap.set(r.driverName, r.score);
     }
     yearPercentiles.set(year, percentileMap);
+
+    // Cache completed (past) years for future runs
+    if (year < currentYear) {
+      const cacheEntry = {};
+      for (const r of yearRankings) {
+        cacheEntry[r.driverName] = r.score;
+      }
+      cache[String(year)] = cacheEntry;
+      cacheUpdated = true;
+    }
+  }
+
+  if (cacheHits > 0) {
+    console.log(`Year scores cache: ${cacheHits} years loaded from cache`);
+  }
+
+  if (cacheUpdated) {
+    saveYearScoresCache(cache);
+    console.log('Year scores cache updated on disk');
   }
 
   return yearPercentiles;
@@ -597,22 +668,45 @@ function computeTrend(driverResults, now = new Date()) {
   return 'steady';
 }
 
-// Compute data points metric (1-5 bars based on unique competitors faced)
-function computeDataPoints(driverName, eventDays) {
-  const competitorsFaced = new Set();
+// Pre-build per-driver lookup maps in a single pass through all eventDays.
+// Returns { driverCompetitors, driverEventDays, driverLastEvent }.
+// This avoids O(drivers * eventDays) scans in computeDataPoints/computeConfidence.
+function buildDriverMaps(eventDays) {
+  const driverCompetitors = new Map();  // Map<driverName, Set<string>>
+  const driverEventDays = new Map();    // Map<driverName, number>
+  const driverLastEvent = new Map();    // Map<driverName, Date>
 
   for (const day of eventDays) {
-    const driverInDay = day.results.find(r => r.driverName === driverName);
-    if (!driverInDay) continue;
+    const driverNamesInDay = day.results.map(r => r.driverName);
 
-    for (const r of day.results) {
-      if (r.driverName !== driverName) {
-        competitorsFaced.add(r.driverName);
+    for (const name of driverNamesInDay) {
+      // Count event days
+      driverEventDays.set(name, (driverEventDays.get(name) || 0) + 1);
+
+      // Track most recent event
+      const prev = driverLastEvent.get(name);
+      if (!prev || day.eventDate > prev) {
+        driverLastEvent.set(name, day.eventDate);
+      }
+
+      // Build competitor set
+      if (!driverCompetitors.has(name)) {
+        driverCompetitors.set(name, new Set());
+      }
+      const compSet = driverCompetitors.get(name);
+      for (const other of driverNamesInDay) {
+        if (other !== name) compSet.add(other);
       }
     }
   }
 
-  const count = competitorsFaced.size;
+  return { driverCompetitors, driverEventDays, driverLastEvent };
+}
+
+// Compute data points metric (1-5 bars based on unique competitors faced)
+function computeDataPoints(driverName, driverMaps) {
+  const competitorsFaced = driverMaps.driverCompetitors.get(driverName);
+  const count = competitorsFaced ? competitorsFaced.size : 0;
   if (count >= 1500) return 5;
   if (count >= 800) return 4;
   if (count >= 400) return 3;
@@ -623,24 +717,17 @@ function computeDataPoints(driverName, eventDays) {
 // Compute confidence metric (1-5 bars)
 // Combines event count, network breadth, recency, and consistency into
 // a single "how sure are we about this ranking?" signal.
-function computeConfidence(driverName, driverResults, eventDays, consistency) {
+function computeConfidence(driverName, driverResults, driverMaps, consistency) {
   // Factor 1: Event count (more events = more data)
   const uniqueEvents = new Set(driverResults.map(r => r.eventCode)).size;
   const eventScore = Math.min(uniqueEvents / 12, 1.0);
 
-  // Factor 2: Unique competitors faced (network breadth)
-  const competitorsFaced = new Set();
-  for (const day of eventDays) {
-    if (!day.results.find(r => r.driverName === driverName)) continue;
-    for (const r of day.results) {
-      if (r.driverName !== driverName) competitorsFaced.add(r.driverName);
-    }
-  }
-  const networkScore = Math.min(competitorsFaced.size / 800, 1.0);
+  // Factor 2: Unique competitors faced (network breadth) — from pre-built map
+  const competitorsFaced = driverMaps.driverCompetitors.get(driverName);
+  const networkScore = Math.min((competitorsFaced ? competitorsFaced.size : 0) / 800, 1.0);
 
-  // Factor 3: Recency (have they competed recently?)
-  const lastEvent = driverResults.reduce((latest, r) =>
-    r.eventDate > latest ? r.eventDate : latest, new Date(0));
+  // Factor 3: Recency (have they competed recently?) — from pre-built map
+  const lastEvent = driverMaps.driverLastEvent.get(driverName) || new Date(0);
   const yearsSinceLast = (new Date() - lastEvent) / (1000 * 60 * 60 * 24 * 365.25);
   const recencyScore = yearsSinceLast <= 2 ? 1.0 :
                        yearsSinceLast <= 5 ? 0.7 :
@@ -724,11 +811,16 @@ async function computeRankings() {
     }
   }
 
-  // 7. Compute per-year scores using same pairwise engine
+  // 7. Pre-build per-driver lookup maps (competitors, event days, last event)
+  // Single pass through eventDays replaces O(drivers * eventDays) scans
+  const driverMaps = buildDriverMaps(eventDays);
+
+  // 8. Compute per-year scores using same pairwise engine
   console.log('Computing per-year scores...');
   const yearPercentiles = computeAllYearScores(eventDays);
 
-  // 8. Build final rankings
+  // 9. Build final rankings
+  const registryByName = new Map(Object.values(registry).map(d => [d.normalizedName, d]));
   const rankings = [];
   const now = new Date();
 
@@ -741,8 +833,8 @@ async function computeRankings() {
 
     const consistency = computeConsistency(results);
     const trend = computeTrend(results, now);
-    const dataPoints = computeDataPoints(driverName, eventDays);
-    const confidence = computeConfidence(driverName, results, eventDays, consistency);
+    const dataPoints = computeDataPoints(driverName, driverMaps);
+    const confidence = computeConfidence(driverName, results, driverMaps, consistency);
 
     const recentClasses = getRecentClasses(results);
     const primaryClass = recentClasses[0] || '';
@@ -754,7 +846,7 @@ async function computeRankings() {
       if (pct !== undefined) yearScores[year] = pct;
     }
 
-    const registryEntry = Object.values(registry).find(d => d.normalizedName === driverName);
+    const registryEntry = registryByName.get(driverName);
     const region = registryEntry?.regions?.[0] || results[0]?.region || '';
 
     rankings.push({
@@ -779,10 +871,10 @@ async function computeRankings() {
     });
   }
 
-  // 9. Normalize to 0-100 percentile scale
+  // 10. Normalize to 0-100 percentile scale
   normalizeToPercentile(rankings);
 
-  // 10. Assign ranks
+  // 11. Assign ranks
   rankings.forEach((r, i) => r.rank = i + 1);
 
   // Clean up internal field

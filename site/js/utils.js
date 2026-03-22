@@ -5,26 +5,72 @@ const DATA_BASE = 'data';
 // Fetch JSON with caching
 const jsonCache = new Map();
 
-const CACHE_BUST = 'v=12';
+const CACHE_BUST = 'v=' + new Date().toISOString().slice(0, 10);
+const FETCH_RETRIES = 2;
+const FETCH_RETRY_DELAY = 1000;
+
 async function fetchJSON(path) {
   if (jsonCache.has(path)) return jsonCache.get(path);
-  const res = await fetch(`${DATA_BASE}/${path}?${CACHE_BUST}`);
-  if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
-  const data = await res.json();
-  jsonCache.set(path, data);
-  return data;
+
+  let lastError;
+  for (let attempt = 0; attempt <= FETCH_RETRIES; attempt++) {
+    try {
+      if (attempt > 0) {
+        await new Promise(r => setTimeout(r, FETCH_RETRY_DELAY));
+      }
+      const res = await fetch(`${DATA_BASE}/${path}?${CACHE_BUST}`);
+      if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+      const data = await res.json();
+      jsonCache.set(path, data);
+      dismissError();
+      return data;
+    } catch (err) {
+      lastError = err;
+    }
+  }
+
+  showError(`Failed to load data after ${FETCH_RETRIES + 1} attempts. Check your connection.`, () => {
+    jsonCache.delete(path);
+    dismissError();
+    route();
+  });
+  throw lastError;
+}
+
+// Show a user-visible error banner at the top of the page
+function showError(message, onRetry) {
+  dismissError();
+  const banner = document.createElement('div');
+  banner.className = 'error-banner';
+  banner.setAttribute('role', 'alert');
+  banner.innerHTML = `
+    <span class="error-banner-message">${escapeHtml(message)}</span>
+    <button class="error-banner-retry">Retry</button>
+    <button class="error-banner-dismiss" aria-label="Dismiss">&times;</button>
+  `;
+  banner.querySelector('.error-banner-retry').addEventListener('click', () => {
+    if (onRetry) onRetry();
+  });
+  banner.querySelector('.error-banner-dismiss').addEventListener('click', dismissError);
+  document.body.prepend(banner);
+}
+
+// Remove the error banner if present
+function dismissError() {
+  const existing = document.querySelector('.error-banner');
+  if (existing) existing.remove();
 }
 
 // Render trend indicator (matches spreadsheet: up arrows, dash, down arrows, X)
 function renderTrend(trend) {
   const map = {
-    up3: '<span class="trend trend-up3" title="Strong improvement">&#9650;&#9650;&#9650;</span>',
-    up2: '<span class="trend trend-up2" title="Strong improvement">&#9650;&#9650;</span>',
-    up1: '<span class="trend trend-up1" title="Improving">&#9650;</span>',
-    steady: '<span class="trend trend-steady" title="Steady">&mdash;</span>',
-    down1: '<span class="trend trend-down1" title="Declining">&#9660;</span>',
-    down2: '<span class="trend trend-down2" title="Strong decline">&#9660;&#9660;</span>',
-    absent: '<span class="trend trend-absent" title="Absent (no events in 1 year)">&#10005;</span>',
+    up3: '<span class="trend trend-up3" title="Strong improvement" role="img" aria-label="Trend: strong improvement">&#9650;&#9650;&#9650;</span>',
+    up2: '<span class="trend trend-up2" title="Strong improvement" role="img" aria-label="Trend: strong improvement">&#9650;&#9650;</span>',
+    up1: '<span class="trend trend-up1" title="Improving" role="img" aria-label="Trend: improving">&#9650;</span>',
+    steady: '<span class="trend trend-steady" title="Steady" role="img" aria-label="Trend: steady">&mdash;</span>',
+    down1: '<span class="trend trend-down1" title="Declining" role="img" aria-label="Trend: declining">&#9660;</span>',
+    down2: '<span class="trend trend-down2" title="Strong decline" role="img" aria-label="Trend: strong decline">&#9660;&#9660;</span>',
+    absent: '<span class="trend trend-absent" title="Absent (no events in 1 year)" role="img" aria-label="Trend: absent, no events in 1 year">&#10005;</span>',
   };
   return map[trend] || map.steady;
 }
@@ -33,9 +79,9 @@ function renderTrend(trend) {
 function renderConsistency(value) {
   const filled = Math.max(1, Math.min(5, value || 1));
   const cls = filled >= 4 ? 'green' : filled >= 2 ? 'yellow' : 'red';
-  let html = `<span class="metric-bar" title="Consistency: ${filled}/5">`;
+  let html = `<span class="metric-bar" title="Consistency: ${filled}/5" role="img" aria-label="Consistency: ${filled} out of 5">`;
   for (let i = 0; i < 5; i++) {
-    html += `<span class="bar ${i < filled ? cls : ''}"></span>`;
+    html += `<span class="bar ${i < filled ? cls : ''}" aria-hidden="true"></span>`;
   }
   html += '</span>';
   return html;
@@ -46,9 +92,9 @@ function renderConfidence(value) {
   const filled = Math.max(1, Math.min(5, value || 1));
   const labels = ['Very Low', 'Low', 'Medium', 'High', 'Very High'];
   const cls = filled >= 4 ? 'green' : filled >= 3 ? 'yellow' : 'orange';
-  let html = `<span class="metric-bar" title="${labels[filled - 1]} confidence">`;
+  let html = `<span class="metric-bar" title="${labels[filled - 1]} confidence" role="img" aria-label="Confidence: ${labels[filled - 1]}">`;
   for (let i = 0; i < 5; i++) {
-    html += `<span class="bar ${i < filled ? cls : ''}"></span>`;
+    html += `<span class="bar ${i < filled ? cls : ''}" aria-hidden="true"></span>`;
   }
   html += '</span>';
   return html;
@@ -58,9 +104,9 @@ function renderConfidence(value) {
 function renderDataPoints(value) {
   const filled = Math.max(1, Math.min(5, value || 1));
   const cls = filled >= 4 ? 'green' : filled >= 2 ? 'yellow' : 'red';
-  let html = `<span class="metric-bar" title="Data Points: ${filled}/5">`;
+  let html = `<span class="metric-bar" title="Data Points: ${filled}/5" role="img" aria-label="Data points: ${filled} out of 5">`;
   for (let i = 0; i < 5; i++) {
-    html += `<span class="bar ${i < filled ? cls : ''}"></span>`;
+    html += `<span class="bar ${i < filled ? cls : ''}" aria-hidden="true"></span>`;
   }
   html += '</span>';
   return html;
@@ -101,7 +147,6 @@ function formatScore(score) {
 
 // Escape HTML
 function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
+  if (!str) return '';
+  return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"})[m]);
 }

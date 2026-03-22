@@ -101,7 +101,7 @@ async function renderEventDetail(eventCode) {
           ${event.paxIndex.slice(0, 50).map(r => `
             <tr>
               <td><strong>${r.position}</strong></td>
-              <td>${escapeHtml(r.name)}</td>
+              <td>${r.driverId ? `<a href="#/driver/${r.driverId}">${escapeHtml(r.name)}</a>` : escapeHtml(r.name)}</td>
               <td>${renderClassBadge(r.className)}</td>
               <td class="hide-mobile">${escapeHtml(r.car || '')}</td>
               <td style="font-family:var(--mono)">${r.paxTime?.toFixed(3) || ''}</td>

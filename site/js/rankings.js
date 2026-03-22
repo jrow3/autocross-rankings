@@ -4,8 +4,29 @@ const PAGE_SIZE = 50;
 let rankingsData = null;
 let filteredData = null;
 let currentPage = 1;
-let sortField = 'score';
-let sortDir = 'desc';
+let sortField = 'rank';
+let sortDir = 'asc';
+// Read filter state from URL hash query params (e.g. #/?class=SS&region=NER)
+function getHashParams() {
+  const hash = window.location.hash.slice(1) || '';
+  const qIndex = hash.indexOf('?');
+  if (qIndex === -1) return new URLSearchParams();
+  return new URLSearchParams(hash.slice(qIndex + 1));
+}
+
+// Write filter state to URL hash without triggering a full re-route
+function setHashParams(classFilter, regionFilter) {
+  const params = new URLSearchParams();
+  if (classFilter) params.set('class', classFilter);
+  if (regionFilter) params.set('region', regionFilter);
+  const qs = params.toString();
+  const newHash = qs ? `#/?${qs}` : '#/';
+  if (window.location.hash !== newHash) {
+    // Use replaceState to avoid adding history entries for every filter change
+    history.replaceState(null, '', newHash);
+  }
+}
+
 let savedClassFilter = '';
 let savedRegionFilter = '';
 
@@ -43,22 +64,25 @@ async function renderRankings() {
       <div><span class="stat-value" id="stat-comparisons">0</span> comparisons made</div>
     </div>
 
-    <table class="rankings-table">
-      <thead>
-        <tr>
-          <th>Driver</th>
-          <th>RATING Score</th>
-          <th>Class</th>
-          <th class="hide-mobile">Trend</th>
-          <th class="hide-mobile">Consistency</th>
-          <th class="hide-mobile">Confidence</th>
-          <th class="hide-mobile">Region</th>
-          <th class="hide-mobile">Jackets</th>
-          <th class="hide-mobile">Events</th>
-        </tr>
-      </thead>
-      <tbody id="rankings-body"></tbody>
-    </table>
+    <div class="table-scroll-container">
+      <table class="rankings-table">
+        <thead>
+          <tr>
+            <th class="sortable" data-sort="rank">Rank ${renderSortIndicator('rank')}</th>
+            <th>Driver</th>
+            <th class="sortable" data-sort="score">RATING Score ${renderSortIndicator('score')}</th>
+            <th>Class</th>
+            <th class="hide-mobile">Trend</th>
+            <th class="hide-mobile">Consistency</th>
+            <th class="hide-mobile">Confidence</th>
+            <th class="hide-mobile">Region</th>
+            <th class="hide-mobile sortable" data-sort="nationalsWins">Jackets ${renderSortIndicator('nationalsWins')}</th>
+            <th class="hide-mobile sortable" data-sort="eventCount">Events ${renderSortIndicator('eventCount')}</th>
+          </tr>
+        </thead>
+        <tbody id="rankings-body"></tbody>
+      </table>
+    </div>
 
     <div class="pagination" id="pagination"></div>
   `;
@@ -71,11 +95,20 @@ async function renderRankings() {
     document.getElementById('stat-comparisons').textContent = (meta.totalComparisons || 0).toLocaleString();
   } catch (e) { /* meta not available */ }
 
+  // Wire up sortable column headers
+  wireSortHeaders();
+
   // Wire up filters
   document.getElementById('filter-class').addEventListener('change', applyFilters);
   document.getElementById('filter-region').addEventListener('change', applyFilters);
 
-  // Restore saved filter values
+  // Restore filter values from URL hash (takes priority) or saved JS state
+  const hashParams = getHashParams();
+  const hashClass = hashParams.get('class') || '';
+  const hashRegion = hashParams.get('region') || '';
+  savedClassFilter = hashClass || savedClassFilter;
+  savedRegionFilter = hashRegion || savedRegionFilter;
+
   if (savedClassFilter) document.getElementById('filter-class').value = savedClassFilter;
   if (savedRegionFilter) document.getElementById('filter-region').value = savedRegionFilter;
 
@@ -94,6 +127,9 @@ function applyFilters() {
   savedClassFilter = classFilter;
   savedRegionFilter = regionFilter;
 
+  // Persist filter state in URL hash so it survives reloads and can be shared
+  setHashParams(classFilter, regionFilter);
+
   filteredData = rankingsData.filter(d => {
     if (classFilter && d.primaryClass !== classFilter) return false;
     if (regionFilter && d.region !== regionFilter) return false;
@@ -102,6 +138,29 @@ function applyFilters() {
 
   currentPage = 1;
   applySortAndRender();
+}
+
+function renderSortIndicator(field) {
+  if (field !== sortField) return '';
+  return sortDir === 'asc' ? ' \u25B2' : ' \u25BC';
+}
+
+function wireSortHeaders() {
+  document.querySelectorAll('.rankings-table th.sortable').forEach(th => {
+    th.style.cursor = 'pointer';
+    th.addEventListener('click', () => {
+      const field = th.dataset.sort;
+      if (sortField === field) {
+        sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        sortField = field;
+        sortDir = 'asc';
+      }
+      // Re-render the full rankings to update sort indicators in headers
+      currentPage = 1;
+      renderRankings();
+    });
+  });
 }
 
 function applySortAndRender() {
@@ -129,7 +188,8 @@ function renderPage(data) {
 
   const tbody = document.getElementById('rankings-body');
   tbody.innerHTML = page.map(d => `
-      <tr data-driver="${d.driverId}">
+      <tr data-driver="${d.driverId}" role="button" tabindex="0" aria-label="View profile for ${escapeHtml(d.displayName)}">
+        <td><span class="rank-num">${d.rank}</span></td>
         <td><strong>${escapeHtml(d.displayName)}</strong></td>
         <td><span class="score">${formatScore(d.score)}</span></td>
         <td>${renderClassBadge(d.primaryClass)}</td>
@@ -142,10 +202,16 @@ function renderPage(data) {
       </tr>
     `).join('');
 
-  // Click to navigate to driver
+  // Click and keyboard navigation to driver profile
   tbody.querySelectorAll('tr[data-driver]').forEach(tr => {
     tr.addEventListener('click', () => {
       window.location.hash = `/driver/${tr.dataset.driver}`;
+    });
+    tr.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        window.location.hash = `/driver/${tr.dataset.driver}`;
+      }
     });
   });
 

@@ -1,5 +1,6 @@
 import * as cheerio from 'cheerio';
 import fetch from 'node-fetch';
+import https from 'https';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -11,8 +12,8 @@ const KNOWN_EVENTS_FILE = join(__dirname, '..', 'data', 'known-events.json');
 const VAULT_BASE = 'https://vault.autocrossdigits.com';
 const SOLOLIVE_BASE = 'https://sololive.scca.com';
 
-// Vault has an SSL cert issue, so we need to disable verification
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+// Vault has an SSL cert issue, so we use a custom agent only for Vault requests
+const vaultAgent = new https.Agent({ rejectUnauthorized: false });
 
 function ensureDir(dir) {
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
@@ -22,12 +23,13 @@ function ensureDir(dir) {
 // Shared fetch with retry
 // ---------------------------------------------------------------------------
 
-async function fetchHTML(url, retries = 3, timeout = 30000) {
+async function fetchHTML(url, retries = 3, timeout = 30000, agent = null) {
   for (let i = 0; i < retries; i++) {
     try {
       const res = await fetch(url, {
         headers: { 'User-Agent': 'AutocrossRankings/1.0 (research)' },
         timeout,
+        ...(agent ? { agent } : {}),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return await res.text();
@@ -44,12 +46,12 @@ async function fetchHTML(url, retries = 3, timeout = 30000) {
 // ===========================================================================
 
 // Discover all events for given years from the Vault
-async function discoverEvents(years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]) {
+async function discoverEvents(years = (() => { const currentYear = new Date().getFullYear(); return Array.from({length: currentYear - 1995 + 2}, (_, i) => 1995 + i); })()) {
   const allEvents = [];
 
   for (const year of years) {
     console.log(`Discovering ${year} events...`);
-    const html = await fetchHTML(`${VAULT_BASE}/year/${year}/`);
+    const html = await fetchHTML(`${VAULT_BASE}/year/${year}/`, 3, 30000, vaultAgent);
     const $ = cheerio.load(html);
 
     $('a').each((_, el) => {
@@ -78,7 +80,7 @@ async function getEventClasses(eventName) {
   const encodedName = encodeURIComponent(eventName).replace(/%20/g, '+');
   const url = `${VAULT_BASE}/event/${encodedName}/`;
   console.log(`  Fetching event classes: ${eventName}`);
-  const html = await fetchHTML(url);
+  const html = await fetchHTML(url, 3, 30000, vaultAgent);
   const $ = cheerio.load(html);
 
   const classes = [];
@@ -221,7 +223,7 @@ const TOUR_LOCATION_CODES = [
 ];
 
 // Build list of expected SoloLive event codes by year (for probing)
-function generateExpectedEventCodes(years = [2021, 2022, 2023, 2024, 2025, 2026]) {
+function generateExpectedEventCodes(years = (() => { const currentYear = new Date().getFullYear(); return Array.from({length: currentYear - 2021 + 2}, (_, i) => 2021 + i); })()) {
   const codes = [];
 
   for (const year of years) {
@@ -347,91 +349,6 @@ async function parseSoloLivePaxIndex(eventCode, dayOrOverall = 'Overall') {
   return results;
 }
 
-// Parse SoloLive class results page (kept for potential future use)
-function parseSoloLiveClassResults(html, className, eventCode) {
-  const $ = cheerio.load(html);
-  const results = [];
-
-  const rows = $('table#tbl01 tr').toArray();
-  let i = 0;
-
-  // Skip header rows
-  while (i < rows.length) {
-    const cls = $(rows[i]).attr('class') || '';
-    if (cls.includes('w3-black') || cls.includes('w3-gray')) {
-      i++;
-      continue;
-    }
-    break;
-  }
-
-  // Process driver rows in groups of 3
-  while (i < rows.length - 2) {
-    const mainRow = $(rows[i]);
-    const infoRow = $(rows[i + 1]);
-    const timesRow = $(rows[i + 2]);
-
-    const cells = mainRow.find('td').toArray();
-    if (cells.length < 5) { i++; continue; }
-
-    const trophy = $(cells[0]).text().trim();
-    const position = parseInt($(cells[1]).text().trim()) || 0;
-    const carNumber = $(cells[2]).text().trim();
-    const name = $(cells[3]).text().trim();
-    const car = $(cells[4]) ? $(cells[4]).text().trim() : '';
-    const tire = cells[6] ? $(cells[6]).text().trim() : '';
-    const paxTime = cells[7] ? parseFloat($(cells[7]).text().trim()) : 0;
-
-    if (!name || position === 0) { i++; continue; }
-
-    const infoCells = infoRow.find('td').toArray();
-    const regionDiv = infoCells[0] ? $(infoCells[0]).text().trim() : '';
-    const cityState = infoCells[1] ? $(infoCells[1]).text().trim() : '';
-    const notes = infoCells[2] ? $(infoCells[2]).text().trim() : '';
-
-    // Extract run times
-    const timeCells = timesRow.find('td').toArray();
-    const runs = { course1: [], course2: [], total: '' };
-
-    for (let t = 0; t < timeCells.length; t++) {
-      const cell = $(timeCells[t]);
-      const text = cell.text().trim();
-      const cellClass = cell.attr('class') || '';
-
-      if (cellClass.includes('course1') && text) {
-        const isBest = cell.find('b').length > 0;
-        const isStrikethrough = cell.find('s').length > 0;
-        runs.course1.push(parseRunTime(text, isBest, isStrikethrough));
-      } else if (cellClass.includes('course2') && text) {
-        const isBest = cell.find('b').length > 0;
-        const isStrikethrough = cell.find('s').length > 0;
-        runs.course2.push(parseRunTime(text, isBest, isStrikethrough));
-      } else if (t === timeCells.length - 1 && text) {
-        runs.total = text;
-      }
-    }
-
-    results.push({
-      position,
-      trophy: trophy === 'T',
-      carNumber,
-      name,
-      car,
-      tire,
-      paxTime,
-      className,
-      region: regionDiv,
-      cityState,
-      notes,
-      runs,
-    });
-
-    i += 3;
-  }
-
-  return results;
-}
-
 // Parse a run time string like "45.553", "48.305(1)", or strikethrough
 function parseRunTime(text, isBest, isStrikethrough) {
   const match = text.match(/^(\d+\.\d+)(?:\((\d+)\))?$/);
@@ -478,7 +395,7 @@ async function scrapeEvent(eventName, eventType = 'tour', eventYear = null) {
     console.log(`  Scraping ${cls}...`);
 
     try {
-      const html = await fetchHTML(url);
+      const html = await fetchHTML(url, 3, 30000, vaultAgent);
       const results = parseVaultClassResults(html, cls);
       classResults[cls] = results;
       allResults.push(...results);
@@ -497,7 +414,7 @@ async function scrapeEvent(eventName, eventType = 'tour', eventYear = null) {
       const paxEncodedName = encodeURIComponent(eventName).replace(/%20/g, '+');
       const paxUrl = `${VAULT_BASE}/eventresults/${paxEncodedName}/type/pax/`;
       console.log(`  Scraping Vault PAX index...`);
-      const html = await fetchHTML(paxUrl);
+      const html = await fetchHTML(paxUrl, 3, 30000, vaultAgent);
       paxOverall = parseVaultPaxResults(html);
       console.log(`    ${paxOverall.length} PAX entries`);
     } catch (e) {
@@ -583,7 +500,7 @@ async function main() {
   const args = process.argv.slice(2);
 
   if (args[0] === 'discover') {
-    const years = args[1] ? args[1].split(',').map(Number) : [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
+    const years = args[1] ? args[1].split(',').map(Number) : (() => { const currentYear = new Date().getFullYear(); return Array.from({length: currentYear - 1995 + 2}, (_, i) => 1995 + i); })();
     const events = await discoverEvents(years);
     console.log(`\nFound ${events.length} events:`);
     events.forEach(e => console.log(`  ${e.name} (${e.type}, ${e.year})`));
@@ -646,7 +563,6 @@ export {
   discoverEvents,
   parseVaultClassResults,
   parseVaultPaxResults,
-  parseSoloLiveClassResults,
   parseSoloLivePaxIndex,
   parseRunTime,
   generateExpectedEventCodes,
