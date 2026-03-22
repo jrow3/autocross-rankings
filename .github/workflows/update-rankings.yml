@@ -27,11 +27,11 @@ jobs:
 
       - name: Discover events
         working-directory: scraper
-        run: node src/scrape-vault.js discover
+        run: node src/scraper.js discover
 
       - name: Scrape all events
         working-directory: scraper
-        run: node src/scrape-vault.js all
+        run: node src/scraper.js all
 
       - name: Build driver registry
         working-directory: scraper
