@@ -372,6 +372,8 @@ main {
   gap: 0.5rem;
   margin-top: 1.5rem;
   padding: 1rem;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .pagination button {
