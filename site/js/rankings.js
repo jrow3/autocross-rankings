@@ -62,12 +62,12 @@ async function renderRankings() {
             <th>Driver</th>
             <th class="sortable" data-sort="score">RATING Score ${renderSortIndicator('score')}</th>
             <th>Class</th>
-            <th class="hide-mobile">Trend</th>
-            <th class="hide-mobile">Consistency</th>
-            <th class="hide-mobile">Confidence</th>
-            <th class="hide-mobile">Region</th>
-            <th class="hide-mobile sortable" data-sort="nationalsWins">Jackets ${renderSortIndicator('nationalsWins')}</th>
-            <th class="hide-mobile sortable" data-sort="eventCount">Events ${renderSortIndicator('eventCount')}</th>
+            <th>Trend</th>
+            <th>Consistency</th>
+            <th>Confidence</th>
+            <th>Region</th>
+            <th class="sortable" data-sort="nationalsWins">Jackets ${renderSortIndicator('nationalsWins')}</th>
+            <th class="sortable" data-sort="eventCount">Events ${renderSortIndicator('eventCount')}</th>
           </tr>
         </thead>
         <tbody id="rankings-body"></tbody>
@@ -164,12 +164,12 @@ function renderPage(data) {
         <td><strong>${escapeHtml(d.displayName)}</strong></td>
         <td><span class="score">${formatScore(d.score)}</span></td>
         <td>${renderClassBadge(d.primaryClass)}</td>
-        <td class="hide-mobile">${renderTrend(d.trend)}</td>
-        <td class="hide-mobile">${renderConsistency(d.consistency)}</td>
-        <td class="hide-mobile">${renderConfidence(d.confidence)}</td>
-        <td class="hide-mobile">${escapeHtml(d.region || '')}</td>
-        <td class="hide-mobile">${d.nationalsWins ? `<span class="jacket-count">${d.nationalsWins}<svg viewBox="0 0 16 16" width="12" height="12"><path d="M6 1L4 2L1 4L2 10L4 9V15H12V9L14 10L15 4L12 2L10 1H6Z" fill="#dc2626"/><path d="M6 1L7 3L8 5L9 3L10 1" fill="none" stroke="#fff" stroke-width="0.8"/><path d="M4 9V15H12V9" fill="none" stroke="#b91c1c" stroke-width="0.5"/></svg></span>` : ''}</td>
-        <td class="hide-mobile">${d.eventCount}</td>
+        <td>${renderTrend(d.trend)}</td>
+        <td>${renderConsistency(d.consistency)}</td>
+        <td>${renderConfidence(d.confidence)}</td>
+        <td>${escapeHtml(d.region || '')}</td>
+        <td>${d.nationalsWins ? `<span class="jacket-count">${d.nationalsWins}<svg viewBox="0 0 16 16" width="12" height="12"><path d="M6 1L4 2L1 4L2 10L4 9V15H12V9L14 10L15 4L12 2L10 1H6Z" fill="#dc2626"/><path d="M6 1L7 3L8 5L9 3L10 1" fill="none" stroke="#fff" stroke-width="0.8"/><path d="M4 9V15H12V9" fill="none" stroke="#b91c1c" stroke-width="0.5"/></svg></span>` : ''}</td>
+        <td>${d.eventCount}</td>
       </tr>
     `).join('');
 

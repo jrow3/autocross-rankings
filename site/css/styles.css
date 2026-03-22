@@ -718,11 +718,9 @@ footer a { color: var(--accent); }
   .driver-nationals-count { margin-left: 0; }
   .driver-score { margin-left: 0; }
 
+  .table-scroll-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .rankings-table { font-size: 0.8rem; }
   .rankings-table th, .rankings-table td { padding: 0.4rem 0.5rem; }
-
-  /* Hide less important columns on mobile */
-  .hide-mobile { display: none; }
 }
 
 /* === Sortable Table Headers === */
