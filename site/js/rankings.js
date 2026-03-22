@@ -58,7 +58,7 @@ async function renderRankings() {
       <table class="rankings-table">
         <thead>
           <tr>
-            <th class="sortable" data-sort="rank">Rank ${renderSortIndicator('rank')}</th>
+            <th>Rank</th>
             <th>Driver</th>
             <th class="sortable" data-sort="score">RATING Score ${renderSortIndicator('score')}</th>
             <th>Class</th>
