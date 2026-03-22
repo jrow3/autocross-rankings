@@ -25,10 +25,11 @@ const OUTPUT_FILE = join(DATA_DIR, 'rankings.json');
 // 4. For each event day, create pairwise comparisons between all drivers
 // 5. Recursively weight wins/losses by opponent quality (iterative)
 // 6. Weight results by recency (plateau + slow decay model)
-// 7. Apply limited data penalty (smooth curve)
-// 8. Normalize to 0-100 percentile scale
-// 9. Compute per-year breakdowns using same pairwise engine
-// 10. Compute consistency, trend, data points, confidence
+// 7. Weight events by field strength (avg score of participants, recomputed per iteration)
+// 8. Apply limited data penalty (smooth curve)
+// 9. Normalize to 0-100 percentile scale
+// 10. Compute per-year breakdowns using same pairwise engine
+// 11. Compute consistency, trend, data points, confidence
 // ============================================================
 
 // --- Core algorithm constants ---
@@ -47,7 +48,6 @@ const MARGIN_SCALE = 15;
 const MARGIN_SOFTCAP = 3.0;
 
 // Pairwise scoring
-const NATIONALS_WEIGHT = 1.5;
 const LOSS_WEIGHT_FACTOR = 0.4;
 
 // Outlier pruning: PAX time ratio + MAD
@@ -324,21 +324,14 @@ function computeRankScoresForSubset(eventDays, options = {}) {
   }
 
   // Build lightweight event day summaries for on-the-fly comparison generation.
-  // Each summary stores sorted driver names, paxTimes, and the pre-computed base
-  // weight (recency * eventType * fieldNorm). Margin multipliers between each pair
-  // are also pre-computed since they depend only on paxTimes, not scores.
-  // This avoids storing ~19.5M comparison objects in memory.
+  // Each summary stores sorted driver names, paxTimes, and pre-computed margin
+  // multipliers. Field-strength weights are recomputed each iteration based on
+  // the current scores of participants, replacing the old flat nationals multiplier.
   const daySummaries = [];
   let totalComparisonsCount = 0;
 
   for (const day of eventDays) {
-    const eventTypeWeight = (day.eventType === 'nationals') ? NATIONALS_WEIGHT : 1.0;
     const recency = useRecencyDecay ? recencyWeight(day.eventDate, now) : 1.0;
-    const baseWeight = recency * eventTypeWeight;
-
-    const fieldSize = day.results.length;
-    const fieldNorm = 1 / Math.sqrt(fieldSize);
-    const weight = baseWeight * fieldNorm;
 
     const sorted = [...day.results].sort((a, b) => a.paxTime - b.paxTime);
     const drivers = sorted.map(r => r.driverName);
@@ -357,26 +350,52 @@ function computeRankScoresForSubset(eventDays, options = {}) {
 
     totalComparisonsCount += (n * (n - 1)) / 2;
 
-    daySummaries.push({ drivers, weight, margins, n });
+    const fieldNorm = 1 / Math.sqrt(n);
+    daySummaries.push({ drivers, recency, fieldNorm, margins, n });
   }
 
-  // Pre-compute total comparison weight per driver for normalization
-  // (depends only on weights and margins, not on scores — constant across iterations)
-  const driverTotalWeight = new Map();
-  for (const summary of daySummaries) {
-    const { drivers, weight, margins, n } = summary;
-    for (let i = 0; i < n; i++) {
-      for (let j = i + 1; j < n; j++) {
-        const w = weight * margins[i * n + j];
-        driverTotalWeight.set(drivers[i], (driverTotalWeight.get(drivers[i]) || 0) + w);
-        driverTotalWeight.set(drivers[j], (driverTotalWeight.get(drivers[j]) || 0) + w);
+  // Compute field-strength weight for each event day based on current scores.
+  // Uses the mean score of participants, normalized so the median event = 1.0.
+  function computeFieldStrengthWeights(currentScores) {
+    const rawStrengths = daySummaries.map(summary => {
+      let total = 0;
+      for (const d of summary.drivers) {
+        total += currentScores.get(d) || INITIAL_SCORE;
       }
-    }
+      return total / summary.drivers.length;
+    });
+
+    // Normalize: median field strength maps to 1.0
+    const sorted = [...rawStrengths].sort((a, b) => a - b);
+    const median = sorted[Math.floor(sorted.length / 2)] || INITIAL_SCORE;
+
+    return rawStrengths.map(s => s / median);
   }
 
   // Iterative convergence (recursive quality propagation)
-  // Re-walks event day summaries each iteration instead of iterating a stored array.
+  // Field-strength weights and per-driver normalization are recomputed each iteration
+  // since they depend on scores.
   for (let iter = 0; iter < MAX_ITERATIONS; iter++) {
+    const fieldWeights = computeFieldStrengthWeights(scores);
+
+    // Compute per-event combined weights and per-driver total weights for this iteration
+    const dayWeights = daySummaries.map((summary, idx) =>
+      summary.recency * fieldWeights[idx] * summary.fieldNorm
+    );
+
+    const driverTotalWeight = new Map();
+    for (let idx = 0; idx < daySummaries.length; idx++) {
+      const { drivers, margins, n } = daySummaries[idx];
+      const weight = dayWeights[idx];
+      for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+          const w = weight * margins[i * n + j];
+          driverTotalWeight.set(drivers[i], (driverTotalWeight.get(drivers[i]) || 0) + w);
+          driverTotalWeight.set(drivers[j], (driverTotalWeight.get(drivers[j]) || 0) + w);
+        }
+      }
+    }
+
     const newScores = new Map();
     const driverAccum = new Map();
 
@@ -384,8 +403,9 @@ function computeRankScoresForSubset(eventDays, options = {}) {
       driverAccum.set(driver, 0);
     }
 
-    for (const summary of daySummaries) {
-      const { drivers, weight, margins, n } = summary;
+    for (let idx = 0; idx < daySummaries.length; idx++) {
+      const { drivers, margins, n } = daySummaries[idx];
+      const weight = dayWeights[idx];
       for (let i = 0; i < n; i++) {
         for (let j = i + 1; j < n; j++) {
           const winnerName = drivers[i];

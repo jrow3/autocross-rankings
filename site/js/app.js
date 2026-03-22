@@ -121,14 +121,16 @@ function renderAbout() {
       old results would decay to essentially zero, losing valuable historical signal. The floor ensures legendary
       performances remain in the calculation, just at reduced influence.</p>
 
-      <h4>Event Type Weight</h4>
-      <ul>
-        <li><strong>Nationals:</strong> 1.5&times;</li>
-        <li><strong>Tours:</strong> 1.0&times;</li>
-      </ul>
-      <p><em>Why?</em> Solo Nationals is the pinnacle &mdash; highest concentration of elite drivers, most pressure,
-      most preparation. Beating someone at Nationals is a stronger signal of relative skill than beating them at a
-      regional Tour where the field is thinner.</p>
+      <h4>Field-Strength Weight</h4>
+      <p>Each event day is weighted by the average RATING score of its participants, normalized so the median
+      event equals 1.0. Events with stronger fields (more highly-rated drivers) carry more weight; weaker fields
+      carry less. This weight is recomputed each iteration as scores update.</p>
+      <p><em>Why not a flat multiplier for Nationals?</em> A fixed &ldquo;1.5&times; for Nationals&rdquo; is a
+      blunt instrument. It doesn&rsquo;t account for variation between events &mdash; a stacked National Tour
+      with top-20 drivers deserves more weight than a lightly-attended one. Field-strength weighting captures
+      this automatically: Nationals naturally gets higher weight because elite drivers attend, but so does any
+      Tour that attracts a strong field. It also avoids penalizing drivers who skip Nationals, since the weight
+      is per-event, not per-event-type.</p>
 
       <h4>Field-Size Normalization: 1/&radic;(fieldSize)</h4>
       <p><em>Why?</em> Without this, a 200-person event generates 19,900 pairwise comparisons while a 10-person
