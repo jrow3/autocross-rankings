@@ -239,8 +239,6 @@ main {
 .stats-bar .stat-value { color: var(--accent); font-weight: 600; }
 
 .table-scroll-container {
-  max-height: calc(100vh - 200px);
-  overflow-y: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }

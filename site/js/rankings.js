@@ -46,16 +46,6 @@ async function renderRankings() {
   app.innerHTML = `
     <div class="rankings-header">
       <h2>National Driver Rankings</h2>
-      <div class="filters">
-        <select class="filter-select" id="filter-class">
-          <option value="">All Classes</option>
-          ${classes.map(c => `<option value="${c}">${c}</option>`).join('')}
-        </select>
-        <select class="filter-select" id="filter-region">
-          <option value="">All Regions</option>
-          ${regions.map(r => `<option value="${r}">${escapeHtml(r)}</option>`).join('')}
-        </select>
-      </div>
     </div>
 
     <div class="stats-bar">
@@ -98,27 +88,8 @@ async function renderRankings() {
   // Wire up sortable column headers
   wireSortHeaders();
 
-  // Wire up filters
-  document.getElementById('filter-class').addEventListener('change', applyFilters);
-  document.getElementById('filter-region').addEventListener('change', applyFilters);
-
-  // Restore filter values from URL hash (takes priority) or saved JS state
-  const hashParams = getHashParams();
-  const hashClass = hashParams.get('class') || '';
-  const hashRegion = hashParams.get('region') || '';
-  savedClassFilter = hashClass || savedClassFilter;
-  savedRegionFilter = hashRegion || savedRegionFilter;
-
-  if (savedClassFilter) document.getElementById('filter-class').value = savedClassFilter;
-  if (savedRegionFilter) document.getElementById('filter-region').value = savedRegionFilter;
-
-  // Re-apply filters if any were saved
-  if (savedClassFilter || savedRegionFilter) {
-    applyFilters();
-  } else {
-    currentPage = 1;
-    applySortAndRender();
-  }
+  currentPage = 1;
+  applySortAndRender();
 }
 
 function applyFilters() {
