@@ -54,12 +54,12 @@ function renderAbout() {
     <div class="about-content">
       <h2>Disclaimer</h2>
       <p>
-        This is an unofficial, community-built project and is <strong>not affiliated with or endorsed by the SCCA</strong>.
+        This is an unofficial project and is <strong>not affiliated with or endorsed by the SCCA</strong>.
         The ratings produced here are the result of one algorithm's attempt at quantifying driver performance
         from publicly available competition results. They are not an official measure of driver skill, nor
         should they be treated as a definitive or authoritative ranking. Autocross performance depends on
-        countless factors - car setup, weather, tire condition, course design, seat time - that no
-        single number can fully capture. Take the scores as a fun, approximate lens on the data, not gospel.
+        countless factors that no single number can fully capture. Take these scores as a fun, approximation
+        on the data, nothing more.
       </p>
 
       <h2>What is RATING?</h2>
