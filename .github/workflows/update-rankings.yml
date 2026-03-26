@@ -15,6 +15,12 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   update:
@@ -58,17 +64,6 @@ jobs:
         working-directory: scraper
         run: node src/generate-output.js
 
-      - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: djrow3.com
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          local-dir: ./site/
-          server-dir: /djrow3.com/dump/autoxrating/
-          state-name: .ftp-deploy-sync-state.json
-          timeout: 60000
-
       - name: Commit updated data
         run: |
           git config user.name "GitHub Actions"
@@ -76,3 +71,12 @@ jobs:
           git add scraper/data/ site/data/ site/.ftp-deploy-sync-state.json 2>/dev/null || true
           git diff --staged --quiet || git commit -m "Update rankings data $(date +%Y-%m-%d)"
           git push
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
