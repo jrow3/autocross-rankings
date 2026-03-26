@@ -77,9 +77,10 @@ function renderAbout() {
       <h2>Deep Dive into How the RATING is Calculated</h2>
 
       <h3>Step 1: Scrape &amp; Build Event Days</h3>
-      <p>The algorithm scrapes results from all SCCA national events and builds "event days" - one entry per event
+      <p>The algorithm scrapes results from all SCCA National Tours and Nationals events and builds "event days" - one entry per event
       per context (overall PAX index + per-class). Each event day contains a list of drivers with their
       PAX-normalized times.</p>
+      <p><em>Why not ProSolo's?</em> The data for ProSolo's is very tricky to extract. Hopefully that will be added in the future.</p>
       <p><em>Why PAX indexing?</em> Autocross classes run different cars. A raw time from a Modified car
       isn't comparable to a Stock car. PAX factors level the playing field so a 60-second run in one
       class can be compared to a 70-second run in another. Both the overall PAX index (all drivers at an
