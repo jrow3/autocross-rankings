@@ -2,26 +2,26 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #f5f6fa;
-  --bg-card: #ffffff;
-  --bg-hover: #eef0f6;
-  --border: #d8dbe5;
-  --text: #1a1d27;
-  --text-dim: #6b7085;
-  --accent: #2563eb;
-  --accent-hover: #1d4ed8;
+  --bg: #0a0a0a;
+  --bg-card: #141414;
+  --bg-hover: #1e1e1e;
+  --border: #2a2a2a;
+  --text: #e0e0e0;
+  --text-dim: #888;
+  --accent: #ff6b35;
+  --accent-hover: #ff8c5a;
   --green: #16a34a;
   --red: #dc2626;
   --yellow: #ca8a04;
   --orange: #ea580c;
   --trophy: #ca8a04;
   --rank-top: #ca8a04;
-  --rank-high: #2563eb;
-  --rank-mid: #6b7085;
-  --font: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  --rank-high: #ff6b35;
+  --rank-mid: #888;
+  --font: 'JetBrains Mono', monospace;
+  --mono: 'JetBrains Mono', monospace;
   --radius: 8px;
-  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 html { font-size: 15px; }
@@ -31,6 +31,16 @@ body {
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, #ffffff06 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: -1;
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -49,9 +59,20 @@ header {
   gap: 2rem;
 }
 
+.site-home {
+  font-size: 0.7rem;
+  color: #555;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: color 0.2s;
+}
+
+.site-home:hover { color: var(--text); }
+.site-home .dot { color: var(--accent); }
+
 .header-content h1 {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: -0.02em;
 }
 
@@ -89,6 +110,7 @@ nav {
 /* === Search === */
 .search-container {
   margin-left: auto;
+  margin-right: calc((100vw - 1200px) / 2 - 2rem);
   position: relative;
 }
 
@@ -148,9 +170,9 @@ nav {
   align-items: center;
   gap: 1rem;
   padding: 0.7rem 1.5rem;
-  background: #fef2f2;
-  border-bottom: 2px solid #fca5a5;
-  color: #991b1b;
+  background: #1a0a0a;
+  border-bottom: 2px solid #dc2626;
+  color: #fca5a5;
   font-size: 0.9rem;
   position: sticky;
   top: 0;
@@ -182,7 +204,7 @@ nav {
   line-height: 1;
 }
 
-.error-banner-dismiss:hover { color: #450a0a; }
+.error-banner-dismiss:hover { color: #fca5a5; }
 
 /* === Main === */
 main {
@@ -239,14 +261,14 @@ main {
 .stats-bar .stat-value { color: var(--accent); font-weight: 600; }
 
 .table-scroll-container {
-  border: 1px solid var(--border);
+  border: none;
   border-radius: var(--radius);
 }
 
 .rankings-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
 }
 
 .rankings-table th {
@@ -599,7 +621,10 @@ main {
   transition: background 0.2s;
 }
 
-.event-card:hover { background: var(--bg-hover); }
+.event-card:hover {
+  background: var(--bg-hover);
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.06);
+}
 
 .event-card h3 { font-size: 1rem; margin-bottom: 0.3rem; }
 .event-card .dates { color: var(--text-dim); font-size: 0.85rem; }
@@ -624,8 +649,8 @@ main {
   margin-left: 0.5rem;
 }
 
-.event-type-tour { background: #dbeafe; color: #1d4ed8; }
-.event-type-nationals { background: #fef3c7; color: #92400e; }
+.event-type-tour { background: rgba(255, 107, 53, 0.15); color: #ff8c5a; }
+.event-type-nationals { background: rgba(202, 138, 4, 0.15); color: #ca8a04; }
 
 /* === About Page === */
 .about-content {
@@ -636,7 +661,11 @@ main {
 .about-content h3 { margin-top: 2rem; margin-bottom: 0.5rem; color: var(--accent); font-size: 1.1rem; }
 .about-content h4 { margin-top: 1.25rem; margin-bottom: 0.4rem; font-size: 1rem; }
 .about-content p { margin-bottom: 1rem; color: var(--text-dim); line-height: 1.6; }
-.about-content em { color: var(--text-dim); font-style: italic; opacity: 0.85; }
+.about-content em {
+  color: var(--text);
+  font-style: normal;
+  font-weight: 500;
+}
 .about-content code { background: rgba(255,255,255,0.06); padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
 .about-content ul, .about-content ol { margin-left: 1.5rem; margin-bottom: 1rem; color: var(--text-dim); }
 .about-content li { margin-bottom: 0.3rem; line-height: 1.5; }

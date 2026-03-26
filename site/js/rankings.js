@@ -45,7 +45,7 @@ async function renderRankings() {
 
   app.innerHTML = `
     <div class="rankings-header">
-      <h2>National Driver Rankings</h2>
+      <h2>National Driver Ratings</h2>
       <div class="filters">
         <select class="filter-select" id="filter-class">
           <option value="">All Classes</option>

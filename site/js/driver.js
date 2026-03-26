@@ -221,12 +221,12 @@ async function renderScoreChart(driver) {
       datasets: [{
         label: 'Performance %',
         data: positions,
-        borderColor: '#2563eb',
-        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+        borderColor: '#ff6b35',
+        backgroundColor: 'rgba(255, 107, 53, 0.1)',
         fill: true,
         tension: 0.3,
         pointRadius: 4,
-        pointBackgroundColor: '#2563eb',
+        pointBackgroundColor: '#ff6b35',
       }],
     },
     options: {
@@ -249,13 +249,13 @@ async function renderScoreChart(driver) {
       scales: {
         y: {
           min: 0, max: 100,
-          title: { display: true, text: 'Percentile', color: '#6b7085' },
-          grid: { color: '#d8dbe5' },
-          ticks: { color: '#6b7085' },
+          title: { display: true, text: 'Percentile', color: '#888' },
+          grid: { color: '#2a2a2a' },
+          ticks: { color: '#888' },
         },
         x: {
-          grid: { color: '#d8dbe5' },
-          ticks: { color: '#6b7085', maxRotation: 45 },
+          grid: { color: '#2a2a2a' },
+          ticks: { color: '#888', maxRotation: 45 },
         },
       },
     },
@@ -559,11 +559,11 @@ async function renderCompareChart(d1, d2) {
         {
           label: d1.displayName,
           data: allYears.map(y => ys1[y] ?? null),
-          borderColor: '#2563eb',
-          backgroundColor: 'rgba(37, 99, 235, 0.1)',
+          borderColor: '#ff6b35',
+          backgroundColor: 'rgba(255, 107, 53, 0.1)',
           tension: 0.3,
           pointRadius: 5,
-          pointBackgroundColor: '#2563eb',
+          pointBackgroundColor: '#ff6b35',
           spanGaps: true,
         },
         {
@@ -584,19 +584,19 @@ async function renderCompareChart(d1, d2) {
       plugins: {
         legend: {
           display: true,
-          labels: { color: '#6b7085' },
+          labels: { color: '#888' },
         },
       },
       scales: {
         y: {
           min: 0, max: 100,
-          title: { display: true, text: 'RATING Score', color: '#6b7085' },
-          grid: { color: '#d8dbe5' },
-          ticks: { color: '#6b7085' },
+          title: { display: true, text: 'RATING Score', color: '#888' },
+          grid: { color: '#2a2a2a' },
+          ticks: { color: '#888' },
         },
         x: {
-          grid: { color: '#d8dbe5' },
-          ticks: { color: '#6b7085' },
+          grid: { color: '#2a2a2a' },
+          ticks: { color: '#888' },
         },
       },
     },
