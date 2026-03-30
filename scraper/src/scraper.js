@@ -51,7 +51,13 @@ async function discoverEvents(years = (() => { const currentYear = new Date().ge
 
   for (const year of years) {
     console.log(`Discovering ${year} events...`);
-    const html = await fetchHTML(`${VAULT_BASE}/year/${year}/`, 3, 30000, vaultAgent);
+    let html;
+    try {
+      html = await fetchHTML(`${VAULT_BASE}/year/${year}/`, 3, 30000, vaultAgent);
+    } catch (e) {
+      console.log(`  No data for ${year} (${e.message}), skipping`);
+      continue;
+    }
     const $ = cheerio.load(html);
 
     $('a').each((_, el) => {
