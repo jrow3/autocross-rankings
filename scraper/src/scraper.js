@@ -19,6 +19,13 @@ function ensureDir(dir) {
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
 }
 
+// Normalize event name to Title-Case for consistent event codes.
+// The Vault sometimes changes casing between scrapes (e.g., "red hills" vs "Red Hills"),
+// which on case-sensitive filesystems (Linux CI) creates duplicate files.
+function normalizeEventName(name) {
+  return name.replace(/\b\w/g, c => c.toUpperCase());
+}
+
 // ---------------------------------------------------------------------------
 // Shared fetch with retry
 // ---------------------------------------------------------------------------
@@ -471,7 +478,7 @@ async function scrapeEvent(eventName, eventType = 'tour', eventYear = null) {
   }
 
   // --- Build output ---
-  const eventCode = eventName.replace(/[^a-zA-Z0-9]/g, '-').replace(/-+/g, '-');
+  const eventCode = normalizeEventName(eventName).replace(/[^a-zA-Z0-9]/g, '-').replace(/-+/g, '-');
 
   const paxIndex = { overall: paxOverall };
   if (paxDay1.length) paxIndex.day1 = paxDay1;
@@ -479,12 +486,12 @@ async function scrapeEvent(eventName, eventType = 'tour', eventYear = null) {
 
   const eventData = {
     eventCode,
-    eventName,
+    eventName: normalizeEventName(eventName),
     eventDates,
     eventType,
     source: 'vault.autocrossdigits.com',
     scrapedAt: new Date().toISOString(),
-    totalDrivers: allResults.length,
+    totalDrivers: allResults.length || paxOverall.length,
     classes: Object.keys(classResults),
     classResults,
     paxIndex,
@@ -533,7 +540,7 @@ async function main() {
 
     let scraped = 0, skipped = 0, failed = 0;
     for (const event of events) {
-      const eventCode = event.name.replace(/[^a-zA-Z0-9]/g, '-').replace(/-+/g, '-');
+      const eventCode = normalizeEventName(event.name).replace(/[^a-zA-Z0-9]/g, '-').replace(/-+/g, '-');
       const outFile = join(DATA_DIR, `${eventCode}.json`);
       if (existsSync(outFile)) {
         console.log(`Skipping ${event.name} (already scraped)`);
