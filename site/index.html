@@ -8,9 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=14">
 </head>
 <body>
+  <script>
+    // Apply saved theme immediately to prevent flash
+    (function() {
+      var t = localStorage.getItem('theme') || 'dark';
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    })();
+  </script>
   <header>
     <a href="https://autox.tools" class="site-home" title="autox.tools">autox<span class="dot">.</span>tools</a>
     <div class="header-content">
@@ -25,6 +32,7 @@
         <input type="text" id="global-search" placeholder="Search drivers..." autocomplete="off">
         <div id="search-results" class="search-dropdown"></div>
       </div>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode">☀️</button>
     </nav>
   </header>
 
@@ -38,11 +46,11 @@
     <p id="last-updated"></p>
   </footer>
 
-  <script src="js/utils.js?v=11"></script>
-  <script src="js/search.js?v=11"></script>
-  <script src="js/rankings.js?v=11"></script>
-  <script src="js/driver.js?v=11"></script>
-  <script src="js/event.js?v=11"></script>
-  <script src="js/app.js?v=12"></script>
+  <script src="js/utils.js?v=14"></script>
+  <script src="js/search.js?v=14"></script>
+  <script src="js/rankings.js?v=14"></script>
+  <script src="js/driver.js?v=14"></script>
+  <script src="js/event.js?v=14"></script>
+  <script src="js/app.js?v=14"></script>
 </body>
 </html>

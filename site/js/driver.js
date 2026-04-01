@@ -1,5 +1,10 @@
 // === Driver Profile View ===
 
+// Read current CSS variable values (theme-aware)
+function getCSSVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
 let scoreChart = null;
 
 async function loadChartJs() {
@@ -221,12 +226,12 @@ async function renderScoreChart(driver) {
       datasets: [{
         label: 'Performance %',
         data: positions,
-        borderColor: '#ff6b35',
-        backgroundColor: 'rgba(255, 107, 53, 0.1)',
+        borderColor: getCSSVar('--accent'),
+        backgroundColor: getCSSVar('--accent') + '1a',
         fill: true,
         tension: 0.3,
         pointRadius: 4,
-        pointBackgroundColor: '#ff6b35',
+        pointBackgroundColor: getCSSVar('--accent'),
       }],
     },
     options: {
@@ -249,13 +254,13 @@ async function renderScoreChart(driver) {
       scales: {
         y: {
           min: 0, max: 100,
-          title: { display: true, text: 'Percentile', color: '#888' },
-          grid: { color: '#2a2a2a' },
-          ticks: { color: '#888' },
+          title: { display: true, text: 'Percentile', color: getCSSVar('--text-dim') },
+          grid: { color: getCSSVar('--chart-grid') },
+          ticks: { color: getCSSVar('--text-dim') },
         },
         x: {
-          grid: { color: '#2a2a2a' },
-          ticks: { color: '#888', maxRotation: 45 },
+          grid: { color: getCSSVar('--chart-grid') },
+          ticks: { color: getCSSVar('--text-dim'), maxRotation: 45 },
         },
       },
     },
@@ -559,21 +564,21 @@ async function renderCompareChart(d1, d2) {
         {
           label: d1.displayName,
           data: allYears.map(y => ys1[y] ?? null),
-          borderColor: '#ff6b35',
-          backgroundColor: 'rgba(255, 107, 53, 0.1)',
+          borderColor: getCSSVar('--accent'),
+          backgroundColor: getCSSVar('--accent') + '1a',
           tension: 0.3,
           pointRadius: 5,
-          pointBackgroundColor: '#ff6b35',
+          pointBackgroundColor: getCSSVar('--accent'),
           spanGaps: true,
         },
         {
           label: d2.displayName,
           data: allYears.map(y => ys2[y] ?? null),
-          borderColor: '#dc2626',
-          backgroundColor: 'rgba(220, 38, 38, 0.1)',
+          borderColor: getCSSVar('--red'),
+          backgroundColor: getCSSVar('--red') + '1a',
           tension: 0.3,
           pointRadius: 5,
-          pointBackgroundColor: '#dc2626',
+          pointBackgroundColor: getCSSVar('--red'),
           spanGaps: true,
         },
       ],
@@ -584,19 +589,19 @@ async function renderCompareChart(d1, d2) {
       plugins: {
         legend: {
           display: true,
-          labels: { color: '#888' },
+          labels: { color: getCSSVar('--text-dim') },
         },
       },
       scales: {
         y: {
           min: 0, max: 100,
-          title: { display: true, text: 'RATING Score', color: '#888' },
-          grid: { color: '#2a2a2a' },
-          ticks: { color: '#888' },
+          title: { display: true, text: 'RATING Score', color: getCSSVar('--text-dim') },
+          grid: { color: getCSSVar('--chart-grid') },
+          ticks: { color: getCSSVar('--text-dim') },
         },
         x: {
-          grid: { color: '#2a2a2a' },
-          ticks: { color: '#888' },
+          grid: { color: getCSSVar('--chart-grid') },
+          ticks: { color: getCSSVar('--text-dim') },
         },
       },
     },

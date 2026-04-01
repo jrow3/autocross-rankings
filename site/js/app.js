@@ -272,6 +272,155 @@ function renderAbout() {
       <h2>Data Sources</h2>
       <p>Results are scraped from the official SCCA Pronto Timing System used at all national events,
       including National Tours and Solo Nationals. Data goes back to 1995.</p>
+
+      <details class="math-nerds">
+      <summary><h2 style="display:inline">For the Math Nerds</h2></summary>
+      <p>Every formula used in the algorithm, with exact constants.</p>
+
+      <h3>Recency Weight</h3>
+      <div class="formula">
+        <code>w<sub>recency</sub>(t) = </code>
+        <table class="piecewise">
+          <tr><td><code>1.0</code></td><td>if <code>t &le; 3</code> years</td></tr>
+          <tr><td><code>max(0.15, &nbsp;0.5<sup>(t &minus; 3) / 5</sup>)</code></td><td>if <code>t &gt; 3</code> years</td></tr>
+        </table>
+      </div>
+      <p>3-year plateau at full strength, then exponential decay with a 5-year half-life, floored at 15%.</p>
+
+      <h3>Individual Outlier Pruning (MAD)</h3>
+      <div class="formula">
+        <code>timeRatio<sub>i</sub> = paxTime<sub>i</sub> / bestPaxTime</code><br><br>
+        <code>MAD = median(|timeRatio<sub>i</sub> &minus; median(timeRatio)|)</code><br><br>
+        <code>modifiedZ<sub>i</sub> = (timeRatio<sub>i</sub> &minus; median) / (MAD &times; 1.4826)</code><br><br>
+        Prune result if <code>modifiedZ<sub>i</sub> &gt; 2.0</code>
+      </div>
+      <p>The 1.4826 scaling factor makes MAD comparable to standard deviation for normally distributed data. Using MAD instead of stddev prevents the outliers themselves from inflating the deviation measure.</p>
+
+      <h3>Event Day Outlier Pruning</h3>
+      <div class="formula">
+        For each event day, compute:<br><br>
+        <code>deviation<sub>day</sub> = mean(normPos<sub>i</sub> &minus; avgNormPos<sub>i</sub>)</code><br><br>
+        where <code>normPos<sub>i</sub> = position / fieldSize</code> and <code>avgNormPos<sub>i</sub></code> is driver <em>i</em>'s career average.<br><br>
+        <code>z<sub>day</sub> = (deviation<sub>day</sub> &minus; &mu;<sub>dev</sub>) / &sigma;<sub>dev</sub></code><br><br>
+        Prune entire day if <code>z<sub>day</sub> &gt; 1.5</code>
+      </div>
+
+      <h3>Time Margin Multiplier</h3>
+      <div class="formula">
+        <code>m = 1 + (3.0 &minus; 1) &times; tanh(ln(t<sub>loser</sub> / t<sub>winner</sub>) &times; 15)</code>
+      </div>
+      <p>Log-ratio for scale invariance, tanh for smooth soft-cap at 3.0&times;. A 2% gap gives ~1.5&times;, a 5% gap gives ~2.5&times;, and it asymptotes to 3.0&times;.</p>
+
+      <h3>Field-Size Normalization</h3>
+      <div class="formula">
+        <code>w<sub>fieldSize</sub> = 1 / &radic;n</code>
+      </div>
+      <p>Total credit for winning a field of <em>n</em> drivers scales as <code>&radic;n</code> (comparisons &times; weight = <em>n</em> &times; 1/&radic;<em>n</em>), giving sublinear growth.</p>
+
+      <h3>Field-Strength Weight</h3>
+      <div class="formula">
+        <code>strength<sub>day</sub> = mean(score<sub>i</sub>)</code> for all drivers <em>i</em> in event day<br><br>
+        <code>w<sub>field</sub> = strength<sub>day</sub> / median(strength<sub>all days</sub>)</code>
+      </div>
+      <p>Normalized so the median event = 1.0. Recomputed each iteration as scores update.</p>
+
+      <h3>Combined Comparison Weight</h3>
+      <div class="formula">
+        <code>w = w<sub>recency</sub> &times; w<sub>field</sub> &times; w<sub>fieldSize</sub></code>
+      </div>
+
+      <h3>Iterative Pairwise Scoring</h3>
+      <div class="formula">
+        For each comparison (winner beats loser):<br><br>
+        <code>&Delta;<sub>winner</sub> = (score<sub>loser</sub> / 1000) &times; w &times; m</code><br><br>
+        <code>&Delta;<sub>loser</sub> = &minus;(score<sub>winner</sub> / 1000) &times; w &times; 0.4 &times; m</code><br><br>
+        Per-driver normalized score:<br><br>
+        <code>score<sub>new</sub> = (&Sigma;&Delta; / &Sigma;w<sub>total</sub>) &times; 1000 + 1000</code><br><br>
+        Then rescale all scores to [100, 2100]:<br><br>
+        <code>score<sub>scaled</sub> = ((score &minus; min) / (max &minus; min)) &times; 2000 + 100</code><br><br>
+        Repeat until <code>max(|score<sub>new</sub> &minus; score<sub>old</sub>|) &lt; 0.001</code> or 100 iterations.
+      </div>
+
+      <h3>Limited Data Penalty</h3>
+      <div class="formula">
+        <code>score<sub>penalized</sub> = score &times; (1 &minus; 0.25 &times; (1 &minus; events / 10)&sup2;)</code><br><br>
+        Only applied when <code>events &lt; 10</code>.
+      </div>
+      <table class="formula-table">
+        <tr><th>Events</th><th>Penalty</th></tr>
+        <tr><td>1</td><td>~20%</td></tr>
+        <tr><td>3</td><td>~12%</td></tr>
+        <tr><td>5</td><td>~6%</td></tr>
+        <tr><td>8</td><td>~1%</td></tr>
+        <tr><td>10+</td><td>0%</td></tr>
+      </table>
+
+      <h3>Probit Normalization (Final 0&ndash;100 Score)</h3>
+      <div class="formula">
+        <strong>Step 1:</strong> Percentile rank<br>
+        <code>p<sub>i</sub> = (n &minus; 1 &minus; rank<sub>i</sub>) / n</code> &nbsp; clamped to [0.0001, 0.9999]<br><br>
+
+        <strong>Step 2:</strong> Probit (inverse normal CDF, Abramowitz &amp; Stegun approximation)<br>
+        <code>t = &radic;(&minus;2 ln(1 &minus; p))</code><br>
+        <code>z = t &minus; (2.515517 + 0.802853t + 0.010328t&sup2;) / (1 + 1.432788t + 0.189269t&sup2; + 0.001308t&sup3;)</code><br><br>
+
+        <strong>Step 3:</strong> Flatten (platykurtic transform)<br>
+        <code>z<sub>flat</sub> = sign(z) &times; |z|<sup>0.85</sup></code><br><br>
+
+        <strong>Step 4:</strong> Scale to 0&ndash;100<br>
+        <code>RATING = round((z<sub>flat</sub> &minus; z<sub>min</sub>) / (z<sub>max</sub> &minus; z<sub>min</sub>) &times; 100)</code>
+      </div>
+
+      <h3>Consistency (1&ndash;5 bars)</h3>
+      <div class="formula">
+        <code>IQR = Q3 &minus; Q1</code> of normalized positions (last 3 years, trimmed 10%, deduped by event)<br><br>
+        <table class="formula-table">
+          <tr><th>IQR</th><th>Rating</th></tr>
+          <tr><td>&lt; 0.05</td><td>5 bars</td></tr>
+          <tr><td>&lt; 0.12</td><td>4 bars</td></tr>
+          <tr><td>&lt; 0.22</td><td>3 bars</td></tr>
+          <tr><td>&lt; 0.35</td><td>2 bars</td></tr>
+          <tr><td>&ge; 0.35</td><td>1 bar</td></tr>
+        </table>
+      </div>
+
+      <h3>Trend (Linear Regression)</h3>
+      <div class="formula">
+        <code>slope = &Sigma;(x<sub>i</sub> &minus; x&#772;)(y<sub>i</sub> &minus; y&#772;) / &Sigma;(x<sub>i</sub> &minus; x&#772;)&sup2;</code><br><br>
+        where <code>x<sub>i</sub></code> = event index, <code>y<sub>i</sub></code> = 1 &minus; normalizedPosition<br><br>
+        <table class="formula-table">
+          <tr><th>Slope</th><th>Trend</th></tr>
+          <tr><td>&gt; 0.05</td><td>&uarr;&uarr;&uarr; Strong improvement</td></tr>
+          <tr><td>&gt; 0.02</td><td>&uarr; Moderate improvement</td></tr>
+          <tr><td>&minus;0.02 to 0.02</td><td>&ndash; Steady</td></tr>
+          <tr><td>&lt; &minus;0.02</td><td>&darr; Moderate decline</td></tr>
+          <tr><td>&lt; &minus;0.05</td><td>&darr;&darr; Strong decline</td></tr>
+        </table>
+        Absent (X) if no events in 1+ year.
+      </div>
+
+      <h3>Confidence (1&ndash;5 bars)</h3>
+      <div class="formula">
+        <code>C = 0.35 &times; min(events/12, 1) + 0.30 &times; min(competitors/800, 1) + 0.20 &times; R + 0.15 &times; consistency/5</code><br><br>
+        where recency factor <code>R</code>:<br>
+        <table class="formula-table">
+          <tr><th>Years since last event</th><th>R</th></tr>
+          <tr><td>&le; 2</td><td>1.0</td></tr>
+          <tr><td>&le; 5</td><td>0.7</td></tr>
+          <tr><td>&le; 8</td><td>0.4</td></tr>
+          <tr><td>&gt; 8</td><td>0.2</td></tr>
+        </table>
+        <br>
+        <table class="formula-table">
+          <tr><th>C</th><th>Rating</th></tr>
+          <tr><td>&ge; 0.80</td><td>5 bars</td></tr>
+          <tr><td>&ge; 0.60</td><td>4 bars</td></tr>
+          <tr><td>&ge; 0.40</td><td>3 bars</td></tr>
+          <tr><td>&ge; 0.25</td><td>2 bars</td></tr>
+          <tr><td>&lt; 0.25</td><td>1 bar</td></tr>
+        </table>
+      </div>
+      </details>
     </div>
   `;
 }
@@ -287,10 +436,37 @@ async function loadMeta() {
   } catch (e) { /* no meta */ }
 }
 
+// === Theme Toggle ===
+function initThemeToggle() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  function updateIcon() {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    btn.textContent = isLight ? '🌙' : '☀️';
+    btn.title = isLight ? 'Switch to dark mode' : 'Switch to light mode';
+  }
+
+  updateIcon();
+
+  btn.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+    }
+    updateIcon();
+  });
+}
+
 // Init
 window.addEventListener('hashchange', route);
 window.addEventListener('DOMContentLoaded', () => {
   initSearch();
+  initThemeToggle();
   loadMeta();
   route();
 });
