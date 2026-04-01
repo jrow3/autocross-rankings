@@ -12,21 +12,24 @@ async function renderEvents() {
     return;
   }
 
+  // Parse start date from eventDates string like "March 21, 2025 - March 23, 2025 in Moultrie, GA"
+  const parseStartDate = (e) => {
+    const m = (e.eventDates || '').match(/^([A-Za-z]+ \d{1,2},? \d{4})/);
+    return m ? new Date(m[1]) : new Date(0);
+  };
+
   const events = (meta.events || []).sort((a, b) => {
-    // Parse year from event dates or code
-    const getYear = (e) => {
-      const match = (e.eventDates || e.eventCode || '').match(/(\d{4})/);
-      return match ? parseInt(match[1]) : 0;
-    };
-    const yearA = getYear(a);
-    const yearB = getYear(b);
+    const dateA = parseStartDate(a);
+    const dateB = parseStartDate(b);
+    const yearA = dateA.getFullYear();
+    const yearB = dateB.getFullYear();
     // Sort by year descending
     if (yearB !== yearA) return yearB - yearA;
     // Within same year, nationals first
     if (a.eventType === 'nationals' && b.eventType !== 'nationals') return -1;
     if (b.eventType === 'nationals' && a.eventType !== 'nationals') return 1;
-    // Then by date descending
-    return (b.eventDates || '').localeCompare(a.eventDates || '');
+    // Then by date descending (most recent tour first)
+    return dateB - dateA;
   });
 
   // Group by year
