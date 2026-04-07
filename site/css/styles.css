@@ -896,9 +896,11 @@ footer a { color: var(--accent); }
 
   /* Driver profile */
   .driver-profile { grid-template-columns: 1fr; }
+  .driver-profile > * { min-width: 0; }
   .driver-header { flex-direction: column; text-align: center; gap: 1rem; }
   .driver-nationals-count { margin-left: 0; }
   .driver-score { margin-left: 0; }
+  .history-table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
   /* Events grid */
   .events-grid { grid-template-columns: 1fr; }
