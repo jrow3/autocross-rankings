@@ -879,7 +879,7 @@ footer a { color: var(--accent); }
   main { padding: 0.8rem; }
 
   /* Rankings table: hide non-essential columns */
-  .col-rank, .col-class, .col-trend, .col-consistency, .col-events, .col-region, .col-jackets { display: none; }
+  .col-class, .col-trend, .col-consistency, .col-confidence, .col-events, .col-region, .col-jackets { display: none; }
 
   .table-scroll-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .rankings-table { font-size: 0.85rem; }

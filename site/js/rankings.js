@@ -74,7 +74,7 @@ async function renderRankings() {
             <th class="col-class">Class</th>
             <th class="col-trend">Trend</th>
             <th class="col-consistency">Consistency</th>
-            <th>Confidence</th>
+            <th class="col-confidence">Confidence</th>
             <th class="col-region">Region</th>
             <th class="sortable col-jackets" data-sort="nationalsWins">Jackets ${renderSortIndicator('nationalsWins')}</th>
             <th class="sortable col-events" data-sort="eventCount">Events ${renderSortIndicator('eventCount')}</th>
@@ -195,7 +195,7 @@ function renderPage(data) {
         <td class="col-class">${renderClassBadge(d.primaryClass)}</td>
         <td class="col-trend">${renderTrend(d.trend)}</td>
         <td class="col-consistency">${renderConsistency(d.consistency)}</td>
-        <td>${renderConfidence(d.confidence)}</td>
+        <td class="col-confidence">${renderConfidence(d.confidence)}</td>
         <td class="col-region">${escapeHtml(d.region || '')}</td>
         <td class="col-jackets">${d.nationalsWins ? `<span class="jacket-count">${d.nationalsWins}<svg viewBox="0 0 16 16" width="12" height="12"><path d="M6 1L4 2L1 4L2 10L4 9V15H12V9L14 10L15 4L12 2L10 1H6Z" fill="#dc2626"/><path d="M6 1L7 3L8 5L9 3L10 1" fill="none" stroke="#fff" stroke-width="0.8"/><path d="M4 9V15H12V9" fill="none" stroke="#b91c1c" stroke-width="0.5"/></svg></span>` : ''}</td>
         <td class="col-events">${d.eventCount}</td>
