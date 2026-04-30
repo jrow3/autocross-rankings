@@ -12,6 +12,56 @@ function ensureDir(dir) {
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
 }
 
+// Regional scoring: tiered points / sqrt(driverCount), normalized to 0-100
+const REGION_TIERS = [
+  { min: 90, points: 5 },
+  { min: 80, points: 3 },
+  { min: 70, points: 1 },
+];
+const MIN_REGION_DRIVERS = 25;
+
+function computeRegionalRankings(rankings) {
+  const regionDrivers = new Map();
+
+  for (const driver of rankings) {
+    const region = driver.region;
+    if (!region) continue;
+    if (!regionDrivers.has(region)) regionDrivers.set(region, []);
+    regionDrivers.get(region).push(driver.score);
+  }
+
+  const regionScores = [];
+  for (const [region, scores] of regionDrivers) {
+    if (scores.length < MIN_REGION_DRIVERS) continue;
+
+    let points = 0;
+    for (const score of scores) {
+      for (const tier of REGION_TIERS) {
+        if (score >= tier.min) {
+          points += tier.points;
+          break;
+        }
+      }
+    }
+
+    const rawScore = points / Math.sqrt(scores.length);
+    regionScores.push({ region, rawScore, driverCount: scores.length });
+  }
+
+  // Normalize to 0-100 (top region = 100)
+  const maxRaw = Math.max(...regionScores.map(r => r.rawScore));
+  const results = regionScores
+    .map(r => ({
+      region: r.region,
+      score: Math.round((r.rawScore / maxRaw) * 100),
+      driverCount: r.driverCount,
+    }))
+    .sort((a, b) => b.score - a.score || a.region.localeCompare(b.region))
+    .map((r, i) => ({ rank: i + 1, ...r }));
+
+  return results;
+}
+
 // Generate all output JSON files for the static frontend
 async function generateOutput() {
   console.log('=== Generating frontend data ===\n');
@@ -90,6 +140,11 @@ async function generateOutput() {
   const slimRankings = rankings.map(({ yearScores, allClasses, ...rest }) => rest);
   writeFileSync(join(SITE_DATA_DIR, 'rankings.json'), JSON.stringify(slimRankings));
   console.log(`Wrote rankings.json (${rankings.length} drivers)`);
+
+  // Generate regional rankings
+  const regionalRankings = computeRegionalRankings(slimRankings);
+  writeFileSync(join(SITE_DATA_DIR, 'regions.json'), JSON.stringify(regionalRankings));
+  console.log(`Wrote regions.json (${regionalRankings.length} regions)`);
 
   // Write lightweight search index (~200KB vs full rankings)
   const searchIndex = rankings.map(d => ({
