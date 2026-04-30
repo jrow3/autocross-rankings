@@ -10,6 +10,7 @@ function getRoute() {
   if (parts[0] === 'compare' && parts[1] && parts[2]) return { page: 'compare', id: parts[1], id2: parts[2] };
   if (parts[0] === 'driver' && parts[1]) return { page: 'driver', id: parts[1] };
   if (parts[0] === 'events') return { page: 'events' };
+  if (parts[0] === 'regions') return { page: 'regions' };
   if (parts[0] === 'event' && parts[1]) return { page: 'event', id: parts[1] };
   if (parts[0] === 'about') return { page: 'about' };
   return { page: 'rankings' };
@@ -38,6 +39,9 @@ async function route() {
       break;
     case 'events':
       await renderEvents();
+      break;
+    case 'regions':
+      await renderRegions();
       break;
     case 'event':
       await renderEventDetail(id);
