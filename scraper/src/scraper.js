@@ -12,8 +12,25 @@ const KNOWN_EVENTS_FILE = join(__dirname, '..', 'data', 'known-events.json');
 const VAULT_BASE = 'https://vault.autocrossdigits.com';
 const SOLOLIVE_BASE = 'https://sololive.scca.com';
 
-// Vault has an SSL cert issue, so we use a custom agent only for Vault requests
-const vaultAgent = new https.Agent({ rejectUnauthorized: false });
+// SSL handling for vault.autocrossdigits.com
+//
+// The Vault has historically had a TLS cert issue (self-signed or expired).
+// To preserve the previous permissive behavior, set INSECURE_VAULT_SKIP_CERT=1
+// in the environment. The bypass is OFF by default — if scrapes fail with a
+// cert error, you can opt back in with that env var.
+//
+// TODO: file an upstream issue with vault.autocrossdigits.com to fix the cert
+// and remove this entirely.
+const SKIP_VAULT_CERT = process.env.INSECURE_VAULT_SKIP_CERT === '1';
+const vaultAgent = SKIP_VAULT_CERT
+  ? new https.Agent({ rejectUnauthorized: false })
+  : null;
+
+if (SKIP_VAULT_CERT) {
+  console.warn(
+    '[scraper] WARNING: INSECURE_VAULT_SKIP_CERT=1 — TLS verification is DISABLED for vault.autocrossdigits.com'
+  );
+}
 
 function ensureDir(dir) {
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
@@ -38,6 +55,14 @@ async function fetchHTML(url, retries = 3, timeout = 30000, agent = null) {
         timeout,
         ...(agent ? { agent } : {}),
       });
+      // Honor 429 Too Many Requests with Retry-After before falling through to retry
+      if (res.status === 429) {
+        const retryAfter = parseInt(res.headers.get('retry-after') || '0', 10);
+        const waitMs = (retryAfter > 0 ? retryAfter : (i + 1) * 5) * 1000;
+        console.log(`  Rate limited (429) on ${url}; waiting ${waitMs / 1000}s before retry ${i + 1}`);
+        await new Promise(r => setTimeout(r, waitMs));
+        continue;
+      }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return await res.text();
     } catch (e) {
@@ -107,17 +132,23 @@ async function getEventClasses(eventName) {
     }
   });
 
-  // Class links: support both /eventresults/EVENT|CLASS/ and ?eventresults=EVENT|CLASS formats
+  // Class links: support pipe-separated, query-string, and slash-separated formats
   $('a').each((_, el) => {
     const href = $(el).attr('href') || '';
-    // New format: /eventresults/EVENT+NAME|CLASS+NAME/
-    const matchNew = href.match(/\/eventresults\/([^|]+)\|([^/]+)\/?/);
-    // Old format: ?eventresults=EVENT_NAME|CLASS_NAME
-    const matchOld = href.match(/\?eventresults=([^|]+)\|(.+)/);
-    const match = matchNew || matchOld;
+    // Pipe format: /eventresults/EVENT+NAME|CLASS+NAME/
+    const matchPipe = href.match(/\/eventresults\/([^|]+)\|([^/]+)\/?/);
+    // Query format: ?eventresults=EVENT_NAME|CLASS_NAME
+    const matchQuery = href.match(/\?eventresults=([^|]+)\|(.+)/);
+    // Slash format: /eventresults/EVENT%20NAME/CLASS%20NAME/
+    const matchSlash = href.match(/\/eventresults\/([^/]+)\/([^/]+)\/?$/);
+
+    const match = matchPipe || matchQuery || matchSlash;
     if (match) {
-      const className = decodeURIComponent(match[2].replace(/\+/g, ' ').replace(/\/$/, ''));
-      if (!classes.includes(className)) classes.push(className);
+      const classSegment = decodeURIComponent(match[2].replace(/\+/g, ' ').replace(/\/$/, ''));
+      // Skip non-class links like type/pax, type/raw
+      if (classSegment === 'pax' || classSegment === 'raw') return;
+      if (match[2].startsWith('type')) return;
+      if (!classes.includes(classSegment)) classes.push(classSegment);
     }
   });
 
@@ -221,6 +252,7 @@ const TOUR_LOCATION_CODES = [
   { code: 'PHXNT',  keywords: ['phoenix'] },
   { code: 'RHNT',   keywords: ['red hills', 'redhills'] },
   { code: 'STXNT',  keywords: ['south texas', 'stx'] },
+  { code: 'BVLNT',  keywords: ['beeville'] },
   { code: 'CHRNT',  keywords: ['charlotte'] },
   { code: 'CLNT',   keywords: ['crows landing', 'crowslanding'] },
   { code: 'LNKNT',  keywords: ['lincoln'] },
@@ -265,7 +297,10 @@ function generateExpectedEventCodes(years = (() => { const currentYear = new Dat
 // Check which SoloLive event codes actually exist (parallel batches)
 async function probeEvents(codes) {
   const existing = [];
-  const BATCH_SIZE = 10;
+  // Conservative concurrency + inter-batch pause so we don't hammer SoloLive
+  // and risk an IP ban. Was 10 with no pause.
+  const BATCH_SIZE = 5;
+  const INTER_BATCH_DELAY_MS = 1000;
 
   for (let i = 0; i < codes.length; i += BATCH_SIZE) {
     const batch = codes.slice(i, i + BATCH_SIZE);
@@ -282,6 +317,13 @@ async function probeEvents(codes) {
             signal: controller.signal,
           });
           clearTimeout(timer);
+          if (res.status === 429) {
+            const retryAfter = parseInt(res.headers.get('retry-after') || '0', 10);
+            const waitSec = retryAfter > 0 ? retryAfter : 10;
+            console.log(`  Rate limited (429) on ${event.code}; pausing ${waitSec}s`);
+            await new Promise(r => setTimeout(r, waitSec * 1000));
+            return null;
+          }
           if (res.ok) {
             console.log(`  Found SoloLive event: ${event.code}`);
             return event;
@@ -294,6 +336,9 @@ async function probeEvents(codes) {
     );
     for (const r of results) {
       if (r.status === 'fulfilled' && r.value) existing.push(r.value);
+    }
+    if (i + BATCH_SIZE < codes.length) {
+      await new Promise(r => setTimeout(r, INTER_BATCH_DELAY_MS));
     }
   }
 
@@ -404,11 +449,18 @@ async function scrapeEvent(eventName, eventType = 'tour', eventYear = null) {
   for (const cls of classes) {
     const encodedEvent = encodeURIComponent(eventName).replace(/%20/g, '+');
     const encodedCls = encodeURIComponent(cls).replace(/%20/g, '+');
-    const url = `${VAULT_BASE}/eventresults/${encodedEvent}|${encodedCls}/`;
+    // Try slash-separated URL first (newer vault format), fall back to pipe-separated
+    const slashUrl = `${VAULT_BASE}/eventresults/${encodeURIComponent(eventName)}/${encodeURIComponent(cls)}/`;
+    const pipeUrl = `${VAULT_BASE}/eventresults/${encodedEvent}|${encodedCls}/`;
     console.log(`  Scraping ${cls}...`);
 
     try {
-      const html = await fetchHTML(url, 3, 30000, vaultAgent);
+      let html;
+      try {
+        html = await fetchHTML(slashUrl, 2, 30000, vaultAgent);
+      } catch (_) {
+        html = await fetchHTML(pipeUrl, 3, 30000, vaultAgent);
+      }
       const results = parseVaultClassResults(html, cls);
       classResults[cls] = results;
       allResults.push(...results);
