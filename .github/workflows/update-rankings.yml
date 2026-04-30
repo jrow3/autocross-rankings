@@ -1,9 +1,9 @@
 name: Update Autocross Rankings
 
 on:
-  # Run weekly on Monday morning (after weekend events)
+  # Run weekly on Tuesday morning (after weekend events)
   schedule:
-    - cron: '0 10 * * 1'
+    - cron: '0 10 * * 2'
   # Manual trigger
   workflow_dispatch:
     inputs:
@@ -41,16 +41,22 @@ jobs:
       - name: Discover events (current + next year)
         working-directory: scraper
         run: node src/scraper.js discover $(date +%Y),$(( $(date +%Y) + 1 ))
+        env:
+          INSECURE_VAULT_SKIP_CERT: '1'
 
       # Full historical re-discovery (manual trigger only, use "full_discovery" input)
       - name: Discover all historical events
         if: github.event.inputs.full_discovery == 'true'
         working-directory: scraper
         run: node src/scraper.js discover
+        env:
+          INSECURE_VAULT_SKIP_CERT: '1'
 
       - name: Scrape all events
         working-directory: scraper
         run: node src/scraper.js all
+        env:
+          INSECURE_VAULT_SKIP_CERT: '1'
 
       - name: Build driver registry
         working-directory: scraper
