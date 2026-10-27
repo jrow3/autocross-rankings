@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-04-30T05:04:23.967Z",
-  "totalDrivers": 13680,
-  "totalEvents": 294,
-  "totalComparisons": 19525454,
-  "totalClasses": 311,
+  "lastUpdated": "2026-10-20T14:41:01.125Z",
+  "totalDrivers": 13939,
+  "totalEvents": 301,
+  "totalComparisons": 20284737,
+  "totalClasses": 361,
   "events": [
     {
       "eventCode": "2003-SCCA-Solo-Nationals",
@@ -32,6 +32,13 @@
       "eventDates": "September 8, 1997 - September 12, 1997 in Topeka, KS",
       "eventType": "nationals",
       "totalDrivers": 919
+    },
+    {
+      "eventCode": "2026-Scca-Solo-Nationals",
+      "eventName": "2026 Scca Solo Nationals",
+      "eventDates": "September 7, 2026 - September 11, 2026 in Lincoln, NE",
+      "eventType": "nationals",
+      "totalDrivers": 1319
     },
     {
       "eventCode": "2021-SCCA-Solo-Nationals",
@@ -494,6 +501,13 @@
       "eventDates": "May 24, 2008 - May 25, 2008 in Atlanta, GA",
       "eventType": "tour",
       "totalDrivers": 235
+    },
+    {
+      "eventCode": "2026-Lincoln-National-Tour",
+      "eventName": "2026 Lincoln National Tour",
+      "eventDates": "May 23, 2026 - May 25, 2026 in Lincoln, NE",
+      "eventType": "tour",
+      "totalDrivers": 359
     },
     {
       "eventCode": "2021-Chicago-National-Tour",
@@ -1119,6 +1133,13 @@
       "totalDrivers": 234
     },
     {
+      "eventCode": "2026-Crows-Landing-National-Tour",
+      "eventName": "2026 Crows Landing National Tour",
+      "eventDates": "June 12, 2026 - June 14, 2026 in Crows Landing, CA",
+      "eventType": "tour",
+      "totalDrivers": 197
+    },
+    {
       "eventCode": "2015-Pikes-Peak-National-Tour",
       "eventName": "2015 Pikes Peak National Tour",
       "eventDates": "June 12, 2015 - June 14, 2015 in Pikes Peak",
@@ -1294,6 +1315,13 @@
       "totalDrivers": 279
     },
     {
+      "eventCode": "2026-Finger-Lakes-National-Tour",
+      "eventName": "2026 Finger Lakes National Tour",
+      "eventDates": "July 31, 2026 - August 2, 2026 in Romulus, NY",
+      "eventType": "tour",
+      "totalDrivers": 260
+    },
+    {
       "eventCode": "2011-Colorado-National-Tour",
       "eventName": "2011 Colorado National Tour",
       "eventDates": "July 30, 2011 - July 31, 2011 in Colorado",
@@ -1306,6 +1334,13 @@
       "eventDates": "July 30, 2005 - July 31, 2005 in Denver, CO",
       "eventType": "tour",
       "totalDrivers": 262
+    },
+    {
+      "eventCode": "2026-Bristol-National-Tour",
+      "eventName": "2026 Bristol National Tour",
+      "eventDates": "July 3, 2026 - July 5, 2026 in Bristol, TN",
+      "eventType": "tour",
+      "totalDrivers": 283
     },
     {
       "eventCode": "2020-Bristol-National-Tour",
@@ -1460,6 +1495,20 @@
       "eventDates": "July 19, 1997 - July 20, 1997 in Topeka, KS",
       "eventType": "tour",
       "totalDrivers": 194
+    },
+    {
+      "eventCode": "2026-Packwood-National-Tour",
+      "eventName": "2026 Packwood National Tour",
+      "eventDates": "July 17, 2026 - July 19, 2026 in Packwood, WA",
+      "eventType": "tour",
+      "totalDrivers": 253
+    },
+    {
+      "eventCode": "2026-Grissom-National-Tour",
+      "eventName": "2026 Grissom National Tour",
+      "eventDates": "July 17, 2026 - July 19, 2026 in Grissom, IN",
+      "eventType": "tour",
+      "totalDrivers": 180
     },
     {
       "eventCode": "2020-Peru-National-Tour",
