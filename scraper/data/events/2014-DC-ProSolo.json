@@ -1,0 +1,6960 @@
+{
+  "eventCode": "2014-DC-ProSolo",
+  "eventName": "2014 DC ProSolo",
+  "eventDates": "04/25/2014 - 04/27/2014",
+  "eventType": "prosolo",
+  "source": "scca-prosolo-pdf",
+  "sources": {
+    "classResults": "http://www.scca.com/downloads/4580-2014-20-tire-20-rack-20-scca-20-dc-20-pro-solo-20-final-20-results/download",
+    "overallIndex": null
+  },
+  "scrapedAt": "2026-10-27T01:06:24.388Z",
+  "isIndexedScore": false,
+  "totalDrivers": 233,
+  "classes": [
+    "C Street",
+    "Super Street R",
+    "Street Touring FWD",
+    "Street Touring Compact",
+    "Street Touring Sport",
+    "Street Touring X",
+    "Street Touring Ultra",
+    "Street Touring R",
+    "E Street Prepared",
+    "Street Modified",
+    "Super Street Modified",
+    "Kart Modified",
+    "Bump Class",
+    "Ladies Class 1",
+    "Ladies Class 2",
+    "Ladies Class 3",
+    "Street Index RWD",
+    "Street Index FWD",
+    "Street R Index RWD",
+    "SP/SM Index A",
+    "SP/SM Index B",
+    "Formula Junior A",
+    "Formula Junior B"
+  ],
+  "classResults": {
+    "C Street": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "161",
+        "name": "Mark Andy",
+        "car": "2005 Mazda RX-8 Red",
+        "tire": "Hankook",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Poland, OH",
+        "paxTime": 66.213,
+        "runs": {
+          "left": [
+            "32.766",
+            "32.766",
+            "35.145(1)",
+            "35.150(1)",
+            "33.472",
+            "33.359"
+          ],
+          "right": [
+            "34.153",
+            "33.609",
+            "35.243(1)",
+            "33.741",
+            "33.447",
+            "34.782(1)"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "57",
+        "name": "John Laughlin",
+        "car": "2013 Subaru BRZ Silver",
+        "tire": "Dunlop*",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Akron, OH",
+        "paxTime": 66.851,
+        "runs": {
+          "left": [
+            "34.498",
+            "33.219",
+            "33.410",
+            "32.978",
+            "33.022",
+            "39.177(3)"
+          ],
+          "right": [
+            "34.934",
+            "34.549",
+            "RL",
+            "34.156",
+            "34.533",
+            "33.873"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "11",
+        "name": "Mike Ferchak",
+        "car": "2013 Scion* FR-S",
+        "tire": "Dunlop*",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Pittsburgh, PA",
+        "paxTime": 66.987,
+        "runs": {
+          "left": [
+            "35.780",
+            "33.757",
+            "33.459",
+            "33.628",
+            "35.924(1)",
+            "33.185"
+          ],
+          "right": [
+            "RL",
+            "34.672",
+            "36.702(1)",
+            "34.476",
+            "36.382(1)",
+            "33.802"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "117",
+        "name": "John Ryan",
+        "car": "2013 Subaru BRZ Black",
+        "tire": "Dunlop*",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Johnstown, PA",
+        "paxTime": 67.65,
+        "runs": {
+          "left": [
+            "34.048",
+            "33.520",
+            "34.104",
+            "34.161",
+            "33.712",
+            "33.462"
+          ],
+          "right": [
+            "35.466",
+            "34.694",
+            "34.467",
+            "34.545",
+            "59.33(0,1)",
+            "34.188"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "127",
+        "name": "David Potocki",
+        "car": "2013 Scion FR-S Asphalt",
+        "tire": "Dunlop*",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Buffalo, NY",
+        "paxTime": 68.139,
+        "runs": {
+          "left": [
+            "34.269",
+            "33.741",
+            "48.309(3)",
+            "DNS",
+            "34.052",
+            "33.795"
+          ],
+          "right": [
+            "RL",
+            "36.717(1)",
+            "34.929",
+            "36.829(1)",
+            "35.065",
+            "34.398"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "6",
+        "name": "Christopher Higgins",
+        "car": "2013 Scion* FR-S Orange",
+        "tire": "Yokoham",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Baltimore, MD",
+        "paxTime": 68.425,
+        "runs": {
+          "left": [
+            "45.553(0,1) 43.637(0,1) 34.878",
+            "34.216",
+            "34.682",
+            "33.780"
+          ],
+          "right": [
+            "35.893",
+            "42.266",
+            "46.561(0,1)",
+            "34.645",
+            "36.017",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "27",
+        "name": "Michael Potocki",
+        "car": "2013 Scion FR-S Gray",
+        "tire": "Dunlop*",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Kenmore, NY",
+        "paxTime": 68.6,
+        "runs": {
+          "left": [
+            "34.766",
+            "33.807",
+            "34.488",
+            "33.872",
+            "35.181",
+            "34.611"
+          ],
+          "right": [
+            "37.701(1)",
+            "34.902",
+            "34.793",
+            "44.595(0,1) 56.062(0,1) 34.816"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "14",
+        "name": "Joe Montuoro",
+        "car": "2013 Subaru BRZ White",
+        "tire": "Dunlop*",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Canonsburg, PA",
+        "paxTime": 68.915,
+        "runs": {
+          "left": [
+            "34.846",
+            "34.681",
+            "34.221",
+            "34.117",
+            "37.909",
+            "34.408"
+          ],
+          "right": [
+            "36.692",
+            "35.036",
+            "36.364",
+            "36.861(1)",
+            "35.223",
+            "34.798"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "61",
+        "name": "Laura Andy",
+        "car": "2005 Mazda RX-8 Red",
+        "tire": "Hankook",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Poland, OH",
+        "paxTime": 70.005,
+        "runs": {
+          "left": [
+            "46.161(0,1)",
+            "34.881",
+            "35.197",
+            "34.928",
+            "35.257",
+            "35.980"
+          ],
+          "right": [
+            "DNS",
+            "36.147",
+            "36.112",
+            "35.432",
+            "35.747",
+            "35.124"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "17",
+        "name": "Vicki Ryan",
+        "car": "2013 Subaru BRZ Black",
+        "tire": "Dunlop*",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Johnstown, PA",
+        "paxTime": 70.988,
+        "runs": {
+          "left": [
+            "36.770",
+            "35.394",
+            "RL",
+            "35.458",
+            "36.908",
+            "35.598"
+          ],
+          "right": [
+            "36.337",
+            "35.594",
+            "36.051",
+            "37.074",
+            "36.836",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 11,
+        "trophy": false,
+        "carNumber": "7",
+        "name": "Nick Warfield",
+        "car": "2013 Subaru* BRZ WRB",
+        "tire": "Dunlop*",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Linthicum Heights, MD",
+        "paxTime": 74.974,
+        "runs": {
+          "left": [
+            "53.278(0,1) 39.558",
+            "37.011",
+            "RL",
+            "DNS",
+            "DNS"
+          ],
+          "right": [
+            "40.256",
+            "38.386",
+            "37.963",
+            "46.150(0,1) DNS",
+            "DNS"
+          ]
+        }
+      }
+    ],
+    "Super Street R": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "113",
+        "name": "Jason Burns",
+        "car": "2010 Chevrolet* Corvette G",
+        "tire": "Hoosier",
+        "className": "Super Street R",
+        "region": "",
+        "cityState": "Red Lion, PA",
+        "paxTime": 60.761,
+        "runs": {
+          "left": [
+            "30.516",
+            "30.414",
+            "RL",
+            "30.292",
+            "31.018",
+            "30.160"
+          ],
+          "right": [
+            "31.470",
+            "30.973",
+            "31.336",
+            "31.198",
+            "31.258",
+            "30.601"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "57",
+        "name": "Grant Reeve",
+        "car": "2003 Corvette* Z06 Black",
+        "tire": "Hoosier",
+        "className": "Super Street R",
+        "region": "",
+        "cityState": "Sturbridge, MA",
+        "paxTime": 60.764,
+        "runs": {
+          "left": [
+            "32.068",
+            "30.953",
+            "31.138",
+            "30.683",
+            "31.126",
+            "30.306"
+          ],
+          "right": [
+            "31.336",
+            "32.814(1)",
+            "31.042",
+            "31.012",
+            "30.583",
+            "30.458"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "142",
+        "name": "Andrew Pallotta",
+        "car": "2004 Chevrolet* Corvette Z",
+        "tire": "Hoosier",
+        "className": "Super Street R",
+        "region": "",
+        "cityState": "Cuyahoga Falls, OH",
+        "paxTime": 61.285,
+        "runs": {
+          "left": [
+            "31.496",
+            "30.560",
+            "31.286",
+            "30.518",
+            "30.890",
+            "RL"
+          ],
+          "right": [
+            "31.589",
+            "31.209",
+            "31.913",
+            "31.234",
+            "32.004",
+            "30.767"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "78",
+        "name": "Brian Conners",
+        "car": "2011 Porsche* GT3 Blue",
+        "tire": "Hoosier",
+        "className": "Super Street R",
+        "region": "",
+        "cityState": "Voorhees, NJ",
+        "paxTime": 61.312,
+        "runs": {
+          "left": [
+            "35.356(1)",
+            "31.322",
+            "31.343",
+            "30.474",
+            "31.667",
+            "30.264"
+          ],
+          "right": [
+            "31.431",
+            "31.552",
+            "31.048",
+            "31.411",
+            "32.596",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "133",
+        "name": "Dan Ireland",
+        "car": "2012 Chevrolet* Grand Spo",
+        "tire": "Hoosier*",
+        "className": "Super Street R",
+        "region": "",
+        "cityState": "Pittsburgh, PA",
+        "paxTime": 61.832,
+        "runs": {
+          "left": [
+            "31.067",
+            "30.810",
+            "31.085",
+            "31.109",
+            "31.798",
+            "30.491"
+          ],
+          "right": [
+            "32.143",
+            "31.600",
+            "32.333",
+            "31.341",
+            "RL",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "87",
+        "name": "Pat Salerno",
+        "car": "2005 Chevrolet* Corvette B",
+        "tire": "Hoosier",
+        "className": "Super Street R",
+        "region": "",
+        "cityState": "Danbury, CT",
+        "paxTime": 62.624,
+        "runs": {
+          "left": [
+            "31.801",
+            "41.528(0,1) 31.615",
+            "31.396",
+            "32.824(1)",
+            "34.73(1)"
+          ],
+          "right": [
+            "34.412(1)",
+            "31.294",
+            "31.848",
+            "31.296",
+            "31.762",
+            "31.228"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "71",
+        "name": "Randy Pearson",
+        "car": "2008 Chevrolet* Corvette Z",
+        "tire": "Hoosier*",
+        "className": "Super Street R",
+        "region": "",
+        "cityState": "Jefferson Hills, PA",
+        "paxTime": 62.709,
+        "runs": {
+          "left": [
+            "32.040",
+            "38.390(3)",
+            "31.327",
+            "31.194",
+            "38.264",
+            "31.219"
+          ],
+          "right": [
+            "33.666",
+            "32.476",
+            "31.804",
+            "34.094(1)",
+            "43.917(1)",
+            "31.515"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "42",
+        "name": "James Newman",
+        "car": "2004 Chevrolet* Corvette Z",
+        "tire": "Hoosier",
+        "className": "Super Street R",
+        "region": "",
+        "cityState": "Columbia, MD",
+        "paxTime": 62.781,
+        "runs": {
+          "left": [
+            "31.989",
+            "41.124(0,1)",
+            "31.339",
+            "RL",
+            "31.377",
+            "36.587(3)"
+          ],
+          "right": [
+            "32.115",
+            "RL",
+            "32.407",
+            "32.000",
+            "31.497",
+            "31.442"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "92",
+        "name": "Mark Labbancz",
+        "car": "2010 Chevrolet* Corvette G",
+        "tire": "Hoosier",
+        "className": "Super Street R",
+        "region": "",
+        "cityState": "Robbinsville, NJ",
+        "paxTime": 63.21,
+        "runs": {
+          "left": [
+            "33.43(1)",
+            "RL",
+            "31.471",
+            "31.398",
+            "41.278(0,1) 34.387(2)"
+          ],
+          "right": [
+            "32.923",
+            "31.812",
+            "32.544",
+            "32.201",
+            "32.572",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "33",
+        "name": "John Fink",
+        "car": "2011 Chevrolet* Corvette G",
+        "tire": "Hoosier*",
+        "className": "Super Street R",
+        "region": "",
+        "cityState": "Wexford, PA",
+        "paxTime": 63.714,
+        "runs": {
+          "left": [
+            "36.799(1)",
+            "RL",
+            "32.970",
+            "32.346",
+            "31.869",
+            "31.494"
+          ],
+          "right": [
+            "34.489",
+            "RL",
+            "33.810",
+            "32.529",
+            "32.220",
+            "32.658"
+          ]
+        }
+      },
+      {
+        "position": 11,
+        "trophy": false,
+        "carNumber": "13",
+        "name": "Heather Burns",
+        "car": "2010 Chevrolet* Corvette G",
+        "tire": "Hoosier",
+        "className": "Super Street R",
+        "region": "",
+        "cityState": "Red Lion, PA",
+        "paxTime": 64.895,
+        "runs": {
+          "left": [
+            "42.522(1)",
+            "33.887",
+            "RL",
+            "32.329",
+            "RL",
+            "31.890"
+          ],
+          "right": [
+            "35.556",
+            "47.807(0,1) 33.914",
+            "33.619",
+            "33.598",
+            "33.005"
+          ]
+        }
+      }
+    ],
+    "Street Touring FWD": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "77",
+        "name": "Andres Rodriguez",
+        "car": "2012 Mazda 2 SILVER",
+        "tire": "Multi",
+        "className": "Street Touring FWD",
+        "region": "",
+        "cityState": "Plantation, FL",
+        "paxTime": 67.934,
+        "runs": {
+          "left": [
+            "35.425",
+            "34.812",
+            "35.183",
+            "RL",
+            "34.570",
+            "33.565"
+          ],
+          "right": [
+            "35.869",
+            "36.194",
+            "37.474(1)",
+            "35.328",
+            "35.620",
+            "34.369"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "72",
+        "name": "Daniel Gross",
+        "car": "2008 Mazda 3 Black",
+        "tire": "BFGoodri",
+        "className": "Street Touring FWD",
+        "region": "",
+        "cityState": "Walkersville, MD",
+        "paxTime": 68.864,
+        "runs": {
+          "left": [
+            "47.934(0,1) 35.404",
+            "35.258",
+            "34.818",
+            "34.681",
+            "34.028"
+          ],
+          "right": [
+            "37.892",
+            "38.482",
+            "36.348",
+            "41.188",
+            "36.120",
+            "34.836"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": false,
+        "carNumber": "57",
+        "name": "Robert Day",
+        "car": "2008 Mazda 3",
+        "tire": "BFGoodri",
+        "className": "Street Touring FWD",
+        "region": "",
+        "cityState": "Holley, NY",
+        "paxTime": 69.784,
+        "runs": {
+          "left": [
+            "36.251",
+            "38.839(2)",
+            "34.459",
+            "36.953(1)",
+            "35.040",
+            "36.682(1)"
+          ],
+          "right": [
+            "36.111",
+            "35.949",
+            "38.139(1)",
+            "37.426(1)",
+            "35.462",
+            "35.325"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "199",
+        "name": "Joseph Austin",
+        "car": "2007 Mini COOPER BLUE",
+        "tire": "BFGoodri",
+        "className": "Street Touring FWD",
+        "region": "",
+        "cityState": "NEWBURGH, NY",
+        "paxTime": 69.964,
+        "runs": {
+          "left": [
+            "43.556",
+            "36.243",
+            "34.796",
+            "36.952(1)",
+            "34.974",
+            "34.732"
+          ],
+          "right": [
+            "41.988(0,1) RL",
+            "35.232",
+            "35.280",
+            "35.418",
+            "35.416"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "157",
+        "name": "Colin Kingsley",
+        "car": "2008 Mazda 3 Blue",
+        "tire": "BFGoodri",
+        "className": "Street Touring FWD",
+        "region": "",
+        "cityState": "Rochester, NY",
+        "paxTime": 70.223,
+        "runs": {
+          "left": [
+            "44.734(0,1) 46.277(1,1) 36.276",
+            "35.761",
+            "35.892",
+            "35.172"
+          ],
+          "right": [
+            "52.804(1,1) 37.410",
+            "36.762",
+            "36.563",
+            "35.777",
+            "35.051"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "99",
+        "name": "Grady Wood",
+        "car": "2007 Mini Cooper Blue",
+        "tire": "BFGoodri",
+        "className": "Street Touring FWD",
+        "region": "",
+        "cityState": "Heber Springs, AR",
+        "paxTime": 70.915,
+        "runs": {
+          "left": [
+            "47.017(0,1) 36.942",
+            "37.189",
+            "36.392",
+            "36.269",
+            "35.204"
+          ],
+          "right": [
+            "38.177",
+            "36.708",
+            "37.422",
+            "35.711",
+            "35.950",
+            "RL"
+          ]
+        }
+      }
+    ],
+    "Street Touring Compact": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "50",
+        "name": "Alejandro Aviles",
+        "car": "1991 Honda Civic Si Red",
+        "tire": "Toyo",
+        "className": "Street Touring Compact",
+        "region": "",
+        "cityState": "Gaithersburg, MD",
+        "paxTime": 65.126,
+        "runs": {
+          "left": [
+            "33.095",
+            "32.698",
+            "33.103",
+            "32.433",
+            "33.009",
+            "32.136"
+          ],
+          "right": [
+            "33.742",
+            "33.592",
+            "33.699",
+            "35.722(1)",
+            "33.402",
+            "32.990"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "187",
+        "name": "Todd Kunze",
+        "car": "1989 Honda Civic si White",
+        "tire": "Toyo",
+        "className": "Street Touring Compact",
+        "region": "",
+        "cityState": "Columbus, Ohi",
+        "paxTime": 66.042,
+        "runs": {
+          "left": [
+            "33.751",
+            "43.205(0,1) 33.660",
+            "33.059",
+            "33.370",
+            "32.777"
+          ],
+          "right": [
+            "RL",
+            "33.812",
+            "34.319",
+            "34.000",
+            "34.267",
+            "33.265"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "91",
+        "name": "Okas Elam",
+        "car": "1989 Honda Civic Black",
+        "tire": "Toyo",
+        "className": "Street Touring Compact",
+        "region": "",
+        "cityState": "Herndon, VA",
+        "paxTime": 66.08,
+        "runs": {
+          "left": [
+            "33.424",
+            "33.389",
+            "33.631",
+            "33.001",
+            "33.390",
+            "32.803"
+          ],
+          "right": [
+            "34.310",
+            "34.184",
+            "34.298",
+            "33.961",
+            "33.277",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "24",
+        "name": "Chang Ho Kim",
+        "car": "1989 Honda Civic Si White",
+        "tire": "Toyo",
+        "className": "Street Touring Compact",
+        "region": "",
+        "cityState": "Maynard, ma",
+        "paxTime": 66.353,
+        "runs": {
+          "left": [
+            "35.978(1)",
+            "32.917",
+            "33.327",
+            "32.928",
+            "38.901",
+            "35.169(1)"
+          ],
+          "right": [
+            "34.249",
+            "34.036",
+            "33.909",
+            "33.941",
+            "33.653",
+            "33.436"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "87",
+        "name": "Dale Kunze",
+        "car": "1989 Honda Civic si white",
+        "tire": "Toyo",
+        "className": "Street Touring Compact",
+        "region": "",
+        "cityState": "Grand Island, NY",
+        "paxTime": 66.605,
+        "runs": {
+          "left": [
+            "44.64(0,1)",
+            "33.036",
+            "33.738",
+            "33.560",
+            "33.956",
+            "32.905"
+          ],
+          "right": [
+            "34.158",
+            "34.204",
+            "34.114",
+            "34.038",
+            "33.700",
+            "35.426(1)"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "83",
+        "name": "Andrew Bower",
+        "car": "1991 Honda Civic green/w",
+        "tire": "Toyo",
+        "className": "Street Touring Compact",
+        "region": "",
+        "cityState": "Paxinos, PA",
+        "paxTime": 66.786,
+        "runs": {
+          "left": [
+            "34.230",
+            "34.011",
+            "RL",
+            "32.798",
+            "33.135",
+            "32.960"
+          ],
+          "right": [
+            "36.547(1)",
+            "34.279",
+            "RL",
+            "33.988",
+            "34.129",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "59",
+        "name": "AJ Snyder",
+        "car": "1991 Honda Civic",
+        "tire": "Toyo*",
+        "className": "Street Touring Compact",
+        "region": "",
+        "cityState": "Gastonia, NC",
+        "paxTime": 67.082,
+        "runs": {
+          "left": [
+            "33.528",
+            "33.240",
+            "33.415",
+            "33.263",
+            "33.800",
+            "33.432"
+          ],
+          "right": [
+            "RL",
+            "RL",
+            "RL",
+            "33.842",
+            "34.939",
+            "34.042"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "159",
+        "name": "Jeff Eng",
+        "car": "1991 Honda Civic Si Teal",
+        "tire": "Toyo*",
+        "className": "Street Touring Compact",
+        "region": "",
+        "cityState": "Wilmington, NC",
+        "paxTime": 67.354,
+        "runs": {
+          "left": [
+            "34.421",
+            "RL",
+            "35.717",
+            "33.496",
+            "35.025(1)",
+            "33.939"
+          ],
+          "right": [
+            "44.629(0,1) RL",
+            "36.044",
+            "36.751(1)",
+            "33.858",
+            "34.247"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "90",
+        "name": "Chris Haydu",
+        "car": "1991 Honda Civic tahitian g",
+        "tire": "Toyo",
+        "className": "Street Touring Compact",
+        "region": "",
+        "cityState": "Dallas, PA",
+        "paxTime": 67.375,
+        "runs": {
+          "left": [
+            "33.895",
+            "46.008(1,1) RL",
+            "35.416(1)",
+            "33.987",
+            "RL"
+          ],
+          "right": [
+            "46.058(0,1) 33.706",
+            "34.337",
+            "38.266(2)",
+            "33.536",
+            "33.480"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "92",
+        "name": "Richard Grunenwald",
+        "car": "1989 Honda Civic Si White",
+        "tire": "Toyo*",
+        "className": "Street Touring Compact",
+        "region": "",
+        "cityState": "Hilliard, OH",
+        "paxTime": 67.728,
+        "runs": {
+          "left": [
+            "34.804",
+            "33.930",
+            "33.480",
+            "33.549",
+            "33.668",
+            "33.928"
+          ],
+          "right": [
+            "RL",
+            "34.305",
+            "34.743",
+            "34.252",
+            "34.794",
+            "34.248"
+          ]
+        }
+      }
+    ],
+    "Street Touring Sport": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "177",
+        "name": "Ian Baker",
+        "car": "1988 Honda CRX Si Blue/",
+        "tire": "Toyo",
+        "className": "Street Touring Sport",
+        "region": "",
+        "cityState": "Herndon, VA",
+        "paxTime": 64.225,
+        "runs": {
+          "left": [
+            "32.862",
+            "31.863",
+            "32.448",
+            "32.248",
+            "32.754",
+            "31.938"
+          ],
+          "right": [
+            "37.636(2)",
+            "33.180",
+            "32.946",
+            "32.683",
+            "32.728",
+            "32.362"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "77",
+        "name": "Mike Snyder",
+        "car": "1988 Honda CRX Si blue",
+        "tire": "Toyo",
+        "className": "Street Touring Sport",
+        "region": "",
+        "cityState": "Elizabethtown, PA",
+        "paxTime": 65.234,
+        "runs": {
+          "left": [
+            "43.965(0,1) 33.490",
+            "32.720",
+            "32.905",
+            "33.649",
+            "32.364"
+          ],
+          "right": [
+            "34.434",
+            "33.730",
+            "33.642",
+            "33.397",
+            "36.761(2)",
+            "32.870"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "78",
+        "name": "Michael Shea",
+        "car": "1990 Mazda Miata Blue",
+        "tire": "Dunlop*",
+        "className": "Street Touring Sport",
+        "region": "",
+        "cityState": "Mertztown, PA",
+        "paxTime": 67.381,
+        "runs": {
+          "left": [
+            "36.147",
+            "33.648",
+            "33.611",
+            "RL",
+            "33.776",
+            "33.353"
+          ],
+          "right": [
+            "49.395(1,1) RL",
+            "34.434",
+            "36.269(1)",
+            "34.381",
+            "34.028"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "139",
+        "name": "Alan Claffie",
+        "car": "1990 Mazda Miata White/G",
+        "tire": "Toyo*",
+        "className": "Street Touring Sport",
+        "region": "",
+        "cityState": "Waldorf, MD",
+        "paxTime": 67.982,
+        "runs": {
+          "left": [
+            "34.353",
+            "34.067",
+            "33.999",
+            "33.770",
+            "34.036",
+            "33.659"
+          ],
+          "right": [
+            "44.312(0,1) RL",
+            "34.880",
+            "36.337(1)",
+            "34.323",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "178",
+        "name": "Shawn Roberts",
+        "car": "1990 Mazda Miata Red",
+        "tire": "Dunlop*",
+        "className": "Street Touring Sport",
+        "region": "",
+        "cityState": "Woodbridge, VA",
+        "paxTime": 68.005,
+        "runs": {
+          "left": [
+            "36.773",
+            "34.513",
+            "33.865",
+            "33.903",
+            "33.580",
+            "33.735"
+          ],
+          "right": [
+            "37.004(1)",
+            "34.906",
+            "34.677",
+            "34.604",
+            "35.123",
+            "34.425"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "143",
+        "name": "Sam Creasey",
+        "car": "1988 Honda* CRX Si Yello",
+        "tire": "Toyo*",
+        "className": "Street Touring Sport",
+        "region": "",
+        "cityState": "Cambridge, MA",
+        "paxTime": 68.724,
+        "runs": {
+          "left": [
+            "34.484",
+            "34.312",
+            "51.081(0,1) RL",
+            "35.412",
+            "33.933"
+          ],
+          "right": [
+            "49.105(1,1) 36.470",
+            "RL",
+            "34.791",
+            "38.144",
+            "38.136(2)"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "39",
+        "name": "Kate Claffie",
+        "car": "1990 Mazda Miata White/G",
+        "tire": "Toyo*",
+        "className": "Street Touring Sport",
+        "region": "",
+        "cityState": "Waldorf, MD",
+        "paxTime": 68.77,
+        "runs": {
+          "left": [
+            "37.503(1)",
+            "34.552",
+            "44.515(0,1) 34.773",
+            "34.413",
+            "33.858"
+          ],
+          "right": [
+            "54.986(0,1) 53.102(0,1) 47.602(0,1) 35.523",
+            "34.912",
+            "39.104(2)"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "142",
+        "name": "Brian Wells",
+        "car": "1993 Mazda* Miata CSP RE",
+        "tire": "Toyo*",
+        "className": "Street Touring Sport",
+        "region": "",
+        "cityState": "Virginia Beach, VA",
+        "paxTime": 69.058,
+        "runs": {
+          "left": [
+            "35.863",
+            "35.089",
+            "35.129",
+            "RL",
+            "RL",
+            "34.324"
+          ],
+          "right": [
+            "RL",
+            "44.523(0,1) 36.417",
+            "35.613",
+            "35.277",
+            "34.734"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "43",
+        "name": "Jack Nguyen",
+        "car": "1988 Honda* CRX Si Yello",
+        "tire": "Toyo*",
+        "className": "Street Touring Sport",
+        "region": "",
+        "cityState": "Milton, MA",
+        "paxTime": 70.452,
+        "runs": {
+          "left": [
+            "36.526",
+            "RL",
+            "35.590",
+            "35.220",
+            "34.283",
+            "RL"
+          ],
+          "right": [
+            "36.934",
+            "RL",
+            "36.169",
+            "37.018",
+            "38.166(1)",
+            "36.262"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "42",
+        "name": "James Rodatus",
+        "car": "1993 Mazda* Miata Redish",
+        "tire": "Multi",
+        "className": "Street Touring Sport",
+        "region": "",
+        "cityState": "Norfolk, VA",
+        "paxTime": 70.614,
+        "runs": {
+          "left": [
+            "37.632",
+            "35.995",
+            "35.774",
+            "RL",
+            "RL",
+            "34.805"
+          ],
+          "right": [
+            "37.688",
+            "RL",
+            "36.267",
+            "38.351",
+            "35.809",
+            "59.865(0,1"
+          ]
+        }
+      }
+    ],
+    "Street Touring X": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "91",
+        "name": "Jeff Hurst",
+        "car": "2004 Mazda RX-8 Black",
+        "tire": "Hankook",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Hicksville, NY",
+        "paxTime": 64.763,
+        "runs": {
+          "left": [
+            "32.990",
+            "32.222",
+            "32.724",
+            "32.086",
+            "32.899",
+            "36.358(2)"
+          ],
+          "right": [
+            "33.581",
+            "33.309",
+            "34.252",
+            "32.955",
+            "34.887(1)",
+            "32.677"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "197",
+        "name": "Jeff Anderson",
+        "car": "1993 BMW* 325is Green",
+        "tire": "Hankook",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Ipswich, MA",
+        "paxTime": 64.956,
+        "runs": {
+          "left": [
+            "RL",
+            "32.426",
+            "32.478",
+            "RL",
+            "33.233",
+            "32.142"
+          ],
+          "right": [
+            "33.412",
+            "33.456",
+            "33.586",
+            "32.861",
+            "35.892(1)",
+            "32.814"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "97",
+        "name": "Bob Davis",
+        "car": "1993 BMW* 325si Green",
+        "tire": "Hankook",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "New Haven, CT",
+        "paxTime": 65.065,
+        "runs": {
+          "left": [
+            "43.002(3)",
+            "33.267",
+            "33.081",
+            "32.918",
+            "35.228(1)",
+            "32.254"
+          ],
+          "right": [
+            "45.775(0,1) RL",
+            "RL",
+            "33.719",
+            "32.811",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "48",
+        "name": "Sir Van Townsend",
+        "car": "2013 Scion* Pollo Italiano M",
+        "tire": "Multi",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Arvada, CO",
+        "paxTime": 65.404,
+        "runs": {
+          "left": [
+            "35.994(1)",
+            "RL",
+            "35.440(1)",
+            "33.184",
+            "34.266(1)",
+            "32.341"
+          ],
+          "right": [
+            "35.940",
+            "34.306",
+            "34.079",
+            "33.415",
+            "34.434",
+            "33.063"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": true,
+        "carNumber": "116",
+        "name": "Michael Bombard",
+        "car": "2013 Subaru BRZ Gray",
+        "tire": "Multi",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Bethlehem, PA",
+        "paxTime": 65.452,
+        "runs": {
+          "left": [
+            "35.818(1)",
+            "33.400",
+            "32.647",
+            "34.451(1)",
+            "34.482",
+            "33.059"
+          ],
+          "right": [
+            "37.537(2)",
+            "33.201",
+            "34.010",
+            "38.168(2)",
+            "36.11(1)",
+            "32.805"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": true,
+        "carNumber": "16",
+        "name": "Eric Simmons",
+        "car": "2013 Subaru BRZ Grey",
+        "tire": "Multi",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Macungie, PA",
+        "paxTime": 65.786,
+        "runs": {
+          "left": [
+            "33.043",
+            "32.690",
+            "33.034",
+            "32.561",
+            "32.891",
+            "32.380"
+          ],
+          "right": [
+            "36.276(1)",
+            "33.487",
+            "33.406",
+            "33.546",
+            "RL",
+            "35.137(1)"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "148",
+        "name": "Danny Kao",
+        "car": "2013 Scion* FR-S Red",
+        "tire": "Multi",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Gaithersburg, MD",
+        "paxTime": 65.825,
+        "runs": {
+          "left": [
+            "43.098(0,1) 33.524",
+            "33.153",
+            "32.541",
+            "32.433",
+            "RL"
+          ],
+          "right": [
+            "34.090",
+            "33.558",
+            "35.349(1)",
+            "33.392",
+            "35.190",
+            "33.394"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "5",
+        "name": "Don Slevin",
+        "car": "2013 Scion* FR-S Orange",
+        "tire": "Hankook",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Spring Valley, NY",
+        "paxTime": 65.834,
+        "runs": {
+          "left": [
+            "47.611(0,1) 33.125",
+            "33.829",
+            "32.646",
+            "33.180",
+            "32.060"
+          ],
+          "right": [
+            "49.797(2,1) 38.959(0,1) 34.061",
+            "33.774",
+            "34.960",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "37",
+        "name": "James Tatad",
+        "car": "2013 Subaru BRZ WR Blue",
+        "tire": "Hankook",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Brooklyn, NY",
+        "paxTime": 66.104,
+        "runs": {
+          "left": [
+            "34.532",
+            "33.204",
+            "32.969",
+            "33.213",
+            "34.161",
+            "33.195"
+          ],
+          "right": [
+            "34.925",
+            "34.615",
+            "34.361",
+            "33.914",
+            "33.798",
+            "33.135"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "82",
+        "name": "Grant Winston",
+        "car": "1997 BMW* 328is Black",
+        "tire": "Dunlop*",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Pelham, NY",
+        "paxTime": 66.227,
+        "runs": {
+          "left": [
+            "33.476",
+            "32.794",
+            "33.385",
+            "33.327",
+            "34.217",
+            "33.069"
+          ],
+          "right": [
+            "33.433",
+            "33.723",
+            "34.484",
+            "33.797",
+            "33.633",
+            "33.587"
+          ]
+        }
+      },
+      {
+        "position": 11,
+        "trophy": false,
+        "carNumber": "171",
+        "name": "Terry Baker",
+        "car": "2001 BMW* 330ci Blue",
+        "tire": "Dunlop*",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Virginia Beach, VA",
+        "paxTime": 67.04,
+        "runs": {
+          "left": [
+            "34.226",
+            "33.580",
+            "33.882",
+            "33.052",
+            "34.189",
+            "33.732"
+          ],
+          "right": [
+            "34.575",
+            "33.988",
+            "34.446",
+            "34.300",
+            "34.289",
+            "34.575"
+          ]
+        }
+      },
+      {
+        "position": 12,
+        "trophy": false,
+        "carNumber": "89",
+        "name": "Peter Appell",
+        "car": "1994 BMW* 325is White",
+        "tire": "Dunlop*",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Edgewater, MD",
+        "paxTime": 67.487,
+        "runs": {
+          "left": [
+            "33.344",
+            "33.318",
+            "33.420",
+            "34.855(1)",
+            "34.092",
+            "33.416"
+          ],
+          "right": [
+            "34.415",
+            "RL",
+            "34.312",
+            "34.169",
+            "34.334",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 13,
+        "trophy": false,
+        "carNumber": "154",
+        "name": "Nick Dunlap",
+        "car": "2010 Mini* Cooper JCW Re",
+        "tire": "Dunlop*",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Alexandria, VA",
+        "paxTime": 67.927,
+        "runs": {
+          "left": [
+            "34.475",
+            "35.061",
+            "34.533",
+            "RL",
+            "33.634",
+            "33.641"
+          ],
+          "right": [
+            "34.750",
+            "34.677",
+            "34.293",
+            "34.477",
+            "35.019",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 14,
+        "trophy": false,
+        "carNumber": "49",
+        "name": "Vince Bly",
+        "car": "2003 Mini* Cooper S Blue/",
+        "tire": "Dunlop*",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Springfield, VA",
+        "paxTime": 68.849,
+        "runs": {
+          "left": [
+            "34.921",
+            "34.258",
+            "34.770",
+            "34.417",
+            "34.359",
+            "34.291"
+          ],
+          "right": [
+            "35.399",
+            "37.432(1)",
+            "35.586",
+            "37.171(1)",
+            "35.459",
+            "34.591"
+          ]
+        }
+      },
+      {
+        "position": 15,
+        "trophy": false,
+        "carNumber": "65",
+        "name": "Alex Reddick",
+        "car": "2013 Scion* FR-S Firestorm",
+        "tire": "Dunlop*",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Columbia, MD",
+        "paxTime": 68.9,
+        "runs": {
+          "left": [
+            "35.296",
+            "34.812",
+            "34.927",
+            "34.280",
+            "35.827",
+            "34.204"
+          ],
+          "right": [
+            "35.578",
+            "34.839",
+            "34.883",
+            "RL",
+            "RL",
+            "34.696"
+          ]
+        }
+      },
+      {
+        "position": 16,
+        "trophy": false,
+        "carNumber": "71",
+        "name": "Curtis Staples",
+        "car": "2002 BMW* 330ci Blue",
+        "tire": "Dunlop*",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Norfolk, VA",
+        "paxTime": 68.939,
+        "runs": {
+          "left": [
+            "50.937(0,1) 37.229",
+            "34.870",
+            "34.270",
+            "34.368",
+            "34.448"
+          ],
+          "right": [
+            "35.275",
+            "35.106",
+            "35.707",
+            "34.669",
+            "34.993",
+            "36.513(1)"
+          ]
+        }
+      },
+      {
+        "position": 17,
+        "trophy": false,
+        "carNumber": "54",
+        "name": "Steve Mitchell",
+        "car": "2010 Mini* JCW Red",
+        "tire": "Dunlop*",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Mc Lean, VA",
+        "paxTime": 69.584,
+        "runs": {
+          "left": [
+            "38.501",
+            "43.767(0,1) 35.510",
+            "35.259",
+            "35.773",
+            "34.478"
+          ],
+          "right": [
+            "43.149(0,1) 36.849",
+            "36.102",
+            "35.441",
+            "35.487",
+            "35.106"
+          ]
+        }
+      },
+      {
+        "position": 18,
+        "trophy": false,
+        "carNumber": "90",
+        "name": "Matthew Knipple",
+        "car": "2013 Scion* FR-S Ultramar",
+        "tire": "BFGoodri",
+        "className": "Street Touring X",
+        "region": "",
+        "cityState": "Virginia Beach, VA",
+        "paxTime": 69.685,
+        "runs": {
+          "left": [
+            "43.784(0,1) 35.336",
+            "35.602",
+            "34.444",
+            "35.477",
+            "41.025"
+          ],
+          "right": [
+            "46.947(0,1) 38.072(1)",
+            "35.241",
+            "35.557",
+            "RL",
+            "RL"
+          ]
+        }
+      }
+    ],
+    "Street Touring Ultra": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "22",
+        "name": "David Wampler",
+        "car": "2006 Subaru STI gray",
+        "tire": "BFGoodri",
+        "className": "Street Touring Ultra",
+        "region": "",
+        "cityState": "Manassas, VA",
+        "paxTime": 63.885,
+        "runs": {
+          "left": [
+            "33.404",
+            "31.860",
+            "32.276",
+            "31.972",
+            "32.346",
+            "31.840"
+          ],
+          "right": [
+            "32.232",
+            "34.177(1)",
+            "RL",
+            "32.108",
+            "32.452",
+            "32.045"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "17",
+        "name": "John Willemin",
+        "car": "2006 Mitsubishi* Lancer Ap",
+        "tire": "BFGoodri",
+        "className": "Street Touring Ultra",
+        "region": "",
+        "cityState": "Alexandria, VA",
+        "paxTime": 63.927,
+        "runs": {
+          "left": [
+            "32.090",
+            "32.006",
+            "31.782",
+            "32.733",
+            "33.911(1)",
+            "31.688"
+          ],
+          "right": [
+            "33.126",
+            "32.239",
+            "32.677",
+            "32.395",
+            "32.835",
+            "36.163(2)"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "10",
+        "name": "Anthony Martell",
+        "car": "2008 Mitsubishi* Evolution S",
+        "tire": "Dunlop*",
+        "className": "Street Touring Ultra",
+        "region": "",
+        "cityState": "Parkville, MD",
+        "paxTime": 64.255,
+        "runs": {
+          "left": [
+            "33.067",
+            "32.310",
+            "RL",
+            "32.080",
+            "43.567(1,1) DNF"
+          ],
+          "right": [
+            "RL",
+            "33.080",
+            "32.810",
+            "32.975",
+            "32.175",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "26",
+        "name": "Jerry Byrd Jr.",
+        "car": "2006 Subaru* STI Black",
+        "tire": "Dunlop*",
+        "className": "Street Touring Ultra",
+        "region": "",
+        "cityState": "Fort Washington, MD",
+        "paxTime": 64.3,
+        "runs": {
+          "left": [
+            "32.863",
+            "32.463",
+            "32.945",
+            "32.651",
+            "33.223",
+            "32.275"
+          ],
+          "right": [
+            "33.100",
+            "32.751",
+            "32.663",
+            "32.818",
+            "RL",
+            "32.025"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "128",
+        "name": "Laurence Casey",
+        "car": "Ford* Mustang",
+        "tire": "Dunlop*",
+        "className": "Street Touring Ultra",
+        "region": "",
+        "cityState": "Frederick, MD",
+        "paxTime": 64.649,
+        "runs": {
+          "left": [
+            "35.417(1)",
+            "32.288",
+            "34.660(1)",
+            "31.822",
+            "33.910",
+            "33.248"
+          ],
+          "right": [
+            "33.379",
+            "RL",
+            "33.495",
+            "32.827",
+            "34.202",
+            "33.718"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "28",
+        "name": "Craig Marhefka",
+        "car": "Ford* Mustang",
+        "tire": "Hankook",
+        "className": "Street Touring Ultra",
+        "region": "",
+        "cityState": "Frederick, MD",
+        "paxTime": 66.221,
+        "runs": {
+          "left": [
+            "32.864",
+            "33.339",
+            "DSQ",
+            "33.178",
+            "34.391",
+            "33.986"
+          ],
+          "right": [
+            "33.528",
+            "33.357",
+            "38.846(2)",
+            "RL",
+            "34.864",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "168",
+        "name": "T.J. Pierson",
+        "car": "2004 BMW M3 silver",
+        "tire": "Dunlop",
+        "className": "Street Touring Ultra",
+        "region": "",
+        "cityState": "New York, NY",
+        "paxTime": 66.737,
+        "runs": {
+          "left": [
+            "33.633",
+            "33.081",
+            "34.174",
+            "32.927",
+            "33.562",
+            "33.998"
+          ],
+          "right": [
+            "33.810",
+            "34.053",
+            "34.086",
+            "33.878",
+            "33.828",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "68",
+        "name": "James Anderson",
+        "car": "2004 BMW* M3 Silver",
+        "tire": "Dunlop*",
+        "className": "Street Touring Ultra",
+        "region": "",
+        "cityState": "Chatham, NJ",
+        "paxTime": 66.803,
+        "runs": {
+          "left": [
+            "34.871",
+            "39.733(2)",
+            "34.277",
+            "RL",
+            "34.094",
+            "33.416"
+          ],
+          "right": [
+            "34.709",
+            "33.907",
+            "34.324",
+            "33.387",
+            "RL",
+            "33.442"
+          ]
+        }
+      }
+    ],
+    "Street Touring R": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "191",
+        "name": "Nick Barbato",
+        "car": "2008 Honda S2000 CR Bla",
+        "tire": "Multi",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Wethersfield, CT",
+        "paxTime": 63.572,
+        "runs": {
+          "left": [
+            "32.301",
+            "31.691",
+            "32.229",
+            "31.464",
+            "32.086",
+            "31.393"
+          ],
+          "right": [
+            "43.232(0,1) 33.103",
+            "32.517",
+            "34.841(1)",
+            "32.639",
+            "32.179"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "27",
+        "name": "Brian Karwan",
+        "car": "2004 Honda S2000 White",
+        "tire": "Dunlop*",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Frederick, MD",
+        "paxTime": 63.748,
+        "runs": {
+          "left": [
+            "32.749",
+            "32.023",
+            "32.145",
+            "31.626",
+            "31.650",
+            "31.402"
+          ],
+          "right": [
+            "33.442",
+            "32.957",
+            "32.581",
+            "32.346",
+            "32.844",
+            "32.388"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "65",
+        "name": "Shane Chinonn-Rhoden",
+        "car": "2006 Mazda Miata MX-5 Gr",
+        "tire": "Hankook",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Laurel, MD",
+        "paxTime": 63.752,
+        "runs": {
+          "left": [
+            "RL",
+            "33.609(1)",
+            "31.656",
+            "31.873",
+            "DNF",
+            "32.286"
+          ],
+          "right": [
+            "33.209",
+            "32.185",
+            "34.620(1)",
+            "32.352",
+            "32.645",
+            "32.096"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "85",
+        "name": "David Marcus",
+        "car": "2006 Honda S2000 Blue",
+        "tire": "Dunlop*",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Fort Lauderdale, FL",
+        "paxTime": 64.002,
+        "runs": {
+          "left": [
+            "32.579",
+            "32.374",
+            "31.838",
+            "31.811",
+            "32.564",
+            "31.735"
+          ],
+          "right": [
+            "33.120",
+            "32.624",
+            "33.434",
+            "32.704",
+            "32.760",
+            "32.267"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": true,
+        "carNumber": "87",
+        "name": "Joseph Ottofaro",
+        "car": "2008 Mazda MX5 Blue",
+        "tire": "Toyo*",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Merrick, NY",
+        "paxTime": 64.258,
+        "runs": {
+          "left": [
+            "46.786(0,1) 47.105(0,1) 32.877",
+            "31.892",
+            "31.974",
+            "31.702"
+          ],
+          "right": [
+            "33.624",
+            "33.619",
+            "33.673",
+            "33.240",
+            "32.683",
+            "32.556"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": true,
+        "carNumber": "165",
+        "name": "James Dunham",
+        "car": "2006 Mazda MX-5 Gray",
+        "tire": "Hankook",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Bristow, VA",
+        "paxTime": 64.426,
+        "runs": {
+          "left": [
+            "32.827",
+            "31.940",
+            "32.539",
+            "32.093",
+            "32.069",
+            "31.803"
+          ],
+          "right": [
+            "32.623",
+            "32.853",
+            "32.871",
+            "34.669(1)",
+            "DSQ",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": true,
+        "carNumber": "185",
+        "name": "Jon Caserta",
+        "car": "2006 Honda S2000 Smurfis",
+        "tire": "Dunlop*",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Phoenixville, PA",
+        "paxTime": 64.433,
+        "runs": {
+          "left": [
+            "32.800",
+            "32.253",
+            "32.228",
+            "32.022",
+            "34.981(1)",
+            "32.455"
+          ],
+          "right": [
+            "32.411",
+            "32.859",
+            "39.611(3)",
+            "33.126",
+            "33.098",
+            "32.795"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": true,
+        "carNumber": "164",
+        "name": "Justin Neal",
+        "car": "2006 Honda S2000 White",
+        "tire": "Hankook",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Falls Church, VA",
+        "paxTime": 64.588,
+        "runs": {
+          "left": [
+            "32.775",
+            "32.695",
+            "32.188",
+            "33.009",
+            "33.119",
+            "31.964"
+          ],
+          "right": [
+            "32.951",
+            "32.997",
+            "32.849",
+            "34.786(1)",
+            "32.624",
+            "32.759"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": true,
+        "carNumber": "69",
+        "name": "Timothy Walker",
+        "car": "2003 Toyota* MR2 spyder b",
+        "tire": "Hankook",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Bowie, MD",
+        "paxTime": 64.69,
+        "runs": {
+          "left": [
+            "34.283",
+            "33.546",
+            "33.567",
+            "32.491",
+            "33.786",
+            "32.275"
+          ],
+          "right": [
+            "34.094",
+            "33.253",
+            "35.672(1)",
+            "33.901",
+            "45.133(0,1)",
+            "32.415"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "78",
+        "name": "Tony Economou",
+        "car": "2004 Honda S2000 Sebring S",
+        "tire": "Hankook",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Sparta, NJ",
+        "paxTime": 64.718,
+        "runs": {
+          "left": [
+            "33.317",
+            "32.381",
+            "36.152(1)",
+            "32.612",
+            "32.921",
+            "31.978"
+          ],
+          "right": [
+            "32.910",
+            "34.717(1)",
+            "33.265",
+            "35.397(1)",
+            "33.233",
+            "32.740"
+          ]
+        }
+      },
+      {
+        "position": 11,
+        "trophy": false,
+        "carNumber": "1",
+        "name": "Christopher Lin",
+        "car": "2003 Toyota MR2 Spyder G",
+        "tire": "Multi",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Alexandria, VA",
+        "paxTime": 64.913,
+        "runs": {
+          "left": [
+            "44.669(0,1) RL",
+            "33.048",
+            "32.369",
+            "33.522",
+            "32.293"
+          ],
+          "right": [
+            "RL",
+            "32.768",
+            "RL",
+            "32.985",
+            "33.097",
+            "32.620"
+          ]
+        }
+      },
+      {
+        "position": 12,
+        "trophy": false,
+        "carNumber": "76",
+        "name": "Mark Dudek",
+        "car": "2009 Mazda MX-5 Copper R",
+        "tire": "Dunlop*",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Boston, MA",
+        "paxTime": 65.463,
+        "runs": {
+          "left": [
+            "32.523",
+            "RL",
+            "33.202",
+            "32.588",
+            "34.917",
+            "32.704"
+          ],
+          "right": [
+            "33.258",
+            "32.940",
+            "33.810",
+            "33.463",
+            "33.259",
+            "33.249"
+          ]
+        }
+      },
+      {
+        "position": 13,
+        "trophy": false,
+        "carNumber": "86",
+        "name": "Nuri Heckrotte",
+        "car": "2003 Toyota* Mr2 Spyder W",
+        "tire": "Hankook",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Wilmington, DE",
+        "paxTime": 65.49,
+        "runs": {
+          "left": [
+            "34.346",
+            "33.687",
+            "32.681",
+            "52.72(0,2)",
+            "32.550",
+            "32.505"
+          ],
+          "right": [
+            "33.760",
+            "33.532",
+            "RL",
+            "33.671",
+            "34.009",
+            "32.985"
+          ]
+        }
+      },
+      {
+        "position": 14,
+        "trophy": false,
+        "carNumber": "190",
+        "name": "John Li",
+        "car": "2009 Mazda Miata MX5 Re",
+        "tire": "Multi",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Dearborn, MI",
+        "paxTime": 65.49,
+        "runs": {
+          "left": [
+            "34.055",
+            "34.069",
+            "33.443",
+            "32.445",
+            "33.493",
+            "32.783"
+          ],
+          "right": [
+            "37.182(1)",
+            "34.607",
+            "34.310",
+            "33.595",
+            "33.846",
+            "33.045"
+          ]
+        }
+      },
+      {
+        "position": 15,
+        "trophy": false,
+        "carNumber": "169",
+        "name": "Daniel Bragason",
+        "car": "2003 Toyota* MR2 Spyder B",
+        "tire": "Hankook",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Rockville, MD",
+        "paxTime": 65.623,
+        "runs": {
+          "left": [
+            "44.404(0,1) 33.412",
+            "43.284(0,1) 33.035",
+            "33.227",
+            "32.415"
+          ],
+          "right": [
+            "33.817",
+            "33.672",
+            "33.925",
+            "33.662",
+            "33.660",
+            "33.208"
+          ]
+        }
+      },
+      {
+        "position": 16,
+        "trophy": false,
+        "carNumber": "91",
+        "name": "Noel Leslie",
+        "car": "2008 Honda S2000 CR Bla",
+        "tire": "Multi",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Frederick, MD",
+        "paxTime": 65.689,
+        "runs": {
+          "left": [
+            "33.434",
+            "32.839",
+            "33.111",
+            "32.573",
+            "32.474",
+            "32.630"
+          ],
+          "right": [
+            "33.574",
+            "33.215",
+            "33.324",
+            "33.250",
+            "33.328",
+            "33.369"
+          ]
+        }
+      },
+      {
+        "position": 17,
+        "trophy": false,
+        "carNumber": "88",
+        "name": "Hezron Laluces",
+        "car": "2006 Honda s2000 sebring s",
+        "tire": "Dunlop*",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Union, NJ",
+        "paxTime": 65.73,
+        "runs": {
+          "left": [
+            "33.304",
+            "33.103",
+            "33.371",
+            "32.707",
+            "RL",
+            "32.911"
+          ],
+          "right": [
+            "33.862",
+            "33.023",
+            "34.149",
+            "RL",
+            "34.121",
+            "33.074"
+          ]
+        }
+      },
+      {
+        "position": 18,
+        "trophy": false,
+        "carNumber": "115",
+        "name": "Evan Schickel",
+        "car": "2013 Mazda Miata Black",
+        "tire": "Hankook",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Brooklyn, NY",
+        "paxTime": 65.807,
+        "runs": {
+          "left": [
+            "33.211",
+            "32.673",
+            "33.293",
+            "32.570",
+            "33.425",
+            "RL"
+          ],
+          "right": [
+            "33.637",
+            "33.237",
+            "RL",
+            "33.374",
+            "35.020",
+            "34.077"
+          ]
+        }
+      },
+      {
+        "position": 19,
+        "trophy": false,
+        "carNumber": "187",
+        "name": "Joseph Wong",
+        "car": "2009 Mazda MX-5 Black",
+        "tire": "Toyo*",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Brooklyn, NY",
+        "paxTime": 65.936,
+        "runs": {
+          "left": [
+            "34.413",
+            "33.018",
+            "33.881",
+            "43.346(0,1) 34.043",
+            "32.645"
+          ],
+          "right": [
+            "40.693",
+            "61.01(0,1)",
+            "35.833(1)",
+            "33.291",
+            "33.701",
+            "34.072"
+          ]
+        }
+      },
+      {
+        "position": 20,
+        "trophy": false,
+        "carNumber": "104",
+        "name": "Tom Layton",
+        "car": "2004 Honda S2000 Silver",
+        "tire": "BFGoodri",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Arlington, VA",
+        "paxTime": 65.959,
+        "runs": {
+          "left": [
+            "RL",
+            "33.400",
+            "33.021",
+            "32.786",
+            "33.641",
+            "32.891"
+          ],
+          "right": [
+            "RL",
+            "33.789",
+            "33.719",
+            "33.559",
+            "33.173",
+            "34.862(1)"
+          ]
+        }
+      },
+      {
+        "position": 21,
+        "trophy": false,
+        "carNumber": "90",
+        "name": "Josh McDonough",
+        "car": "2009 Mazda MX-5 Red",
+        "tire": "Multi",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Novi, MI",
+        "paxTime": 65.965,
+        "runs": {
+          "left": [
+            "43.447(0,1) 35.361(1)",
+            "39.682(3)",
+            "33.506",
+            "42.545(1)",
+            "32.706"
+          ],
+          "right": [
+            "35.934",
+            "34.010",
+            "34.316",
+            "34.097",
+            "38.299(2)",
+            "33.259"
+          ]
+        }
+      },
+      {
+        "position": 22,
+        "trophy": false,
+        "carNumber": "68",
+        "name": "Dhariel Tatis",
+        "car": "2004 Honda S2000 Red",
+        "tire": "Hankook",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "White Plains, NY",
+        "paxTime": 66.081,
+        "runs": {
+          "left": [
+            "33.190",
+            "33.085",
+            "33.181",
+            "34.375(1)",
+            "32.604",
+            "32.520"
+          ],
+          "right": [
+            "35.241",
+            "33.997",
+            "34.180",
+            "33.561",
+            "35.566(1)",
+            "33.569"
+          ]
+        }
+      },
+      {
+        "position": 23,
+        "trophy": false,
+        "carNumber": "64",
+        "name": "Ryan Davies",
+        "car": "2006 Honda S2000 White",
+        "tire": "Hankook",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Fairfax, VA",
+        "paxTime": 66.379,
+        "runs": {
+          "left": [
+            "49.469(0,1) 45.619(0,1)",
+            "33.132",
+            "45.57(0,1)",
+            "35.156(1)",
+            "34.18(1)"
+          ],
+          "right": [
+            "43.028(0,1) 34.612",
+            "34.242",
+            "33.632",
+            "33.247",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 24,
+        "trophy": false,
+        "carNumber": "30",
+        "name": "Daniel Stainback",
+        "car": "2000 Honda S2000 White",
+        "tire": "Dunlop*",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Northport, NY",
+        "paxTime": 66.384,
+        "runs": {
+          "left": [
+            "36.866(2)",
+            "33.068",
+            "33.232",
+            "35.013(1)",
+            "33.083",
+            "33.336"
+          ],
+          "right": [
+            "34.314",
+            "33.320",
+            "36.399(1)",
+            "RL",
+            "33.843",
+            "33.316"
+          ]
+        }
+      },
+      {
+        "position": 25,
+        "trophy": false,
+        "carNumber": "168",
+        "name": "Rad Tatis",
+        "car": "2004 Honda S2000 Red",
+        "tire": "Hankook",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Wappingers Falls, NY",
+        "paxTime": 66.458,
+        "runs": {
+          "left": [
+            "RL",
+            "RL",
+            "33.180",
+            "RL",
+            "33.032",
+            "38.440"
+          ],
+          "right": [
+            "33.756",
+            "44.726(0,1) 34.332",
+            "33.426",
+            "33.701",
+            "33.520"
+          ]
+        }
+      },
+      {
+        "position": 26,
+        "trophy": false,
+        "carNumber": "15",
+        "name": "Joshua Thal-Pruzan",
+        "car": "2013 Mazda Miata Club Bla",
+        "tire": "Hankook",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Cliffside Park, NJ",
+        "paxTime": 66.735,
+        "runs": {
+          "left": [
+            "35.123",
+            "33.991",
+            "RL",
+            "33.651",
+            "32.978",
+            "RL"
+          ],
+          "right": [
+            "34.256",
+            "RL",
+            "33.757",
+            "38.521",
+            "34.218",
+            "39.439(3)"
+          ]
+        }
+      },
+      {
+        "position": 27,
+        "trophy": false,
+        "carNumber": "4",
+        "name": "David Escalante",
+        "car": "2003 Honda S2000 Silver",
+        "tire": "BFGoodri",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Falls church, VA",
+        "paxTime": 66.781,
+        "runs": {
+          "left": [
+            "43.891(0,1) 51.387(0,1) 34.620",
+            "33.186",
+            "35.288(1)",
+            "32.977"
+          ],
+          "right": [
+            "37.158(1)",
+            "34.682",
+            "34.233",
+            "33.804",
+            "37.437(2)",
+            "33.868"
+          ]
+        }
+      },
+      {
+        "position": 28,
+        "trophy": false,
+        "carNumber": "98",
+        "name": "Dan Adams",
+        "car": "2004 Honda S2000 Silvers",
+        "tire": "Dunlop*",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Virginia Beach, VA",
+        "paxTime": 67.473,
+        "runs": {
+          "left": [
+            "34.637",
+            "34.085",
+            "33.847",
+            "34.405",
+            "34.037",
+            "33.495"
+          ],
+          "right": [
+            "35.734",
+            "35.827",
+            "34.899",
+            "34.650",
+            "35.071",
+            "33.978"
+          ]
+        }
+      },
+      {
+        "position": 29,
+        "trophy": false,
+        "carNumber": "42",
+        "name": "Raymond Schumin",
+        "car": "2000 Honda S2000 Silver",
+        "tire": "Yokoham",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Stuarts Draft, VA",
+        "paxTime": 68.75,
+        "runs": {
+          "left": [
+            "34.988",
+            "34.212",
+            "34.820",
+            "34.385",
+            "43.521(1)",
+            "33.868"
+          ],
+          "right": [
+            "35.803",
+            "36.130",
+            "45.068(0,1)",
+            "34.882",
+            "35.164",
+            "44.62(0,1)"
+          ]
+        }
+      },
+      {
+        "position": 30,
+        "trophy": false,
+        "carNumber": "19",
+        "name": "Ata Tabesh",
+        "car": "2005 Honda*",
+        "tire": "Dunlop*",
+        "className": "Street Touring R",
+        "region": "",
+        "cityState": "Ellicott City, MD",
+        "paxTime": 68.996,
+        "runs": {
+          "left": [
+            "RL",
+            "RL",
+            "33.913",
+            "33.599",
+            "34.333",
+            "33.659"
+          ],
+          "right": [
+            "39.187(2)",
+            "35.641",
+            "35.452",
+            "35.397",
+            "39.694(2)",
+            "35.992"
+          ]
+        }
+      }
+    ],
+    "E Street Prepared": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "147",
+        "name": "Adam George",
+        "car": "2005 Ford* Mustang Silver",
+        "tire": "Hoosier",
+        "className": "E Street Prepared",
+        "region": "",
+        "cityState": "Westminster, MD",
+        "paxTime": 62.511,
+        "runs": {
+          "left": [
+            "32.181",
+            "30.902",
+            "31.666",
+            "30.788",
+            "31.871",
+            "31.232"
+          ],
+          "right": [
+            "34.612(1)",
+            "32.471",
+            "35.231(1)",
+            "31.723",
+            "32.372",
+            "32.004"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "72",
+        "name": "Pat Griffith",
+        "car": "1982 Chevrolet* Camaro Z2",
+        "tire": "Hoosier",
+        "className": "E Street Prepared",
+        "region": "",
+        "cityState": "Harmans, MD",
+        "paxTime": 62.538,
+        "runs": {
+          "left": [
+            "32.663",
+            "31.504",
+            "31.640",
+            "30.913",
+            "33.871(1)",
+            "31.196"
+          ],
+          "right": [
+            "43.343(0,1) 34.121(1)",
+            "32.695",
+            "31.650",
+            "32.037",
+            "31.625"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "34",
+        "name": "Karen Kraus",
+        "car": "2006 Subaru Impreza WRX S",
+        "tire": "Hoosier",
+        "className": "E Street Prepared",
+        "region": "",
+        "cityState": "Harmans, MD",
+        "paxTime": 62.549,
+        "runs": {
+          "left": [
+            "32.475",
+            "31.024",
+            "31.308",
+            "30.829",
+            "31.302",
+            "RL"
+          ],
+          "right": [
+            "32.976",
+            "31.955",
+            "32.138",
+            "31.720",
+            "32.893",
+            "33.444(1)"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "195",
+        "name": "Jadrice Toussaint",
+        "car": "2013 Ford* Mustang Boss Y",
+        "tire": "Hoosier",
+        "className": "E Street Prepared",
+        "region": "",
+        "cityState": "Charlotte, NC",
+        "paxTime": 62.668,
+        "runs": {
+          "left": [
+            "32.537",
+            "33.543(1)",
+            "31.813",
+            "33.342(1)",
+            "31.541",
+            "30.952"
+          ],
+          "right": [
+            "32.948",
+            "32.722",
+            "34.287(1)",
+            "31.716",
+            "32.881",
+            "32.054"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "134",
+        "name": "Samuel Krauss",
+        "car": "2006 Subaru WRX silver",
+        "tire": "Hoosier",
+        "className": "E Street Prepared",
+        "region": "",
+        "cityState": "St-Laurent, QC",
+        "paxTime": 62.734,
+        "runs": {
+          "left": [
+            "36.741",
+            "31.405",
+            "31.147",
+            "30.944",
+            "31.369",
+            "30.862"
+          ],
+          "right": [
+            "42.629(0,1)",
+            "31.872",
+            "44.758(1,1) 32.177",
+            "33.558(1)",
+            "31.997"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "47",
+        "name": "Sam Vassallo",
+        "car": "2005 Ford* Mustang GT Si",
+        "tire": "Hoosier",
+        "className": "E Street Prepared",
+        "region": "",
+        "cityState": "Boonsboro, MD",
+        "paxTime": 63.486,
+        "runs": {
+          "left": [
+            "41.24(0,1)",
+            "32.429",
+            "31.746",
+            "44.059(0,1)",
+            "31.407",
+            "RL"
+          ],
+          "right": [
+            "32.640",
+            "32.788",
+            "34.629(1)",
+            "32.196",
+            "32.079",
+            "35.846(2)"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "29",
+        "name": "Ron Bistrais",
+        "car": "2007 Ford* Shelby GT Whit",
+        "tire": "Hoosier",
+        "className": "E Street Prepared",
+        "region": "",
+        "cityState": "West Windsor, NJ",
+        "paxTime": 63.588,
+        "runs": {
+          "left": [
+            "31.970",
+            "31.980",
+            "32.208",
+            "31.762",
+            "32.690",
+            "31.547"
+          ],
+          "right": [
+            "34.776(1)",
+            "38.506(3)",
+            "33.027",
+            "32.553",
+            "32.671",
+            "32.041"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "143",
+        "name": "Derek Latshaw",
+        "car": "2006 Ford* Mustang GT Si",
+        "tire": "Hoosier",
+        "className": "E Street Prepared",
+        "region": "",
+        "cityState": "East Berlin, PA",
+        "paxTime": 63.959,
+        "runs": {
+          "left": [
+            "54.386(0,1) 33.282",
+            "32.094",
+            "32.171",
+            "32.237",
+            "31.443"
+          ],
+          "right": [
+            "33.839",
+            "32.622",
+            "33.131",
+            "33.057",
+            "36.155(1)",
+            "32.516"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "43",
+        "name": "Dennis Latshaw",
+        "car": "2006 Ford* Mustang silver",
+        "tire": "Hoosier",
+        "className": "E Street Prepared",
+        "region": "",
+        "cityState": "Hanover, PA",
+        "paxTime": 64.614,
+        "runs": {
+          "left": [
+            "35.302",
+            "32.329",
+            "33.092",
+            "31.686",
+            "32.557",
+            "32.203"
+          ],
+          "right": [
+            "33.189",
+            "32.928",
+            "33.999",
+            "33.200",
+            "33.609",
+            "33.061"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "95",
+        "name": "Keath Marx",
+        "car": "2013 Ford* Mustang Boss Y",
+        "tire": "Hoosier",
+        "className": "E Street Prepared",
+        "region": "",
+        "cityState": "Suffolk, VA",
+        "paxTime": 64.705,
+        "runs": {
+          "left": [
+            "34.012",
+            "33.085",
+            "RL",
+            "31.983",
+            "36.663",
+            "31.666"
+          ],
+          "right": [
+            "33.827",
+            "RL",
+            "33.341",
+            "33.039",
+            "36.486(1)",
+            "34.213(1)"
+          ]
+        }
+      },
+      {
+        "position": 11,
+        "trophy": false,
+        "carNumber": "187",
+        "name": "Mark Sarcevicz",
+        "car": "1999 Chevrolet* Camaro Bl",
+        "tire": "Hoosier",
+        "className": "E Street Prepared",
+        "region": "",
+        "cityState": "Bridgewater, MA",
+        "paxTime": 66.589,
+        "runs": {
+          "left": [
+            "33.479",
+            "34.943(1)",
+            "33.977",
+            "33.415",
+            "34.745",
+            "33.632"
+          ],
+          "right": [
+            "33.564",
+            "33.174",
+            "35.79(1)",
+            "RL",
+            "33.971",
+            "33.252"
+          ]
+        }
+      },
+      {
+        "position": 12,
+        "trophy": false,
+        "carNumber": "87",
+        "name": "Ryan Field",
+        "car": "1999 Chevrolet* Camaro Bl",
+        "tire": "Hoosier",
+        "className": "E Street Prepared",
+        "region": "",
+        "cityState": "Tyngsboro, MA",
+        "paxTime": 66.845,
+        "runs": {
+          "left": [
+            "34.796",
+            "34.373",
+            "33.630",
+            "33.130",
+            "39.86(3)",
+            "33.212"
+          ],
+          "right": [
+            "36.246",
+            "33.883",
+            "33.736",
+            "33.715",
+            "35.407(1)",
+            "RL"
+          ]
+        }
+      }
+    ],
+    "Street Modified": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "124",
+        "name": "Aaron Shoe",
+        "car": "2006 Mitsubishi* Evo MR G",
+        "tire": "Hoosier",
+        "className": "Street Modified",
+        "region": "",
+        "cityState": "Bear, DE",
+        "paxTime": 59.688,
+        "runs": {
+          "left": [
+            "30.529",
+            "30.396",
+            "30.061",
+            "29.814",
+            "31.361",
+            "29.468"
+          ],
+          "right": [
+            "30.974",
+            "30.356",
+            "30.753",
+            "30.220",
+            "30.388",
+            "30.645"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "96",
+        "name": "Frank Gaus",
+        "car": "2006 Mitsubishi* Evolution I",
+        "tire": "Hoosier",
+        "className": "Street Modified",
+        "region": "",
+        "cityState": "Wexford, PA",
+        "paxTime": 60.146,
+        "runs": {
+          "left": [
+            "30.100",
+            "29.998",
+            "RL",
+            "31.727(1)",
+            "29.592",
+            "29.644"
+          ],
+          "right": [
+            "31.474",
+            "30.775",
+            "30.554",
+            "32.299(1)",
+            "30.751",
+            "32.591(1)"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "24",
+        "name": "Michael Fineberg",
+        "car": "2006 Mitsubishi* Evolution M",
+        "tire": "Hoosier",
+        "className": "Street Modified",
+        "region": "",
+        "cityState": "Medi, PA",
+        "paxTime": 60.346,
+        "runs": {
+          "left": [
+            "31.058",
+            "30.133",
+            "30.825",
+            "30.179",
+            "30.150",
+            "30.081"
+          ],
+          "right": [
+            "43.767(0,1) RL",
+            "30.809",
+            "30.749",
+            "30.265",
+            "30.312"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "99",
+        "name": "PJ Corrales",
+        "car": "1995 G-Fab* 240sx Panda",
+        "tire": "Hoosier",
+        "className": "Street Modified",
+        "region": "",
+        "cityState": "Rocky Hill, CT",
+        "paxTime": 61.252,
+        "runs": {
+          "left": [
+            "31.546",
+            "30.557",
+            "31.193",
+            "32.666(1)",
+            "33.212(1)",
+            "32.392(1)"
+          ],
+          "right": [
+            "31.271",
+            "30.976",
+            "31.401",
+            "30.885",
+            "31.323",
+            "30.695"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "1",
+        "name": "Vasilios Zaharis",
+        "car": "2008 Mitsubishi* Evolution X",
+        "tire": "Hoosier*",
+        "className": "Street Modified",
+        "region": "",
+        "cityState": "Windsor, CT",
+        "paxTime": 62.549,
+        "runs": {
+          "left": [
+            "47.617(0,1) 32.310",
+            "35.302(1)",
+            "RL",
+            "RL",
+            "31.259"
+          ],
+          "right": [
+            "45.541(0,1) 33.373",
+            "RL",
+            "32.476",
+            "32.087",
+            "31.290"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "72",
+        "name": "Andrew Barrette",
+        "car": "1992 Honda Civic Red",
+        "tire": "Toyo*",
+        "className": "Street Modified",
+        "region": "",
+        "cityState": "Stamford, CT",
+        "paxTime": 64.317,
+        "runs": {
+          "left": [
+            "33.410",
+            "RL",
+            "32.633",
+            "32.327",
+            "31.589",
+            "32.083"
+          ],
+          "right": [
+            "34.115",
+            "RL",
+            "33.684",
+            "33.303",
+            "33.081",
+            "32.728"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "172",
+        "name": "Kenneth Johnson",
+        "car": "1992 Honda Civic Red",
+        "tire": "Toyo*",
+        "className": "Street Modified",
+        "region": "",
+        "cityState": "Fairfield, CT",
+        "paxTime": 67.528,
+        "runs": {
+          "left": [
+            "36.491",
+            "35.070",
+            "33.522",
+            "36.022(1)",
+            "33.265",
+            "33.547"
+          ],
+          "right": [
+            "43.160(0,1) RL",
+            "34.772",
+            "34.263",
+            "34.344",
+            "RL"
+          ]
+        }
+      }
+    ],
+    "Super Street Modified": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "97",
+        "name": "Jake Namer",
+        "car": "1993 Mazda RX7 Black Ham",
+        "tire": "Hoosier",
+        "className": "Super Street Modified",
+        "region": "",
+        "cityState": "N ew York, NY",
+        "paxTime": 59.32,
+        "runs": {
+          "left": [
+            "32.923(1)",
+            "29.835",
+            "30.145",
+            "29.669",
+            "31.233(1)",
+            "29.248"
+          ],
+          "right": [
+            "31.530",
+            "30.433",
+            "31.128",
+            "30.302",
+            "32.374(1)",
+            "30.072"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "53",
+        "name": "Martin Valent",
+        "car": "1991 Toyota MR2 Turbo Gr",
+        "tire": "Hoosier",
+        "className": "Super Street Modified",
+        "region": "",
+        "cityState": "Hurricane, WV",
+        "paxTime": 59.385,
+        "runs": {
+          "left": [
+            "41.602(0,1) 29.981",
+            "31.179",
+            "29.773",
+            "31.006",
+            "29.745"
+          ],
+          "right": [
+            "31.252",
+            "30.135",
+            "34.344(2)",
+            "30.143",
+            "30.553",
+            "29.640"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": false,
+        "carNumber": "123",
+        "name": "Charles Koulik",
+        "car": "1992 Mazda miata red",
+        "tire": "Hoosier",
+        "className": "Super Street Modified",
+        "region": "",
+        "cityState": "Wilkes Barre, PA",
+        "paxTime": 60.898,
+        "runs": {
+          "left": [
+            "30.643",
+            "30.283",
+            "31.651",
+            "30.475",
+            "31.304",
+            "30.415"
+          ],
+          "right": [
+            "32.554",
+            "30.978",
+            "31.398",
+            "30.881",
+            "32.956(1)",
+            "30.615"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "23",
+        "name": "Joe Brennan",
+        "car": "1992 Mazda MIATA REDIS",
+        "tire": "Hoosier",
+        "className": "Super Street Modified",
+        "region": "",
+        "cityState": "Kingston, PA",
+        "paxTime": 60.915,
+        "runs": {
+          "left": [
+            "31.242",
+            "30.757",
+            "30.643",
+            "30.304",
+            "30.513",
+            "29.773"
+          ],
+          "right": [
+            "32.085",
+            "31.362",
+            "32.558",
+            "33.901(1)",
+            "35.217(2)",
+            "31.142"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "87",
+        "name": "Mike Golden",
+        "car": "1989 Mazda RX-7 Turbo Bl",
+        "tire": "Hoosier*",
+        "className": "Super Street Modified",
+        "region": "",
+        "cityState": "Woodbine, MD",
+        "paxTime": 63.87,
+        "runs": {
+          "left": [
+            "33.425",
+            "33.633",
+            "32.213",
+            "31.787",
+            "33.672(1)",
+            "31.443"
+          ],
+          "right": [
+            "32.994",
+            "32.964",
+            "33.802",
+            "32.427",
+            "33.335",
+            "RL"
+          ]
+        }
+      }
+    ],
+    "Kart Modified": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "45",
+        "name": "Julian Garfield",
+        "car": "2008 CRG/Honda Honda Bl",
+        "tire": "MG*",
+        "className": "Kart Modified",
+        "region": "",
+        "cityState": "Mount Airy, MD",
+        "paxTime": 55.031,
+        "runs": {
+          "left": [
+            "40.493(0,1) 28.961",
+            "27.808",
+            "31.603(2)",
+            "27.948",
+            "27.346"
+          ],
+          "right": [
+            "RL",
+            "28.818",
+            "29.195",
+            "RL",
+            "28.046",
+            "27.685"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "145",
+        "name": "Mike Kline",
+        "car": "2008 CRG/Honda Honda Ro",
+        "tire": "MG*",
+        "className": "Kart Modified",
+        "region": "",
+        "cityState": "Glen Burnie, MD",
+        "paxTime": 55.749,
+        "runs": {
+          "left": [
+            "28.257",
+            "28.118",
+            "28.331",
+            "27.221",
+            "28.738",
+            "27.628"
+          ],
+          "right": [
+            "31.919(1)",
+            "29.071",
+            "28.627",
+            "28.815",
+            "28.528",
+            "29.942(1)"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "68",
+        "name": "Scott Boito",
+        "car": "2008 Intrepid Silverstone Or",
+        "tire": "MG*",
+        "className": "Kart Modified",
+        "region": "",
+        "cityState": "Kingsport, TN",
+        "paxTime": 56.375,
+        "runs": {
+          "left": [
+            "30.590",
+            "RL",
+            "29.908",
+            "28.080",
+            "28.825",
+            "27.721"
+          ],
+          "right": [
+            "29.730",
+            "29.204",
+            "29.922",
+            "RL",
+            "28.654",
+            "29.165"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "23",
+        "name": "Alan Sheidler",
+        "car": "1999 Honda Honda/Renspe",
+        "tire": "MG*",
+        "className": "Kart Modified",
+        "region": "",
+        "cityState": "Rochester Hills, MI",
+        "paxTime": 56.509,
+        "runs": {
+          "left": [
+            "28.748",
+            "27.768",
+            "28.360",
+            "27.831",
+            "31.327(1)",
+            "27.652"
+          ],
+          "right": [
+            "29.809",
+            "29.574",
+            "30.388",
+            "29.214",
+            "28.857",
+            "29.183"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "50",
+        "name": "Justin Mitchell",
+        "car": "2005 intrepid Silver",
+        "tire": "MG*",
+        "className": "Kart Modified",
+        "region": "",
+        "cityState": "Hillsborough, NC",
+        "paxTime": 56.562,
+        "runs": {
+          "left": [
+            "39.832(0,1) 28.452",
+            "30.559",
+            "28.902",
+            "28.269",
+            "28.268"
+          ],
+          "right": [
+            "30.298",
+            "29.015",
+            "39.8(0,1)",
+            "29.615",
+            "29.876",
+            "28.294"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "44",
+        "name": "Daniel Wendel",
+        "car": "2009 Top Kart* Speedy TM",
+        "tire": "Hoosier",
+        "className": "Kart Modified",
+        "region": "",
+        "cityState": "Advance, NC",
+        "paxTime": 56.879,
+        "runs": {
+          "left": [
+            "28.430",
+            "RL",
+            "27.821",
+            "27.956",
+            "28.592",
+            "33.525(1)"
+          ],
+          "right": [
+            "31.802(1)",
+            "31.495",
+            "30.027",
+            "29.058",
+            "30.978(1)",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "99",
+        "name": "Joshua West",
+        "car": "2006 Tony Kart Krypton Wh",
+        "tire": "MG*",
+        "className": "Kart Modified",
+        "region": "",
+        "cityState": "Salisbury, MD",
+        "paxTime": 57.087,
+        "runs": {
+          "left": [
+            "RL",
+            "28.556",
+            "31.996",
+            "29.136",
+            "28.686",
+            "28.438"
+          ],
+          "right": [
+            "29.799",
+            "29.090",
+            "29.551",
+            "DNS",
+            "30.156",
+            "28.649"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "31",
+        "name": "Ryan Lower",
+        "car": "1999 Honda/CRG Kaliforn",
+        "tire": "MG",
+        "className": "Kart Modified",
+        "region": "",
+        "cityState": "State College, PA",
+        "paxTime": 57.172,
+        "runs": {
+          "left": [
+            "32.855",
+            "RL",
+            "28.925",
+            "28.145",
+            "28.157",
+            "RL"
+          ],
+          "right": [
+            "29.578",
+            "29.923",
+            "29.404",
+            "29.027",
+            "29.235",
+            "29.079"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "19",
+        "name": "Lisa Garfield",
+        "car": "2002 CTS CR125 Honda Bl",
+        "tire": "MG*",
+        "className": "Kart Modified",
+        "region": "",
+        "cityState": "Mount Airy, MD",
+        "paxTime": 61.247,
+        "runs": {
+          "left": [
+            "38.204(1)",
+            "31.025",
+            "30.665",
+            "29.641",
+            "DNS",
+            "DNS"
+          ],
+          "right": [
+            "35.116",
+            "31.897",
+            "31.606",
+            "32.929",
+            "DNS",
+            "DNS"
+          ]
+        }
+      }
+    ],
+    "Bump Class": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "99",
+        "name": "Rusty English",
+        "car": "2011 Subaru* ScoobyRoobyR",
+        "tire": "Dunlop*",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Chesapeake, Va",
+        "paxTime": 52.535,
+        "runs": {
+          "left": [
+            "33.276",
+            "33.518",
+            "33.606",
+            "32.664",
+            "32.847",
+            "32.168"
+          ],
+          "right": [
+            "36.176(1)",
+            "33.981",
+            "34.061",
+            "35.904(1)",
+            "RL",
+            "33.256"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "97",
+        "name": "James Feinberg",
+        "car": "2008 Audi* TT White",
+        "tire": "Dunlop*",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Fuquay Varina, NC",
+        "paxTime": 52.635,
+        "runs": {
+          "left": [
+            "33.423",
+            "32.712",
+            "32.941",
+            "33.001",
+            "32.811",
+            "32.458"
+          ],
+          "right": [
+            "33.679",
+            "33.364",
+            "33.801",
+            "33.633",
+            "33.229",
+            "33.090"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "197",
+        "name": "David Spratte",
+        "car": "2008 Audi* TT White",
+        "tire": "Dunlop*",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Raleigh, NC",
+        "paxTime": 53.111,
+        "runs": {
+          "left": [
+            "34.135",
+            "33.359",
+            "33.776",
+            "33.554",
+            "34.240",
+            "32.750"
+          ],
+          "right": [
+            "47.498(0,1) 34.148",
+            "34.341",
+            "33.972",
+            "33.439",
+            "33.391"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "42",
+        "name": "Marshall Cone",
+        "car": "2006 Mini Cooper Red",
+        "tire": "Hankook",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Sterling, VA",
+        "paxTime": 53.515,
+        "runs": {
+          "left": [
+            "51.496(0,1) 34.303",
+            "34.407",
+            "34.070",
+            "35.462",
+            "34.141"
+          ],
+          "right": [
+            "34.751",
+            "34.487",
+            "37.824(1)",
+            "34.538",
+            "34.363",
+            "34.509"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "71",
+        "name": "Nathan Young",
+        "car": "2006 Honda S2000 Blue",
+        "tire": "Dunlop*",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "West Chester, PA",
+        "paxTime": 54.054,
+        "runs": {
+          "left": [
+            "33.652",
+            "RL",
+            "32.747",
+            "39.274(3)",
+            "32.949",
+            "35.248(1)"
+          ],
+          "right": [
+            "34.255",
+            "RL",
+            "34.152",
+            "39.545(3)",
+            "34.208",
+            "35.527"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "28",
+        "name": "Steve Kahre",
+        "car": "2006 Honda S2000 Yellow",
+        "tire": "Dunlop*",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Spotsylvania, VA",
+        "paxTime": 54.299,
+        "runs": {
+          "left": [
+            "38.117(2)",
+            "33.583",
+            "34.206",
+            "33.411",
+            "33.578",
+            "33.392"
+          ],
+          "right": [
+            "36.380",
+            "34.028",
+            "34.302",
+            "36.578(1)",
+            "34.566",
+            "33.810"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "47",
+        "name": "Matt Feeney",
+        "car": "2004 Chevrolet* Corvette r",
+        "tire": "Dunlop*",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Lexington, NC",
+        "paxTime": 54.537,
+        "runs": {
+          "left": [
+            "43.992(0,1)",
+            "33.697",
+            "46.625(0,1) 36.025(1)",
+            "RL",
+            "35.377(1)"
+          ],
+          "right": [
+            "34.705",
+            "33.927",
+            "35.597",
+            "35.246",
+            "35.227",
+            "33.799"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "61",
+        "name": "Jeffrey Rooney",
+        "car": "2004 Honda S2000 White",
+        "tire": "Dunlop*",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Virginia Beach, VA",
+        "paxTime": 54.999,
+        "runs": {
+          "left": [
+            "RL",
+            "34.014",
+            "34.088",
+            "33.664",
+            "34.597",
+            "33.920"
+          ],
+          "right": [
+            "35.030",
+            "35.061",
+            "35.048",
+            "34.708",
+            "RL",
+            "34.404"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "39",
+        "name": "Robert Chrismas",
+        "car": "1989 Honda Civic Si White",
+        "tire": "Avon*",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Genoa, OH",
+        "paxTime": 55.089,
+        "runs": {
+          "left": [
+            "32.667",
+            "RL",
+            "31.679",
+            "31.350",
+            "31.049",
+            "31.005"
+          ],
+          "right": [
+            "34.429",
+            "32.620",
+            "32.893",
+            "32.470",
+            "32.098",
+            "35.645(2)"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "142",
+        "name": "Craig Garfield",
+        "car": "2006 Mini Cooper Red",
+        "tire": "Hankook",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Ellicott City, MD",
+        "paxTime": 56.66,
+        "runs": {
+          "left": [
+            "37.604",
+            "36.260",
+            "37.430",
+            "RL",
+            "36.967",
+            "36.084"
+          ],
+          "right": [
+            "RL",
+            "37.797",
+            "39.018",
+            "37.564",
+            "43.556(0,1)",
+            "36.371"
+          ]
+        }
+      }
+    ],
+    "Ladies Class 1": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "98",
+        "name": "Learic Cramer",
+        "car": "2010 Porsche* GT3 Black",
+        "tire": "Hoosier",
+        "className": "Ladies Class 1",
+        "region": "",
+        "cityState": "Columbia, MD",
+        "paxTime": 53.401,
+        "runs": {
+          "left": [
+            "33.019",
+            "RL",
+            "31.403",
+            "30.914",
+            "34.706(1)",
+            "31.422"
+          ],
+          "right": [
+            "33.157",
+            "RL",
+            "33.138",
+            "RL",
+            "32.001",
+            "31.617"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "57",
+        "name": "Stephanie Reeve",
+        "car": "2003 Corvette* Z06 Black",
+        "tire": "Hoosier",
+        "className": "Ladies Class 1",
+        "region": "",
+        "cityState": "Sturbridge, MA",
+        "paxTime": 53.957,
+        "runs": {
+          "left": [
+            "32.222",
+            "31.424",
+            "33.341",
+            "31.821",
+            "31.460",
+            "31.117"
+          ],
+          "right": [
+            "44.932(0,1) 33.199",
+            "32.538",
+            "RL",
+            "33.010",
+            "32.065"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "19",
+        "name": "Rachel Baker",
+        "car": "2011 BMW* 1M White",
+        "tire": "Hoosier",
+        "className": "Ladies Class 1",
+        "region": "",
+        "cityState": "Westford, MA",
+        "paxTime": 54.155,
+        "runs": {
+          "left": [
+            "33.151",
+            "32.258",
+            "32.331",
+            "31.682",
+            "33.420",
+            "31.963"
+          ],
+          "right": [
+            "34.862",
+            "33.700",
+            "35.482(1)",
+            "32.788",
+            "34.786(1)",
+            "32.953"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "95",
+        "name": "Donna Marx",
+        "car": "2013 Ford* Mustang Boss Y",
+        "tire": "Hoosier",
+        "className": "Ladies Class 1",
+        "region": "",
+        "cityState": "Suffolk, VA",
+        "paxTime": 54.388,
+        "runs": {
+          "left": [
+            "44.366(0,1) 43.150(0,1) 35.49(1)",
+            "32.985",
+            "32.290",
+            "31.964"
+          ],
+          "right": [
+            "40.123(0,1) 47.881(0,2) 34.483",
+            "33.617",
+            "34.511",
+            "32.249"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "96",
+        "name": "Kristi Gaus",
+        "car": "2006 Mitsubishi* Evolution I",
+        "tire": "Hoosier",
+        "className": "Ladies Class 1",
+        "region": "",
+        "cityState": "Wexford, PA",
+        "paxTime": 54.739,
+        "runs": {
+          "left": [
+            "32.032",
+            "RL",
+            "32.037",
+            "31.517",
+            "31.353",
+            "31.864"
+          ],
+          "right": [
+            "34.182",
+            "RL",
+            "31.813",
+            "31.682",
+            "32.003",
+            "31.278"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "47",
+        "name": "Kandy Johnson",
+        "car": "2005 Ford* Mustang GT Si",
+        "tire": "Hoosier",
+        "className": "Ladies Class 1",
+        "region": "",
+        "cityState": "Glen Allen, VA",
+        "paxTime": 54.947,
+        "runs": {
+          "left": [
+            "34.763",
+            "RL",
+            "32.583",
+            "RL",
+            "33.017",
+            "33.815(1)"
+          ],
+          "right": [
+            "34.235",
+            "32.289",
+            "RL",
+            "34.731(1)",
+            "33.920",
+            "34.305(1)"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "37",
+        "name": "Jenna Corrales",
+        "car": "1989 honda crx blue",
+        "tire": "Hoosier",
+        "className": "Ladies Class 1",
+        "region": "",
+        "cityState": "Rocky Hill, CT",
+        "paxTime": 55.311,
+        "runs": {
+          "left": [
+            "33.566",
+            "32.822",
+            "42.655(1)",
+            "31.992",
+            "32.869",
+            "33.733(1)"
+          ],
+          "right": [
+            "39.824(2)",
+            "33.698",
+            "35.741(1)",
+            "34.57(1)",
+            "34.823",
+            "36.923(2)"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "20",
+        "name": "Sophia Zaharis",
+        "car": "2008 Mitsubishi* Evolution X",
+        "tire": "Hoosier*",
+        "className": "Ladies Class 1",
+        "region": "",
+        "cityState": "Windsor, CT",
+        "paxTime": 58.113,
+        "runs": {
+          "left": [
+            "37.366",
+            "33.647",
+            "34.688",
+            "32.905",
+            "RL",
+            "33.393"
+          ],
+          "right": [
+            "37.148",
+            "34.638",
+            "34.358",
+            "34.054",
+            "34.941",
+            "33.891"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "11",
+        "name": "Amanda Bauske",
+        "car": "2004 Chevy* Corvette Red",
+        "tire": "Hoosier",
+        "className": "Ladies Class 1",
+        "region": "",
+        "cityState": "Richmond, VA",
+        "paxTime": 59.749,
+        "runs": {
+          "left": [
+            "39.982(1)",
+            "46.914(0,1) 44.301(0,1)",
+            "33.822",
+            "36.672",
+            "35.267"
+          ],
+          "right": [
+            "51.651(0,1) 47.586(0,1) 44.565(0,1) 37.494(1)",
+            "36.879",
+            "36.142"
+          ]
+        }
+      }
+    ],
+    "Ladies Class 2": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "14",
+        "name": "Shelly Monfort",
+        "car": "2014 Ford* Focus Black",
+        "tire": "Hankook",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "saratoga, CA",
+        "paxTime": 53.532,
+        "runs": {
+          "left": [
+            "42.429",
+            "35.178",
+            "34.294",
+            "RL",
+            "34.542",
+            "34.442"
+          ],
+          "right": [
+            "36.307",
+            "35.392",
+            "35.554",
+            "38.539(2)",
+            "35.782",
+            "35.138"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "184",
+        "name": "Jennifer Bedell",
+        "car": "2003 Toyota MR2 Spyder R",
+        "tire": "Toyo*",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Hillsborough, NC",
+        "paxTime": 53.548,
+        "runs": {
+          "left": [
+            "RL",
+            "35.223",
+            "34.494",
+            "34.742",
+            "33.888",
+            "33.300"
+          ],
+          "right": [
+            "35.752",
+            "35.076",
+            "35.494",
+            "48.053(0,1) 34.464",
+            "34.226"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "90",
+        "name": "Jocelin Huang",
+        "car": "2010 Porsche* GT3 White",
+        "tire": "Yokoham",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Edina, MN",
+        "paxTime": 53.557,
+        "runs": {
+          "left": [
+            "52.224(0,1)",
+            "32.554",
+            "32.660",
+            "34.178(1)",
+            "32.877",
+            "42.818(0,1"
+          ],
+          "right": [
+            "43.006",
+            "35.392",
+            "33.607",
+            "32.797",
+            "33.133",
+            ")",
+            "32.601"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "84",
+        "name": "Chris Peterson",
+        "car": "0 Toyota Spyder",
+        "tire": "Toyo*",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Hillsborough, NC",
+        "paxTime": 53.739,
+        "runs": {
+          "left": [
+            "35.021",
+            "33.985",
+            "33.668",
+            "34.092",
+            "34.253",
+            "33.354"
+          ],
+          "right": [
+            "34.479",
+            "34.413",
+            "RL",
+            "34.902",
+            "36.13(1)",
+            "34.597"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "97",
+        "name": "Gwen Baake Habenicht",
+        "car": "2008 Audi* TT White",
+        "tire": "Dunlop*",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Bahama, NC",
+        "paxTime": 54.037,
+        "runs": {
+          "left": [
+            "35.180",
+            "34.387",
+            "34.153",
+            "33.679",
+            "34.657",
+            "33.302"
+          ],
+          "right": [
+            "36.523",
+            "34.686",
+            "33.999",
+            "34.775",
+            "35.216",
+            "33.992"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "27",
+        "name": "Tara Buck",
+        "car": "2013 Scion* FRS Red",
+        "tire": "Dunlop*",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "North East, MD",
+        "paxTime": 55.313,
+        "runs": {
+          "left": [
+            "35.569",
+            "RL",
+            "43.773(1)",
+            "34.216",
+            "35.371",
+            "34.404"
+          ],
+          "right": [
+            "56.761(0,1) 37.014",
+            "35.185",
+            "RL",
+            "36.418",
+            "35.248"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "82",
+        "name": "Denise Howell",
+        "car": "2003 Toyota Celica GT Whi",
+        "tire": "Toyo*",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Fairfield, PA",
+        "paxTime": 55.456,
+        "runs": {
+          "left": [
+            "50.640(0,1) 38.889(1)",
+            "35.415",
+            "35.278",
+            "DNS",
+            "DNS"
+          ],
+          "right": [
+            "47.801(0,1) 43.818(0,1) 38.124",
+            "36.650",
+            "DNS",
+            "DNS"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "127",
+        "name": "Michelle Knoll",
+        "car": "2013 Scion* FR-S Firestorm",
+        "tire": "Dunlop*",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Baltimore, MD",
+        "paxTime": 55.8,
+        "runs": {
+          "left": [
+            "39.399(1)",
+            "37.656(1)",
+            "39.929(2)",
+            "35.093",
+            "36.612(1)",
+            "34.645"
+          ],
+          "right": [
+            "37.621",
+            "36.452",
+            "36.135",
+            "35.367",
+            "RL",
+            "36.606"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "41",
+        "name": "Rachel Sims",
+        "car": "2012 Mini Cooper Sea Foa",
+        "tire": "BFGoodri",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Doylestown, PA",
+        "paxTime": 56.777,
+        "runs": {
+          "left": [
+            "42.682(1)",
+            "48.918(0,1) RL",
+            "39.660",
+            "37.589",
+            "36.769"
+          ],
+          "right": [
+            "RL",
+            "RL",
+            "42.558",
+            "38.628",
+            "38.442",
+            "37.352"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "74",
+        "name": "Becca Nell",
+        "car": "2008 Honda S2000 CR Bla",
+        "tire": "Dunlop*",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Norwalk, CT",
+        "paxTime": 57.418,
+        "runs": {
+          "left": [
+            "46.671(0,1) 36.308",
+            "35.283",
+            "35.086",
+            "36.260",
+            "35.426"
+          ],
+          "right": [
+            "38.077",
+            "RL",
+            "36.679",
+            "35.801",
+            "35.971",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 11,
+        "trophy": false,
+        "carNumber": "47",
+        "name": "Aamanda Minen",
+        "car": "2003 Mini cooper red",
+        "tire": "BFGoodri",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Tappahannock, VA",
+        "paxTime": 58.45,
+        "runs": {
+          "left": [
+            "57.165(0,1) 51.724",
+            "51.088(0,1) 43.910",
+            "38.955",
+            "37.898"
+          ],
+          "right": [
+            "56.621(0,1)",
+            "37.913",
+            "41.962(1)",
+            "39.913",
+            "43.81(1)",
+            "39.876"
+          ]
+        }
+      }
+    ],
+    "Ladies Class 3": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "92",
+        "name": "Kathy Grunenwald",
+        "car": "1989 Honda Civic Si White",
+        "tire": "Toyo",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Hilliard, OH",
+        "paxTime": 54.198,
+        "runs": {
+          "left": [
+            "37.034(1)",
+            "33.464",
+            "33.550",
+            "33.468",
+            "36.22(1)",
+            "33.428"
+          ],
+          "right": [
+            "35.729",
+            "33.982",
+            "45.341(0,1) 34.386",
+            "35.350",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "85",
+        "name": "Victoria Benya",
+        "car": "2006 Honda S2000 Blue",
+        "tire": "Dunlop*",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Phoenixville, PA",
+        "paxTime": 54.207,
+        "runs": {
+          "left": [
+            "33.506",
+            "33.193",
+            "33.179",
+            "33.096",
+            "39.668(3)",
+            "32.796"
+          ],
+          "right": [
+            "RL",
+            "34.060",
+            "34.110",
+            "33.809",
+            "53.77(1,1)",
+            "33.472"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "17",
+        "name": "Mina Ingraham",
+        "car": "2004 Subaru* WRX STi Ja",
+        "tire": "BFGoodri",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Lynchburg, VA",
+        "paxTime": 54.223,
+        "runs": {
+          "left": [
+            "32.964",
+            "32.880",
+            "32.361",
+            "33.125",
+            "33.175",
+            "32.427"
+          ],
+          "right": [
+            "34.295",
+            "32.983",
+            "34.113",
+            "33.243",
+            "32.889",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "54",
+        "name": "Caitlin Dunlap",
+        "car": "2010 Mini JCW Hardtop Re",
+        "tire": "Dunlop*",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Alexandria, VA",
+        "paxTime": 54.619,
+        "runs": {
+          "left": [
+            "33.854",
+            "33.787",
+            "33.905",
+            "33.560",
+            "34.069",
+            "33.717"
+          ],
+          "right": [
+            "35.576",
+            "34.467",
+            "34.908",
+            "34.206",
+            "38.321(2)",
+            "44.745(0,1"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "77",
+        "name": "Heidi Ellison",
+        "car": "1998 BMW* M3 Black",
+        "tire": "Dunlop*",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Roosevelt, NY",
+        "paxTime": 55.033,
+        "runs": {
+          "left": [
+            "36.322(1)",
+            "37.705(2)",
+            "34.846(1)",
+            "32.945",
+            "42.522",
+            "34.94(1)"
+          ],
+          "right": [
+            "38.527(2)",
+            "46.224(1,1) 33.499",
+            "33.280",
+            "36.29(1)",
+            "33.617"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "5",
+        "name": "Dawn Ammirata",
+        "car": "2013 Scion* FRS Orange",
+        "tire": "Hankook",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Caldwell, NJ",
+        "paxTime": 55.419,
+        "runs": {
+          "left": [
+            "38.591",
+            "34.824",
+            "34.273",
+            "35.791(1)",
+            "40.464",
+            "43.721(0,1"
+          ],
+          "right": [
+            "35.729",
+            "34.940",
+            "34.485",
+            "34.558",
+            "36.989",
+            ")",
+            "35.056"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "33",
+        "name": "Ashley Colburn",
+        "car": "2013 Subaru* BRZ Silver",
+        "tire": "BFGoodri",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Clarksburg, MD",
+        "paxTime": 58.974,
+        "runs": {
+          "left": [
+            "37.622",
+            "36.586",
+            "60.601(0,2) 36.840",
+            "39.513",
+            "36.511"
+          ],
+          "right": [
+            "43.243(0,1) 39.629(1)",
+            "38.126",
+            "36.791",
+            "36.710",
+            "36.658"
+          ]
+        }
+      }
+    ],
+    "Street Index RWD": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "84",
+        "name": "Eric Peterson",
+        "car": "2003 Toyota Spyder Red",
+        "tire": "Toyo*",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "Hillsborough, NC",
+        "paxTime": 52.11,
+        "runs": {
+          "left": [
+            "33.436",
+            "35.227",
+            "32.961",
+            "33.158",
+            "32.778",
+            "32.395"
+          ],
+          "right": [
+            "33.799",
+            "33.539",
+            "33.699",
+            "34.205",
+            "33.529",
+            "33.317"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "111",
+        "name": "Tom Weaver",
+        "car": "2013 Chevrolet* Corvette G",
+        "tire": "Multi",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "Rochester, NY",
+        "paxTime": 52.712,
+        "runs": {
+          "left": [
+            "33.919",
+            "31.989",
+            "33.173",
+            "34.69(1)",
+            "43.227(1)",
+            "32.762"
+          ],
+          "right": [
+            "35.414(1)",
+            "33.087",
+            "33.991",
+            "33.311",
+            "33.739",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "90",
+        "name": "Charles Kim",
+        "car": "2010 Porsche* GT3 White",
+        "tire": "Yokoham",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "Edina, MN",
+        "paxTime": 53.165,
+        "runs": {
+          "left": [
+            "32.563",
+            "34.314",
+            "33.493",
+            "32.204",
+            "32.176",
+            "31.790"
+          ],
+          "right": [
+            "34.377",
+            "33.223",
+            "33.363",
+            "33.425",
+            "32.888",
+            "33.913"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "11",
+        "name": "Chris Morton",
+        "car": "2013 Chevrolet* Grand Spo",
+        "tire": "Multi",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "Webster, NY",
+        "paxTime": 53.206,
+        "runs": {
+          "left": [
+            "34.168",
+            "33.033",
+            "33.387",
+            "32.917",
+            "33.175",
+            "32.548"
+          ],
+          "right": [
+            "38.325(2)",
+            "33.312",
+            "38.226(2)",
+            "33.521",
+            "RL",
+            "33.138"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "17",
+        "name": "Andrew Kessel",
+        "car": "2006 Porsche* Cayman S S",
+        "tire": "Dunlop*",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "New York, NY",
+        "paxTime": 53.215,
+        "runs": {
+          "left": [
+            "33.441",
+            "32.825",
+            "35.060(1)",
+            "32.730",
+            "32.455",
+            "31.970"
+          ],
+          "right": [
+            "34.350",
+            "37.439(2)",
+            "37.734(2)",
+            "33.727",
+            "34.029",
+            "36.000(1)"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "65",
+        "name": "Yury Kholondyrev",
+        "car": "2005 Lotus* Elise",
+        "tire": "BFGoodri",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "New York, NY",
+        "paxTime": 53.558,
+        "runs": {
+          "left": [
+            "38.231",
+            "36.997",
+            "32.837",
+            "32.551",
+            "43.372",
+            "32.637"
+          ],
+          "right": [
+            "35.328(1)",
+            "32.979",
+            "33.252",
+            "32.945",
+            "35.392(1)",
+            "32.605"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "24",
+        "name": "Jeremy Prati",
+        "car": "2008 Honda S2000 C/R Bla",
+        "tire": "Dunlop*",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "Wallkill, NY",
+        "paxTime": 53.601,
+        "runs": {
+          "left": [
+            "33.708",
+            "RL",
+            "32.731",
+            "32.794",
+            "33.148",
+            "32.726"
+          ],
+          "right": [
+            "34.482",
+            "33.998",
+            "34.751",
+            "33.711",
+            "33.448",
+            "37.688(2)"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "74",
+        "name": "Tim Kong",
+        "car": "2008 Honda S2000 CR Bla",
+        "tire": "Dunlop*",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "Port Chester, NY",
+        "paxTime": 53.665,
+        "runs": {
+          "left": [
+            "32.638",
+            "32.632",
+            "33.154",
+            "32.557",
+            "33.843",
+            "32.660"
+          ],
+          "right": [
+            "34.481",
+            "33.937",
+            "33.696",
+            "35.554(1)",
+            "35.699(1)",
+            "33.715"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "50",
+        "name": "Dick Rasmussen",
+        "car": "2012 Ford* Mustang GT Re",
+        "tire": "Dunlop*",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "Raleigh, NC",
+        "paxTime": 54.273,
+        "runs": {
+          "left": [
+            "35.344",
+            "34.261",
+            "34.523",
+            "33.994",
+            "33.598",
+            "35.170"
+          ],
+          "right": [
+            "36.076",
+            "35.495",
+            "36.465(1)",
+            "34.670",
+            "37.595(1)",
+            "34.703"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "79",
+        "name": "Stephen Miller",
+        "car": "1999 Mazda* Miata Black",
+        "tire": "Toyo*",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "Garner, NC",
+        "paxTime": 54.409,
+        "runs": {
+          "left": [
+            "35.963",
+            "35.509",
+            "RL",
+            "35.383",
+            "34.690",
+            "33.849"
+          ],
+          "right": [
+            "35.798",
+            "35.963",
+            "37.47(1)",
+            "35.477",
+            "34.762",
+            "37.099(1)"
+          ]
+        }
+      },
+      {
+        "position": 11,
+        "trophy": false,
+        "carNumber": "179",
+        "name": "Mark Miller",
+        "car": "1999 Mazda* Miata Black",
+        "tire": "Toyo*",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "Carolina Beach, NC",
+        "paxTime": 56.161,
+        "runs": {
+          "left": [
+            "54.333(0,1) 36.309",
+            "49.253(0,1) 36.976",
+            "35.517",
+            "34.829"
+          ],
+          "right": [
+            "51.272(0,1) 46.662(0,1) 46.648(0,1) 36.337",
+            "37.875(1)",
+            "35.992"
+          ]
+        }
+      },
+      {
+        "position": 12,
+        "trophy": false,
+        "carNumber": "2",
+        "name": "Julian Brown",
+        "car": "2008 Honda* S2000 CR Be",
+        "tire": "BFGoodri",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "New York, NY",
+        "paxTime": 58.305,
+        "runs": {
+          "left": [
+            "51.565(0,1) 39.502",
+            "RL",
+            "35.425",
+            "RL",
+            "38.427(1)"
+          ],
+          "right": [
+            "56.745(0,1) 40.458(0,1)",
+            "36.556",
+            "RL",
+            "38.591(1)",
+            "37.024(1)"
+          ]
+        }
+      },
+      {
+        "position": 13,
+        "trophy": false,
+        "carNumber": "9",
+        "name": "David Palumbo",
+        "car": "2013 Chevrolet Camaro ZL",
+        "tire": "Goodyear",
+        "className": "Street Index RWD",
+        "region": "",
+        "cityState": "Mc Lean, VA",
+        "paxTime": 67.728,
+        "runs": {
+          "left": [
+            "61.547(0,1)",
+            "48.938(0,1)",
+            "DNS",
+            "DNS",
+            "DNS",
+            "DNS"
+          ],
+          "right": [
+            "36.255",
+            "RL",
+            "DNS",
+            "DNS",
+            "DNS",
+            "DNS"
+          ]
+        }
+      }
+    ],
+    "Street Index FWD": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "82",
+        "name": "Michael Moran",
+        "car": "2003 Toyota Celica GT Whi",
+        "tire": "Hankook",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Fairfield, PA",
+        "paxTime": 52.053,
+        "runs": {
+          "left": [
+            "36.083(1)",
+            "33.374",
+            "34.225",
+            "33.486",
+            "34.723",
+            "33.349"
+          ],
+          "right": [
+            "34.863",
+            "34.640",
+            "34.612",
+            "34.289",
+            "38.830",
+            "34.164"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "182",
+        "name": "andy thomas",
+        "car": "2003 Toyota celica white",
+        "tire": "Hankook",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Adamstown, MD",
+        "paxTime": 52.234,
+        "runs": {
+          "left": [
+            "RL",
+            "35.311(1)",
+            "36.19(1)",
+            "33.918",
+            "33.895",
+            "33.449"
+          ],
+          "right": [
+            "34.501",
+            "34.352",
+            "35.872",
+            "34.300",
+            "RL",
+            "37.987(2)"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "114",
+        "name": "Sam Strano",
+        "car": "2014 Ford* Focus Black",
+        "tire": "Hankook",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Brookville, PA",
+        "paxTime": 52.45,
+        "runs": {
+          "left": [
+            "34.270",
+            "33.795",
+            "33.596",
+            "33.462",
+            "33.533",
+            "33.422"
+          ],
+          "right": [
+            "34.608",
+            "RL",
+            "34.882",
+            "RL",
+            "34.922",
+            "34.607"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "197",
+        "name": "Azmath Mohammed",
+        "car": "2001 Toyota Celica Black",
+        "tire": "Toyo*",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Troy, MI",
+        "paxTime": 52.516,
+        "runs": {
+          "left": [
+            "46.037(0,1) 34.175",
+            "39.087(2)",
+            "33.997",
+            "33.584",
+            "33.200"
+          ],
+          "right": [
+            "35.406",
+            "35.668",
+            "35.133",
+            "34.914",
+            "35.339",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": true,
+        "carNumber": "57",
+        "name": "Timothy Whalen",
+        "car": "2013 Ford* Focus ST Tange",
+        "tire": "Dunlop*",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Williamsville, NY",
+        "paxTime": 52.554,
+        "runs": {
+          "left": [
+            "34.778",
+            "34.380",
+            "34.047",
+            "33.802",
+            "34.378",
+            "34.079"
+          ],
+          "right": [
+            "37.806(1)",
+            "34.362",
+            "36.808(1)",
+            "41.519(2)",
+            "36.698(1)",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "41",
+        "name": "Matt Jones",
+        "car": "2012 Mini Cooper Green",
+        "tire": "BFGoodri",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Washington, DC",
+        "paxTime": 52.718,
+        "runs": {
+          "left": [
+            "40.596",
+            "35.233",
+            "35.309",
+            "RL",
+            "35.426",
+            "34.261"
+          ],
+          "right": [
+            "35.652",
+            "RL",
+            "RL",
+            "45.191(0,1) 35.679",
+            "34.562"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "97",
+        "name": "Michael Eckert",
+        "car": "2001 Toyota Celica Blue",
+        "tire": "Toyo*",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Columbus, OH",
+        "paxTime": 52.855,
+        "runs": {
+          "left": [
+            "34.624",
+            "34.239",
+            "35.874(1)",
+            "33.997",
+            "33.778",
+            "33.681"
+          ],
+          "right": [
+            "36.315",
+            "35.259",
+            "RL",
+            "34.926",
+            "34.873",
+            "40.244(3)"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "141",
+        "name": "Ryan Leach",
+        "car": "2012 Mini Cooper Sea Foa",
+        "tire": "BFGoodri",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Doylestown, PA",
+        "paxTime": 53.038,
+        "runs": {
+          "left": [
+            "35.059",
+            "35.038",
+            "35.065",
+            "34.340",
+            "52.945(1)",
+            "35.204"
+          ],
+          "right": [
+            "46.270(0,1) 46.211(0,1) 35.156",
+            "36.124",
+            "35.476",
+            "34.900"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "147",
+        "name": "Courtney Cormier",
+        "car": "2003 Mini Cooper red",
+        "tire": "BFGoodri",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Glen Allen, VA",
+        "paxTime": 53.127,
+        "runs": {
+          "left": [
+            "RL",
+            "34.420",
+            "35.420",
+            "34.924",
+            "34.395",
+            "34.376"
+          ],
+          "right": [
+            "41.354(3)",
+            "41.354(3)",
+            "RL",
+            "35.646",
+            "RL",
+            "34.981"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "14",
+        "name": "Michael Snyder",
+        "car": "2014 Ford* Focus Black",
+        "tire": "Hankook",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Burtonsville, MD",
+        "paxTime": 53.146,
+        "runs": {
+          "left": [
+            "35.684",
+            "34.309",
+            "34.339",
+            "33.799",
+            "35.544",
+            "33.833"
+          ],
+          "right": [
+            "54.310(0,2)",
+            "35.132",
+            "35.979",
+            "35.312",
+            "35.311",
+            "36.561(1)"
+          ]
+        }
+      },
+      {
+        "position": 11,
+        "trophy": false,
+        "carNumber": "47",
+        "name": "Scott Hoffman",
+        "car": "2003 Mini Cooper Red",
+        "tire": "BFGoodri",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Richmond, VA",
+        "paxTime": 53.271,
+        "runs": {
+          "left": [
+            "35.253",
+            "35.440",
+            "34.959",
+            "37.085(1)",
+            "34.295",
+            "34.332"
+          ],
+          "right": [
+            "36.949",
+            "35.957",
+            "37.996(1)",
+            "35.471",
+            "35.249",
+            "35.430"
+          ]
+        }
+      },
+      {
+        "position": 12,
+        "trophy": false,
+        "carNumber": "92",
+        "name": "Alex Kang",
+        "car": "2012 Mini* Cooper White",
+        "tire": "Dunlop*",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Pleasanton, CA",
+        "paxTime": 53.752,
+        "runs": {
+          "left": [
+            "46.558(0,1) 35.632",
+            "35.122",
+            "35.214",
+            "34.533",
+            "36.357(1)"
+          ],
+          "right": [
+            "44.840(1,1) RL",
+            "36.617",
+            "35.993",
+            "35.639",
+            "37.785(1)"
+          ]
+        }
+      },
+      {
+        "position": 13,
+        "trophy": false,
+        "carNumber": "11",
+        "name": "Ted Descovich",
+        "car": "2008 Mini Cooper white",
+        "tire": "BFGoodri",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Chester, NY",
+        "paxTime": 54.133,
+        "runs": {
+          "left": [
+            "35.455",
+            "35.171",
+            "35.279",
+            "35.063",
+            "35.576",
+            "35.610"
+          ],
+          "right": [
+            "37.496",
+            "36.118",
+            "35.607",
+            "35.680",
+            "35.805",
+            "35.654"
+          ]
+        }
+      },
+      {
+        "position": 14,
+        "trophy": false,
+        "carNumber": "15",
+        "name": "Bruce Bellom",
+        "car": "2010 Mini* Cooper silver",
+        "tire": "BFGoodri",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Peekskill, NY",
+        "paxTime": 54.367,
+        "runs": {
+          "left": [
+            "35.566",
+            "35.300",
+            "35.273",
+            "35.525",
+            "36.651",
+            "34.986"
+          ],
+          "right": [
+            "37.319",
+            "39.974(2)",
+            "36.403",
+            "36.337",
+            "38.171(1)",
+            "35.989"
+          ]
+        }
+      },
+      {
+        "position": 15,
+        "trophy": false,
+        "carNumber": "4",
+        "name": "James Carr",
+        "car": "2007 Honda* Civic Black",
+        "tire": "BFGoodri",
+        "className": "Street Index FWD",
+        "region": "",
+        "cityState": "Richmond, VA",
+        "paxTime": 55.017,
+        "runs": {
+          "left": [
+            "36.501",
+            "36.080",
+            "35.715",
+            "36.745",
+            "36.302",
+            "35.700"
+          ],
+          "right": [
+            "56.961(0,1) 36.492",
+            "36.443",
+            "36.614",
+            "36.504",
+            "35.658"
+          ]
+        }
+      }
+    ],
+    "Street R Index RWD": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "132",
+        "name": "Tony Savini",
+        "car": "1999 Chevrolet* Corvette B",
+        "tire": "Hoosier",
+        "className": "Street R Index RWD",
+        "region": "",
+        "cityState": "Cochranville, PA",
+        "paxTime": 52.544,
+        "runs": {
+          "left": [
+            "31.808",
+            "31.171",
+            "31.557",
+            "31.491",
+            "32.126",
+            "31.032"
+          ],
+          "right": [
+            "RL",
+            "32.020",
+            "31.887",
+            "33.643(1)",
+            "31.520",
+            "31.631"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "32",
+        "name": "Jeff Jacobs",
+        "car": "1999 Chevrolet* Corvette B",
+        "tire": "Hoosier",
+        "className": "Street R Index RWD",
+        "region": "",
+        "cityState": "Philadelphia, PA",
+        "paxTime": 52.912,
+        "runs": {
+          "left": [
+            "32.373",
+            "31.279",
+            "32.334",
+            "31.640",
+            "32.084",
+            "RL"
+          ],
+          "right": [
+            "39.191(3)",
+            "32.144",
+            "34.302(1)",
+            "32.340",
+            "32.134",
+            "31.711"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "19",
+        "name": "Matt Murray",
+        "car": "2011 BMW* 1M Coupe Whi",
+        "tire": "Hoosier",
+        "className": "Street R Index RWD",
+        "region": "",
+        "cityState": "Westport, CT",
+        "paxTime": 53.374,
+        "runs": {
+          "left": [
+            "32.773",
+            "31.706",
+            "31.827",
+            "31.610",
+            "31.968",
+            "31.306"
+          ],
+          "right": [
+            "32.930",
+            "37.209",
+            "34.968(1)",
+            "32.412",
+            "32.913",
+            "32.235"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "97",
+        "name": "Paul Kozlak",
+        "car": "1999 Chevrolet* Corvette C",
+        "tire": "Hoosier",
+        "className": "Street R Index RWD",
+        "region": "",
+        "cityState": "Litchfield, ME",
+        "paxTime": 53.605,
+        "runs": {
+          "left": [
+            "32.722",
+            "42.718(0,1) 32.317",
+            "31.975",
+            "33.188",
+            "31.726"
+          ],
+          "right": [
+            "33.760",
+            "32.595",
+            "32.682",
+            "32.257",
+            "RL",
+            "32.089"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "193",
+        "name": "Mark Valera",
+        "car": "2000 Chevrolet* Corvette F",
+        "tire": "Hoosier",
+        "className": "Street R Index RWD",
+        "region": "",
+        "cityState": "New York, NY",
+        "paxTime": 54.545,
+        "runs": {
+          "left": [
+            "32.505",
+            "32.957",
+            "32.814",
+            "36.225(2)",
+            "36.909(2)",
+            "34.301(1)"
+          ],
+          "right": [
+            "35.434(1)",
+            "34.949(1)",
+            "33.577",
+            "34.946(1)",
+            "41.194(4)",
+            "32.430"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "16",
+        "name": "Kevin Chaplin",
+        "car": "2007 Nissan* 350Z Nismo W",
+        "tire": "Hoosier*",
+        "className": "Street R Index RWD",
+        "region": "",
+        "cityState": "Richmond, VA",
+        "paxTime": 55.426,
+        "runs": {
+          "left": [
+            "DNF",
+            "34.163",
+            "33.917",
+            "33.340",
+            "34.506",
+            "32.857"
+          ],
+          "right": [
+            "47.186(0,1) 34.736",
+            "34.778",
+            "34.927",
+            "34.489",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "18",
+        "name": "Joe Donaggio",
+        "car": "2013 Subaru BRZ Galaxy B",
+        "tire": "Kumho*",
+        "className": "Street R Index RWD",
+        "region": "",
+        "cityState": "Bayside, NY",
+        "paxTime": 56.909,
+        "runs": {
+          "left": [
+            "47.663(0,1) 47.235(0,1) 38.231(1)",
+            "34.321",
+            "35.269",
+            "RL"
+          ],
+          "right": [
+            "36.895",
+            "35.087",
+            "35.683",
+            "35.155",
+            "36.986",
+            "34.827"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "93",
+        "name": "Lisa Valera",
+        "car": "2000 Chevrolet* Corvette F",
+        "tire": "Hoosier",
+        "className": "Street R Index RWD",
+        "region": "",
+        "cityState": "Fresh Meadows, NY",
+        "paxTime": 58.862,
+        "runs": {
+          "left": [
+            "36.715",
+            "35.323",
+            "37.455(1)",
+            "34.910",
+            "45.53(1)",
+            "36.322(1)"
+          ],
+          "right": [
+            "44.228(0,1) 37.965(1)",
+            "44.651(0,1) 42.565(0,1)",
+            "35.164",
+            "43.17(0,1)"
+          ]
+        }
+      }
+    ],
+    "SP/SM Index A": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "29",
+        "name": "Steve Seguis",
+        "car": "2002 Honda* S2000 Yellow",
+        "tire": "Hoosier",
+        "className": "SP/SM Index A",
+        "region": "",
+        "cityState": "Flushing, NY",
+        "paxTime": 52.711,
+        "runs": {
+          "left": [
+            "RL",
+            "31.086",
+            "31.363",
+            "30.606",
+            "30.973",
+            "30.320"
+          ],
+          "right": [
+            "33.300",
+            "31.559",
+            "31.898",
+            "31.506",
+            "32.389",
+            "31.258"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "92",
+        "name": "Lee Piccione",
+        "car": "1995 BMW* M3 Violet",
+        "tire": "Hoosier",
+        "className": "SP/SM Index A",
+        "region": "",
+        "cityState": "Severn, MD",
+        "paxTime": 53.068,
+        "runs": {
+          "left": [
+            "31.362",
+            "30.869",
+            "32.891(1)",
+            "30.723",
+            "32.047",
+            "30.883"
+          ],
+          "right": [
+            "33.639(1)",
+            "31.272",
+            "31.889",
+            "31.532",
+            "33.701(1)",
+            "31.883"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "39",
+        "name": "Rod mcgeorge",
+        "car": "2004 Chevrolet* covette ye",
+        "tire": "Hoosier",
+        "className": "SP/SM Index A",
+        "region": "",
+        "cityState": "Tappahannock, VA",
+        "paxTime": 53.43,
+        "runs": {
+          "left": [
+            "31.333",
+            "30.673",
+            "32.750",
+            "31.280",
+            "31.215",
+            "30.256"
+          ],
+          "right": [
+            "31.800",
+            "31.089",
+            "35.064(2)",
+            "31.087",
+            "31.442",
+            "31.417"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "99",
+        "name": "Justin Lau",
+        "car": "2003 Mitsubishi* Evo VIII",
+        "tire": "Hoosier",
+        "className": "SP/SM Index A",
+        "region": "",
+        "cityState": "Norwalk, CT",
+        "paxTime": 53.935,
+        "runs": {
+          "left": [
+            "40.458(1)",
+            "30.837",
+            "31.568",
+            "32.443(1)",
+            "30.902",
+            "31.048"
+          ],
+          "right": [
+            "34.755(1)",
+            "31.263",
+            "31.782",
+            "31.157",
+            "31.828",
+            "31.573"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "38",
+        "name": "Mike Johnson",
+        "car": "2006 Chevrolet* Z06 Yello",
+        "tire": "BFGoodri",
+        "className": "SP/SM Index A",
+        "region": "",
+        "cityState": "Glen Allen, VA",
+        "paxTime": 53.972,
+        "runs": {
+          "left": [
+            "32.093",
+            "34.586(2)",
+            "31.739",
+            "31.050",
+            "33.508(1)",
+            "42.311(0,1"
+          ],
+          "right": [
+            "35.829(2)",
+            "31.633",
+            "31.502",
+            "31.360",
+            "31.264",
+            ")",
+            "30.916"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "11",
+        "name": "Christopher Cann",
+        "car": "2004 Chevy Z06 Red",
+        "tire": "Hoosier",
+        "className": "SP/SM Index A",
+        "region": "",
+        "cityState": "Richmond, VA",
+        "paxTime": 54.822,
+        "runs": {
+          "left": [
+            "32.812",
+            "31.117",
+            "31.638",
+            "31.346",
+            "31.092",
+            "30.890"
+          ],
+          "right": [
+            "33.823",
+            "32.970",
+            "33.282",
+            "32.462",
+            "32.942",
+            "32.051"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "192",
+        "name": "Kirk Boston",
+        "car": "1985 BMW* M3 Purple",
+        "tire": "Hoosier",
+        "className": "SP/SM Index A",
+        "region": "",
+        "cityState": "Severn, MD",
+        "paxTime": 55.598,
+        "runs": {
+          "left": [
+            "46.808(0,1) 32.658",
+            "32.900",
+            "32.274",
+            "32.368",
+            "31.740"
+          ],
+          "right": [
+            "35.764",
+            "33.906",
+            "34.220",
+            "33.211",
+            "33.372",
+            "RL"
+          ]
+        }
+      }
+    ],
+    "SP/SM Index B": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "137",
+        "name": "Brian Kuehl",
+        "car": "1991 Honda CRX Blue",
+        "tire": "Hoosier",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Windham, NH",
+        "paxTime": 51.171,
+        "runs": {
+          "left": [
+            "35.128(2)",
+            "30.488",
+            "DNS",
+            "DNS",
+            "30.375",
+            "30.088"
+          ],
+          "right": [
+            "31.763",
+            "31.256",
+            "40.739(2)",
+            "DNS",
+            "31.306",
+            "30.685"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "76",
+        "name": "Eric Campbell",
+        "car": "2001 BMW* 330CI Titani",
+        "tire": "Hoosier",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Canal Winchester, OH",
+        "paxTime": 51.482,
+        "runs": {
+          "left": [
+            "30.467",
+            "RL",
+            "30.184",
+            "29.938",
+            "30.480",
+            "29.922"
+          ],
+          "right": [
+            "31.228",
+            "30.503",
+            "30.756",
+            "30.546",
+            "30.518",
+            "32.319(1)"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "59",
+        "name": "John Vitamvas",
+        "car": "2002 BMW* 330Ci Red",
+        "tire": "Hoosier",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Columbia, md",
+        "paxTime": 52.297,
+        "runs": {
+          "left": [
+            "35.815",
+            "30.647",
+            "31.338",
+            "30.854",
+            "30.890",
+            "30.455"
+          ],
+          "right": [
+            "31.940",
+            "31.037",
+            "RL",
+            "31.311",
+            "31.915",
+            "30.927"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "75",
+        "name": "Brian Garfield",
+        "car": "1996 BMW* 328i Red/Bla",
+        "tire": "Hoosier",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Mount Airy, MD",
+        "paxTime": 52.373,
+        "runs": {
+          "left": [
+            "31.970",
+            "30.826",
+            "30.761",
+            "30.555",
+            "31.707"
+          ],
+          "right": [
+            "31.630",
+            "31.479",
+            "31.707",
+            "30.916"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": true,
+        "carNumber": "184",
+        "name": "Justin- Rest",
+        "car": "1994 Mazda Miata Red",
+        "tire": "Hoosier",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Blacksburg, VA",
+        "paxTime": 53.021,
+        "runs": {
+          "left": [
+            "32.340",
+            "31.542",
+            "41.467(0,1)",
+            "30.671",
+            "31.412",
+            "30.774"
+          ],
+          "right": [
+            "31.496",
+            "45.579(1,1) 41.884(0,1) 35.83(2)",
+            "33.835(1)",
+            "31.342"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "175",
+        "name": "Kevin Henry",
+        "car": "1990 BMW* 325i Blue",
+        "tire": "Hoosier",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Alexandria, VA",
+        "paxTime": 53.198,
+        "runs": {
+          "left": [
+            "33.446(1)",
+            "30.870",
+            "31.467",
+            "DNS"
+          ],
+          "right": [
+            "31.569",
+            "31.918",
+            "DNS",
+            "DNS"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "84",
+        "name": "Peter Johnson",
+        "car": "1994 Mazda Miata Red",
+        "tire": "Hoosier",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Baltimore, MD",
+        "paxTime": 53.54,
+        "runs": {
+          "left": [
+            "32.098",
+            "31.856",
+            "31.940",
+            "31.121",
+            "35.661(2)",
+            "30.867"
+          ],
+          "right": [
+            "43.548(0,1) 32.277",
+            "34.926(1)",
+            "31.912",
+            "33.073",
+            "31.753"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "37",
+        "name": "Don Kuehl",
+        "car": "1991 Honda CRX Blue",
+        "tire": "Hoosier",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Windham, NH",
+        "paxTime": 53.563,
+        "runs": {
+          "left": [
+            "RL",
+            "31.866",
+            "32.017",
+            "31.460",
+            "42.127(0,1) 32.410"
+          ],
+          "right": [
+            "50.221(0,1) 33.409",
+            "33.309",
+            "32.980",
+            "34.763(1)",
+            "32.154"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "154",
+        "name": "Doug Keiler",
+        "car": "0 BMW* 323 Black",
+        "tire": "Hoosier",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Virginia Beach, VA",
+        "paxTime": 53.99,
+        "runs": {
+          "left": [
+            "32.155",
+            "31.816",
+            "33.695(1)",
+            "33.137(1)",
+            "31.869",
+            "31.408"
+          ],
+          "right": [
+            "32.726",
+            "31.982",
+            "44.128(1,1)",
+            "31.960",
+            "36.398(2)",
+            "38.535(3)"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "66",
+        "name": "Charles Sudano",
+        "car": "1999 Mazda Miata Red",
+        "tire": "Hoosier",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Freeport, NY",
+        "paxTime": 54.175,
+        "runs": {
+          "left": [
+            "33.086",
+            "31.939",
+            "32.366",
+            "31.678",
+            "32.105",
+            "31.372"
+          ],
+          "right": [
+            "32.975",
+            "32.264",
+            "32.211",
+            "RL",
+            "33.944(1)",
+            "31.991"
+          ]
+        }
+      },
+      {
+        "position": 11,
+        "trophy": false,
+        "carNumber": "46",
+        "name": "Marc Monnar",
+        "car": "2005 Mazda RX-8 Serenity W",
+        "tire": "Hoosier",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Waltham, MA",
+        "paxTime": 54.177,
+        "runs": {
+          "left": [
+            "42.927(0,1) 31.936",
+            "32.224",
+            "47.928(0,1)",
+            "31.466",
+            "RL"
+          ],
+          "right": [
+            "34.123",
+            "32.597",
+            "33.642",
+            "34.226(1)",
+            "34.947(1)",
+            "32.122"
+          ]
+        }
+      },
+      {
+        "position": 12,
+        "trophy": false,
+        "carNumber": "54",
+        "name": "Peter Florance",
+        "car": "1999 BMW* 323i Black",
+        "tire": "Hoosier",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Virginia Beach, VA",
+        "paxTime": 54.885,
+        "runs": {
+          "left": [
+            "35.134",
+            "32.293",
+            "32.762",
+            "32.023",
+            "33.003",
+            "DNF"
+          ],
+          "right": [
+            "38.029(1)",
+            "33.259",
+            "33.986",
+            "33.517",
+            "32.813",
+            "32.396"
+          ]
+        }
+      },
+      {
+        "position": 13,
+        "trophy": false,
+        "carNumber": "67",
+        "name": "Marty Janzen",
+        "car": "1993 BMW* 325i Whitish",
+        "tire": "Multi",
+        "className": "SP/SM Index B",
+        "region": "",
+        "cityState": "Virginia Beach, VA",
+        "paxTime": 58.169,
+        "runs": {
+          "left": [
+            "34.707",
+            "35.684(1)",
+            "DSQ",
+            "DSQ",
+            "DSQ",
+            "DSQ"
+          ],
+          "right": [
+            "46.533(0,1)",
+            "33.566",
+            "DSQ",
+            "DSQ",
+            "DSQ",
+            "DSQ"
+          ]
+        }
+      }
+    ],
+    "Formula Junior A": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "25",
+        "name": "Trey White",
+        "car": "1995 Invader Kart Blue/Red",
+        "tire": "MG*",
+        "className": "Formula Junior A",
+        "region": "",
+        "cityState": "Glen Allen, VA",
+        "paxTime": 63.983,
+        "runs": {
+          "left": [
+            "43.482",
+            "42.619",
+            "32.929",
+            "32.181",
+            "32.458",
+            "31.971"
+          ],
+          "right": [
+            "43.408",
+            "RL",
+            "33.109",
+            "32.666",
+            "32.759",
+            "32.012"
+          ]
+        }
+      }
+    ],
+    "Formula Junior B": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "52",
+        "name": "Kimsoo Gopnik",
+        "car": "2000 CRG Kart* Cadet Kart",
+        "tire": "MG*",
+        "className": "Formula Junior B",
+        "region": "",
+        "cityState": "Maynard, MA",
+        "paxTime": 70.534,
+        "runs": {
+          "left": [
+            "48.325(0,1) 35.255",
+            "36.523",
+            "35.327",
+            "34.475",
+            "34.195"
+          ],
+          "right": [
+            "RL",
+            "37.348",
+            "40.479(1)",
+            "36.670",
+            "36.339",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": false,
+        "carNumber": "5",
+        "name": "Tyler Cormier",
+        "car": "1993 all kart* all kart black",
+        "tire": "MG*",
+        "className": "Formula Junior B",
+        "region": "",
+        "cityState": "Glen Allen, VA",
+        "paxTime": 70.925,
+        "runs": {
+          "left": [
+            "42.301",
+            "40.745",
+            "38.896",
+            "36.765",
+            "39.757",
+            "35.382"
+          ],
+          "right": [
+            "RL",
+            "40.967",
+            "37.686",
+            "37.373",
+            "37.080",
+            "35.543"
+          ]
+        }
+      }
+    ]
+  },
+  "paxIndex": {
+    "overall": []
+  }
+}

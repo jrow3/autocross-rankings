@@ -19,6 +19,9 @@ async function main() {
 
     // Step 2: Scrape all events
     run('node src/scraper.js all');
+
+    // Step 2b: Scrape ProSolo results (SCCA PDFs, not on the Vault)
+    run('node src/prosolo/scrape.js all');
   }
 
   // Step 3: Build driver registry

@@ -207,8 +207,11 @@ async function renderScoreChart(driver) {
   const history = [...(driver.history || [])].reverse();
   const labels = history.map(h => {
     const name = h.eventName || h.eventCode;
-    // Shorten: "2026 Tire Rack SCCA Red Hills National Tour" -> "Red Hills '26"
-    const short = name.replace(/\d{4}\s+Tire Rack SCCA\s+/i, '').replace(/National Tour/i, '').trim();
+    // Shorten: "2026 Tire Rack SCCA Red Hills National Tour" -> "Red Hills '26",
+    // "2025 Tire Rack SCCA Lincoln ProSolo" -> "Lincoln PS"
+    const short = h.eventType === 'prosolo'
+      ? name.replace(/^\d{4}\s+(Tire\s?Rack\s+)?(SCCA\s+)?/i, '').replace(/ProSolo/i, 'PS').trim()
+      : name.replace(/\d{4}\s+Tire Rack SCCA\s+/i, '').replace(/National Tour/i, '').trim();
     return short.slice(0, 20);
   });
 

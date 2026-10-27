@@ -13,8 +13,9 @@ async function renderEvents() {
   }
 
   // Parse start date from eventDates string like "March 21, 2025 - March 23, 2025 in Moultrie, GA"
+  // or, for ProSolos, "08/29/2025 - 08/31/2025"
   const parseStartDate = (e) => {
-    const m = (e.eventDates || '').match(/^([A-Za-z]+ \d{1,2},? \d{4})/);
+    const m = (e.eventDates || '').match(/^([A-Za-z]+ \d{1,2},? \d{4}|\d{2}\/\d{2}\/\d{4})/);
     return m ? new Date(m[1]) : new Date(0);
   };
 
