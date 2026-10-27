@@ -58,6 +58,13 @@ jobs:
         env:
           INSECURE_VAULT_SKIP_CERT: '1'
 
+      # ProSolo results come from SCCA's PDFs. A PDF that fails reconciliation
+      # marks this step failed without holding back the Tour/Nationals update.
+      - name: Scrape ProSolo results (current year)
+        working-directory: scraper
+        run: node src/prosolo/scrape.js $(date +%Y)
+        continue-on-error: true
+
       - name: Build driver registry
         working-directory: scraper
         run: node src/driver-registry.js

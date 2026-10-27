@@ -1,0 +1,3801 @@
+{
+  "eventCode": "2022-Tire-Rack-SCCA-Florida-ProSolo1",
+  "eventName": "2022 Tire Rack SCCA Florida ProSolo1",
+  "eventDates": "02/18/2022 - 02/20/2022",
+  "eventType": "prosolo",
+  "source": "scca-prosolo-pdf",
+  "sources": {
+    "classResults": "https://www.scca.com/downloads/61100-official-class-results/download",
+    "overallIndex": "https://www.scca.com/downloads/61101-overall-index-results/download"
+  },
+  "scrapedAt": "2026-10-27T01:08:26.172Z",
+  "isIndexedScore": false,
+  "totalDrivers": 113,
+  "classes": [
+    "B Street (2WD)",
+    "C Street",
+    "E Street",
+    "Solo Spec Coupe",
+    "Street Touring Roadster",
+    "Street Touring Xtreme",
+    "Classic American Muscle",
+    "Ladies Class 2",
+    "Ladies Class 3",
+    "Street 1",
+    "Street 3",
+    "Street 4",
+    "Street 5",
+    "Race Tire Index 1",
+    "Race Tire Index 2",
+    "Bump Class",
+    "Z"
+  ],
+  "classResults": {
+    "B Street (2WD)": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "169",
+        "name": "Rad Delgado",
+        "car": "2016 BMW M3 White",
+        "tire": "Falken",
+        "className": "B Street (2WD)",
+        "region": "",
+        "cityState": "Fort Lauderdale, FL",
+        "paxTime": 103.627,
+        "runs": {
+          "left": [
+            "DNF",
+            "52.291",
+            "52.119"
+          ],
+          "right": [
+            "54.016",
+            "52.360",
+            "51.508"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "54",
+        "name": "Lou Hudyman",
+        "car": "2014 Porsche Boxster Silver",
+        "tire": "Yokoham",
+        "className": "B Street (2WD)",
+        "region": "",
+        "cityState": "Ocala, FL",
+        "paxTime": 104.281,
+        "runs": {
+          "left": [
+            "DNF",
+            "52.422",
+            "52.587"
+          ],
+          "right": [
+            "52.522",
+            "51.859",
+            "51.887"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": false,
+        "carNumber": "69",
+        "name": "Craig Ellis",
+        "car": "BMW M4 White",
+        "tire": "Falken",
+        "className": "B Street (2WD)",
+        "region": "",
+        "cityState": "Fort Myers, FL",
+        "paxTime": 106.767,
+        "runs": {
+          "left": [
+            "59.605(1)",
+            "54.484",
+            "53.834"
+          ],
+          "right": [
+            "53.163",
+            "52.933",
+            "53.409"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "91",
+        "name": "Edward Fisher",
+        "car": "2008 Chevrolet Corvette si",
+        "tire": "Falken",
+        "className": "B Street (2WD)",
+        "region": "",
+        "cityState": "Huntsville, AL",
+        "paxTime": 107.869,
+        "runs": {
+          "left": [
+            "74.501(5)",
+            "RL",
+            "54.634"
+          ],
+          "right": [
+            "53.398",
+            "53.235",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "8",
+        "name": "Reed Hadley",
+        "car": "2007 Chevrolet Corvette Re",
+        "tire": "Falken",
+        "className": "B Street (2WD)",
+        "region": "",
+        "cityState": "New Smyrna Beach, FL",
+        "paxTime": 111.547,
+        "runs": {
+          "left": [
+            "DNF",
+            "56.900",
+            "57.096(1)"
+          ],
+          "right": [
+            "57.002",
+            "RL",
+            "54.647"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "154",
+        "name": "Kelly Hudyman",
+        "car": "2014 Porsche Boxster Silver",
+        "tire": "Yokoham",
+        "className": "B Street (2WD)",
+        "region": "",
+        "cityState": "Denville, NJ",
+        "paxTime": 114.538,
+        "runs": {
+          "left": [
+            "58.937",
+            "57.345",
+            "56.559"
+          ],
+          "right": [
+            "RL",
+            "57.979(1)",
+            "DNS"
+          ]
+        }
+      }
+    ],
+    "C Street": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "98",
+        "name": "Rick Cone",
+        "car": "2019 Mazda Miata White",
+        "tire": "Yokoham",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Lawrenceville, GA",
+        "paxTime": 102.604,
+        "runs": {
+          "left": [
+            "52.341",
+            "51.872",
+            "51.307"
+          ],
+          "right": [
+            "51.626",
+            "51.698",
+            "51.297"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "95",
+        "name": "Christian Kolmers",
+        "car": "2019 Mazda Miata Black",
+        "tire": "Yokoham",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Marietta, GA",
+        "paxTime": 105.125,
+        "runs": {
+          "left": [
+            "DNF",
+            "52.859",
+            "52.567"
+          ],
+          "right": [
+            "52.674",
+            "52.558",
+            "52.584"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": false,
+        "carNumber": "74",
+        "name": "Mike Cavanaugh",
+        "car": "2019 Mazda MX-5 Arctic W",
+        "tire": "Bridgesto",
+        "className": "C Street",
+        "region": "",
+        "cityState": "Falkville, AL",
+        "paxTime": 110.117,
+        "runs": {
+          "left": [
+            "57.732",
+            "56.171",
+            "57.771(1)"
+          ],
+          "right": [
+            "56.791(1)",
+            "53.946",
+            "RL"
+          ]
+        }
+      }
+    ],
+    "E Street": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "194",
+        "name": "Trevor Renson",
+        "car": "2003 Toyota MR2 Spyder S",
+        "tire": "Yokoham",
+        "className": "E Street",
+        "region": "",
+        "cityState": "Apopka, FL",
+        "paxTime": 104.461,
+        "runs": {
+          "left": [
+            "56.111(1)",
+            "52.290",
+            "51.997"
+          ],
+          "right": [
+            "52.464",
+            "52.842",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "98",
+        "name": "Kerry Coughlin",
+        "car": "1999 Mazda Miata Black",
+        "tire": "Falken",
+        "className": "E Street",
+        "region": "",
+        "cityState": "Prairieville, LA",
+        "paxTime": 106.573,
+        "runs": {
+          "left": [
+            "54.131",
+            "RL",
+            "52.932"
+          ],
+          "right": [
+            "53.641",
+            "54.599(1)",
+            "54.368(1)"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "185",
+        "name": "Philip Petrie",
+        "car": "2003 Toyota MR2 Yellow",
+        "tire": "",
+        "className": "E Street",
+        "region": "",
+        "cityState": "New Port Richey, FL",
+        "paxTime": 107.268,
+        "runs": {
+          "left": [
+            "55.807(1)",
+            "54.041",
+            "54.770(1)"
+          ],
+          "right": [
+            "59.052(3)",
+            "53.227",
+            "54.276(1)"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "85",
+        "name": "Donald Wright",
+        "car": "2003 Toyota MR2 Spyder Y",
+        "tire": "Yokoham",
+        "className": "E Street",
+        "region": "",
+        "cityState": "Orlando, FL",
+        "paxTime": 109.734,
+        "runs": {
+          "left": [
+            "DNF",
+            "55.194",
+            "54.933"
+          ],
+          "right": [
+            "DNF",
+            "55.000",
+            "54.801"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "7",
+        "name": "Scott Swartz",
+        "car": "1999 Mazda Miata Silver",
+        "tire": "Bridgesto",
+        "className": "E Street",
+        "region": "",
+        "cityState": "Belleview, FL",
+        "paxTime": 115.028,
+        "runs": {
+          "left": [
+            "RL",
+            "58.985",
+            "58.060"
+          ],
+          "right": [
+            "57.569",
+            "56.968",
+            "RL"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "94",
+        "name": "Brad Renson",
+        "car": "2003 Toyota mr2 Silver",
+        "tire": "Yokoham",
+        "className": "E Street",
+        "region": "",
+        "cityState": "tamarac, FL",
+        "paxTime": 115.559,
+        "runs": {
+          "left": [
+            "60.508(1)",
+            "59.862(1)",
+            "58.543"
+          ],
+          "right": [
+            "58.479",
+            "57.016",
+            "57.385"
+          ]
+        }
+      }
+    ],
+    "Solo Spec Coupe": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "72",
+        "name": "Mike Lawson",
+        "car": "2016 Scion FR-S Red",
+        "tire": "Falken",
+        "className": "Solo Spec Coupe",
+        "region": "",
+        "cityState": "Lehigh Acres, FL",
+        "paxTime": 105.429,
+        "runs": {
+          "left": [
+            "54.631",
+            "53.021",
+            "53.296"
+          ],
+          "right": [
+            "55.209(1)",
+            "52.408",
+            "52.498"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "184",
+        "name": "David Spratte",
+        "car": "2016 Scion FR-S Red Hot M",
+        "tire": "Falken",
+        "className": "Solo Spec Coupe",
+        "region": "",
+        "cityState": "Raleigh, NC",
+        "paxTime": 105.916,
+        "runs": {
+          "left": [
+            "53.744",
+            "DNF",
+            "53.599"
+          ],
+          "right": [
+            "53.302",
+            "52.795",
+            "52.317"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": false,
+        "carNumber": "84",
+        "name": "Jonathan Roberts",
+        "car": "2016 Scion FRS Burnt Hall",
+        "tire": "Falken",
+        "className": "Solo Spec Coupe",
+        "region": "",
+        "cityState": "Richmond Hill, GA",
+        "paxTime": 106.582,
+        "runs": {
+          "left": [
+            "DNF",
+            "53.960",
+            "53.895"
+          ],
+          "right": [
+            "53.740",
+            "52.687",
+            "56.754(2)"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "46",
+        "name": "G.H. Sharp",
+        "car": "2016 Scion FR-S Lunar Sto",
+        "tire": "Falken",
+        "className": "Solo Spec Coupe",
+        "region": "",
+        "cityState": "APEX, NC",
+        "paxTime": 106.812,
+        "runs": {
+          "left": [
+            "DNF",
+            "54.135",
+            "DNF"
+          ],
+          "right": [
+            "56.215(1)",
+            "52.999",
+            "52.677"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "193",
+        "name": "Chang Ho Kim",
+        "car": "2014 Subaru BRZ",
+        "tire": "Falken",
+        "className": "Solo Spec Coupe",
+        "region": "",
+        "cityState": "Maynard, ma",
+        "paxTime": 110.228,
+        "runs": {
+          "left": [
+            "57.255",
+            "58.349(1)",
+            "55.819"
+          ],
+          "right": [
+            "55.368",
+            "54.409",
+            "54.515"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "93",
+        "name": "Malcolm Lawson",
+        "car": "2014 Scion FR-S red",
+        "tire": "Falken",
+        "className": "Solo Spec Coupe",
+        "region": "",
+        "cityState": "Venice, FL",
+        "paxTime": 117.17,
+        "runs": {
+          "left": [
+            "DNF",
+            "59.602",
+            "60.009"
+          ],
+          "right": [
+            "57.568",
+            "DNF",
+            "58.922(1)"
+          ]
+        }
+      }
+    ],
+    "Street Touring Roadster": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "20",
+        "name": "Erik Cardenas",
+        "car": "2019 Mazda MX-5 Red",
+        "tire": "Falken",
+        "className": "Street Touring Roadster",
+        "region": "",
+        "cityState": "miami gardens, FL",
+        "paxTime": 104.515,
+        "runs": {
+          "left": [
+            "54.972",
+            "53.243",
+            "52.510"
+          ],
+          "right": [
+            "DNF",
+            "52.531",
+            "52.005"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "86",
+        "name": "Hugo PW Yuk",
+        "car": "2021 Mazda MX5 Miata Po",
+        "tire": "Yokoham",
+        "className": "Street Touring Roadster",
+        "region": "",
+        "cityState": "Coral Springs, FL",
+        "paxTime": 107.456,
+        "runs": {
+          "left": [
+            "66.090(6)",
+            "RL",
+            "53.891"
+          ],
+          "right": [
+            "53.565",
+            "RL",
+            "58.524(3)"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": false,
+        "carNumber": "96",
+        "name": "Keith Robertson",
+        "car": "1995 BMW M3 BLUE",
+        "tire": "Kumho",
+        "className": "Street Touring Roadster",
+        "region": "",
+        "cityState": "Tampa, FL",
+        "paxTime": 110.13,
+        "runs": {
+          "left": [
+            "56.196",
+            "55.684",
+            "55.346"
+          ],
+          "right": [
+            "55.441",
+            "55.338",
+            "54.784"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "97",
+        "name": "Cesar Sierra",
+        "car": "2006 Mazda Mx5 Black",
+        "tire": "Falken",
+        "className": "Street Touring Roadster",
+        "region": "",
+        "cityState": "Hialeah, FL",
+        "paxTime": 110.532,
+        "runs": {
+          "left": [
+            "DNF",
+            "58.046(1)",
+            "55.838"
+          ],
+          "right": [
+            "56.395",
+            "54.694",
+            "DNF"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "77",
+        "name": "Amauri Fuentes",
+        "car": "2006 Mazda Miata White",
+        "tire": "Falken",
+        "className": "Street Touring Roadster",
+        "region": "",
+        "cityState": "Miami, FL",
+        "paxTime": 111.509,
+        "runs": {
+          "left": [
+            "57.624",
+            "RL",
+            "55.564"
+          ],
+          "right": [
+            "57.470",
+            "55.945",
+            "56.601"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "5",
+        "name": "Giovanni Alvarez",
+        "car": "2006 Mazda MX-5 Copper R",
+        "tire": "Bridgesto",
+        "className": "Street Touring Roadster",
+        "region": "",
+        "cityState": "Miami, FL",
+        "paxTime": 112.076,
+        "runs": {
+          "left": [
+            "DNF",
+            "57.422(1)",
+            "DNF"
+          ],
+          "right": [
+            "55.884",
+            "55.165",
+            "54.654"
+          ]
+        }
+      }
+    ],
+    "Street Touring Xtreme": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "93",
+        "name": "Jonathan Mudge",
+        "car": "2013 Thion FR-ETH White",
+        "tire": "Yokoham",
+        "className": "Street Touring Xtreme",
+        "region": "",
+        "cityState": "Easley, SC",
+        "paxTime": 101.752,
+        "runs": {
+          "left": [
+            "51.677",
+            "53.126",
+            "50.713"
+          ],
+          "right": [
+            "51.039",
+            "52.710(1)",
+            "52.621(1)"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "187",
+        "name": "Steven Hughes",
+        "car": "2013 Scion FRS White",
+        "tire": "Yokoham",
+        "className": "Street Touring Xtreme",
+        "region": "",
+        "cityState": "Apopka, FL",
+        "paxTime": 102.803,
+        "runs": {
+          "left": [
+            "52.161",
+            "51.842",
+            "51.814"
+          ],
+          "right": [
+            "52.682",
+            "51.323",
+            "50.989"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "87",
+        "name": "Mike Brau",
+        "car": "2013 Scion FR-S White",
+        "tire": "Yokoham",
+        "className": "Street Touring Xtreme",
+        "region": "",
+        "cityState": "Champions Gate, FL",
+        "paxTime": 105.815,
+        "runs": {
+          "left": [
+            "DNF",
+            "53.526",
+            "53.064"
+          ],
+          "right": [
+            "54.893",
+            "53.188",
+            "52.751"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "199",
+        "name": "Brian Conners",
+        "car": "2013 Scion FRS Black",
+        "tire": "Falken",
+        "className": "Street Touring Xtreme",
+        "region": "",
+        "cityState": "Penn Valley, PA",
+        "paxTime": 106.804,
+        "runs": {
+          "left": [
+            "DNF",
+            "55.813(1)",
+            "54.099"
+          ],
+          "right": [
+            "RL",
+            "55.431(1)",
+            "52.705"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "99",
+        "name": "Donour Sizemore",
+        "car": "2013 Scion FRS Black",
+        "tire": "Falken",
+        "className": "Street Touring Xtreme",
+        "region": "",
+        "cityState": "Nashville, TN",
+        "paxTime": 107.439,
+        "runs": {
+          "left": [
+            "55.441",
+            "54.344",
+            "54.002"
+          ],
+          "right": [
+            "54.038",
+            "54.050",
+            "53.437"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "69",
+        "name": "David Wells",
+        "car": "2013 Subaru BRZ Blue",
+        "tire": "Falken",
+        "className": "Street Touring Xtreme",
+        "region": "",
+        "cityState": "Fort Lauderdale, FL",
+        "paxTime": 108.035,
+        "runs": {
+          "left": [
+            "59.732(3)",
+            "DNF",
+            "53.960"
+          ],
+          "right": [
+            "59.155(3)",
+            "RL",
+            "54.075"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "1",
+        "name": "Pablo Gonzalez-Phillips",
+        "car": "2020 Subaru WRX STI Blu",
+        "tire": "Yokoham",
+        "className": "Street Touring Xtreme",
+        "region": "",
+        "cityState": "Valrico, FL",
+        "paxTime": 123.216,
+        "runs": {
+          "left": [
+            "DNF",
+            "DNF",
+            "60.978"
+          ],
+          "right": [
+            "63.251",
+            "62.238",
+            "DNF"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "96",
+        "name": "Andrew Caffey",
+        "car": "2003 Honda Civic SI Blue",
+        "tire": "Kumho",
+        "className": "Street Touring Xtreme",
+        "region": "",
+        "cityState": "Ponte Vedra Beach, FL",
+        "paxTime": 134.87,
+        "runs": {
+          "left": [
+            "66.866",
+            "RL",
+            "DNF"
+          ],
+          "right": [
+            "68.004(1)",
+            "DNF",
+            "DNF"
+          ]
+        }
+      }
+    ],
+    "Classic American Muscle": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "78",
+        "name": "Chris Cervenka",
+        "car": "2018 Ford Shelby GT350 G",
+        "tire": "Falken",
+        "className": "Classic American Muscle",
+        "region": "",
+        "cityState": "Valdosta, GA",
+        "paxTime": 85.911,
+        "runs": {
+          "left": [
+            "54.352",
+            "53.633",
+            "52.662"
+          ],
+          "right": [
+            "53.363",
+            "52.917",
+            "52.492"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "1",
+        "name": "Jon Nwanagu",
+        "car": "2001 Chevrolet CMaro sck",
+        "tire": "",
+        "className": "Classic American Muscle",
+        "region": "",
+        "cityState": "Columbia, SC",
+        "paxTime": 86.867,
+        "runs": {
+          "left": [
+            "54.268",
+            "54.060",
+            "54.041"
+          ],
+          "right": [
+            "53.526",
+            "53.787",
+            "53.202"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "125",
+        "name": "JG Pasterjak",
+        "car": "2003 Chevrolet Corvette Z0",
+        "tire": "Falken",
+        "className": "Classic American Muscle",
+        "region": "",
+        "cityState": "Ormond Beach, FL",
+        "paxTime": 86.904,
+        "runs": {
+          "left": [
+            "RL",
+            "52.300",
+            "52.014"
+          ],
+          "right": [
+            "53.436",
+            "52.121",
+            "51.320"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "178",
+        "name": "James Bell",
+        "car": "2018 Ford Mustang GT 350",
+        "tire": "Falken",
+        "className": "Classic American Muscle",
+        "region": "",
+        "cityState": "Tallahassee, FL",
+        "paxTime": 87.886,
+        "runs": {
+          "left": [
+            "54.103",
+            "55.699(1)",
+            "55.080(1)"
+          ],
+          "right": [
+            "54.179",
+            "53.933",
+            "53.468"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "72",
+        "name": "Peyton Weber",
+        "car": "2019 Ford Mustang GT Met",
+        "tire": "Continent",
+        "className": "Classic American Muscle",
+        "region": "",
+        "cityState": "Valdosta, GA",
+        "paxTime": 96.598,
+        "runs": {
+          "left": [
+            "58.134",
+            "DNF",
+            "DNF"
+          ],
+          "right": [
+            "DNF",
+            "60.101(1)",
+            "63.725(3)"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "50",
+        "name": "Jose Perez",
+        "car": "2019 Ford Mustang Silver",
+        "tire": "Falken",
+        "className": "Classic American Muscle",
+        "region": "",
+        "cityState": "Pembroke Pines, FL",
+        "paxTime": 98.905,
+        "runs": {
+          "left": [
+            "65.240",
+            "61.173",
+            "RL"
+          ],
+          "right": [
+            "62.563",
+            "59.886",
+            "60.131"
+          ]
+        }
+      }
+    ],
+    "Ladies Class 2": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "95",
+        "name": "Ashley Weaver",
+        "car": "2019 Mazda MX-5 Miata B",
+        "tire": "Yokoham",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Marietta, GA",
+        "paxTime": 91.202,
+        "runs": {
+          "left": [
+            "63.555(2)",
+            "58.564",
+            "57.810"
+          ],
+          "right": [
+            "56.554",
+            "55.767",
+            "57.029"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "13",
+        "name": "Angela Carlascio",
+        "car": "2017 Honda Civic ZOMG T",
+        "tire": "Bridgesto",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "West Melbourne, FL",
+        "paxTime": 92.439,
+        "runs": {
+          "left": [
+            "65.652(2)",
+            "58.926",
+            "RL"
+          ],
+          "right": [
+            "58.295(1)",
+            "58.564(1)",
+            "56.191"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": false,
+        "carNumber": "199",
+        "name": "Caitlyn Allen",
+        "car": "2017 Ford Focus RS Black",
+        "tire": "Bridgesto",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Ponte Vedra Beach, FL",
+        "paxTime": 97.059,
+        "runs": {
+          "left": [
+            "65.831",
+            "61.866",
+            "60.764"
+          ],
+          "right": [
+            "62.441",
+            "60.106",
+            "62.932(1)"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "7",
+        "name": "Nancy Judd",
+        "car": "2020 Porsche 718 Cayman G",
+        "tire": "Falken",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Marco Island, FL",
+        "paxTime": 97.374,
+        "runs": {
+          "left": [
+            "65.298(1)",
+            "62.108",
+            "61.088"
+          ],
+          "right": [
+            "57.412",
+            "56.089",
+            "58.759"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "99",
+        "name": "Cassidy Allen",
+        "car": "2017 Ford Focus RS Black",
+        "tire": "Bridgesto",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "Ponte Vedra Beach, FL",
+        "paxTime": 98.331,
+        "runs": {
+          "left": [
+            "63.994(1)",
+            "DNF",
+            "DNF"
+          ],
+          "right": [
+            "59.659(1)",
+            "60.387(1)",
+            "58.460(1)"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "44",
+        "name": "Vivian Liu",
+        "car": "2016 Mercedes-Benz AMG C",
+        "tire": "Bridgesto",
+        "className": "Ladies Class 2",
+        "region": "",
+        "cityState": "West Melbourne, FL",
+        "paxTime": 114.587,
+        "runs": {
+          "left": [
+            "DNF",
+            "74.957",
+            "71.175"
+          ],
+          "right": [
+            "RL",
+            "70.465",
+            "72.819(1)"
+          ]
+        }
+      }
+    ],
+    "Ladies Class 3": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "184",
+        "name": "Jennifer Bedell",
+        "car": "2016 Scion FR-S Got Lava?",
+        "tire": "Falken",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Hillsborough, NC",
+        "paxTime": 86.458,
+        "runs": {
+          "left": [
+            "58.178(2)",
+            "57.656(1)",
+            "53.167"
+          ],
+          "right": [
+            "54.770",
+            "54.795(1)",
+            "54.973(1)"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "84",
+        "name": "Chris Peterson",
+        "car": "2016 Scion FRS Hot Lava",
+        "tire": "Falken",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Hillsborough, NC",
+        "paxTime": 86.949,
+        "runs": {
+          "left": [
+            "57.996",
+            "55.660",
+            "54.601"
+          ],
+          "right": [
+            "54.595",
+            "53.949",
+            "DNF"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "99",
+        "name": "Jessica Lewis",
+        "car": "2013 Scion frs",
+        "tire": "Falken",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Birmingham, AL",
+        "paxTime": 87.298,
+        "runs": {
+          "left": [
+            "RL",
+            "53.866",
+            "DNF"
+          ],
+          "right": [
+            "55.445(1)",
+            "53.982",
+            "53.644"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "97",
+        "name": "Laura Marcus",
+        "car": "2020 Toyota Supra Gray",
+        "tire": "Yokoham",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Windermere, FL",
+        "paxTime": 87.822,
+        "runs": {
+          "left": [
+            "56.443",
+            "53.682",
+            "53.695"
+          ],
+          "right": [
+            "52.521",
+            "51.746",
+            "52.294"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "54",
+        "name": "Caitlin Dunlap",
+        "car": "2000 Chevrolet Corvette Bl",
+        "tire": "Yokoham",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Rockledge, FL",
+        "paxTime": 88.066,
+        "runs": {
+          "left": [
+            "DNF",
+            "57.153(1)",
+            "54.314"
+          ],
+          "right": [
+            "53.738",
+            "52.981",
+            "52.304"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "189",
+        "name": "Tonda Lawson",
+        "car": "2016 Scion FR-S Red",
+        "tire": "Falken",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Lehigh Acres, FL",
+        "paxTime": 89.152,
+        "runs": {
+          "left": [
+            "57.204",
+            "56.261",
+            "RL"
+          ],
+          "right": [
+            "65.557",
+            "56.523",
+            "55.040"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "89",
+        "name": "Geraghty Anne Ellis",
+        "car": "2016 Scion FRS Red",
+        "tire": "Falken",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Atlanta, GA",
+        "paxTime": 89.831,
+        "runs": {
+          "left": [
+            "62.545",
+            "57.178",
+            "57.258"
+          ],
+          "right": [
+            "56.647",
+            "54.971",
+            "DNF"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "65",
+        "name": "Linda Duncan",
+        "car": "2013 Toyota FRS Red",
+        "tire": "Falken",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Crystal River, FL",
+        "paxTime": 90,
+        "runs": {
+          "left": [
+            "DNF",
+            "57.183",
+            "56.333"
+          ],
+          "right": [
+            "56.673",
+            "56.027",
+            "57.466"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "93",
+        "name": "Jacqueline Lawson",
+        "car": "2014 Scion Frs Red",
+        "tire": "Falken",
+        "className": "Ladies Class 3",
+        "region": "",
+        "cityState": "Venice, FL",
+        "paxTime": 100.406,
+        "runs": {
+          "left": [
+            "DNF",
+            "66.655",
+            "65.398"
+          ],
+          "right": [
+            "RL",
+            "60.999",
+            "59.953"
+          ]
+        }
+      }
+    ],
+    "Street 1": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "186",
+        "name": "G Warren Hahn",
+        "car": "2004 Honda S2000 Silver",
+        "tire": "Hoosier",
+        "className": "Street 1",
+        "region": "",
+        "cityState": "Port Saint Lucie, FL",
+        "paxTime": 83.964,
+        "runs": {
+          "left": [
+            "50.159",
+            "49.873",
+            "49.220"
+          ],
+          "right": [
+            "49.829",
+            "49.578",
+            "48.983"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "34",
+        "name": "Robert Palmblad",
+        "car": "2008 Mazda MX-5 Blue",
+        "tire": "Falken",
+        "className": "Street 1",
+        "region": "",
+        "cityState": "Orlando, FL",
+        "paxTime": 86.877,
+        "runs": {
+          "left": [
+            "53.149",
+            "51.581",
+            "51.085"
+          ],
+          "right": [
+            "RL",
+            "51.606",
+            "53.023(1)"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "86",
+        "name": "Sacha Tauber",
+        "car": "2004 Honda S2000 Silver",
+        "tire": "Hoosier",
+        "className": "Street 1",
+        "region": "",
+        "cityState": "Pflugerville, TX",
+        "paxTime": 87.631,
+        "runs": {
+          "left": [
+            "53.757(1)",
+            "51.843(1)",
+            "52.278(1)"
+          ],
+          "right": [
+            "50.649",
+            "52.067(1)",
+            "55.474(3)"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "82",
+        "name": "Ethan Swindel",
+        "car": "1997 Honda Civic EX Whit",
+        "tire": "Hoosier",
+        "className": "Street 1",
+        "region": "",
+        "cityState": "Gainesville, FL",
+        "paxTime": 89.915,
+        "runs": {
+          "left": [
+            "55.078",
+            "55.776",
+            "53.498"
+          ],
+          "right": [
+            "53.279",
+            "52.205",
+            "52.160"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "77",
+        "name": "Chris Larson",
+        "car": "2003 Chevrolet Corvette Z0",
+        "tire": "Hoosier",
+        "className": "Street 1",
+        "region": "",
+        "cityState": "Orlando, FL",
+        "paxTime": 92.164,
+        "runs": {
+          "left": [
+            "56.316(1)",
+            "54.106",
+            "DNF"
+          ],
+          "right": [
+            "52.837",
+            "51.626",
+            "50.984"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "27",
+        "name": "Sergio Ovalle",
+        "car": "1999 Mazda Miata Blue",
+        "tire": "Falken",
+        "className": "Street 1",
+        "region": "",
+        "cityState": "Largo, FL",
+        "paxTime": 93.838,
+        "runs": {
+          "left": [
+            "56.969",
+            "55.857",
+            "54.453"
+          ],
+          "right": [
+            "DNF",
+            "57.174(1)",
+            "55.043"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "9",
+        "name": "Paul Bellanca",
+        "car": "2013 Volkswagen GTI Red",
+        "tire": "Falken",
+        "className": "Street 1",
+        "region": "",
+        "cityState": "Ormond Beach, FL",
+        "paxTime": 94.4,
+        "runs": {
+          "left": [
+            "58.799(1)",
+            "57.212(1)",
+            "DNF"
+          ],
+          "right": [
+            "57.956(1)",
+            "55.710",
+            "54.902"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "22",
+        "name": "Dustin Carstenn",
+        "car": "2000 Acura Integra Silver",
+        "tire": "",
+        "className": "Street 1",
+        "region": "",
+        "cityState": "Ocala, FL",
+        "paxTime": 96.555,
+        "runs": {
+          "left": [
+            "DNF",
+            "DNF",
+            "56.904"
+          ],
+          "right": [
+            "DNF",
+            "56.557",
+            "DNF"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "32",
+        "name": "Tyler Register",
+        "car": "1996 Honda Civic Silver",
+        "tire": "Toyo",
+        "className": "Street 1",
+        "region": "",
+        "cityState": "Ocala, FL",
+        "paxTime": 98.945,
+        "runs": {
+          "left": [
+            "62.723",
+            "59.905",
+            "59.330"
+          ],
+          "right": [
+            "56.939",
+            "DNF",
+            "DNS"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "55",
+        "name": "Steven Goodbread",
+        "car": "2003 Chevrolet Corvette Z0",
+        "tire": "Hoosier",
+        "className": "Street 1",
+        "region": "",
+        "cityState": "Melrose, FL",
+        "paxTime": 98.996,
+        "runs": {
+          "left": [
+            "62.970(1)",
+            "58.424",
+            "57.010"
+          ],
+          "right": [
+            "57.899",
+            "55.870",
+            "56.877"
+          ]
+        }
+      },
+      {
+        "position": 11,
+        "trophy": false,
+        "carNumber": "36",
+        "name": "Andrew Sherlock",
+        "car": "1996 BMW 328is Black",
+        "tire": "Bridgesto",
+        "className": "Street 1",
+        "region": "",
+        "cityState": "Tampa, FL",
+        "paxTime": 102.072,
+        "runs": {
+          "left": [
+            "DNF",
+            "56.985(1)",
+            "55.680(1)"
+          ],
+          "right": [
+            "69.063(6)",
+            "65.746(6)",
+            "64.972(6)"
+          ]
+        }
+      }
+    ],
+    "Street 3": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "75",
+        "name": "Gregory Shumaker",
+        "car": "2017 Chevrolet Camaro SS 1",
+        "tire": "Falken",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "Orlando, FL",
+        "paxTime": 84.122,
+        "runs": {
+          "left": [
+            "53.874",
+            "51.588",
+            "52.875(1)"
+          ],
+          "right": [
+            "54.252(1)",
+            "53.626(1)",
+            "52.395"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "97",
+        "name": "David Marcus",
+        "car": "2020 Toyota Supra Gray",
+        "tire": "Yokoham",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "Windermere, FL",
+        "paxTime": 85.108,
+        "runs": {
+          "left": [
+            "DNF",
+            "51.273",
+            "51.186"
+          ],
+          "right": [
+            "51.323",
+            "50.985",
+            "51.172"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "1",
+        "name": "Deniz Pamukcu",
+        "car": "2017 Porsche Cayman Blac",
+        "tire": "Yokoham",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "Bethlehem, PA",
+        "paxTime": 86.19,
+        "runs": {
+          "left": [
+            "55.288(1)",
+            "RL",
+            "52.167"
+          ],
+          "right": [
+            "51.726",
+            "55.179(2)",
+            "51.302"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "76",
+        "name": "Armando Camejo",
+        "car": "2020 Hyundai Veloster N W",
+        "tire": "Falken",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "Miami, FL",
+        "paxTime": 87.603,
+        "runs": {
+          "left": [
+            "56.110",
+            "55.396(1)",
+            "53.954"
+          ],
+          "right": [
+            "56.345(1)",
+            "RL",
+            "52.103"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "7",
+        "name": "Edward Young",
+        "car": "2020 Porsche 718 Cayman G",
+        "tire": "Falken",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "Marco Island, FL",
+        "paxTime": 88.103,
+        "runs": {
+          "left": [
+            "54.996",
+            "DNF",
+            "53.268"
+          ],
+          "right": [
+            "52.753",
+            "52.756",
+            "DNF"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "54",
+        "name": "Nick Dunlap",
+        "car": "2000 Chevrolet Corvette Bl",
+        "tire": "Yokoham",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "Rockledge, FL",
+        "paxTime": 88.247,
+        "runs": {
+          "left": [
+            "56.745(1)",
+            "55.105(1)",
+            "DNF"
+          ],
+          "right": [
+            "53.531",
+            "52.369",
+            "51.732"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "85",
+        "name": "Brian Meyers",
+        "car": "2007 Ford Mustang GT All",
+        "tire": "Bridgesto",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "Brooksville, FL",
+        "paxTime": 89.127,
+        "runs": {
+          "left": [
+            "58.907",
+            "55.583",
+            "55.443"
+          ],
+          "right": [
+            "55.263",
+            "54.726",
+            "55.656"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "24",
+        "name": "Ethan Scott",
+        "car": "2019 Honda Civic Type R A",
+        "tire": "Kumho",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "Miami, FL",
+        "paxTime": 89.748,
+        "runs": {
+          "left": [
+            "56.866",
+            "57.268(1)",
+            "54.641"
+          ],
+          "right": [
+            "DNF",
+            "DNF",
+            "54.013"
+          ]
+        }
+      },
+      {
+        "position": 9,
+        "trophy": false,
+        "carNumber": "35",
+        "name": "Nicolas Camejo",
+        "car": "2020 Hyundai Veloster N B",
+        "tire": "Falken",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "Miami, FL",
+        "paxTime": 90.251,
+        "runs": {
+          "left": [
+            "57.378",
+            "54.304",
+            "57.692(2)"
+          ],
+          "right": [
+            "DNF",
+            "55.471(1)",
+            "54.959(1)"
+          ]
+        }
+      },
+      {
+        "position": 10,
+        "trophy": false,
+        "carNumber": "21",
+        "name": "Matthew Griffin",
+        "car": "2017 Chevrolet Camaro SS 1",
+        "tire": "Falken",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "Orlando, FL",
+        "paxTime": 91.06,
+        "runs": {
+          "left": [
+            "RL",
+            "56.648",
+            "57.072"
+          ],
+          "right": [
+            "57.074",
+            "56.670",
+            "55.911"
+          ]
+        }
+      },
+      {
+        "position": 11,
+        "trophy": false,
+        "carNumber": "44",
+        "name": "Desmond Au",
+        "car": "2016 Mercedes-Benz AMG C",
+        "tire": "Bridgesto",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "West Melbourne, FL",
+        "paxTime": 91.297,
+        "runs": {
+          "left": [
+            "RL",
+            "57.954(1)",
+            "57.221(1)"
+          ],
+          "right": [
+            "57.095",
+            "55.631",
+            "56.237(1)"
+          ]
+        }
+      },
+      {
+        "position": 12,
+        "trophy": false,
+        "carNumber": "19",
+        "name": "Aaron Yang",
+        "car": "2021 Chevrolet Camaro SS 1",
+        "tire": "Goodyear",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "New Smyrna Beach, FL",
+        "paxTime": 92.407,
+        "runs": {
+          "left": [
+            "62.369",
+            "59.600",
+            "57.732"
+          ],
+          "right": [
+            "58.046",
+            "56.492",
+            "57.655(1)"
+          ]
+        }
+      },
+      {
+        "position": 13,
+        "trophy": false,
+        "carNumber": "91",
+        "name": "Carlos Morales",
+        "car": "2012 Porsche 991 911 Plat",
+        "tire": "Pirelli",
+        "className": "Street 3",
+        "region": "",
+        "cityState": "Alachua, FL",
+        "paxTime": 93.059,
+        "runs": {
+          "left": [
+            "58.859",
+            "56.921",
+            "DNF"
+          ],
+          "right": [
+            "57.072",
+            "55.522",
+            "55.063"
+          ]
+        }
+      }
+    ],
+    "Street 4": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "99",
+        "name": "Mark Allen",
+        "car": "2016 Ford Focus RS Grey",
+        "tire": "Bridgesto",
+        "className": "Street 4",
+        "region": "",
+        "cityState": "Ponte Vedra Beach, FL",
+        "paxTime": 84.993,
+        "runs": {
+          "left": [
+            "53.210",
+            "53.865",
+            "53.259"
+          ],
+          "right": [
+            "53.623",
+            "52.634",
+            "54.382(1)"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "67",
+        "name": "Thomas Kring",
+        "car": "2016 Audi TT Grey",
+        "tire": "Multi",
+        "className": "Street 4",
+        "region": "",
+        "cityState": "Estero, FL",
+        "paxTime": 85.254,
+        "runs": {
+          "left": [
+            "52.830",
+            "52.597",
+            "53.242"
+          ],
+          "right": [
+            "52.501",
+            "54.065(1)",
+            "52.267"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "7",
+        "name": "Vincent Valda",
+        "car": "2021 Audi RS6 White",
+        "tire": "Michelin",
+        "className": "Street 4",
+        "region": "",
+        "cityState": "Winter Garden, FL",
+        "paxTime": 86.982,
+        "runs": {
+          "left": [
+            "55.895",
+            "DNF",
+            "54.218"
+          ],
+          "right": [
+            "52.639",
+            "52.907",
+            "55.545(1)"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "97",
+        "name": "Edward Champagnie",
+        "car": "2003 Mitsubishi Lancer Yel",
+        "tire": "Hoosier",
+        "className": "Street 4",
+        "region": "",
+        "cityState": "Sunrise, FL",
+        "paxTime": 87.814,
+        "runs": {
+          "left": [
+            "DNF",
+            "52.207",
+            "50.782"
+          ],
+          "right": [
+            "52.064",
+            "50.270",
+            "50.578"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "11",
+        "name": "Tim Friedl",
+        "car": "2019 Volkswagen Golf R Bl",
+        "tire": "Falken",
+        "className": "Street 4",
+        "region": "",
+        "cityState": "Jacksonville, FL",
+        "paxTime": 87.962,
+        "runs": {
+          "left": [
+            "DNF",
+            "54.635",
+            "54.872"
+          ],
+          "right": [
+            "57.008(1)",
+            "58.493(2)",
+            "54.907"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "31",
+        "name": "Gerry Bonet",
+        "car": "2017 Ford Focus RS Grey",
+        "tire": "Dunlop",
+        "className": "Street 4",
+        "region": "",
+        "cityState": "ORLANDO, FL",
+        "paxTime": 88.392,
+        "runs": {
+          "left": [
+            "58.611(1)",
+            "55.970",
+            "55.320"
+          ],
+          "right": [
+            "56.209",
+            "54.757",
+            "54.985"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "8",
+        "name": "John Humphrey",
+        "car": "2014 Subaru WRX Silver",
+        "tire": "Falken",
+        "className": "Street 4",
+        "region": "",
+        "cityState": "Gainesville, FL",
+        "paxTime": 96.85,
+        "runs": {
+          "left": [
+            "69.076(1)",
+            "62.876",
+            "58.765"
+          ],
+          "right": [
+            "60.362",
+            "60.451",
+            "RL"
+          ]
+        }
+      }
+    ],
+    "Street 5": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "91",
+        "name": "Mike King",
+        "car": "2019 Honda Civic Type R S",
+        "tire": "Falken",
+        "className": "Street 5",
+        "region": "",
+        "cityState": "Saint Johns, FL",
+        "paxTime": 84.699,
+        "runs": {
+          "left": [
+            "54.932(1)",
+            "52.899",
+            "DNF"
+          ],
+          "right": [
+            "52.579",
+            "DNF",
+            "52.861"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "13",
+        "name": "Chase Helm",
+        "car": "2019 Honda Civic Black",
+        "tire": "Falken",
+        "className": "Street 5",
+        "region": "",
+        "cityState": "New Bern, NC",
+        "paxTime": 85.948,
+        "runs": {
+          "left": [
+            "55.833",
+            "54.149",
+            "55.228(1)"
+          ],
+          "right": [
+            "54.655",
+            "55.129(1)",
+            "52.885"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "37",
+        "name": "Andrew Aul",
+        "car": "2022 Subaru BRZ Blue",
+        "tire": "Yokoham",
+        "className": "Street 5",
+        "region": "",
+        "cityState": "Willow Spring, NC",
+        "paxTime": 86.553,
+        "runs": {
+          "left": [
+            "56.577(1)",
+            "55.507(1)",
+            "54.966(1)"
+          ],
+          "right": [
+            "52.821",
+            "53.195",
+            "56.409(2)"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "93",
+        "name": "Terry McIntyre",
+        "car": "2022 Subaru BRZ Blue",
+        "tire": "Falken",
+        "className": "Street 5",
+        "region": "",
+        "cityState": "Orange City, FL",
+        "paxTime": 86.619,
+        "runs": {
+          "left": [
+            "58.266(1)",
+            "55.561(1)",
+            "55.251(1)"
+          ],
+          "right": [
+            "54.380",
+            "RL",
+            "52.618"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "14",
+        "name": "Erik Leili",
+        "car": "2021 Hyundai Veloster N B",
+        "tire": "Falken",
+        "className": "Street 5",
+        "region": "",
+        "cityState": "Jacksonville, FL",
+        "paxTime": 90.37,
+        "runs": {
+          "left": [
+            "60.727",
+            "DNF",
+            "56.870"
+          ],
+          "right": [
+            "59.550",
+            "56.446",
+            "55.670"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "5",
+        "name": "Giovana Soares",
+        "car": "2021 Hyundai Veloster M W",
+        "tire": "Pirelli",
+        "className": "Street 5",
+        "region": "",
+        "cityState": "Orlando, FL",
+        "paxTime": 99.584,
+        "runs": {
+          "left": [
+            "DNF",
+            "65.652",
+            "63.069"
+          ],
+          "right": [
+            "DNF",
+            "60.946",
+            "61.005"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "9",
+        "name": "Logan McStine",
+        "car": "2013 Hyundai Veloster Red",
+        "tire": "Toyo",
+        "className": "Street 5",
+        "region": "",
+        "cityState": "Zephyrhills, FL",
+        "paxTime": 103.133,
+        "runs": {
+          "left": [
+            "69.009(1)",
+            "63.393",
+            "63.732"
+          ],
+          "right": [
+            "69.157(1)",
+            "65.412(1)",
+            "64.563"
+          ]
+        }
+      }
+    ],
+    "Race Tire Index 1": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "6",
+        "name": "Paul Wright",
+        "car": "2021 Birel Shifter Kart Red",
+        "tire": "MG",
+        "className": "Race Tire Index 1",
+        "region": "",
+        "cityState": "Sarasota, FL",
+        "paxTime": 85.19,
+        "runs": {
+          "left": [
+            "46.906",
+            "47.730(1)",
+            "46.293"
+          ],
+          "right": [
+            "46.477",
+            "45.211",
+            "53.740"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "174",
+        "name": "Charlie Thompson",
+        "car": "1986 Red devil",
+        "tire": "Hoosier",
+        "className": "Race Tire Index 1",
+        "region": "",
+        "cityState": "Brandon, FL",
+        "paxTime": 85.448,
+        "runs": {
+          "left": [
+            "47.609",
+            "DNF",
+            "46.065"
+          ],
+          "right": [
+            "47.525",
+            "DNF",
+            "DNS"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "92",
+        "name": "Matt Feeney",
+        "car": "2008 Novakar Orange",
+        "tire": "Hoosier",
+        "className": "Race Tire Index 1",
+        "region": "",
+        "cityState": "Lexington, NC",
+        "paxTime": 85.953,
+        "runs": {
+          "left": [
+            "49.635",
+            "47.950",
+            "47.359"
+          ],
+          "right": [
+            "49.260",
+            "47.851",
+            "46.784"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "66",
+        "name": "Chuck Lutz",
+        "car": "2019 BirelART Shifter Kart R",
+        "tire": "MG",
+        "className": "Race Tire Index 1",
+        "region": "",
+        "cityState": "Orlando, FL",
+        "paxTime": 87.226,
+        "runs": {
+          "left": [
+            "47.155",
+            "46.351",
+            "48.882(1)"
+          ],
+          "right": [
+            "48.920(1)",
+            "47.658(1)",
+            "47.340"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "56",
+        "name": "Chris Kunkel",
+        "car": "1956 Jeep DJ3A Yellow",
+        "tire": "Avon",
+        "className": "Race Tire Index 1",
+        "region": "",
+        "cityState": "Orchard Park, NY",
+        "paxTime": 89.422,
+        "runs": {
+          "left": [
+            "49.031",
+            "50.145(1)",
+            "RL"
+          ],
+          "right": [
+            "48.805",
+            "DNF",
+            "DNF"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "74",
+        "name": "Tom Buckman",
+        "car": "1986 Red Devil Phaneuf Bl",
+        "tire": "Hoosier",
+        "className": "Race Tire Index 1",
+        "region": "",
+        "cityState": "Gaylord, Mi",
+        "paxTime": 97.323,
+        "runs": {
+          "left": [
+            "55.326",
+            "RL",
+            "53.465"
+          ],
+          "right": [
+            "55.170",
+            "53.864",
+            "53.132"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "86",
+        "name": "Krista Minehart",
+        "car": "2014 Stalker M-Spec AXR O",
+        "tire": "Avon",
+        "className": "Race Tire Index 1",
+        "region": "",
+        "cityState": "Brooksville, FL",
+        "paxTime": 100.426,
+        "runs": {
+          "left": [
+            "56.597",
+            "53.351",
+            "52.595"
+          ],
+          "right": [
+            "DNF",
+            "55.856(1)",
+            "RL"
+          ]
+        }
+      }
+    ],
+    "Race Tire Index 2": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "67",
+        "name": "Wes Hughson",
+        "car": "2000 Honda POS2000 Smur",
+        "tire": "Hoosier",
+        "className": "Race Tire Index 2",
+        "region": "",
+        "cityState": "Panama City, FL",
+        "paxTime": 86.231,
+        "runs": {
+          "left": [
+            "50.902",
+            "DNS",
+            "DNS"
+          ],
+          "right": [
+            "52.369(1)",
+            "49.116",
+            "48.442"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "115",
+        "name": "Oliver Licul",
+        "car": "2015 Mazda MX-5 Little",
+        "tire": "Hoosier",
+        "className": "Race Tire Index 2",
+        "region": "",
+        "cityState": "Key Biscayne, FL",
+        "paxTime": 89.125,
+        "runs": {
+          "left": [
+            "52.662",
+            "52.659",
+            "51.717"
+          ],
+          "right": [
+            "53.639",
+            "52.158",
+            "53.634(1)"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": false,
+        "carNumber": "15",
+        "name": "Augusto Nucci",
+        "car": "2015 Mazda MX5 White",
+        "tire": "Hoosier",
+        "className": "Race Tire Index 2",
+        "region": "",
+        "cityState": "Miami, FL",
+        "paxTime": 89.354,
+        "runs": {
+          "left": [
+            "DNF",
+            "52.816",
+            "55.502(1)"
+          ],
+          "right": [
+            "DNF",
+            "53.107",
+            "51.326"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": false,
+        "carNumber": "91",
+        "name": "Lander Labrada",
+        "car": "2000 Mazda Miata Green",
+        "tire": "Hoosier",
+        "className": "Race Tire Index 2",
+        "region": "",
+        "cityState": "Miami, FL",
+        "paxTime": 92.587,
+        "runs": {
+          "left": [
+            "DNF",
+            "52.512",
+            "DNF"
+          ],
+          "right": [
+            "53.955",
+            "52.542",
+            "51.870"
+          ]
+        }
+      }
+    ],
+    "Bump Class": [
+      {
+        "position": 1,
+        "trophy": true,
+        "carNumber": "88",
+        "name": "Walter Lunsmann",
+        "car": "2018 Porsche GT2 RS Blac",
+        "tire": "Hoosier",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Wellington, FL",
+        "paxTime": 83.854,
+        "runs": {
+          "left": [
+            "DNF",
+            "48.902",
+            "RL"
+          ],
+          "right": [
+            "49.493",
+            "48.830",
+            "49.112"
+          ]
+        }
+      },
+      {
+        "position": 2,
+        "trophy": true,
+        "carNumber": "199",
+        "name": "Darrin DiSimo",
+        "car": "2014 Ford Focus ST White",
+        "tire": "Falken",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "High Springs, FL",
+        "paxTime": 84.1,
+        "runs": {
+          "left": [
+            "DNF",
+            "54.487",
+            "53.358"
+          ],
+          "right": [
+            "57.553(1)",
+            "54.241",
+            "53.776"
+          ]
+        }
+      },
+      {
+        "position": 3,
+        "trophy": true,
+        "carNumber": "72",
+        "name": "Kevin Wenzel",
+        "car": "2015 Porsche Cayman GTS B",
+        "tire": "Falken",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Tryon, NC",
+        "paxTime": 84.768,
+        "runs": {
+          "left": [
+            "53.210",
+            "51.177",
+            "DNF"
+          ],
+          "right": [
+            "RL",
+            "51.947(1)",
+            "52.201(1)"
+          ]
+        }
+      },
+      {
+        "position": 4,
+        "trophy": true,
+        "carNumber": "196",
+        "name": "Steve Waters",
+        "car": "2017 Chevrolet Corvette Wh",
+        "tire": "Hoosier",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Smyrna, GA",
+        "paxTime": 86.474,
+        "runs": {
+          "left": [
+            "51.676",
+            "51.274",
+            "50.441"
+          ],
+          "right": [
+            "50.857",
+            "53.651(2)",
+            "50.344"
+          ]
+        }
+      },
+      {
+        "position": 5,
+        "trophy": false,
+        "carNumber": "96",
+        "name": "John Fink",
+        "car": "2017 Chevrolet Corvette GS",
+        "tire": "Hoosier",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Easley, SC",
+        "paxTime": 86.824,
+        "runs": {
+          "left": [
+            "53.544",
+            "51.024",
+            "DNF"
+          ],
+          "right": [
+            "50.645",
+            "50.215",
+            "50.170"
+          ]
+        }
+      },
+      {
+        "position": 6,
+        "trophy": false,
+        "carNumber": "71",
+        "name": "Tim Reardon",
+        "car": "2012 Chevrolet Corvette Ye",
+        "tire": "Falken",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Titusville, FL",
+        "paxTime": 86.922,
+        "runs": {
+          "left": [
+            "55.731",
+            "54.343",
+            "53.138"
+          ],
+          "right": [
+            "DNF",
+            "53.908",
+            "52.606"
+          ]
+        }
+      },
+      {
+        "position": 7,
+        "trophy": false,
+        "carNumber": "99",
+        "name": "Thomas Simon",
+        "car": "2014 Ford Focus ST White",
+        "tire": "Falken",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "Kennesaw, GA",
+        "paxTime": 90.991,
+        "runs": {
+          "left": [
+            "DNF",
+            "58.106",
+            "57.878"
+          ],
+          "right": [
+            "DNF",
+            "59.067",
+            "58.034"
+          ]
+        }
+      },
+      {
+        "position": 8,
+        "trophy": false,
+        "carNumber": "37",
+        "name": "Matthew Walsh",
+        "car": "2008 Chevrolet corvette Blu",
+        "tire": "Firestone",
+        "className": "Bump Class",
+        "region": "",
+        "cityState": "MELBOURNE, FL",
+        "paxTime": 101.524,
+        "runs": {
+          "left": [
+            "62.600",
+            "DNF",
+            "61.121(1)"
+          ],
+          "right": [
+            "63.346(1)",
+            "62.387(1)",
+            "62.486(2)"
+          ]
+        }
+      }
+    ],
+    "Z": []
+  },
+  "paxIndex": {
+    "overall": [
+      {
+        "position": 1,
+        "name": "Trevor Renson",
+        "className": "E Street",
+        "carNumber": "194",
+        "rawTime": 104.461,
+        "paxMultiplier": 0.787,
+        "paxTime": 82.211
+      },
+      {
+        "position": 2,
+        "name": "Rick Cone",
+        "className": "C Street",
+        "carNumber": "98",
+        "rawTime": 102.604,
+        "paxMultiplier": 0.803,
+        "paxTime": 82.391
+      },
+      {
+        "position": 3,
+        "name": "Jonathan Mudge",
+        "className": "Street Touring Xtreme",
+        "carNumber": "93",
+        "rawTime": 101.752,
+        "paxMultiplier": 0.812,
+        "paxTime": 82.623
+      },
+      {
+        "position": 4,
+        "name": "Steven Hughes",
+        "className": "Street Touring Xtreme",
+        "carNumber": "187",
+        "rawTime": 102.803,
+        "paxMultiplier": 0.812,
+        "paxTime": 83.476
+      },
+      {
+        "position": 5,
+        "name": "Walter Lunsmann",
+        "className": "Bump Class",
+        "carNumber": "88",
+        "rawTime": 97.732,
+        "paxMultiplier": 0.858,
+        "paxTime": 83.854
+      },
+      {
+        "position": 6,
+        "name": "Kerry Coughlin",
+        "className": "E Street",
+        "carNumber": "98",
+        "rawTime": 106.573,
+        "paxMultiplier": 0.787,
+        "paxTime": 83.873
+      },
+      {
+        "position": 7,
+        "name": "G Warren Hahn",
+        "className": "Street 1",
+        "carNumber": "186",
+        "rawTime": 98.203,
+        "paxMultiplier": 0.855,
+        "paxTime": 83.964
+      },
+      {
+        "position": 8,
+        "name": "Darrin DiSimo",
+        "className": "Bump Class",
+        "carNumber": "199",
+        "rawTime": 107.134,
+        "paxMultiplier": 0.785,
+        "paxTime": 84.1
+      },
+      {
+        "position": 9,
+        "name": "Gregory Shumaker",
+        "className": "Street 3",
+        "carNumber": "75",
+        "rawTime": 103.983,
+        "paxMultiplier": 0.809,
+        "paxTime": 84.122
+      },
+      {
+        "position": 10,
+        "name": "Rad Delgado",
+        "className": "B Street (2WD)",
+        "carNumber": "169",
+        "rawTime": 103.627,
+        "paxMultiplier": 0.814,
+        "paxTime": 84.352
+      },
+      {
+        "position": 11,
+        "name": "Christian Kolmers",
+        "className": "C Street",
+        "carNumber": "95",
+        "rawTime": 105.125,
+        "paxMultiplier": 0.803,
+        "paxTime": 84.415
+      },
+      {
+        "position": 12,
+        "name": "Philip Petrie",
+        "className": "E Street",
+        "carNumber": "185",
+        "rawTime": 107.268,
+        "paxMultiplier": 0.787,
+        "paxTime": 84.42
+      },
+      {
+        "position": 13,
+        "name": "Mike Lawson",
+        "className": "Solo Spec Coupe",
+        "carNumber": "72",
+        "rawTime": 105.429,
+        "paxMultiplier": 0.801,
+        "paxTime": 84.449
+      },
+      {
+        "position": 14,
+        "name": "Mike King",
+        "className": "Street 5",
+        "carNumber": "91",
+        "rawTime": 105.478,
+        "paxMultiplier": 0.803,
+        "paxTime": 84.699
+      },
+      {
+        "position": 15,
+        "name": "Kevin Wenzel",
+        "className": "Bump Class",
+        "carNumber": "72",
+        "rawTime": 103.124,
+        "paxMultiplier": 0.822,
+        "paxTime": 84.768
+      },
+      {
+        "position": 16,
+        "name": "David Spratte",
+        "className": "Solo Spec Coupe",
+        "carNumber": "184",
+        "rawTime": 105.916,
+        "paxMultiplier": 0.801,
+        "paxTime": 84.839
+      },
+      {
+        "position": 17,
+        "name": "Lou Hudyman",
+        "className": "B Street (2WD)",
+        "carNumber": "54",
+        "rawTime": 104.281,
+        "paxMultiplier": 0.814,
+        "paxTime": 84.885
+      },
+      {
+        "position": 18,
+        "name": "Mark Allen",
+        "className": "Street 4",
+        "carNumber": "99",
+        "rawTime": 105.844,
+        "paxMultiplier": 0.803,
+        "paxTime": 84.993
+      },
+      {
+        "position": 19,
+        "name": "David Marcus",
+        "className": "Street 3",
+        "carNumber": "97",
+        "rawTime": 102.171,
+        "paxMultiplier": 0.833,
+        "paxTime": 85.108
+      },
+      {
+        "position": 20,
+        "name": "Paul Wright",
+        "className": "Race Tire Index 1",
+        "carNumber": "6",
+        "rawTime": 91.504,
+        "paxMultiplier": 0.931,
+        "paxTime": 85.19
+      },
+      {
+        "position": 21,
+        "name": "Thomas Kring",
+        "className": "Street 4",
+        "carNumber": "67",
+        "rawTime": 104.864,
+        "paxMultiplier": 0.813,
+        "paxTime": 85.254
+      },
+      {
+        "position": 22,
+        "name": "Jonathan Roberts",
+        "className": "Solo Spec Coupe",
+        "carNumber": "84",
+        "rawTime": 106.582,
+        "paxMultiplier": 0.801,
+        "paxTime": 85.372
+      },
+      {
+        "position": 23,
+        "name": "Charlie Thompson",
+        "className": "Race Tire Index 1",
+        "carNumber": "174",
+        "rawTime": 93.59,
+        "paxMultiplier": 0.913,
+        "paxTime": 85.448
+      },
+      {
+        "position": 24,
+        "name": "G.H. Sharp",
+        "className": "Solo Spec Coupe",
+        "carNumber": "46",
+        "rawTime": 106.812,
+        "paxMultiplier": 0.801,
+        "paxTime": 85.556
+      },
+      {
+        "position": 25,
+        "name": "Chris Cervenka",
+        "className": "Classic American Muscle",
+        "carNumber": "78",
+        "rawTime": 105.154,
+        "paxMultiplier": 0.817,
+        "paxTime": 85.911
+      },
+      {
+        "position": 26,
+        "name": "Mike Brau",
+        "className": "Street Touring Xtreme",
+        "carNumber": "87",
+        "rawTime": 105.815,
+        "paxMultiplier": 0.812,
+        "paxTime": 85.922
+      },
+      {
+        "position": 27,
+        "name": "Chase Helm",
+        "className": "Street 5",
+        "carNumber": "13",
+        "rawTime": 107.034,
+        "paxMultiplier": 0.803,
+        "paxTime": 85.948
+      },
+      {
+        "position": 28,
+        "name": "Matt Feeney",
+        "className": "Race Tire Index 1",
+        "carNumber": "92",
+        "rawTime": 94.143,
+        "paxMultiplier": 0.913,
+        "paxTime": 85.953
+      },
+      {
+        "position": 29,
+        "name": "Deniz Pamukcu",
+        "className": "Street 3",
+        "carNumber": "1",
+        "rawTime": 103.469,
+        "paxMultiplier": 0.833,
+        "paxTime": 86.19
+      },
+      {
+        "position": 30,
+        "name": "Wes Hughson",
+        "className": "Race Tire Index 2",
+        "carNumber": "67",
+        "rawTime": 99.344,
+        "paxMultiplier": 0.868,
+        "paxTime": 86.231
+      },
+      {
+        "position": 31,
+        "name": "Erik Cardenas",
+        "className": "Street Touring Roadster",
+        "carNumber": "20",
+        "rawTime": 104.515,
+        "paxMultiplier": 0.826,
+        "paxTime": 86.329
+      },
+      {
+        "position": 32,
+        "name": "Donald Wright",
+        "className": "E Street",
+        "carNumber": "85",
+        "rawTime": 109.734,
+        "paxMultiplier": 0.787,
+        "paxTime": 86.361
+      },
+      {
+        "position": 33,
+        "name": "Jennifer Bedell",
+        "className": "Ladies Class 3",
+        "carNumber": "184",
+        "rawTime": 107.937,
+        "paxMultiplier": 0.801,
+        "paxTime": 86.458
+      },
+      {
+        "position": 34,
+        "name": "Steve Waters",
+        "className": "Bump Class",
+        "carNumber": "196",
+        "rawTime": 100.785,
+        "paxMultiplier": 0.858,
+        "paxTime": 86.474
+      },
+      {
+        "position": 35,
+        "name": "Andrew Aul",
+        "className": "Street 5",
+        "carNumber": "37",
+        "rawTime": 107.787,
+        "paxMultiplier": 0.803,
+        "paxTime": 86.553
+      },
+      {
+        "position": 36,
+        "name": "Terry McIntyre",
+        "className": "Street 5",
+        "carNumber": "93",
+        "rawTime": 107.869,
+        "paxMultiplier": 0.803,
+        "paxTime": 86.619
+      },
+      {
+        "position": 37,
+        "name": "Brian Conners",
+        "className": "Street Touring Xtreme",
+        "carNumber": "199",
+        "rawTime": 106.804,
+        "paxMultiplier": 0.812,
+        "paxTime": 86.725
+      },
+      {
+        "position": 38,
+        "name": "John Fink",
+        "className": "Bump Class",
+        "carNumber": "96",
+        "rawTime": 101.194,
+        "paxMultiplier": 0.858,
+        "paxTime": 86.824
+      },
+      {
+        "position": 39,
+        "name": "Jon Nwanagu",
+        "className": "Classic American Muscle",
+        "carNumber": "1",
+        "rawTime": 107.243,
+        "paxMultiplier": 0.81,
+        "paxTime": 86.867
+      },
+      {
+        "position": 40,
+        "name": "Robert Palmblad",
+        "className": "Street 1",
+        "carNumber": "34",
+        "rawTime": 102.691,
+        "paxMultiplier": 0.846,
+        "paxTime": 86.877
+      },
+      {
+        "position": 41,
+        "name": "JG Pasterjak",
+        "className": "Classic American Muscle",
+        "carNumber": "125",
+        "rawTime": 103.334,
+        "paxMultiplier": 0.841,
+        "paxTime": 86.904
+      },
+      {
+        "position": 42,
+        "name": "Craig Ellis",
+        "className": "B Street (2WD)",
+        "carNumber": "69",
+        "rawTime": 106.767,
+        "paxMultiplier": 0.814,
+        "paxTime": 86.908
+      },
+      {
+        "position": 43,
+        "name": "Tim Reardon",
+        "className": "Bump Class",
+        "carNumber": "71",
+        "rawTime": 105.744,
+        "paxMultiplier": 0.822,
+        "paxTime": 86.922
+      },
+      {
+        "position": 44,
+        "name": "Chris Peterson",
+        "className": "Ladies Class 3",
+        "carNumber": "84",
+        "rawTime": 108.55,
+        "paxMultiplier": 0.801,
+        "paxTime": 86.949
+      },
+      {
+        "position": 45,
+        "name": "Vincent Valda",
+        "className": "Street 4",
+        "carNumber": "7",
+        "rawTime": 106.857,
+        "paxMultiplier": 0.814,
+        "paxTime": 86.982
+      },
+      {
+        "position": 46,
+        "name": "Chuck Lutz",
+        "className": "Race Tire Index 1",
+        "carNumber": "66",
+        "rawTime": 93.691,
+        "paxMultiplier": 0.931,
+        "paxTime": 87.226
+      },
+      {
+        "position": 47,
+        "name": "Donour Sizemore",
+        "className": "Street Touring Xtreme",
+        "carNumber": "99",
+        "rawTime": 107.439,
+        "paxMultiplier": 0.812,
+        "paxTime": 87.24
+      },
+      {
+        "position": 48,
+        "name": "Jessica Lewis",
+        "className": "Ladies Class 3",
+        "carNumber": "99",
+        "rawTime": 107.51,
+        "paxMultiplier": 0.812,
+        "paxTime": 87.298
+      },
+      {
+        "position": 49,
+        "name": "Armando Camejo",
+        "className": "Street 3",
+        "carNumber": "76",
+        "rawTime": 106.057,
+        "paxMultiplier": 0.826,
+        "paxTime": 87.603
+      },
+      {
+        "position": 50,
+        "name": "Sacha Tauber",
+        "className": "Street 1",
+        "carNumber": "86",
+        "rawTime": 102.492,
+        "paxMultiplier": 0.855,
+        "paxTime": 87.631
+      },
+      {
+        "position": 51,
+        "name": "David Wells",
+        "className": "Street Touring Xtreme",
+        "carNumber": "69",
+        "rawTime": 108.035,
+        "paxMultiplier": 0.812,
+        "paxTime": 87.724
+      },
+      {
+        "position": 52,
+        "name": "Edward Fisher",
+        "className": "B Street (2WD)",
+        "carNumber": "91",
+        "rawTime": 107.869,
+        "paxMultiplier": 0.814,
+        "paxTime": 87.805
+      },
+      {
+        "position": 53,
+        "name": "Edward Champagnie",
+        "className": "Street 4",
+        "carNumber": "97",
+        "rawTime": 101.052,
+        "paxMultiplier": 0.869,
+        "paxTime": 87.814
+      },
+      {
+        "position": 54,
+        "name": "Laura Marcus",
+        "className": "Ladies Class 3",
+        "carNumber": "97",
+        "rawTime": 105.428,
+        "paxMultiplier": 0.833,
+        "paxTime": 87.822
+      },
+      {
+        "position": 55,
+        "name": "James Bell",
+        "className": "Classic American Muscle",
+        "carNumber": "178",
+        "rawTime": 107.571,
+        "paxMultiplier": 0.817,
+        "paxTime": 87.886
+      },
+      {
+        "position": 56,
+        "name": "Tim Friedl",
+        "className": "Street 4",
+        "carNumber": "11",
+        "rawTime": 109.542,
+        "paxMultiplier": 0.803,
+        "paxTime": 87.962
+      },
+      {
+        "position": 57,
+        "name": "Caitlin Dunlap",
+        "className": "Ladies Class 3",
+        "carNumber": "54",
+        "rawTime": 106.618,
+        "paxMultiplier": 0.826,
+        "paxTime": 88.066
+      },
+      {
+        "position": 58,
+        "name": "Edward Young",
+        "className": "Street 3",
+        "carNumber": "7",
+        "rawTime": 106.021,
+        "paxMultiplier": 0.831,
+        "paxTime": 88.103
+      },
+      {
+        "position": 59,
+        "name": "Nick Dunlap",
+        "className": "Street 3",
+        "carNumber": "54",
+        "rawTime": 106.837,
+        "paxMultiplier": 0.826,
+        "paxTime": 88.247
+      },
+      {
+        "position": 60,
+        "name": "Chang Ho Kim",
+        "className": "Solo Spec Coupe",
+        "carNumber": "193",
+        "rawTime": 110.228,
+        "paxMultiplier": 0.801,
+        "paxTime": 88.293
+      },
+      {
+        "position": 61,
+        "name": "Gerry Bonet",
+        "className": "Street 4",
+        "carNumber": "31",
+        "rawTime": 110.077,
+        "paxMultiplier": 0.803,
+        "paxTime": 88.392
+      },
+      {
+        "position": 62,
+        "name": "Mike Cavanaugh",
+        "className": "C Street",
+        "carNumber": "74",
+        "rawTime": 110.117,
+        "paxMultiplier": 0.803,
+        "paxTime": 88.424
+      },
+      {
+        "position": 63,
+        "name": "Hugo PW Yuk",
+        "className": "Street Touring Roadster",
+        "carNumber": "86",
+        "rawTime": 107.456,
+        "paxMultiplier": 0.826,
+        "paxTime": 88.759
+      },
+      {
+        "position": 64,
+        "name": "Oliver Licul",
+        "className": "Race Tire Index 2",
+        "carNumber": "115",
+        "rawTime": 103.875,
+        "paxMultiplier": 0.858,
+        "paxTime": 89.125
+      },
+      {
+        "position": 65,
+        "name": "Brian Meyers",
+        "className": "Street 3",
+        "carNumber": "85",
+        "rawTime": 110.169,
+        "paxMultiplier": 0.809,
+        "paxTime": 89.127
+      },
+      {
+        "position": 66,
+        "name": "Tonda Lawson",
+        "className": "Ladies Class 3",
+        "carNumber": "189",
+        "rawTime": 111.301,
+        "paxMultiplier": 0.801,
+        "paxTime": 89.152
+      },
+      {
+        "position": 67,
+        "name": "Augusto Nucci",
+        "className": "Race Tire Index 2",
+        "carNumber": "15",
+        "rawTime": 104.142,
+        "paxMultiplier": 0.858,
+        "paxTime": 89.354
+      },
+      {
+        "position": 68,
+        "name": "Chris Kunkel",
+        "className": "Race Tire Index 1",
+        "carNumber": "56",
+        "rawTime": 97.836,
+        "paxMultiplier": 0.914,
+        "paxTime": 89.422
+      },
+      {
+        "position": 69,
+        "name": "Ethan Scott",
+        "className": "Street 3",
+        "carNumber": "24",
+        "rawTime": 108.654,
+        "paxMultiplier": 0.826,
+        "paxTime": 89.748
+      },
+      {
+        "position": 70,
+        "name": "Geraghty Anne Ellis",
+        "className": "Ladies Class 3",
+        "carNumber": "89",
+        "rawTime": 112.149,
+        "paxMultiplier": 0.801,
+        "paxTime": 89.831
+      },
+      {
+        "position": 71,
+        "name": "Ethan Swindel",
+        "className": "Street 1",
+        "carNumber": "82",
+        "rawTime": 105.658,
+        "paxMultiplier": 0.851,
+        "paxTime": 89.915
+      },
+      {
+        "position": 72,
+        "name": "Linda Duncan",
+        "className": "Ladies Class 3",
+        "carNumber": "65",
+        "rawTime": 112.36,
+        "paxMultiplier": 0.801,
+        "paxTime": 90
+      },
+      {
+        "position": 73,
+        "name": "Nicolas Camejo",
+        "className": "Street 3",
+        "carNumber": "35",
+        "rawTime": 109.263,
+        "paxMultiplier": 0.826,
+        "paxTime": 90.251
+      },
+      {
+        "position": 74,
+        "name": "Erik Leili",
+        "className": "Street 5",
+        "carNumber": "14",
+        "rawTime": 112.54,
+        "paxMultiplier": 0.803,
+        "paxTime": 90.37
+      },
+      {
+        "position": 75,
+        "name": "Scott Swartz",
+        "className": "E Street",
+        "carNumber": "7",
+        "rawTime": 115.028,
+        "paxMultiplier": 0.787,
+        "paxTime": 90.527
+      },
+      {
+        "position": 76,
+        "name": "Reed Hadley",
+        "className": "B Street (2WD)",
+        "carNumber": "8",
+        "rawTime": 111.547,
+        "paxMultiplier": 0.814,
+        "paxTime": 90.799
+      },
+      {
+        "position": 77,
+        "name": "Brad Renson",
+        "className": "E Street",
+        "carNumber": "94",
+        "rawTime": 115.559,
+        "paxMultiplier": 0.787,
+        "paxTime": 90.945
+      },
+      {
+        "position": 78,
+        "name": "Keith Robertson",
+        "className": "Street Touring Roadster",
+        "carNumber": "96",
+        "rawTime": 110.13,
+        "paxMultiplier": 0.826,
+        "paxTime": 90.967
+      },
+      {
+        "position": 79,
+        "name": "Thomas Simon",
+        "className": "Bump Class",
+        "carNumber": "99",
+        "rawTime": 115.912,
+        "paxMultiplier": 0.785,
+        "paxTime": 90.991
+      },
+      {
+        "position": 80,
+        "name": "Matthew Griffin",
+        "className": "Street 3",
+        "carNumber": "21",
+        "rawTime": 112.559,
+        "paxMultiplier": 0.809,
+        "paxTime": 91.06
+      },
+      {
+        "position": 81,
+        "name": "Ashley Weaver",
+        "className": "Ladies Class 2",
+        "carNumber": "95",
+        "rawTime": 113.577,
+        "paxMultiplier": 0.803,
+        "paxTime": 91.202
+      },
+      {
+        "position": 82,
+        "name": "Desmond Au",
+        "className": "Street 3",
+        "carNumber": "44",
+        "rawTime": 112.852,
+        "paxMultiplier": 0.809,
+        "paxTime": 91.297
+      },
+      {
+        "position": 83,
+        "name": "Cesar Sierra",
+        "className": "Street Touring Roadster",
+        "carNumber": "97",
+        "rawTime": 110.532,
+        "paxMultiplier": 0.826,
+        "paxTime": 91.299
+      },
+      {
+        "position": 84,
+        "name": "Amauri Fuentes",
+        "className": "Street Touring Roadster",
+        "carNumber": "77",
+        "rawTime": 111.509,
+        "paxMultiplier": 0.826,
+        "paxTime": 92.106
+      },
+      {
+        "position": 85,
+        "name": "Chris Larson",
+        "className": "Street 1",
+        "carNumber": "77",
+        "rawTime": 105.09,
+        "paxMultiplier": 0.877,
+        "paxTime": 92.164
+      },
+      {
+        "position": 86,
+        "name": "Aaron Yang",
+        "className": "Street 3",
+        "carNumber": "19",
+        "rawTime": 114.224,
+        "paxMultiplier": 0.809,
+        "paxTime": 92.407
+      },
+      {
+        "position": 87,
+        "name": "Angela Carlascio",
+        "className": "Ladies Class 2",
+        "carNumber": "13",
+        "rawTime": 115.117,
+        "paxMultiplier": 0.803,
+        "paxTime": 92.439
+      },
+      {
+        "position": 88,
+        "name": "Giovanni Alvarez",
+        "className": "Street Touring Roadster",
+        "carNumber": "5",
+        "rawTime": 112.076,
+        "paxMultiplier": 0.826,
+        "paxTime": 92.575
+      },
+      {
+        "position": 89,
+        "name": "Lander Labrada",
+        "className": "Race Tire Index 2",
+        "carNumber": "91",
+        "rawTime": 104.382,
+        "paxMultiplier": 0.887,
+        "paxTime": 92.587
+      },
+      {
+        "position": 90,
+        "name": "Carlos Morales",
+        "className": "Street 3",
+        "carNumber": "91",
+        "rawTime": 111.984,
+        "paxMultiplier": 0.831,
+        "paxTime": 93.059
+      },
+      {
+        "position": 91,
+        "name": "Kelly Hudyman",
+        "className": "B Street (2WD)",
+        "carNumber": "154",
+        "rawTime": 114.538,
+        "paxMultiplier": 0.814,
+        "paxTime": 93.234
+      },
+      {
+        "position": 92,
+        "name": "Sergio Ovalle",
+        "className": "Street 1",
+        "carNumber": "27",
+        "rawTime": 109.496,
+        "paxMultiplier": 0.857,
+        "paxTime": 93.838
+      },
+      {
+        "position": 93,
+        "name": "Malcolm Lawson",
+        "className": "Solo Spec Coupe",
+        "carNumber": "93",
+        "rawTime": 117.17,
+        "paxMultiplier": 0.801,
+        "paxTime": 93.853
+      },
+      {
+        "position": 94,
+        "name": "Paul Bellanca",
+        "className": "Street 1",
+        "carNumber": "9",
+        "rawTime": 112.114,
+        "paxMultiplier": 0.842,
+        "paxTime": 94.4
+      },
+      {
+        "position": 95,
+        "name": "Dustin Carstenn",
+        "className": "Street 1",
+        "carNumber": "22",
+        "rawTime": 113.461,
+        "paxMultiplier": 0.851,
+        "paxTime": 96.555
+      },
+      {
+        "position": 96,
+        "name": "Peyton Weber",
+        "className": "Classic American Muscle",
+        "carNumber": "72",
+        "rawTime": 118.235,
+        "paxMultiplier": 0.817,
+        "paxTime": 96.598
+      },
+      {
+        "position": 97,
+        "name": "John Humphrey",
+        "className": "Street 4",
+        "carNumber": "8",
+        "rawTime": 119.127,
+        "paxMultiplier": 0.813,
+        "paxTime": 96.85
+      },
+      {
+        "position": 98,
+        "name": "Caitlyn Allen",
+        "className": "Ladies Class 2",
+        "carNumber": "199",
+        "rawTime": 120.87,
+        "paxMultiplier": 0.803,
+        "paxTime": 97.059
+      },
+      {
+        "position": 99,
+        "name": "Tom Buckman",
+        "className": "Race Tire Index 1",
+        "carNumber": "74",
+        "rawTime": 106.597,
+        "paxMultiplier": 0.913,
+        "paxTime": 97.323
+      },
+      {
+        "position": 100,
+        "name": "Nancy Judd",
+        "className": "Ladies Class 2",
+        "carNumber": "7",
+        "rawTime": 117.177,
+        "paxMultiplier": 0.831,
+        "paxTime": 97.374
+      },
+      {
+        "position": 101,
+        "name": "Cassidy Allen",
+        "className": "Ladies Class 2",
+        "carNumber": "99",
+        "rawTime": 122.454,
+        "paxMultiplier": 0.803,
+        "paxTime": 98.331
+      },
+      {
+        "position": 102,
+        "name": "Jose Perez",
+        "className": "Classic American Muscle",
+        "carNumber": "50",
+        "rawTime": 121.059,
+        "paxMultiplier": 0.817,
+        "paxTime": 98.905
+      },
+      {
+        "position": 103,
+        "name": "Tyler Register",
+        "className": "Street 1",
+        "carNumber": "32",
+        "rawTime": 116.269,
+        "paxMultiplier": 0.851,
+        "paxTime": 98.945
+      },
+      {
+        "position": 104,
+        "name": "Steven Goodbread",
+        "className": "Street 1",
+        "carNumber": "55",
+        "rawTime": 112.88,
+        "paxMultiplier": 0.877,
+        "paxTime": 98.996
+      },
+      {
+        "position": 105,
+        "name": "Giovana Soares",
+        "className": "Street 5",
+        "carNumber": "5",
+        "rawTime": 124.015,
+        "paxMultiplier": 0.803,
+        "paxTime": 99.584
+      },
+      {
+        "position": 106,
+        "name": "Pablo Gonzalez-Phillips",
+        "className": "Street Touring Xtreme",
+        "carNumber": "1",
+        "rawTime": 123.216,
+        "paxMultiplier": 0.812,
+        "paxTime": 100.051
+      },
+      {
+        "position": 107,
+        "name": "Jacqueline Lawson",
+        "className": "Ladies Class 3",
+        "carNumber": "93",
+        "rawTime": 125.351,
+        "paxMultiplier": 0.801,
+        "paxTime": 100.406
+      },
+      {
+        "position": 108,
+        "name": "Krista Minehart",
+        "className": "Race Tire Index 1",
+        "carNumber": "86",
+        "rawTime": 108.451,
+        "paxMultiplier": 0.926,
+        "paxTime": 100.426
+      },
+      {
+        "position": 109,
+        "name": "Matthew Walsh",
+        "className": "Bump Class",
+        "carNumber": "37",
+        "rawTime": 123.508,
+        "paxMultiplier": 0.822,
+        "paxTime": 101.524
+      },
+      {
+        "position": 110,
+        "name": "Andrew Sherlock",
+        "className": "Street 1",
+        "carNumber": "36",
+        "rawTime": 120.652,
+        "paxMultiplier": 0.846,
+        "paxTime": 102.072
+      },
+      {
+        "position": 111,
+        "name": "Logan McStine",
+        "className": "Street 5",
+        "carNumber": "9",
+        "rawTime": 127.956,
+        "paxMultiplier": 0.806,
+        "paxTime": 103.133
+      },
+      {
+        "position": 112,
+        "name": "Andrew Caffey",
+        "className": "Street Touring Xtreme",
+        "carNumber": "96",
+        "rawTime": 134.87,
+        "paxMultiplier": 0.812,
+        "paxTime": 109.514
+      },
+      {
+        "position": 113,
+        "name": "Vivian Liu",
+        "className": "Ladies Class 2",
+        "carNumber": "44",
+        "rawTime": 141.64,
+        "paxMultiplier": 0.809,
+        "paxTime": 114.587
+      }
+    ]
+  }
+}

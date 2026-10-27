@@ -11,7 +11,11 @@ async function loadChartJs() {
   if (window.Chart) return;
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js';
+    // Pinned to a specific version with SRI so a CDN compromise can't inject
+    // arbitrary JS into the driver-profile page.
+    script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js';
+    script.integrity = 'sha384-vsrfeLOOY6KuIYKDlmVH5UiBmgIdB1oEf7p01YgWHuqmOHfZr374+odEv96n9tNC';
+    script.crossOrigin = 'anonymous';
     script.onload = resolve;
     script.onerror = reject;
     document.head.appendChild(script);
@@ -172,7 +176,7 @@ async function renderDriver(driverId) {
               <tr>
                 <td>
                   <a href="#/event/${h.eventCode}">${escapeHtml(h.eventName || h.eventCode)}</a>
-                  <div style="font-size:0.75rem;color:var(--text-dim)">${h.eventDates || ''}</div>
+                  <div style="font-size:0.75rem;color:var(--text-dim)">${escapeHtml(h.eventDates || '')}</div>
                 </td>
                 <td>${renderClassBadge(h.className)}</td>
                 <td>${h.trophy ? renderTrophy(h.eventType, h.position) : ''}${h.position}/${h.totalInClass || '?'}</td>
@@ -203,8 +207,11 @@ async function renderScoreChart(driver) {
   const history = [...(driver.history || [])].reverse();
   const labels = history.map(h => {
     const name = h.eventName || h.eventCode;
-    // Shorten: "2026 Tire Rack SCCA Red Hills National Tour" -> "Red Hills '26"
-    const short = name.replace(/\d{4}\s+Tire Rack SCCA\s+/i, '').replace(/National Tour/i, '').trim();
+    // Shorten: "2026 Tire Rack SCCA Red Hills National Tour" -> "Red Hills '26",
+    // "2025 Tire Rack SCCA Lincoln ProSolo" -> "Lincoln PS"
+    const short = h.eventType === 'prosolo'
+      ? name.replace(/^\d{4}\s+(Tire\s?Rack\s+)?(SCCA\s+)?/i, '').replace(/ProSolo/i, 'PS').trim()
+      : name.replace(/\d{4}\s+Tire Rack SCCA\s+/i, '').replace(/National Tour/i, '').trim();
     return short.slice(0, 20);
   });
 
@@ -383,34 +390,37 @@ function getConsistencyLabel(value) {
 
 function computeHeadToHead(d1, d2) {
   // Find shared events by eventCode and compare PAX overall positions
-  const d1Events = new Map();
-  (d1.history || []).forEach(h => {
-    // Use eventCode as key; store paxOverallPosition or class position
+  // (class position as a fallback), normalized to percentile. Lower = better.
+  const percentile = h => {
     const pos = h.paxOverallPosition || h.position;
     const total = h.paxOverallTotal || h.totalInClass || 999;
-    // Normalize to percentile for comparison
-    if (pos && total) {
-      d1Events.set(h.eventCode, { position: pos, total });
-    }
-  });
+    return pos && total ? pos / total : null;
+  };
+  const d2Events = new Map((d2.history || []).map(h => [h.eventCode, h]));
 
-  let d1Wins = 0, d2Wins = 0, ties = 0;
-  (d2.history || []).forEach(h => {
-    const d1Entry = d1Events.get(h.eventCode);
-    if (!d1Entry) return;
-    const d2Pos = h.paxOverallPosition || h.position;
-    const d2Total = h.paxOverallTotal || h.totalInClass || 999;
-    if (!d2Pos || !d2Total) return;
+  const events = [];
+  for (const h1 of d1.history || []) {
+    const h2 = d2Events.get(h1.eventCode);
+    const pct1 = percentile(h1);
+    const pct2 = h2 && percentile(h2);
+    if (pct1 === null || !pct2) continue;
+    events.push({ h1, h2, winner: pct1 < pct2 ? 1 : pct2 < pct1 ? 2 : 0 });
+  }
 
-    // Compare normalized percentile (lower position = better)
-    const d1Pct = d1Entry.position / d1Entry.total;
-    const d2Pct = d2Pos / d2Total;
-    if (d1Pct < d2Pct) d1Wins++;
-    else if (d2Pct < d1Pct) d2Wins++;
-    else ties++;
-  });
+  const d1Wins = events.filter(e => e.winner === 1).length;
+  const d2Wins = events.filter(e => e.winner === 2).length;
+  const ties = events.filter(e => e.winner === 0).length;
+  return { d1Wins, d2Wins, ties, total: events.length, events };
+}
 
-  return { d1Wins, d2Wins, ties, total: d1Wins + d2Wins + ties };
+function renderHeadToHeadResult(h, isWinner, isLoser) {
+  const cls = isWinner ? 'compare-winner' : isLoser ? 'compare-loser' : '';
+  return `
+    <td class="${cls}">
+      ${renderClassBadge(h.className)}
+      <div>${h.trophy ? renderTrophy(h.eventType, h.position) : ''}${h.position}/${h.totalInClass || '?'} in class</div>
+      ${h.paxOverallPosition ? `<div style="font-size:0.75rem;color:var(--text-dim)">PAX ${h.paxOverallPosition}/${h.paxOverallTotal}</div>` : ''}
+    </td>`;
 }
 
 async function renderCompare(driverId1, driverId2) {
@@ -520,6 +530,27 @@ async function renderCompare(driverId1, driverId2) {
           <div class="h2h-label">${escapeHtml(d2.displayName)}: ${h2h.d2Wins}</div>
         </div>
         ${h2h.ties > 0 ? `<div style="text-align:center;color:var(--text-dim);font-size:0.85rem;margin-top:0.5rem;">Ties: ${h2h.ties}</div>` : ''}
+        <table class="compare-table" style="margin-top:1rem;">
+          <thead>
+            <tr>
+              <th style="text-align:left">Event</th>
+              <th>${escapeHtml(d1.displayName)}</th>
+              <th>${escapeHtml(d2.displayName)}</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${h2h.events.map(({ h1, h2, winner }) => `
+              <tr>
+                <td style="text-align:left">
+                  <a href="#/event/${h1.eventCode}">${escapeHtml(h1.eventName || h1.eventCode)}</a>
+                  <div style="font-size:0.75rem;color:var(--text-dim)">${escapeHtml(h1.eventDates || '')}</div>
+                </td>
+                ${renderHeadToHeadResult(h1, winner === 1, winner === 2)}
+                ${renderHeadToHeadResult(h2, winner === 2, winner === 1)}
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
       </div>
       ` : `
       <div class="card" style="grid-column: 1 / -1;">

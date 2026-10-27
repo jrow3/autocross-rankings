@@ -113,6 +113,8 @@ function canonicalizeFirstName(firstName) {
 function normalizeName(name) {
   let normalized = name
     .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '') // François → Francois
     .replace(/\s+/g, ' ')
     .replace(/['']/g, "'")
     .replace(/\./g, ' ')       // G.H. Sharp → G H Sharp

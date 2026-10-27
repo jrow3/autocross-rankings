@@ -13,8 +13,9 @@ async function renderEvents() {
   }
 
   // Parse start date from eventDates string like "March 21, 2025 - March 23, 2025 in Moultrie, GA"
+  // or, for ProSolos, "08/29/2025 - 08/31/2025"
   const parseStartDate = (e) => {
-    const m = (e.eventDates || '').match(/^([A-Za-z]+ \d{1,2},? \d{4})/);
+    const m = (e.eventDates || '').match(/^([A-Za-z]+ \d{1,2},? \d{4}|\d{2}\/\d{2}\/\d{4})/);
     return m ? new Date(m[1]) : new Date(0);
   };
 
@@ -57,7 +58,7 @@ async function renderEvents() {
               ${escapeHtml(e.eventName || e.eventCode)}
               <span class="event-type-badge event-type-${e.eventType}">${e.eventType}</span>
             </h3>
-            <div class="dates">${e.eventDates || ''}</div>
+            <div class="dates">${escapeHtml(e.eventDates || '')}</div>
             <div class="stats">
               <div><span>${e.totalDrivers || '?'}</span> drivers</div>
             </div>
@@ -148,7 +149,7 @@ async function renderEventDetail(eventCode) {
         <div class="driver-info">
           <h2>${escapeHtml(event.eventName || event.eventCode)}</h2>
           <div class="meta">
-            ${event.eventDates || ''}
+            ${escapeHtml(event.eventDates || '')}
             <span class="event-type-badge event-type-${event.eventType}">${event.eventType}</span>
           </div>
         </div>

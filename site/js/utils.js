@@ -129,8 +129,9 @@ function renderTrophy(eventType, position) {
       '<path d="M4 9V15H12V9" fill="none" stroke="#b91c1c" stroke-width="0.5"/>' +
       '</svg> ';
   }
-  // Trophy for tour wins
-  return '<svg class="trophy-icon" title="Tour trophy" viewBox="0 0 16 16" width="14" height="14">' +
+  // Trophy for tour and ProSolo wins
+  const title = eventType === 'prosolo' ? 'ProSolo trophy' : 'Tour trophy';
+  return `<svg class="trophy-icon" title="${title}" viewBox="0 0 16 16" width="14" height="14">` +
     '<path d="M4 2C4 2 3 2 2 3C1 4 1 6 1 6L3 7L3 5L4 4V2ZM12 2C12 2 13 2 14 3C15 4 15 6 15 6L13 7L13 5L12 4V2ZM5 1H11V4C11 6.2 9.2 8 8 8C6.8 8 5 6.2 5 4V1ZM5 9L6 14H10L11 9C10 9.5 9 10 8 10C7 10 6 9.5 5 9Z" fill="#ca8a04"/>' +
     '</svg> ';
 }

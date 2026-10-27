@@ -81,10 +81,13 @@ function renderAbout() {
       <h2>Deep Dive into How the RATING is Calculated</h2>
 
       <h3>Step 1: Scrape &amp; Build Event Days</h3>
-      <p>The algorithm scrapes results from all SCCA National Tours and Nationals events and builds "event days" - one entry per event
+      <p>The algorithm scrapes results from all SCCA National Tours, ProSolos and Nationals events and builds "event days" - one entry per event
       per context (overall PAX index + per-class). Each event day contains a list of drivers with their
       PAX-normalized times.</p>
-      <p><em>Why not ProSolo's?</em> The data for ProSolo's is very tricky to extract. Hopefully that will be added in the future.</p>
+      <p><em>How do ProSolos count?</em> A ProSolo driver's time is their best left run plus their best right run,
+      the same number SCCA scores the class on. ProSolos are weighted like any other event, by the strength of the
+      field that shows up. The Challenge brackets and knockout rounds aren't scored: they're head-to-head
+      eliminations with dial-ins, not times that compare across drivers.</p>
       <p><em>Why PAX indexing?</em> Autocross classes run different cars. A raw time from a Modified car
       isn't comparable to a Stock car. PAX factors level the playing field so a 60-second run in one
       class can be compared to a 70-second run in another. Both the overall PAX index (all drivers at an
@@ -275,7 +278,8 @@ function renderAbout() {
 
       <h2>Data Sources</h2>
       <p>Results are scraped from the official SCCA Pronto Timing System used at all national events,
-      including National Tours and Solo Nationals. Data goes back to 1995.</p>
+      including National Tours and Solo Nationals. Data goes back to 1995. ProSolo results (2013 onward) come
+      from the class results PDFs SCCA posts for each event.</p>
 
       <details class="math-nerds">
       <summary><h2 style="display:inline">For the Math Nerds</h2></summary>
