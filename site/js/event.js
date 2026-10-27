@@ -57,7 +57,7 @@ async function renderEvents() {
               ${escapeHtml(e.eventName || e.eventCode)}
               <span class="event-type-badge event-type-${e.eventType}">${e.eventType}</span>
             </h3>
-            <div class="dates">${e.eventDates || ''}</div>
+            <div class="dates">${escapeHtml(e.eventDates || '')}</div>
             <div class="stats">
               <div><span>${e.totalDrivers || '?'}</span> drivers</div>
             </div>
@@ -148,7 +148,7 @@ async function renderEventDetail(eventCode) {
         <div class="driver-info">
           <h2>${escapeHtml(event.eventName || event.eventCode)}</h2>
           <div class="meta">
-            ${event.eventDates || ''}
+            ${escapeHtml(event.eventDates || '')}
             <span class="event-type-badge event-type-${event.eventType}">${event.eventType}</span>
           </div>
         </div>

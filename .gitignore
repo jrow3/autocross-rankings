@@ -1,2 +1,11 @@
 node_modules/
 .claude/
+
+# Secrets and credentials — never commit
+.env
+.env.*
+*.env
+secrets/
+credentials*
+*.pem
+*.key

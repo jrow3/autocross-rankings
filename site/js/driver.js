@@ -11,7 +11,11 @@ async function loadChartJs() {
   if (window.Chart) return;
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js';
+    // Pinned to a specific version with SRI so a CDN compromise can't inject
+    // arbitrary JS into the driver-profile page.
+    script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js';
+    script.integrity = 'sha384-vsrfeLOOY6KuIYKDlmVH5UiBmgIdB1oEf7p01YgWHuqmOHfZr374+odEv96n9tNC';
+    script.crossOrigin = 'anonymous';
     script.onload = resolve;
     script.onerror = reject;
     document.head.appendChild(script);
@@ -172,7 +176,7 @@ async function renderDriver(driverId) {
               <tr>
                 <td>
                   <a href="#/event/${h.eventCode}">${escapeHtml(h.eventName || h.eventCode)}</a>
-                  <div style="font-size:0.75rem;color:var(--text-dim)">${h.eventDates || ''}</div>
+                  <div style="font-size:0.75rem;color:var(--text-dim)">${escapeHtml(h.eventDates || '')}</div>
                 </td>
                 <td>${renderClassBadge(h.className)}</td>
                 <td>${h.trophy ? renderTrophy(h.eventType, h.position) : ''}${h.position}/${h.totalInClass || '?'}</td>
